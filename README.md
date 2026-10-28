@@ -1,91 +1,88 @@
+<div align="center">
+
 # CaPtain: A Pipeline for Post-Training Code-as-Policy Robot Agents
 
-**Project page:** coming soon | **Paper:** coming soon | **Models (Hugging Face):** coming soon | **Video:** coming soon
+**The first fully open, all-stage pipeline for a small, pure code-as-policy model**
 
-CaPtain is an open pipeline that post-trains a small open vision-language model into a code-as-policy (CaP) robot agent.
-The agent controls a robot by writing Python against low-level perception and motion primitives, looks at images and at
-the receipts of its own robot calls, and decides itself when the task is done. The pipeline has three steps:
+[![Project Page](https://img.shields.io/badge/Project-Page-blue?logo=github)](#)
+[![arXiv](https://img.shields.io/badge/arXiv-coming%20soon-b31b1b?logo=arxiv)](#)
+[![Hugging Face](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Models%20%26%20Data-orange)](#)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
-1. **CaPtain-Harness** exposes only low-level perception and motion primitives, with no high-level skills, and the same API
-   runs in simulation and on real robots.
-2. **Supervised fine-tuning (SFT)** on synthetic agent trajectories collected in this harness gives a cold start.
-3. **Reinforcement learning (RL)** with a **simulator critic**: a small critic reads the simulator's physical state (object
-   poses, grasp state, sub-goal progress) and turns the change in its predicted success across each model request into
-   that request's credit. The policy never sees this state.
+<img src="docs/assets/teaser.jpg" width="100%" alt="CaPtain-4B at a glance">
 
-Applied to Qwen3.5-4B, which scores 0% zero-shot, the pipeline gives **CaPtain-4B-SFT** and **CaPtain-4B**:
-- held-out LIBERO success rises to 55.4% after SFT and 73.8% after RL;
-- the gain persists on three perturbation suites (LIBERO-PRO, LIBERO-Plus, LIBERO-MAX; +17.6 to +21.2 points), with 78.5 on
-  LIBERO-PRO Pos+Task;
-- trained only on LIBERO, the agent transfers zero-shot to RoboTwin 2.0, RoboDojo, SimplerEnv and CaP-Bench;
-- through a hardware backend, the pipeline extends to a real robot without real-world training data.
+</div>
 
-At test time CaPtain-4B uses neither a frontier model nor a LIBERO-trained VLA.
+## What is CaPtain
 
-## Repository layout
+CaPtain post-trains a small open vision-language model into a **code-as-policy (CaP) robot agent**: the agent controls a
+robot by writing Python against low-level perception and motion primitives, reads the receipts of its own robot calls,
+and decides itself when the task is done. Everything needed to reproduce and use it is open:
 
-| Part | What it is |
-|---|---|
-| [`harness/`](harness/README.md) | **CaPtain-Harness**: the `python` tool (a persistent sandboxed session), the 22-capability robot API plus `finish()`, one-line receipts, the completion gate, context compaction, perception services, and the backends: LIBERO (with LIBERO-PRO / LIBERO-Plus / LIBERO-MAX), RoboTwin 2.0, RoboDojo, SimplerEnv, CaP-Bench and a hardware backend interface for real robots. Also the evaluation runners, task lists and scorers of the paper. |
-| [`harness/eval/transfer/`](harness/eval/transfer/README.md) | The zero-shot transfer evaluations: install notes, official protocol settings, task lists, run and scoring scripts per benchmark. |
-| [`sft/`](sft/README.md) | SFT code for **CaPtain-4B-SFT**: data format, helper-library code normalisation, trainer (DeepSpeed ZeRO-3), launch script and the exact training configuration. |
-| [`rl/`](rl/README.md) | RL code for **CaPtain-4B**: streaming rollout and environment servers, the simulator critic (privileged simulator state at request boundaries, co-trained online), advantages (GAE + group-relative outcome), the SAO-style update with KL to the SFT model, the trainer, the run lifecycle and the configuration of the final run. |
+- **CaPtain-Harness** — a persistent, sandboxed Python session with 22 low-level capabilities (perception, geometric
+  measurement, IK-level motion) and `finish()`, no high-level skills and no VLA. Every call returns a text receipt. The
+  same API runs on LIBERO, LIBERO-PRO / Plus / MAX, RoboTwin 2.0, RoboDojo, SimplerEnv, CaP-Bench and real robots.
+- **The pipeline** — SFT on synthetic agent trajectories collected in the harness, then RL with a **simulator critic**: a
+  small critic reads the simulator's physical state (object poses, grasp state, sub-goal progress) and turns the change
+  in its predicted success across each model request into that request's credit. The policy never sees this state.
+- **CaPtain-4B** — Qwen3.5-4B after SFT and RL. At test time it uses neither a frontier model nor a benchmark-trained VLA.
+- **Open release** — SFT data, model weights, harness, SFT and RL training code, and the RL infrastructure
+  (streaming rollout servers, critic co-training, run supervisor).
 
-```
-                 synthetic agent trajectories (collected in CaPtain-Harness)
-                                   |
- Qwen3.5-4B --SFT (sft/)--> CaPtain-4B-SFT --RL in LIBERO with the simulator critic (rl/)--> CaPtain-4B
-                                   |                                                          |
-                                   +------------- evaluated in CaPtain-Harness (harness/) ----+
-          LIBERO, LIBERO-PRO, LIBERO-Plus, LIBERO-MAX | RoboTwin 2.0, RoboDojo, SimplerEnv, CaP-Bench | real robot
-```
+<div align="center">
+<img src="docs/assets/pipeline.jpg" width="100%" alt="CaPtain overview: inference in CaPtain-Harness (top), training and test (bottom)">
+</div>
 
-## Models and artifacts
+## News
 
-| Name | Contents |
-|---|---|
-| CaPtain-4B | RL model (round 300 = 75 optimizer updates), bf16, Qwen3.5-4B architecture |
-| CaPtain-4B-SFT | SFT model; RL start point and KL reference |
-| CaPtain-artifacts | simulator-critic warm start and feature spec; RL/SFT configs; the 7,360 RL start states and start-pool manifests; LIBERO-PRO Pos+Task frozen init states; LIBERO-MAX cases; example episodes |
+- **[2026/10]** 🔥 Code release: CaPtain-Harness with all benchmark backends, SFT and RL training code.
+- **Coming soon** 🤗 CaPtain-4B, CaPtain-4B-SFT and the SFT data on Hugging Face · 📄 paper on arXiv.
 
-The Hugging Face repositories are coming soon; the commands below use `<hf-user>/CaPtain-4B` as a placeholder. The SFT data
-and RL rollouts will be released with them.
+## Results
 
-## Results (simulation, success %)
-
-LIBERO family, host / strict (strict additionally requires that the agent called `finish()` itself):
+**SFT → RL on the LIBERO family** (host / strict success %; strict additionally requires that the agent called `finish()` itself):
 
 | Benchmark | Episodes | Qwen3.5-4B | CaPtain-4B-SFT | **CaPtain-4B** |
-|---|---|---|---|---|
-| LIBERO, official held-out states 11-16 (4 suites x 10 tasks) | 240 | 0.0 / 0.0 | 55.4 / 52.1 | **73.8 / 67.5** |
-| LIBERO-PRO Pos+Task, 6-cell mean | 600 | 0.0 / 0.0 | 59.5 / 56.7 | **78.5 / 71.5** |
-| LIBERO-PRO Pos+Task, 8-cell mean | 800 | 0.0 / 0.0 | 49.2 / 45.1 | **68.6 / 58.9** |
+|---|:-:|:-:|:-:|:-:|
+| LIBERO, official held-out states 11–16 | 240 | 0.0 / 0.0 | 55.4 / 52.1 | **73.8 / 67.5** |
+| LIBERO-PRO Pos+Task, 6-cell mean | 600 | 0.3 / 0.2 | 59.5 / 56.7 | **78.5 / 71.5** |
+| LIBERO-PRO Pos+Task, 8-cell mean | 800 | 0.2 / 0.1 | 49.2 / 45.1 | **68.6 / 58.9** |
 | LIBERO-Plus, 7 categories | 700 | 0.0 / 0.0 | 48.6 / 44.6 | **66.1 / 59.0** |
+| LIBERO-PRO, 4 categories | 160 | 0.0 / 0.0 | 48.8 / 48.1 | **68.8 / 60.6** |
 | LIBERO-MAX Dynamic | 80 | 0.0 / 0.0 | 40.0 / 40.0 | **61.2 / 50.0** |
 | LIBERO-MAX Base | 80 | 0.0 / 0.0 | 51.2 / 45.0 | **70.0 / 63.8** |
 
-Zero-shot transfer of CaPtain-4B (trained only on LIBERO):
+<div align="center"><img src="docs/assets/sft_vs_rl.jpg" width="90%" alt="SFT vs RL host and strict success"></div>
 
-| Benchmark | Protocol | CaPtain-4B |
-|---|---|---|
-| RoboTwin 2.0 | official Hard protocol, 50 tasks x 100 trials, dual Franka Panda | 22.6 (all 50 tasks), 30.0 (33 single-arm tasks) |
-| RoboDojo | 42 tasks, official layouts and native action budget, dual ARX X5; leaderboard Score / success | 1.7 / 0.8 (all), 2.0 / 1.0 (32 single-arm tasks) |
-| SimplerEnv | WidowX (Bridge) visual matching, 4 tasks x 24 episodes | 83.3 |
-| CaP-Bench | Cube Lift and Cube Stack, 20 trials each, at CaP-Gym's step horizon | 75.0 (CaPtain-4B-SFT 55.0, Qwen3.5-4B 5.0) |
+**LIBERO-PRO Pos+Task** (6-cell / 8-cell mean, %): CaPtain-4B reaches **78.5**, the best result we know of among systems
+that use neither a frontier model nor a LIBERO-trained VLA at test time (the full comparison is in the paper).
 
-Protocol: T = 1, top_p = 1, thinking on, a 64k-token context with compaction, SAM3 + Molmo2-8B perception, at most 60 model
-requests and 1080 s per episode (RoboDojo: 120 requests, 3600 s). Host success means the hidden goal predicate holds at
-the end of the episode. On the transfer benchmarks the harness also uses inputs that the benchmarks' official policy
-observations do not include (simulated depth, camera calibration, a wrist force or contact signal, and on SimplerEnv an
-added wrist camera); they are listed per benchmark in [`harness/eval/transfer/README.md`](harness/eval/transfer/README.md).
-The agent never receives object poses, the success predicate or task progress.
+**Zero-shot transfer** of CaPtain-4B, trained only on LIBERO:
+
+| Benchmark | Protocol | CaPtain-4B | Reference points |
+|---|---|:-:|---|
+| RoboTwin 2.0 | official Hard protocol, 50 tasks × 100 trials | **22.6** (single-arm 30.0) | X-VLA 20.9, Xiaomi-Robotics-0 18.2, π0 16.3 (trained on RoboTwin demos) |
+| SimplerEnv | WidowX (Bridge) visual matching, 4 tasks × 24 | **83.3** | ManiAgent (GPT-5) 86.8, PhysBrain 1.0 80.2, π0.5 57.1 |
+| CaP-Bench | Cube Lift + Cube Stack at CaP-Gym's step horizon | **75.0** | CaP-X M2 (Gemini-3-Pro) 73.5, CaP-RL 62.0 |
+| RoboDojo | 42 tasks, official layouts and action budget (leaderboard Score) | **1.7** | GPT-5.5 agent 1.1, RDT 0.5, OpenVLA-OFT 0.2 |
+
+The transfer backends use inputs beyond the benchmarks' official policy observation (simulated depth, camera
+calibration, a wrist force or contact signal, and on SimplerEnv an added wrist camera); they are listed per benchmark in
+[`harness/eval/transfer/README.md`](harness/eval/transfer/README.md). The agent never receives object poses, the success
+predicate or task progress.
 
 ## Installation
 
-Linux x86_64 with NVIDIA GPUs (EGL for MuJoCo; Vulkan for the SAPIEN / Isaac Sim transfer benchmarks), `bubblewrap` >= 0.5.
+Linux x86_64 with NVIDIA GPUs (EGL for MuJoCo; Vulkan for the SAPIEN / Isaac Sim transfer benchmarks), `bubblewrap` ≥ 0.5.
+
+| Route | Use it when you want to… |
+|---|---|
+| Harness only | evaluate CaPtain-4B (or your own model) in CaPtain-Harness, or plug in a new robot or benchmark |
+| + transfer environments | run RoboTwin 2.0, RoboDojo or SimplerEnv ([`harness/eval/transfer/`](harness/eval/transfer/README.md)) |
+| + training | reproduce SFT ([`sft/`](sft/README.md)) and RL ([`rl/`](rl/README.md)) |
 
 ```bash
-git clone <this repository> CaPtain && cd CaPtain/harness
+git clone https://github.com/waltstephen/CaPtain.git && cd CaPtain/harness
 scripts/setup_third_party.sh                                   # LIBERO @ pinned revision into third_party/
 python3.10 -m venv .venv-libero && .venv-libero/bin/pip install -r requirements-libero.txt \
   && .venv-libero/bin/pip install -e third_party/libero --no-deps && .venv-libero/bin/pip install -e . --no-deps
@@ -93,45 +90,90 @@ python3.11 -m venv ~/envs/student-py311 && ~/envs/student-py311/bin/pip install 
 python3.11 -m venv .venv-transfer && .venv-transfer/bin/pip install -r requirements-transfer.txt              # only for RoboTwin / RoboDojo / SimplerEnv
 ```
 
-Perception services (SAM3, Molmo2-8B) and the policy server (vLLM 0.29) are described in [`harness/README.md`](harness/README.md).
-Each transfer benchmark's simulator is installed in its own environment; see [`harness/eval/transfer/README.md`](harness/eval/transfer/README.md).
-Training environments are described in [`sft/README.md`](sft/README.md) and [`rl/README.md`](rl/README.md).
+Perception services (SAM 3, Molmo2-8B) and the policy server (vLLM 0.29) are described in [`harness/README.md`](harness/README.md).
 
-## Quick start: evaluate CaPtain-4B on one LIBERO episode
+## Quick Start
+
+**1. Evaluate CaPtain-4B on one LIBERO episode**
 
 ```bash
 cd harness
-services/start_perception.sh                                    # SAM3 :8114 + Molmo2-8B :8122
+services/start_perception.sh                                    # SAM 3 :8114 + Molmo2-8B :8122
 services/serve_policy.sh <hf-user>/CaPtain-4B 8600              # vLLM 0.29, OpenAI-compatible endpoint
 STUDENT_PYTHON=~/envs/student-py311/bin/python eval/run_episode.sh libero_spatial 0 11 runs/demo
 cat runs/demo/libero_spatial_0_seed-11/episode_result.json      # host_final_success, agent_finished, termination_reason, ...
 ```
 
-The model endpoint is any OpenAI-compatible server (`POLICY_URL`, default `http://127.0.0.1:8600/v1`; `--auth bearer`
-reads `CAPTAIN_API_KEY` or `OPENAI_API_KEY`). Full benchmark runs: [`harness/README.md`](harness/README.md) (LIBERO family)
-and [`harness/eval/transfer/README.md`](harness/eval/transfer/README.md) (transfer). Training: [`sft/README.md`](sft/README.md), [`rl/README.md`](rl/README.md).
+Any OpenAI-compatible endpoint works (`POLICY_URL`, default `http://127.0.0.1:8600/v1`; `--auth bearer` reads
+`CAPTAIN_API_KEY` or `OPENAI_API_KEY`), so the harness can also run frontier models or your own checkpoints.
 
-## Real robots
+**2. Reproduce the paper's evaluations**
 
-The harness reaches a robot through a driver that implements a small protocol (read measured state, command one control
-tick with an absolute end-effector goal and a gripper action, hold, read camera frames with depth and intrinsics). A MuJoCo
-kinematic twin updated from the measured joints provides kinematics, so the tools, receipts and TASK.md are those of the
-simulation runs. See "Hardware backend" in [`harness/README.md`](harness/README.md).
+```bash
+export POLICY_URL=http://127.0.0.1:8600/v1 STUDENT_PYTHON=~/envs/student-py311/bin/python EGL_DEVICE=0
+python3 eval/run_jobs.py eval/tasks/libero_official_240.tsv --out runs/captain-4b --parallel 8
+python3 eval/summarize.py eval/tasks/libero_official_240.tsv runs/captain-4b
+```
+
+The other task lists (LIBERO-PRO, LIBERO-Plus, LIBERO-MAX) are in [`harness/README.md`](harness/README.md); the transfer
+benchmarks in [`harness/eval/transfer/README.md`](harness/eval/transfer/README.md).
+
+**3. Train**
+
+- SFT (2 × 8 GPUs): [`sft/README.md`](sft/README.md) — data format, the two stages and `train/launch_sft.sh`.
+- RL (16 GPUs: 8 trainer + 8 rollout; an 8-GPU config is included): [`rl/README.md`](rl/README.md) —
+  `bash rl/scripts/run_stream.sh rl/configs/captain-4b.json` starts perception, policy servers, the environment server and
+  the trainer under one supervisor.
+
+## Repository layout
+
+| Path | What it is |
+|---|---|
+| [`harness/`](harness/README.md) | **CaPtain-Harness**: the `python` tool, the 22-capability robot API, receipts, completion gate, context compaction, perception services, all backends, evaluation runners, task lists and scorers |
+| [`harness/eval/transfer/`](harness/eval/transfer/README.md) | zero-shot transfer: install notes, official protocol settings, task lists, run and scoring scripts per benchmark |
+| [`sft/`](sft/README.md) | SFT for CaPtain-4B-SFT: data format, trainer (DeepSpeed ZeRO-3), launch script, exact configuration |
+| [`rl/`](rl/README.md) | RL for CaPtain-4B: streaming rollout and environment servers, the simulator critic, advantages, SAO-style update, trainer, run supervisor, final-run configuration |
+| [`docs/`](docs) | figures used in this README |
+
+## For AI agents
+
+> 🤖 Most people now hand a repository to a coding agent. This section is written for that agent: paste it, or point
+> your agent at [`AGENTS.md`](AGENTS.md), which holds the same rules in more detail.
+
+- **Entry points.** Run one episode: `harness/eval/run_episode.sh <suite> <task_id> <seed> <out_dir>`. Run a task list:
+  `harness/eval/run_jobs.py <tasks.tsv> --out <dir>`. Score: `harness/eval/summarize.py`. Train: `sft/train/launch_sft.sh`,
+  `rl/scripts/run_stream.sh <config>`.
+- **Where things live.** Robot API, receipts and capability contracts: `harness/src/captain_harness/adapters/` and `ports/`. One episode:
+  `harness/src/captain_harness/server/`. ReAct loop, compaction, model client: `harness/src/captain_harness/react/`.
+  Backends: `adapters/{libero,robotwin2,robodojo,simplerenv,capgym,hardware}`. RL critic and advantages: `rl/`.
+- **Invariants you must keep.**
+  1. `react` must not import `server` or `adapters` and must not use robot or task vocabulary (`tests/test_import_boundaries.py`).
+  2. Hidden state stays hidden: nothing served to the model carries poses, contacts or the success predicate; the episode
+     output directory is hidden from the sandbox.
+  3. Budgets (request cap, wall time, action budget) are enforced in the server, not the driver.
+  4. Do not change model-visible text (TASK.md, tool descriptions, receipts, request template) when evaluating the
+     released checkpoints; they were trained on exactly this text.
+- **Adding a robot or benchmark.** Implement a backend under `adapters/` with the same capability manifest, register its
+  suite, add a task list under `eval/`, and run `pytest tests/test_transfer_wiring.py`. For real hardware implement the
+  driver protocol in `adapters/hardware` (measured state, one control tick, hold, camera frames with depth and intrinsics).
+- **Checks before you finish.** `cd harness && .venv-libero/bin/python -m pytest -q tests/test_react_*.py
+  tests/test_server_env_server.py tests/test_import_boundaries.py tests/test_transfer_wiring.py` (seconds, CPU).
+- **Configuration.** Machine paths come from environment variables (`POLICY_URL`, `STUDENT_PYTHON`, `EGL_DEVICE`,
+  `CAPTAIN_ROOT`, `CAPTAIN_WORKSPACE`, …); never hard-code paths or keys.
 
 ## Hardware used for the paper
 
 | Stage | Hardware | Time |
 |---|---|---|
-| SFT (stage 2) | 16 x H100-80GB | ~7.6 h (~120 GPU-hours) |
-| RL (CaPtain-4B, 300 rounds of 256 episodes) | 16 x H100-80GB: 8 for the trainer; 8 for rollout (6 vLLM policies, SAM3, Molmo2-8B, EGL rendering) | ~15-20 min per round; about 1,290 GPU-hours |
+| SFT (stage 2) | 16 × H100-80GB | ~7.6 h (~120 GPU-hours) |
+| RL (CaPtain-4B, 300 rounds of 256 episodes) | 16 × H100-80GB: 8 trainer; 8 rollout (6 vLLM policies, SAM 3, Molmo2-8B, EGL rendering) | ~1,290 GPU-hours |
 | Evaluation | 1 GPU for the policy plus 1 for perception and rendering | ~6 min median per LIBERO episode |
 
 ## License
 
-The code in this repository is released under the [MIT License](LICENSE). Third-party components keep their own licenses;
-see [THIRD_PARTY_LICENSES.md](THIRD_PARTY_LICENSES.md) (note that SAM 3 weights fall under the SAM License). The model
-weights follow the license of the base model, Qwen3.5-4B (Apache-2.0). Known limitations of this release are listed in
-[RELEASE_NOTES.md](RELEASE_NOTES.md).
+The code is released under the [MIT License](LICENSE). Third-party components keep their own licenses; see
+[THIRD_PARTY_LICENSES.md](THIRD_PARTY_LICENSES.md) (SAM 3 weights fall under the SAM License). Model weights follow the
+license of the base model, Qwen3.5-4B (Apache-2.0). Known limitations of this release: [RELEASE_NOTES.md](RELEASE_NOTES.md).
 
 ## Citation
 
@@ -140,7 +182,10 @@ weights follow the license of the base model, Qwen3.5-4B (Apache-2.0). Known lim
   title   = {CaPtain: A Pipeline for Post-Training Code-as-Policy Robot Agents},
   author  = {Fan, Yijia and He, Xilin and Jiang, Yilei and Wu, Dongming and Wang, Jiaxu and Yue, Xiangyu},
   journal = {arXiv preprint},
-  year    = {2026},
-  note    = {arXiv identifier coming soon}
+  year    = {2026}
 }
 ```
+
+## Contact
+
+Questions and issues: open a GitHub issue, or contact the corresponding author, Xiangyu Yue (xyyue@ie.cuhk.edu.hk).
