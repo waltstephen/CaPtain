@@ -4,9 +4,8 @@
 
 **The first fully open, all-stage pipeline for a small, pure code-as-policy model**
 
-[![Project Page](https://img.shields.io/badge/Project-Page-blue?logo=github)](#)
-[![arXiv](https://img.shields.io/badge/arXiv-coming%20soon-b31b1b?logo=arxiv)](#)
-[![Hugging Face](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Models%20%26%20Data-orange)](#)
+[![Project Page](https://img.shields.io/badge/Project-Page-blue?logo=github)](https://waltstephen.github.io/captain/)
+[![Hugging Face](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Models%20%26%20Data-orange)](https://huggingface.co/YijiaFan/CaPtain-4B)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
 <img src="docs/assets/teaser.jpg" width="100%" alt="CaPtain-4B at a glance">
@@ -38,7 +37,7 @@ and decides itself when the task is done. Everything needed to reproduce and use
 ## News
 
 - **[2026/10]** 🔥 Code release: CaPtain-Harness with all benchmark backends, SFT and RL training code.
-- **Coming soon** 🤗 CaPtain-4B, CaPtain-4B-SFT and the SFT data on Hugging Face · 📄 paper on arXiv.
+- **[2026/10]** 🤗 Models and data on Hugging Face: [CaPtain-4B](https://huggingface.co/YijiaFan/CaPtain-4B), [CaPtain-4B-SFT](https://huggingface.co/YijiaFan/CaPtain-4B-SFT), [CaPtain-SFT-Data](https://huggingface.co/datasets/YijiaFan/CaPtain-SFT-Data), [CaPtain-artifacts](https://huggingface.co/datasets/YijiaFan/CaPtain-artifacts) · 🌐 [project page](https://waltstephen.github.io/captain/).
 
 ## Results
 
@@ -105,7 +104,7 @@ Model weights (SAM 3, Molmo2-8B, CaPtain-4B): `harness/scripts/download_models.s
 ```bash
 cd harness
 services/start_perception.sh                                    # SAM 3 :8114 + Molmo2-8B :8122
-services/serve_policy.sh <hf-user>/CaPtain-4B 8600              # vLLM 0.29, OpenAI-compatible endpoint
+services/serve_policy.sh YijiaFan/CaPtain-4B 8600              # vLLM 0.29, OpenAI-compatible endpoint
 STUDENT_PYTHON=~/envs/student-py311/bin/python eval/run_episode.sh libero_spatial 0 11 runs/demo
 cat runs/demo/libero_spatial_0_seed-11/episode_result.json      # host_final_success, agent_finished, termination_reason, ...
 ```

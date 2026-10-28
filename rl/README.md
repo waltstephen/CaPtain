@@ -102,8 +102,8 @@ Other requirements:
 
 ```bash
 export CAPTAIN_WORKSPACE=/shared/captain CAPTAIN_ROOT=/path/to/CaPtain
-huggingface-cli download <hf-user>/CaPtain-4B-SFT --local-dir $CAPTAIN_WORKSPACE/models/CaPtain-4B-SFT
-huggingface-cli download <hf-user>/CaPtain-artifacts --repo-type dataset --include 'critic/*' --local-dir $CAPTAIN_WORKSPACE
+huggingface-cli download YijiaFan/CaPtain-4B-SFT --local-dir $CAPTAIN_WORKSPACE/models/CaPtain-4B-SFT
+huggingface-cli download YijiaFan/CaPtain-artifacts --repo-type dataset --include 'critic/*' --local-dir $CAPTAIN_WORKSPACE
 #  -> $CAPTAIN_WORKSPACE/critic/warm_start/{critic_default.pt, critic_split.pt, feature_spec.json, metrics_sameT.json}
 ```
 
@@ -119,7 +119,7 @@ lighting/camera/material variation + 44 official non-evaluation states (indices 
 `CaPtain-artifacts/starts/libero_fresh_init_rl/`. Install them as the harness's fresh-init set, then build the pool:
 
 ```bash
-huggingface-cli download <hf-user>/CaPtain-artifacts --repo-type dataset --include 'starts/*' --local-dir $CAPTAIN_WORKSPACE
+huggingface-cli download YijiaFan/CaPtain-artifacts --repo-type dataset --include 'starts/*' --local-dir $CAPTAIN_WORKSPACE
 mv $CAPTAIN_ROOT/harness/data/libero_fresh_init $CAPTAIN_ROOT/harness/data/libero_fresh_init.bundled
 cp -r $CAPTAIN_WORKSPACE/starts/libero_fresh_init_rl $CAPTAIN_ROOT/harness/data/libero_fresh_init
 bash rl/scripts/prepare_starts.sh       # -> $CAPTAIN_WORKSPACE/configs/start-bank.json, start-pool.json
