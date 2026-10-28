@@ -1,0 +1,62 @@
+{
+  "completion_candidate_profile": {
+    "hard_mark_centering_condition": false,
+    "hard_support_gap_condition": false,
+    "max_mark_vertical_delta_m": 0.12,
+    "max_static_displacement_m": 0.01,
+    "min_mark_vertical_delta_m": -0.02,
+    "min_robust_vertical_gap_m": 0.002,
+    "min_xy_overlap_ratio": 0.7,
+    "recommendation_only": true,
+    "required_boolean_evidence": [
+      "gripper_released",
+      "target_destination_distinct",
+      "centroid_inside_destination_xy",
+      "mark_inside_destination_xy"
+    ],
+    "rule_id": "V12_confidence_repair"
+  },
+  "confidence_hard_demotions": {
+    "target_intersects_destination": 0.0
+  },
+  "confidence_necessary_conditions": [
+    "gripper_released"
+  ],
+  "confidence_penalties": {
+    "destination_partially_covered": 0.8,
+    "identity_low_confidence": 0.5,
+    "target_static_not_yet_measurable": 0.7,
+    "target_underside_occluded": 0.75
+  },
+  "confidence_weights": {
+    "centroid_inside_destination_xy": 0.05,
+    "gripper_released": 0.1,
+    "mark_vertical_delta_m": 0.2,
+    "robust_vertical_gap_m": 0.3,
+    "target_destination_distinct": 0.05,
+    "target_static_after_release_m": 0.15,
+    "xy_overlap_ratio": 0.15
+  },
+  "eef_clearance_extent_ratio": 1.5,
+  "mark_distance_destination_ratio": 0.45,
+  "max_eef_clearance_m": 0.3,
+  "max_extent_ratio": 1.5,
+  "max_mark_distance_m": 0.1,
+  "min_eef_clearance_m": 0.12,
+  "min_extent_ratio": 0.5,
+  "min_mark_distance_m": 0.05,
+  "min_on_footprint_overlap": 0.83,
+  "protocol_id": "libero-public-completion-v12",
+  "recommendation_threshold": 0.75,
+  "schema_version": "captain-public-completion/v3",
+  "signal_reliability_high_to_low": [
+    "robust_vertical_gap_m",
+    "mark_vertical_delta_m",
+    "xy_overlap_ratio",
+    "target_static_after_release_m",
+    "gripper_released",
+    "centroid_inside_destination_xy",
+    "target_destination_distinct",
+    "support_gap_bounds_m"
+  ]
+}

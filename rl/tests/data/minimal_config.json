@@ -1,0 +1,21 @@
+{
+  "run_dir": "/tmp/captain-rl-test/runs/minimal",
+  "repo": "/tmp/captain-rl-test/CaPtain",
+  "harness": "/tmp/captain-rl-test/CaPtain/harness",
+  "base_model": "/tmp/captain-rl-test/models/captain-4b-sft",
+  "nnodes": 1,
+  "single_node": "a",
+  "rollout_nodes": ["a", "b"],
+  "train_gpus": [4, 5, 6, 7],
+  "minimum_free_gpu_gib": 60,
+  "max_steps": 1000,
+  "save_steps": 10,
+  "prompts_per_step": 8,
+  "num_generations": 4,
+  "max_training_requests": 4,
+  "max_requests": 40,
+  "wall_time": 720,
+  "max_actions": 150,
+  "max_tool_calls": 600,
+  "seed": 17
+}

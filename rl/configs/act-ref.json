@@ -1,0 +1,610 @@
+{
+ "rule": "1.5 x median physical actions of successful teacher episodes (>= 3 per task)",
+ "ref": {
+  "libero_10:0": 60.0,
+  "libero_10:1": 48.0,
+  "libero_10:2": 42.8,
+  "libero_10:3": 72.0,
+  "libero_10:4": 31.5,
+  "libero_10:7": 48.0,
+  "libero_10:8": 40.5,
+  "libero_90:0": 19.5,
+  "libero_90:1": 46.5,
+  "libero_90:10": 18.0,
+  "libero_90:11": 12.0,
+  "libero_90:12": 18.0,
+  "libero_90:13": 16.5,
+  "libero_90:14": 15.0,
+  "libero_90:15": 19.5,
+  "libero_90:16": 15.0,
+  "libero_90:17": 16.5,
+  "libero_90:18": 22.5,
+  "libero_90:19": 21.0,
+  "libero_90:2": 18.0,
+  "libero_90:20": 20.2,
+  "libero_90:21": 62.2,
+  "libero_90:22": 46.5,
+  "libero_90:23": 84.0,
+  "libero_90:24": 25.5,
+  "libero_90:25": 21.0,
+  "libero_90:26": 22.5,
+  "libero_90:27": 36.0,
+  "libero_90:28": 16.5,
+  "libero_90:29": 20.2,
+  "libero_90:3": 52.5,
+  "libero_90:30": 17.2,
+  "libero_90:31": 20.2,
+  "libero_90:33": 27.0,
+  "libero_90:36": 17.2,
+  "libero_90:38": 22.5,
+  "libero_90:4": 45.0,
+  "libero_90:40": 49.5,
+  "libero_90:41": 29.2,
+  "libero_90:42": 40.5,
+  "libero_90:43": 18.0,
+  "libero_90:44": 32.2,
+  "libero_90:45": 60.0,
+  "libero_90:46": 22.5,
+  "libero_90:47": 21.0,
+  "libero_90:48": 16.5,
+  "libero_90:49": 22.5,
+  "libero_90:5": 46.5,
+  "libero_90:50": 27.8,
+  "libero_90:51": 24.0,
+  "libero_90:52": 18.0,
+  "libero_90:53": 19.5,
+  "libero_90:54": 22.5,
+  "libero_90:55": 21.0,
+  "libero_90:56": 23.2,
+  "libero_90:57": 21.0,
+  "libero_90:58": 16.5,
+  "libero_90:59": 19.5,
+  "libero_90:60": 16.5,
+  "libero_90:61": 15.8,
+  "libero_90:62": 16.5,
+  "libero_90:63": 35.2,
+  "libero_90:64": 34.5,
+  "libero_90:65": 15.0,
+  "libero_90:66": 21.0,
+  "libero_90:67": 15.0,
+  "libero_90:68": 16.5,
+  "libero_90:71": 15.0,
+  "libero_90:72": 15.0,
+  "libero_90:73": 21.0,
+  "libero_90:74": 19.5,
+  "libero_90:75": 18.0,
+  "libero_90:76": 19.5,
+  "libero_90:78": 20.2,
+  "libero_90:79": 18.0,
+  "libero_90:8": 45.0,
+  "libero_90:80": 18.0,
+  "libero_90:81": 22.5,
+  "libero_90:82": 18.0,
+  "libero_90:83": 18.0,
+  "libero_90:84": 20.2,
+  "libero_90:85": 20.2,
+  "libero_90:86": 85.5,
+  "libero_90:87": 16.5,
+  "libero_90:88": 81.8,
+  "libero_90:9": 16.5,
+  "libero_goal:1": 15.8,
+  "libero_goal:2": 18.0,
+  "libero_goal:3": 42.0,
+  "libero_goal:4": 16.5,
+  "libero_goal:5": 40.5,
+  "libero_goal:6": 21.0,
+  "libero_goal:7": 45.0,
+  "libero_goal:8": 16.5,
+  "libero_goal:9": 27.8,
+  "libero_object:0": 26.2,
+  "libero_object:1": 19.5,
+  "libero_object:2": 18.0,
+  "libero_object:3": 19.5,
+  "libero_object:4": 21.0,
+  "libero_object:5": 25.5,
+  "libero_object:6": 19.5,
+  "libero_object:7": 20.2,
+  "libero_object:8": 19.5,
+  "libero_object:9": 21.0,
+  "libero_spatial:0": 15.0,
+  "libero_spatial:1": 16.5,
+  "libero_spatial:2": 15.0,
+  "libero_spatial:3": 16.5,
+  "libero_spatial:4": 27.0,
+  "libero_spatial:5": 19.5,
+  "libero_spatial:6": 16.5,
+  "libero_spatial:7": 16.5,
+  "libero_spatial:8": 15.0,
+  "libero_spatial:9": 19.5,
+  "libero_spatial:*": 16.5,
+  "libero_object:*": 19.9,
+  "libero_goal:*": 21.0,
+  "libero_10:*": 48.0
+ },
+ "teacher": {
+  "libero_10:0": {
+   "n": 27,
+   "median": 40
+  },
+  "libero_10:1": {
+   "n": 28,
+   "median": 32.0
+  },
+  "libero_10:2": {
+   "n": 26,
+   "median": 28.5
+  },
+  "libero_10:3": {
+   "n": 27,
+   "median": 48
+  },
+  "libero_10:4": {
+   "n": 26,
+   "median": 21.0
+  },
+  "libero_10:7": {
+   "n": 27,
+   "median": 32
+  },
+  "libero_10:8": {
+   "n": 30,
+   "median": 27.0
+  },
+  "libero_10:9": {
+   "n": 2,
+   "median": 58.0
+  },
+  "libero_90:0": {
+   "n": 17,
+   "median": 13
+  },
+  "libero_90:1": {
+   "n": 21,
+   "median": 31
+  },
+  "libero_90:10": {
+   "n": 23,
+   "median": 12
+  },
+  "libero_90:11": {
+   "n": 19,
+   "median": 8
+  },
+  "libero_90:12": {
+   "n": 22,
+   "median": 12.0
+  },
+  "libero_90:13": {
+   "n": 23,
+   "median": 11
+  },
+  "libero_90:14": {
+   "n": 23,
+   "median": 10
+  },
+  "libero_90:15": {
+   "n": 23,
+   "median": 13
+  },
+  "libero_90:16": {
+   "n": 23,
+   "median": 10
+  },
+  "libero_90:17": {
+   "n": 22,
+   "median": 11.0
+  },
+  "libero_90:18": {
+   "n": 21,
+   "median": 15
+  },
+  "libero_90:19": {
+   "n": 22,
+   "median": 14.0
+  },
+  "libero_90:2": {
+   "n": 22,
+   "median": 12.0
+  },
+  "libero_90:20": {
+   "n": 22,
+   "median": 13.5
+  },
+  "libero_90:21": {
+   "n": 22,
+   "median": 41.5
+  },
+  "libero_90:22": {
+   "n": 19,
+   "median": 31
+  },
+  "libero_90:23": {
+   "n": 4,
+   "median": 56.0
+  },
+  "libero_90:24": {
+   "n": 22,
+   "median": 17.0
+  },
+  "libero_90:25": {
+   "n": 22,
+   "median": 14.0
+  },
+  "libero_90:26": {
+   "n": 22,
+   "median": 15.0
+  },
+  "libero_90:27": {
+   "n": 24,
+   "median": 24.0
+  },
+  "libero_90:28": {
+   "n": 20,
+   "median": 11.0
+  },
+  "libero_90:29": {
+   "n": 22,
+   "median": 13.5
+  },
+  "libero_90:3": {
+   "n": 13,
+   "median": 35
+  },
+  "libero_90:30": {
+   "n": 24,
+   "median": 11.5
+  },
+  "libero_90:31": {
+   "n": 22,
+   "median": 13.5
+  },
+  "libero_90:33": {
+   "n": 21,
+   "median": 18
+  },
+  "libero_90:35": {
+   "n": 1,
+   "median": 65
+  },
+  "libero_90:36": {
+   "n": 20,
+   "median": 11.5
+  },
+  "libero_90:38": {
+   "n": 23,
+   "median": 15
+  },
+  "libero_90:4": {
+   "n": 13,
+   "median": 30
+  },
+  "libero_90:40": {
+   "n": 31,
+   "median": 33
+  },
+  "libero_90:41": {
+   "n": 24,
+   "median": 19.5
+  },
+  "libero_90:42": {
+   "n": 27,
+   "median": 27
+  },
+  "libero_90:43": {
+   "n": 21,
+   "median": 12
+  },
+  "libero_90:44": {
+   "n": 22,
+   "median": 21.5
+  },
+  "libero_90:45": {
+   "n": 23,
+   "median": 40
+  },
+  "libero_90:46": {
+   "n": 20,
+   "median": 15.0
+  },
+  "libero_90:47": {
+   "n": 20,
+   "median": 14.0
+  },
+  "libero_90:48": {
+   "n": 21,
+   "median": 11
+  },
+  "libero_90:49": {
+   "n": 21,
+   "median": 15
+  },
+  "libero_90:5": {
+   "n": 15,
+   "median": 31
+  },
+  "libero_90:50": {
+   "n": 20,
+   "median": 18.5
+  },
+  "libero_90:51": {
+   "n": 21,
+   "median": 16
+  },
+  "libero_90:52": {
+   "n": 21,
+   "median": 12
+  },
+  "libero_90:53": {
+   "n": 21,
+   "median": 13
+  },
+  "libero_90:54": {
+   "n": 22,
+   "median": 15.0
+  },
+  "libero_90:55": {
+   "n": 21,
+   "median": 14
+  },
+  "libero_90:56": {
+   "n": 20,
+   "median": 15.5
+  },
+  "libero_90:57": {
+   "n": 21,
+   "median": 14
+  },
+  "libero_90:58": {
+   "n": 21,
+   "median": 11
+  },
+  "libero_90:59": {
+   "n": 21,
+   "median": 13
+  },
+  "libero_90:60": {
+   "n": 22,
+   "median": 11.0
+  },
+  "libero_90:61": {
+   "n": 22,
+   "median": 10.5
+  },
+  "libero_90:62": {
+   "n": 21,
+   "median": 11
+  },
+  "libero_90:63": {
+   "n": 22,
+   "median": 23.5
+  },
+  "libero_90:64": {
+   "n": 21,
+   "median": 23
+  },
+  "libero_90:65": {
+   "n": 19,
+   "median": 10
+  },
+  "libero_90:66": {
+   "n": 20,
+   "median": 14.0
+  },
+  "libero_90:67": {
+   "n": 21,
+   "median": 10
+  },
+  "libero_90:68": {
+   "n": 21,
+   "median": 11
+  },
+  "libero_90:7": {
+   "n": 2,
+   "median": 7.5
+  },
+  "libero_90:70": {
+   "n": 1,
+   "median": 10
+  },
+  "libero_90:71": {
+   "n": 21,
+   "median": 10
+  },
+  "libero_90:72": {
+   "n": 22,
+   "median": 10.0
+  },
+  "libero_90:73": {
+   "n": 20,
+   "median": 14.0
+  },
+  "libero_90:74": {
+   "n": 21,
+   "median": 13
+  },
+  "libero_90:75": {
+   "n": 21,
+   "median": 12
+  },
+  "libero_90:76": {
+   "n": 21,
+   "median": 13
+  },
+  "libero_90:78": {
+   "n": 20,
+   "median": 13.5
+  },
+  "libero_90:79": {
+   "n": 21,
+   "median": 12
+  },
+  "libero_90:8": {
+   "n": 22,
+   "median": 30.0
+  },
+  "libero_90:80": {
+   "n": 20,
+   "median": 12.0
+  },
+  "libero_90:81": {
+   "n": 21,
+   "median": 15
+  },
+  "libero_90:82": {
+   "n": 21,
+   "median": 12
+  },
+  "libero_90:83": {
+   "n": 20,
+   "median": 12.0
+  },
+  "libero_90:84": {
+   "n": 22,
+   "median": 13.5
+  },
+  "libero_90:85": {
+   "n": 20,
+   "median": 13.5
+  },
+  "libero_90:86": {
+   "n": 33,
+   "median": 57
+  },
+  "libero_90:87": {
+   "n": 21,
+   "median": 11
+  },
+  "libero_90:88": {
+   "n": 6,
+   "median": 54.5
+  },
+  "libero_90:89": {
+   "n": 2,
+   "median": 35.5
+  },
+  "libero_90:9": {
+   "n": 22,
+   "median": 11.0
+  },
+  "libero_goal:0": {
+   "n": 1,
+   "median": 9
+  },
+  "libero_goal:1": {
+   "n": 26,
+   "median": 10.5
+  },
+  "libero_goal:2": {
+   "n": 26,
+   "median": 12.0
+  },
+  "libero_goal:3": {
+   "n": 26,
+   "median": 28.0
+  },
+  "libero_goal:4": {
+   "n": 26,
+   "median": 11.0
+  },
+  "libero_goal:5": {
+   "n": 19,
+   "median": 27
+  },
+  "libero_goal:6": {
+   "n": 24,
+   "median": 14.0
+  },
+  "libero_goal:7": {
+   "n": 27,
+   "median": 30
+  },
+  "libero_goal:8": {
+   "n": 26,
+   "median": 11.0
+  },
+  "libero_goal:9": {
+   "n": 28,
+   "median": 18.5
+  },
+  "libero_object:0": {
+   "n": 26,
+   "median": 17.5
+  },
+  "libero_object:1": {
+   "n": 26,
+   "median": 13.0
+  },
+  "libero_object:2": {
+   "n": 26,
+   "median": 12.0
+  },
+  "libero_object:3": {
+   "n": 25,
+   "median": 13
+  },
+  "libero_object:4": {
+   "n": 18,
+   "median": 14.0
+  },
+  "libero_object:5": {
+   "n": 27,
+   "median": 17
+  },
+  "libero_object:6": {
+   "n": 26,
+   "median": 13.0
+  },
+  "libero_object:7": {
+   "n": 26,
+   "median": 13.5
+  },
+  "libero_object:8": {
+   "n": 27,
+   "median": 13
+  },
+  "libero_object:9": {
+   "n": 25,
+   "median": 14
+  },
+  "libero_spatial:0": {
+   "n": 29,
+   "median": 10
+  },
+  "libero_spatial:1": {
+   "n": 26,
+   "median": 11.0
+  },
+  "libero_spatial:2": {
+   "n": 26,
+   "median": 10.0
+  },
+  "libero_spatial:3": {
+   "n": 26,
+   "median": 11.0
+  },
+  "libero_spatial:4": {
+   "n": 26,
+   "median": 18.0
+  },
+  "libero_spatial:5": {
+   "n": 26,
+   "median": 13.0
+  },
+  "libero_spatial:6": {
+   "n": 26,
+   "median": 11.0
+  },
+  "libero_spatial:7": {
+   "n": 26,
+   "median": 11.0
+  },
+  "libero_spatial:8": {
+   "n": 27,
+   "median": 10
+  },
+  "libero_spatial:9": {
+   "n": 27,
+   "median": 13
+  }
+ }
+}

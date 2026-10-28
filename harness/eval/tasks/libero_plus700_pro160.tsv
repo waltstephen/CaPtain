@@ -1,0 +1,862 @@
+# LIBERO-Plus (7 categories x 4 suites, 25 per stratum, init state 0, env seed 11; 700) + LIBERO-PRO 4 categories {lan, object, swap, task} x 40 tasks (seed 11; 160)
+# id	benchmark	cell	variant	suite	task_id	seed	init_index	init_state_file	init_state_sha256	max_case	max_arm	instruction
+0	libero_plus	Sensor_Noise/libero_10	plus	libero_10	1778	11	0	-	-	-	-	put the white mug on the plate and put the chocolate pudding to the right of the plate
+1	libero_plus	Background_Textures/libero_object	plus	libero_object	171	11	0	-	-	-	-	pick up the orange juice and place it in the basket
+2	libero_pro	lan/libero_10_lan	pro	libero_10_lan	0	11	-	-	-	-	-	place alphabet soup and tomato sauce into basket
+3	libero_pro	task/libero_object_task	pro	libero_object_task	2	11	-	-	-	-	-	Pick the tomato sauce and place it in the basket
+4	libero_pro	lan/libero_object_lan	pro	libero_object_lan	1	11	-	-	-	-	-	grab cream cheese and put into basket
+5	libero_plus	Robot_Initial_States/libero_goal	plus	libero_goal	312	11	0	-	-	-	-	open the middle drawer of the cabinet
+6	libero_plus	Language_Instructions/libero_goal	plus	libero_goal	1349	11	0	-	-	-	-	Insert the cream cheese into the basin
+7	libero_plus	Language_Instructions/libero_10	plus	libero_10	1152	11	0	-	-	-	-	The basket is almost ready just add the cream cheese box and the butter to complete it
+8	libero_pro	swap/libero_10_swap	pro	libero_10_swap	3	11	-	-	-	-	-	put the black bowl in the bottom drawer of the cabinet and close it
+9	libero_plus	Light_Conditions/libero_10	plus	libero_10	2331	11	0	-	-	-	-	put the black bowl in the bottom drawer of the cabinet and close it
+10	libero_pro	swap/libero_spatial_swap	pro	libero_spatial_swap	4	11	-	-	-	-	-	pick up the black bowl in the top drawer of the wooden cabinet and place it on the plate
+11	libero_plus	Sensor_Noise/libero_object	plus	libero_object	1618	11	0	-	-	-	-	pick up the tomato sauce and place it in the basket
+12	libero_pro	swap/libero_object_swap	pro	libero_object_swap	5	11	-	-	-	-	-	pick up the tomato sauce and place it in the basket
+13	libero_plus	Background_Textures/libero_spatial	plus	libero_spatial	85	11	0	-	-	-	-	pick up the black bowl in the top drawer of the wooden cabinet and place it on the plate
+14	libero_plus	Language_Instructions/libero_spatial	plus	libero_spatial	1039	11	0	-	-	-	-	Could you put the black bowl thats beside the ramekin onto the plate
+15	libero_pro	object/libero_10_object	pro	libero_10_object	8	11	-	-	-	-	-	put both moka pots on the stove
+16	libero_plus	Camera_Viewpoints/libero_object	plus	libero_object	997	11	0	-	-	-	-	pick up the chocolate pudding and place it in the basket
+17	libero_pro	task/libero_spatial_task	pro	libero_spatial_task	9	11	-	-	-	-	-	Pick the akita black bowl on the stove and place it on the plate
+18	libero_plus	Light_Conditions/libero_goal	plus	libero_goal	2394	11	0	-	-	-	-	open the top drawer and put the bowl inside
+19	libero_plus	Objects_Layout/libero_spatial	plus	libero_spatial	1841	11	0	-	-	-	-	pick up the black bowl in the top drawer of the wooden cabinet and place it on the plate
+20	libero_plus	Objects_Layout/libero_10	plus	libero_10	2208	11	0	-	-	-	-	pick up the book and place it in the back compartment of the caddy
+21	libero_pro	task/libero_goal_task	pro	libero_goal_task	8	11	-	-	-	-	-	Put the wine bottle on the plate
+22	libero_plus	Robot_Initial_States/libero_spatial	plus	libero_spatial	323	11	0	-	-	-	-	pick up the black bowl next to the ramekin and place it on the plate
+23	libero_pro	object/libero_goal_object	pro	libero_goal_object	4	11	-	-	-	-	-	put the bowl on top of the cabinet
+24	libero_plus	Sensor_Noise/libero_goal	plus	libero_goal	1878	11	0	-	-	-	-	put the wine bottle on the rack
+25	libero_plus	Robot_Initial_States/libero_10	plus	libero_10	420	11	0	-	-	-	-	put the black bowl in the bottom drawer of the cabinet and close it
+26	libero_pro	object/libero_spatial_object	pro	libero_spatial_object	5	11	-	-	-	-	-	pick up the black bowl on the ramekin and place it on the plate
+27	libero_plus	Objects_Layout/libero_object	plus	libero_object	1946	11	0	-	-	-	-	pick up the butter and place it in the basket
+28	libero_pro	task/libero_10_task	pro	libero_10_task	8	11	-	-	-	-	-	put the left moka pot on the stove
+29	libero_plus	Camera_Viewpoints/libero_spatial	plus	libero_spatial	676	11	0	-	-	-	-	pick up the black bowl from table center and place it on the plate
+30	libero_plus	Robot_Initial_States/libero_object	plus	libero_object	268	11	0	-	-	-	-	pick up the alphabet soup and place it in the basket
+31	libero_plus	Sensor_Noise/libero_spatial	plus	libero_spatial	1561	11	0	-	-	-	-	pick up the black bowl on the ramekin and place it on the plate
+32	libero_plus	Background_Textures/libero_10	plus	libero_10	31	11	0	-	-	-	-	turn on the stove and put the moka pot on it
+33	libero_plus	Camera_Viewpoints/libero_goal	plus	libero_goal	1051	11	0	-	-	-	-	put the bowl on the plate
+34	libero_plus	Light_Conditions/libero_spatial	plus	libero_spatial	2212	11	0	-	-	-	-	pick up the black bowl in the top drawer of the wooden cabinet and place it on the plate
+35	libero_pro	lan/libero_spatial_lan	pro	libero_spatial_lan	6	11	-	-	-	-	-	grab the black bowl beside the cookie box and set it on plate
+36	libero_plus	Camera_Viewpoints/libero_10	plus	libero_10	752	11	0	-	-	-	-	turn on the stove and put the moka pot on it
+37	libero_plus	Objects_Layout/libero_goal	plus	libero_goal	2249	11	0	-	-	-	-	put the wine bottle on top of the cabinet
+38	libero_plus	Background_Textures/libero_goal	plus	libero_goal	189	11	0	-	-	-	-	put the wine bottle on the rack
+39	libero_pro	object/libero_object_object	pro	libero_object_object	6	11	-	-	-	-	-	pick up the butter and place it in the basket
+40	libero_plus	Light_Conditions/libero_object	plus	libero_object	2484	11	0	-	-	-	-	pick up the salad dressing and place it in the basket
+41	libero_plus	Language_Instructions/libero_object	plus	libero_object	1356	11	0	-	-	-	-	lift the citrus beverage and deposit it in the woven container
+42	libero_pro	swap/libero_goal_swap	pro	libero_goal_swap	2	11	-	-	-	-	-	put the wine bottle on top of the cabinet
+43	libero_pro	lan/libero_goal_lan	pro	libero_goal_lan	9	11	-	-	-	-	-	place the wine bottle on the rack
+44	libero_plus	Sensor_Noise/libero_10	plus	libero_10	1783	11	0	-	-	-	-	put the white mug on the plate and put the chocolate pudding to the right of the plate
+45	libero_plus	Background_Textures/libero_object	plus	libero_object	63	11	0	-	-	-	-	pick up the bbq sauce and place it in the basket
+46	libero_pro	lan/libero_10_lan	pro	libero_10_lan	2	11	-	-	-	-	-	switch stove on and put moka pot on it
+47	libero_pro	task/libero_object_task	pro	libero_object_task	0	11	-	-	-	-	-	Pick the cream cheese and place it in the basket
+48	libero_pro	lan/libero_object_lan	pro	libero_object_lan	5	11	-	-	-	-	-	pick tomato sauce and put it in basket
+49	libero_plus	Robot_Initial_States/libero_goal	plus	libero_goal	390	11	0	-	-	-	-	put the wine bottle on top of the cabinet
+50	libero_plus	Language_Instructions/libero_goal	plus	libero_goal	1147	11	0	-	-	-	-	Place the bowl on the stove
+51	libero_plus	Language_Instructions/libero_10	plus	libero_10	1473	11	0	-	-	-	-	The kitchen is getting organized place that yellow and white mug in the microwave and close the door when done
+52	libero_pro	swap/libero_10_swap	pro	libero_10_swap	0	11	-	-	-	-	-	put both the alphabet soup and the tomato sauce in the basket
+53	libero_plus	Light_Conditions/libero_10	plus	libero_10	2399	11	0	-	-	-	-	put both the alphabet soup and the cream cheese box in the basket
+54	libero_pro	swap/libero_spatial_swap	pro	libero_spatial_swap	5	11	-	-	-	-	-	pick up the black bowl on the ramekin and place it on the plate
+55	libero_plus	Sensor_Noise/libero_object	plus	libero_object	1538	11	0	-	-	-	-	pick up the bbq sauce and place it in the basket
+56	libero_pro	swap/libero_object_swap	pro	libero_object_swap	2	11	-	-	-	-	-	pick up the salad dressing and place it in the basket
+57	libero_plus	Background_Textures/libero_spatial	plus	libero_spatial	27	11	0	-	-	-	-	pick up the black bowl between the plate and the ramekin and place it on the plate
+58	libero_plus	Language_Instructions/libero_spatial	plus	libero_spatial	1327	11	0	-	-	-	-	pick up the darkhued receptacle on the timber storage unit and place it on the dish
+59	libero_pro	object/libero_10_object	pro	libero_10_object	2	11	-	-	-	-	-	turn on the stove and put the moka pot on it
+60	libero_plus	Camera_Viewpoints/libero_object	plus	libero_object	647	11	0	-	-	-	-	pick up the alphabet soup and place it in the basket
+61	libero_pro	task/libero_spatial_task	pro	libero_spatial_task	4	11	-	-	-	-	-	Pick the akita black bowl on the top of the wooden cabinet and place it on the plate
+62	libero_plus	Light_Conditions/libero_goal	plus	libero_goal	2336	11	0	-	-	-	-	open the middle drawer of the cabinet
+63	libero_plus	Objects_Layout/libero_spatial	plus	libero_spatial	2018	11	0	-	-	-	-	pick up the black bowl on the ramekin and place it on the plate
+64	libero_plus	Objects_Layout/libero_10	plus	libero_10	2214	11	0	-	-	-	-	pick up the book and place it in the back compartment of the caddy
+65	libero_pro	task/libero_goal_task	pro	libero_goal_task	5	11	-	-	-	-	-	Push the cream cheese to the front of the stove
+66	libero_plus	Robot_Initial_States/libero_spatial	plus	libero_spatial	466	11	0	-	-	-	-	pick up the black bowl next to the cookie box and place it on the plate
+67	libero_pro	object/libero_goal_object	pro	libero_goal_object	5	11	-	-	-	-	-	push the plate to the front of the stove
+68	libero_plus	Sensor_Noise/libero_goal	plus	libero_goal	1867	11	0	-	-	-	-	put the wine bottle on the rack
+69	libero_plus	Robot_Initial_States/libero_10	plus	libero_10	641	11	0	-	-	-	-	put the yellow and white mug in the microwave and close it
+70	libero_pro	object/libero_spatial_object	pro	libero_spatial_object	4	11	-	-	-	-	-	pick up the black bowl in the top drawer of the wooden cabinet and place it on the plate
+71	libero_plus	Objects_Layout/libero_object	plus	libero_object	2050	11	0	-	-	-	-	pick up the milk and place it in the basket
+72	libero_pro	task/libero_10_task	pro	libero_10_task	5	11	-	-	-	-	-	pick up the cup and place it in the back compartment of the caddy
+73	libero_plus	Camera_Viewpoints/libero_spatial	plus	libero_spatial	980	11	0	-	-	-	-	pick up the black bowl on the wooden cabinet and place it on the plate
+74	libero_plus	Robot_Initial_States/libero_object	plus	libero_object	599	11	0	-	-	-	-	pick up the orange juice and place it in the basket
+75	libero_plus	Sensor_Noise/libero_spatial	plus	libero_spatial	1523	11	0	-	-	-	-	pick up the black bowl in the top drawer of the wooden cabinet and place it on the plate
+76	libero_plus	Background_Textures/libero_10	plus	libero_10	212	11	0	-	-	-	-	put the white mug on the left plate and put the yellow and white mug on the right plate
+77	libero_plus	Camera_Viewpoints/libero_goal	plus	libero_goal	704	11	0	-	-	-	-	open the middle drawer of the cabinet
+78	libero_plus	Light_Conditions/libero_spatial	plus	libero_spatial	2401	11	0	-	-	-	-	pick up the black bowl on the wooden cabinet and place it on the plate
+79	libero_pro	lan/libero_spatial_lan	pro	libero_spatial_lan	3	11	-	-	-	-	-	lift black bowl from cookie box and put it on plate
+80	libero_plus	Camera_Viewpoints/libero_10	plus	libero_10	744	11	0	-	-	-	-	turn on the stove and put the moka pot on it
+81	libero_plus	Objects_Layout/libero_goal	plus	libero_goal	2022	11	0	-	-	-	-	put the bowl on the plate
+82	libero_plus	Background_Textures/libero_goal	plus	libero_goal	66	11	0	-	-	-	-	open the top drawer and put the bowl inside
+83	libero_pro	object/libero_object_object	pro	libero_object_object	3	11	-	-	-	-	-	pick up the bbq sauce and place it in the basket
+84	libero_plus	Light_Conditions/libero_object	plus	libero_object	2395	11	0	-	-	-	-	pick up the ketchup and place it in the basket
+85	libero_plus	Language_Instructions/libero_object	plus	libero_object	1312	11	0	-	-	-	-	Could you put the chocolate pudding in the basket for me
+86	libero_pro	swap/libero_goal_swap	pro	libero_goal_swap	7	11	-	-	-	-	-	turn on the stove
+87	libero_pro	lan/libero_goal_lan	pro	libero_goal_lan	7	11	-	-	-	-	-	switch on the stove
+88	libero_plus	Sensor_Noise/libero_10	plus	libero_10	1855	11	0	-	-	-	-	put both moka pots on the stove
+89	libero_plus	Background_Textures/libero_object	plus	libero_object	135	11	0	-	-	-	-	pick up the ketchup and place it in the basket
+90	libero_pro	lan/libero_10_lan	pro	libero_10_lan	1	11	-	-	-	-	-	place cream cheese box and butter into basket
+91	libero_pro	task/libero_object_task	pro	libero_object_task	1	11	-	-	-	-	-	Pick the alphabet soup and place it in the basket
+92	libero_pro	lan/libero_object_lan	pro	libero_object_lan	2	11	-	-	-	-	-	grab salad dressing and put into basket
+93	libero_plus	Robot_Initial_States/libero_goal	plus	libero_goal	550	11	0	-	-	-	-	put the cream cheese in the bowl
+94	libero_plus	Language_Instructions/libero_goal	plus	libero_goal	1117	11	0	-	-	-	-	Pull out the central sliding storage compartment of the furniture used for storing items
+95	libero_plus	Language_Instructions/libero_10	plus	libero_10	1311	11	0	-	-	-	-	pick up the collection of written pages bound together and place it in the rear storage section of the portable utility cart
+96	libero_pro	swap/libero_10_swap	pro	libero_10_swap	8	11	-	-	-	-	-	put both moka pots on the stove
+97	libero_plus	Light_Conditions/libero_10	plus	libero_10	2382	11	0	-	-	-	-	put both moka pots on the stove
+98	libero_pro	swap/libero_spatial_swap	pro	libero_spatial_swap	3	11	-	-	-	-	-	pick up the black bowl on the cookie box and place it on the plate
+99	libero_plus	Sensor_Noise/libero_object	plus	libero_object	1616	11	0	-	-	-	-	pick up the tomato sauce and place it in the basket
+100	libero_pro	swap/libero_object_swap	pro	libero_object_swap	0	11	-	-	-	-	-	pick up the alphabet soup and place it in the basket
+101	libero_plus	Background_Textures/libero_spatial	plus	libero_spatial	214	11	0	-	-	-	-	pick up the black bowl on the stove and place it on the plate
+102	libero_plus	Language_Instructions/libero_spatial	plus	libero_spatial	1067	11	0	-	-	-	-	Pick up the black bowl from table center and place it on the plate this is the first step in our meal preparation
+103	libero_pro	object/libero_10_object	pro	libero_10_object	5	11	-	-	-	-	-	pick up the book and place it in the back compartment of the caddy
+104	libero_plus	Camera_Viewpoints/libero_object	plus	libero_object	1027	11	0	-	-	-	-	pick up the orange juice and place it in the basket
+105	libero_pro	task/libero_spatial_task	pro	libero_spatial_task	0	11	-	-	-	-	-	Pick the akita black bowl not between the plate and the ramekin and place it on the plate
+106	libero_plus	Light_Conditions/libero_goal	plus	libero_goal	2471	11	0	-	-	-	-	put the bowl on top of the cabinet
+107	libero_plus	Objects_Layout/libero_spatial	plus	libero_spatial	1850	11	0	-	-	-	-	pick up the black bowl in the top drawer of the wooden cabinet and place it on the plate
+108	libero_plus	Objects_Layout/libero_10	plus	libero_10	2063	11	0	-	-	-	-	put both the alphabet soup and the tomato sauce in the basket
+109	libero_pro	task/libero_goal_task	pro	libero_goal_task	6	11	-	-	-	-	-	put the wine bottle in the bowl
+110	libero_plus	Robot_Initial_States/libero_spatial	plus	libero_spatial	517	11	0	-	-	-	-	pick up the black bowl on the stove and place it on the plate
+111	libero_pro	object/libero_goal_object	pro	libero_goal_object	7	11	-	-	-	-	-	turn on the stove
+112	libero_plus	Sensor_Noise/libero_goal	plus	libero_goal	1870	11	0	-	-	-	-	put the wine bottle on the rack
+113	libero_plus	Robot_Initial_States/libero_10	plus	libero_10	382	11	0	-	-	-	-	turn on the stove and put the moka pot on it
+114	libero_pro	object/libero_spatial_object	pro	libero_spatial_object	1	11	-	-	-	-	-	pick up the black bowl next to the ramekin and place it on the plate
+115	libero_plus	Objects_Layout/libero_object	plus	libero_object	2037	11	0	-	-	-	-	pick up the milk and place it in the basket
+116	libero_pro	task/libero_10_task	pro	libero_10_task	9	11	-	-	-	-	-	put the white mug in the microwave and close it
+117	libero_plus	Camera_Viewpoints/libero_spatial	plus	libero_spatial	895	11	0	-	-	-	-	pick up the black bowl on the stove and place it on the plate
+118	libero_plus	Robot_Initial_States/libero_object	plus	libero_object	596	11	0	-	-	-	-	pick up the chocolate pudding and place it in the basket
+119	libero_plus	Sensor_Noise/libero_spatial	plus	libero_spatial	1436	11	0	-	-	-	-	pick up the black bowl next to the ramekin and place it on the plate
+120	libero_plus	Background_Textures/libero_10	plus	libero_10	284	11	0	-	-	-	-	pick up the book and place it in the back compartment of the caddy
+121	libero_plus	Camera_Viewpoints/libero_goal	plus	libero_goal	933	11	0	-	-	-	-	put the cream cheese in the bowl
+122	libero_plus	Light_Conditions/libero_spatial	plus	libero_spatial	2136	11	0	-	-	-	-	pick up the black bowl between the plate and the ramekin and place it on the plate
+123	libero_pro	lan/libero_spatial_lan	pro	libero_spatial_lan	9	11	-	-	-	-	-	lift bowl from cabinet and put on plate
+124	libero_plus	Camera_Viewpoints/libero_10	plus	libero_10	763	11	0	-	-	-	-	turn on the stove and put the moka pot on it
+125	libero_plus	Objects_Layout/libero_goal	plus	libero_goal	2146	11	0	-	-	-	-	put the cream cheese in the bowl
+126	libero_plus	Background_Textures/libero_goal	plus	libero_goal	177	11	0	-	-	-	-	put the cream cheese in the bowl
+127	libero_pro	object/libero_object_object	pro	libero_object_object	4	11	-	-	-	-	-	pick up the ketchup and place it in the basket
+128	libero_plus	Light_Conditions/libero_object	plus	libero_object	2492	11	0	-	-	-	-	pick up the salad dressing and place it in the basket
+129	libero_plus	Language_Instructions/libero_object	plus	libero_object	1170	11	0	-	-	-	-	The cooking show starts soon first pick up the ketchup and place it in the basket
+130	libero_pro	swap/libero_goal_swap	pro	libero_goal_swap	1	11	-	-	-	-	-	put the bowl on the stove
+131	libero_pro	lan/libero_goal_lan	pro	libero_goal_lan	3	11	-	-	-	-	-	slide open the top drawer and place the bowl in it
+132	libero_plus	Sensor_Noise/libero_10	plus	libero_10	1902	11	0	-	-	-	-	put the yellow and white mug in the microwave and close it
+133	libero_plus	Background_Textures/libero_object	plus	libero_object	73	11	0	-	-	-	-	pick up the bbq sauce and place it in the basket
+134	libero_pro	lan/libero_10_lan	pro	libero_10_lan	6	11	-	-	-	-	-	place white mug on plate and chocolate pudding to right
+135	libero_pro	task/libero_object_task	pro	libero_object_task	5	11	-	-	-	-	-	Pick the bbq sauce and place it in the basket
+136	libero_pro	lan/libero_object_lan	pro	libero_object_lan	8	11	-	-	-	-	-	lift chocolate pudding and put it in basket
+137	libero_plus	Robot_Initial_States/libero_goal	plus	libero_goal	633	11	0	-	-	-	-	put the bowl on the plate
+138	libero_plus	Language_Instructions/libero_goal	plus	libero_goal	1180	11	0	-	-	-	-	Place the wine bottle on top of the cabinet please
+139	libero_plus	Language_Instructions/libero_10	plus	libero_10	1231	11	0	-	-	-	-	insert the darkcolored round container used for eating or mixing food into the lowest sliding storage compartment of the furniture used for storing kitchen items and shut it securely
+140	libero_pro	swap/libero_10_swap	pro	libero_10_swap	6	11	-	-	-	-	-	put the white mug on the plate and put the chocolate pudding to the right of the plate
+141	libero_plus	Light_Conditions/libero_10	plus	libero_10	2340	11	0	-	-	-	-	put the yellow and white mug in the microwave and close it
+142	libero_pro	swap/libero_spatial_swap	pro	libero_spatial_swap	7	11	-	-	-	-	-	pick up the black bowl on the stove and place it on the plate
+143	libero_plus	Sensor_Noise/libero_object	plus	libero_object	1755	11	0	-	-	-	-	pick up the chocolate pudding and place it in the basket
+144	libero_pro	swap/libero_object_swap	pro	libero_object_swap	6	11	-	-	-	-	-	pick up the butter and place it in the basket
+145	libero_plus	Background_Textures/libero_spatial	plus	libero_spatial	80	11	0	-	-	-	-	pick up the black bowl in the top drawer of the wooden cabinet and place it on the plate
+146	libero_plus	Language_Instructions/libero_spatial	plus	libero_spatial	1321	11	0	-	-	-	-	Grasp the dark bowl adjacent to the plate and set it upon the plate
+147	libero_pro	object/libero_10_object	pro	libero_10_object	7	11	-	-	-	-	-	put both the alphabet soup and the cream cheese box in the basket
+148	libero_plus	Camera_Viewpoints/libero_object	plus	libero_object	954	11	0	-	-	-	-	pick up the milk and place it in the basket
+149	libero_pro	task/libero_spatial_task	pro	libero_spatial_task	8	11	-	-	-	-	-	Pick the akita black bowl next to the ramekin and place it on the plate
+150	libero_plus	Light_Conditions/libero_goal	plus	libero_goal	2478	11	0	-	-	-	-	put the bowl on top of the cabinet
+151	libero_plus	Objects_Layout/libero_spatial	plus	libero_spatial	1860	11	0	-	-	-	-	pick up the black bowl next to the cookie box and place it on the plate
+152	libero_plus	Objects_Layout/libero_10	plus	libero_10	2205	11	0	-	-	-	-	pick up the book and place it in the back compartment of the caddy
+153	libero_pro	task/libero_goal_task	pro	libero_goal_task	9	11	-	-	-	-	-	Put the cream cheese on the rack
+154	libero_plus	Robot_Initial_States/libero_spatial	plus	libero_spatial	317	11	0	-	-	-	-	pick up the black bowl next to the ramekin and place it on the plate
+155	libero_pro	object/libero_goal_object	pro	libero_goal_object	6	11	-	-	-	-	-	put the cream cheese in the bowl
+156	libero_plus	Sensor_Noise/libero_goal	plus	libero_goal	1663	11	0	-	-	-	-	put the bowl on top of the cabinet
+157	libero_plus	Robot_Initial_States/libero_10	plus	libero_10	652	11	0	-	-	-	-	put the yellow and white mug in the microwave and close it
+158	libero_pro	object/libero_spatial_object	pro	libero_spatial_object	3	11	-	-	-	-	-	pick up the black bowl on the cookie box and place it on the plate
+159	libero_plus	Objects_Layout/libero_object	plus	libero_object	2075	11	0	-	-	-	-	pick up the milk and place it in the basket
+160	libero_pro	task/libero_10_task	pro	libero_10_task	4	11	-	-	-	-	-	put the yellow and white mug on the left plate and put the white mug on the right plate
+161	libero_plus	Camera_Viewpoints/libero_spatial	plus	libero_spatial	871	11	0	-	-	-	-	pick up the black bowl on the stove and place it on the plate
+162	libero_plus	Robot_Initial_States/libero_object	plus	libero_object	406	11	0	-	-	-	-	pick up the bbq sauce and place it in the basket
+163	libero_plus	Sensor_Noise/libero_spatial	plus	libero_spatial	1551	11	0	-	-	-	-	pick up the black bowl on the ramekin and place it on the plate
+164	libero_plus	Background_Textures/libero_10	plus	libero_10	3	11	0	-	-	-	-	turn on the stove and put the moka pot on it
+165	libero_plus	Camera_Viewpoints/libero_goal	plus	libero_goal	804	11	0	-	-	-	-	open the top drawer and put the bowl inside
+166	libero_plus	Light_Conditions/libero_spatial	plus	libero_spatial	2307	11	0	-	-	-	-	pick up the black bowl on the cookie box and place it on the plate
+167	libero_pro	lan/libero_spatial_lan	pro	libero_spatial_lan	5	11	-	-	-	-	-	grab black bowl on ramekin and set it on plate
+168	libero_plus	Camera_Viewpoints/libero_10	plus	libero_10	1072	11	0	-	-	-	-	put the yellow and white mug in the microwave and close it
+169	libero_plus	Objects_Layout/libero_goal	plus	libero_goal	2081	11	0	-	-	-	-	put the bowl on the stove
+170	libero_plus	Background_Textures/libero_goal	plus	libero_goal	232	11	0	-	-	-	-	put the wine bottle on top of the cabinet
+171	libero_pro	object/libero_object_object	pro	libero_object_object	5	11	-	-	-	-	-	pick up the tomato sauce and place it in the basket
+172	libero_plus	Light_Conditions/libero_object	plus	libero_object	2486	11	0	-	-	-	-	pick up the salad dressing and place it in the basket
+173	libero_plus	Language_Instructions/libero_object	plus	libero_object	1241	11	0	-	-	-	-	grasp the dairy spread and place it in the woven container
+174	libero_pro	swap/libero_goal_swap	pro	libero_goal_swap	4	11	-	-	-	-	-	put the bowl on top of the cabinet
+175	libero_pro	lan/libero_goal_lan	pro	libero_goal_lan	2	11	-	-	-	-	-	place the wine bottle on top of the cabinet
+176	libero_plus	Sensor_Noise/libero_10	plus	libero_10	1919	11	0	-	-	-	-	put the yellow and white mug in the microwave and close it
+177	libero_plus	Background_Textures/libero_object	plus	libero_object	153	11	0	-	-	-	-	pick up the milk and place it in the basket
+178	libero_pro	lan/libero_10_lan	pro	libero_10_lan	3	11	-	-	-	-	-	put black bowl inside bottom drawer and close it
+179	libero_pro	task/libero_object_task	pro	libero_object_task	3	11	-	-	-	-	-	Pick the ketchup and place it in the basket
+180	libero_pro	lan/libero_object_lan	pro	libero_object_lan	6	11	-	-	-	-	-	grab butter and put it into basket
+181	libero_plus	Robot_Initial_States/libero_goal	plus	libero_goal	403	11	0	-	-	-	-	open the top drawer and put the bowl inside
+182	libero_plus	Language_Instructions/libero_goal	plus	libero_goal	1297	11	0	-	-	-	-	move the dish toward the front of the cooker
+183	libero_plus	Language_Instructions/libero_10	plus	libero_10	1197	11	0	-	-	-	-	Activate the cooking heat source and place the Italian coffee brewer above it
+184	libero_pro	swap/libero_10_swap	pro	libero_10_swap	9	11	-	-	-	-	-	put the yellow and white mug in the microwave and close it
+185	libero_plus	Light_Conditions/libero_10	plus	libero_10	2353	11	0	-	-	-	-	put the yellow and white mug in the microwave and close it
+186	libero_pro	swap/libero_spatial_swap	pro	libero_spatial_swap	1	11	-	-	-	-	-	pick up the black bowl next to the ramekin and place it on the plate
+187	libero_plus	Sensor_Noise/libero_object	plus	libero_object	1687	11	0	-	-	-	-	pick up the butter and place it in the basket
+188	libero_pro	swap/libero_object_swap	pro	libero_object_swap	3	11	-	-	-	-	-	pick up the bbq sauce and place it in the basket
+189	libero_plus	Background_Textures/libero_spatial	plus	libero_spatial	114	11	0	-	-	-	-	pick up the black bowl next to the cookie box and place it on the plate
+190	libero_plus	Language_Instructions/libero_spatial	plus	libero_spatial	1009	11	0	-	-	-	-	Could you move the black bowl thats between the plate and the ramekin onto the plate
+191	libero_pro	object/libero_10_object	pro	libero_10_object	3	11	-	-	-	-	-	put the black bowl in the bottom drawer of the cabinet and close it
+192	libero_plus	Camera_Viewpoints/libero_object	plus	libero_object	887	11	0	-	-	-	-	pick up the butter and place it in the basket
+193	libero_pro	task/libero_spatial_task	pro	libero_spatial_task	3	11	-	-	-	-	-	Pick the akita black bowl on the top of the cabinet and place it on the plate
+194	libero_plus	Light_Conditions/libero_goal	plus	libero_goal	2492	11	0	-	-	-	-	put the cream cheese in the bowl
+195	libero_plus	Objects_Layout/libero_spatial	plus	libero_spatial	1871	11	0	-	-	-	-	pick up the black bowl next to the cookie box and place it on the plate
+196	libero_plus	Objects_Layout/libero_10	plus	libero_10	2114	11	0	-	-	-	-	put both the cream cheese box and the butter in the basket
+197	libero_pro	task/libero_goal_task	pro	libero_goal_task	0	11	-	-	-	-	-	open the bottom drawer of the cabinet
+198	libero_plus	Robot_Initial_States/libero_spatial	plus	libero_spatial	352	11	0	-	-	-	-	pick up the black bowl from table center and place it on the plate
+199	libero_pro	object/libero_goal_object	pro	libero_goal_object	1	11	-	-	-	-	-	put the bowl on the stove
+200	libero_plus	Sensor_Noise/libero_goal	plus	libero_goal	1753	11	0	-	-	-	-	put the cream cheese in the bowl
+201	libero_plus	Robot_Initial_States/libero_10	plus	libero_10	648	11	0	-	-	-	-	put the yellow and white mug in the microwave and close it
+202	libero_pro	object/libero_spatial_object	pro	libero_spatial_object	6	11	-	-	-	-	-	pick up the black bowl next to the cookie box and place it on the plate
+203	libero_plus	Objects_Layout/libero_object	plus	libero_object	2071	11	0	-	-	-	-	pick up the milk and place it in the basket
+204	libero_pro	task/libero_10_task	pro	libero_10_task	1	11	-	-	-	-	-	put both the alphabet soup and the butter in the basket
+205	libero_plus	Camera_Viewpoints/libero_spatial	plus	libero_spatial	947	11	0	-	-	-	-	pick up the black bowl on the wooden cabinet and place it on the plate
+206	libero_plus	Robot_Initial_States/libero_object	plus	libero_object	601	11	0	-	-	-	-	pick up the orange juice and place it in the basket
+207	libero_plus	Sensor_Noise/libero_spatial	plus	libero_spatial	1713	11	0	-	-	-	-	pick up the black bowl on the wooden cabinet and place it on the plate
+208	libero_plus	Background_Textures/libero_10	plus	libero_10	10	11	0	-	-	-	-	turn on the stove and put the moka pot on it
+209	libero_plus	Camera_Viewpoints/libero_goal	plus	libero_goal	974	11	0	-	-	-	-	put the cream cheese in the bowl
+210	libero_plus	Light_Conditions/libero_spatial	plus	libero_spatial	2123	11	0	-	-	-	-	pick up the black bowl between the plate and the ramekin and place it on the plate
+211	libero_pro	lan/libero_spatial_lan	pro	libero_spatial_lan	2	11	-	-	-	-	-	lift the black bowl from the table center and put it on the plate
+212	libero_plus	Camera_Viewpoints/libero_10	plus	libero_10	838	11	0	-	-	-	-	put the white mug on the left plate and put the yellow and white mug on the right plate
+213	libero_plus	Objects_Layout/libero_goal	plus	libero_goal	2227	11	0	-	-	-	-	put the wine bottle on top of the cabinet
+214	libero_plus	Background_Textures/libero_goal	plus	libero_goal	53	11	0	-	-	-	-	open the top drawer and put the bowl inside
+215	libero_pro	object/libero_object_object	pro	libero_object_object	9	11	-	-	-	-	-	pick up the orange juice and place it in the basket
+216	libero_plus	Light_Conditions/libero_object	plus	libero_object	2295	11	0	-	-	-	-	pick up the bbq sauce and place it in the basket
+217	libero_plus	Language_Instructions/libero_object	plus	libero_object	1368	11	0	-	-	-	-	Would you be so kind as to pick up the orange juice and place it in the basket Thanks
+218	libero_pro	swap/libero_goal_swap	pro	libero_goal_swap	3	11	-	-	-	-	-	open the top drawer and put the bowl inside
+219	libero_pro	lan/libero_goal_lan	pro	libero_goal_lan	8	11	-	-	-	-	-	place the bowl on top of the plate
+220	libero_plus	Sensor_Noise/libero_10	plus	libero_10	1905	11	0	-	-	-	-	put the yellow and white mug in the microwave and close it
+221	libero_plus	Background_Textures/libero_object	plus	libero_object	15	11	0	-	-	-	-	pick up the alphabet soup and place it in the basket
+222	libero_pro	lan/libero_10_lan	pro	libero_10_lan	7	11	-	-	-	-	-	put alphabet soup and cream cheese box in basket
+223	libero_pro	task/libero_object_task	pro	libero_object_task	9	11	-	-	-	-	-	Pick the chocolate pudding and place it in the basket
+224	libero_pro	lan/libero_object_lan	pro	libero_object_lan	7	11	-	-	-	-	-	grab milk and put into basket
+225	libero_plus	Robot_Initial_States/libero_goal	plus	libero_goal	579	11	0	-	-	-	-	turn on the stove
+226	libero_plus	Language_Instructions/libero_goal	plus	libero_goal	1153	11	0	-	-	-	-	place the rounded vessel for mixing food on the cooking appliance
+227	libero_plus	Language_Instructions/libero_10	plus	libero_10	1279	11	0	-	-	-	-	Place the porcelain vessel used for hot beverages that is completely white onto the dish positioned to your left and position the twotoned vessel predominantly yellow with white onto the dish to your right
+228	libero_pro	swap/libero_10_swap	pro	libero_10_swap	2	11	-	-	-	-	-	turn on the stove and put the moka pot on it
+229	libero_plus	Light_Conditions/libero_10	plus	libero_10	2426	11	0	-	-	-	-	put both the cream cheese box and the butter in the basket
+230	libero_pro	swap/libero_spatial_swap	pro	libero_spatial_swap	9	11	-	-	-	-	-	pick up the black bowl on the wooden cabinet and place it on the plate
+231	libero_plus	Sensor_Noise/libero_object	plus	libero_object	1704	11	0	-	-	-	-	pick up the milk and place it in the basket
+232	libero_pro	swap/libero_object_swap	pro	libero_object_swap	1	11	-	-	-	-	-	pick up the cream cheese and place it in the basket
+233	libero_plus	Background_Textures/libero_spatial	plus	libero_spatial	74	11	0	-	-	-	-	pick up the black bowl from table center and place it on the plate
+234	libero_plus	Language_Instructions/libero_spatial	plus	libero_spatial	1324	11	0	-	-	-	-	Attention to detail is important pick up the black bowl adjacent to the plate and carefully position it on the plate
+235	libero_pro	object/libero_10_object	pro	libero_10_object	6	11	-	-	-	-	-	put the white mug on the plate and put the chocolate pudding to the right of the plate
+236	libero_plus	Camera_Viewpoints/libero_object	plus	libero_object	829	11	0	-	-	-	-	pick up the tomato sauce and place it in the basket
+237	libero_pro	task/libero_spatial_task	pro	libero_spatial_task	6	11	-	-	-	-	-	Pick the akita black bowl on the stove and place it on the plate
+238	libero_plus	Light_Conditions/libero_goal	plus	libero_goal	2353	11	0	-	-	-	-	open the middle drawer of the cabinet
+239	libero_plus	Objects_Layout/libero_spatial	plus	libero_spatial	1754	11	0	-	-	-	-	pick up the black bowl between the plate and the ramekin and place it on the plate
+240	libero_plus	Objects_Layout/libero_10	plus	libero_10	2051	11	0	-	-	-	-	put both the alphabet soup and the cream cheese box in the basket
+241	libero_pro	task/libero_goal_task	pro	libero_goal_task	1	11	-	-	-	-	-	Put the plate on the stove
+242	libero_plus	Robot_Initial_States/libero_spatial	plus	libero_spatial	416	11	0	-	-	-	-	pick up the black bowl in the top drawer of the wooden cabinet and place it on the plate
+243	libero_pro	object/libero_goal_object	pro	libero_goal_object	2	11	-	-	-	-	-	put the wine bottle on top of the cabinet
+244	libero_plus	Sensor_Noise/libero_goal	plus	libero_goal	1508	11	0	-	-	-	-	open the middle drawer of the cabinet
+245	libero_plus	Robot_Initial_States/libero_10	plus	libero_10	619	11	0	-	-	-	-	put both moka pots on the stove
+246	libero_pro	object/libero_spatial_object	pro	libero_spatial_object	7	11	-	-	-	-	-	pick up the black bowl on the stove and place it on the plate
+247	libero_plus	Objects_Layout/libero_object	plus	libero_object	2170	11	0	-	-	-	-	pick up the salad dressing and place it in the basket
+248	libero_pro	task/libero_10_task	pro	libero_10_task	2	11	-	-	-	-	-	turn on the stove and put the pan on it
+249	libero_plus	Camera_Viewpoints/libero_spatial	plus	libero_spatial	956	11	0	-	-	-	-	pick up the black bowl on the wooden cabinet and place it on the plate
+250	libero_plus	Robot_Initial_States/libero_object	plus	libero_object	583	11	0	-	-	-	-	pick up the chocolate pudding and place it in the basket
+251	libero_plus	Sensor_Noise/libero_spatial	plus	libero_spatial	1690	11	0	-	-	-	-	pick up the black bowl on the wooden cabinet and place it on the plate
+252	libero_plus	Background_Textures/libero_10	plus	libero_10	183	11	0	-	-	-	-	put both the cream cheese box and the butter in the basket
+253	libero_plus	Camera_Viewpoints/libero_goal	plus	libero_goal	950	11	0	-	-	-	-	put the cream cheese in the bowl
+254	libero_plus	Light_Conditions/libero_spatial	plus	libero_spatial	2330	11	0	-	-	-	-	pick up the black bowl on the ramekin and place it on the plate
+255	libero_pro	lan/libero_spatial_lan	pro	libero_spatial_lan	1	11	-	-	-	-	-	take black bowl next to ramekin and place on plate
+256	libero_plus	Camera_Viewpoints/libero_10	plus	libero_10	1004	11	0	-	-	-	-	put both the alphabet soup and the cream cheese box in the basket
+257	libero_plus	Objects_Layout/libero_goal	plus	libero_goal	2095	11	0	-	-	-	-	put the bowl on top of the cabinet
+258	libero_plus	Background_Textures/libero_goal	plus	libero_goal	169	11	0	-	-	-	-	put the cream cheese in the bowl
+259	libero_pro	object/libero_object_object	pro	libero_object_object	7	11	-	-	-	-	-	pick up the milk and place it in the basket
+260	libero_plus	Light_Conditions/libero_object	plus	libero_object	2490	11	0	-	-	-	-	pick up the salad dressing and place it in the basket
+261	libero_plus	Language_Instructions/libero_object	plus	libero_object	1108	11	0	-	-	-	-	Before the guests arrive pick up the salad dressing and place it in the basket on the dining table
+262	libero_pro	swap/libero_goal_swap	pro	libero_goal_swap	5	11	-	-	-	-	-	push the plate to the front of the stove
+263	libero_pro	lan/libero_goal_lan	pro	libero_goal_lan	6	11	-	-	-	-	-	place the cream cheese inside the bowl
+264	libero_plus	Sensor_Noise/libero_10	plus	libero_10	1645	11	0	-	-	-	-	put the black bowl in the bottom drawer of the cabinet and close it
+265	libero_plus	Background_Textures/libero_object	plus	libero_object	13	11	0	-	-	-	-	pick up the alphabet soup and place it in the basket
+266	libero_pro	lan/libero_10_lan	pro	libero_10_lan	5	11	-	-	-	-	-	pick up the book and place in back compartment
+267	libero_pro	task/libero_object_task	pro	libero_object_task	6	11	-	-	-	-	-	Pick the orange juice and place it in the basket
+268	libero_pro	lan/libero_object_lan	pro	libero_object_lan	4	11	-	-	-	-	-	lift ketchup and put it in basket
+269	libero_plus	Robot_Initial_States/libero_goal	plus	libero_goal	301	11	0	-	-	-	-	open the middle drawer of the cabinet
+270	libero_plus	Language_Instructions/libero_goal	plus	libero_goal	1098	11	0	-	-	-	-	Please make sure the middle drawer of the cabinet is open
+271	libero_plus	Language_Instructions/libero_10	plus	libero_10	1264	11	0	-	-	-	-	Before the party starts make sure to put the white mug on the left plate and the yellow and white mug on the right plate
+272	libero_pro	swap/libero_10_swap	pro	libero_10_swap	5	11	-	-	-	-	-	pick up the book and place it in the back compartment of the caddy
+273	libero_plus	Light_Conditions/libero_10	plus	libero_10	2372	11	0	-	-	-	-	put the yellow and white mug in the microwave and close it
+274	libero_pro	swap/libero_spatial_swap	pro	libero_spatial_swap	6	11	-	-	-	-	-	pick up the black bowl next to the cookie box and place it on the plate
+275	libero_plus	Sensor_Noise/libero_object	plus	libero_object	1623	11	0	-	-	-	-	pick up the tomato sauce and place it in the basket
+276	libero_pro	swap/libero_object_swap	pro	libero_object_swap	4	11	-	-	-	-	-	pick up the ketchup and place it in the basket
+277	libero_plus	Background_Textures/libero_spatial	plus	libero_spatial	52	11	0	-	-	-	-	pick up the black bowl from table center and place it on the plate
+278	libero_plus	Language_Instructions/libero_spatial	plus	libero_spatial	985	11	0	-	-	-	-	Could you put the black bowl on the plate for me Its the one sitting between the plate and the ramekin
+279	libero_pro	object/libero_10_object	pro	libero_10_object	0	11	-	-	-	-	-	put both the alphabet soup and the tomato sauce in the basket
+280	libero_plus	Camera_Viewpoints/libero_object	plus	libero_object	934	11	0	-	-	-	-	pick up the milk and place it in the basket
+281	libero_pro	task/libero_spatial_task	pro	libero_spatial_task	1	11	-	-	-	-	-	Pick the akita black bowl next to the cookie box and place it on the plate
+282	libero_plus	Light_Conditions/libero_goal	plus	libero_goal	2532	11	0	-	-	-	-	put the wine bottle on the rack
+283	libero_plus	Objects_Layout/libero_spatial	plus	libero_spatial	1966	11	0	-	-	-	-	pick up the black bowl on the cookie box and place it on the plate
+284	libero_plus	Objects_Layout/libero_10	plus	libero_10	2224	11	0	-	-	-	-	pick up the book and place it in the back compartment of the caddy
+285	libero_pro	task/libero_goal_task	pro	libero_goal_task	7	11	-	-	-	-	-	Turn off the stove
+286	libero_plus	Robot_Initial_States/libero_spatial	plus	libero_spatial	573	11	0	-	-	-	-	pick up the black bowl on the wooden cabinet and place it on the plate
+287	libero_pro	object/libero_goal_object	pro	libero_goal_object	8	11	-	-	-	-	-	put the bowl on the plate
+288	libero_plus	Sensor_Noise/libero_goal	plus	libero_goal	1695	11	0	-	-	-	-	put the bowl on top of the cabinet
+289	libero_plus	Robot_Initial_States/libero_10	plus	libero_10	573	11	0	-	-	-	-	put both the alphabet soup and the cream cheese box in the basket
+290	libero_pro	object/libero_spatial_object	pro	libero_spatial_object	0	11	-	-	-	-	-	pick up the black bowl between the plate and the ramekin and place it on the plate
+291	libero_plus	Objects_Layout/libero_object	plus	libero_object	1871	11	0	-	-	-	-	pick up the bbq sauce and place it in the basket
+292	libero_pro	task/libero_10_task	pro	libero_10_task	0	11	-	-	-	-	-	put both the cream cheese and the tomato sauce in the basket
+293	libero_plus	Camera_Viewpoints/libero_spatial	plus	libero_spatial	818	11	0	-	-	-	-	pick up the black bowl on the ramekin and place it on the plate
+294	libero_plus	Robot_Initial_States/libero_object	plus	libero_object	462	11	0	-	-	-	-	pick up the tomato sauce and place it in the basket
+295	libero_plus	Sensor_Noise/libero_spatial	plus	libero_spatial	1665	11	0	-	-	-	-	pick up the black bowl next to the plate and place it on the plate
+296	libero_plus	Background_Textures/libero_10	plus	libero_10	45	11	0	-	-	-	-	put the black bowl in the bottom drawer of the cabinet and close it
+297	libero_plus	Camera_Viewpoints/libero_goal	plus	libero_goal	850	11	0	-	-	-	-	put the bowl on top of the cabinet
+298	libero_plus	Light_Conditions/libero_spatial	plus	libero_spatial	2294	11	0	-	-	-	-	pick up the black bowl on the cookie box and place it on the plate
+299	libero_pro	lan/libero_spatial_lan	pro	libero_spatial_lan	8	11	-	-	-	-	-	pick the bowl beside the plate and put it on plate
+300	libero_plus	Camera_Viewpoints/libero_10	plus	libero_10	857	11	0	-	-	-	-	put the white mug on the left plate and put the yellow and white mug on the right plate
+301	libero_plus	Objects_Layout/libero_goal	plus	libero_goal	2233	11	0	-	-	-	-	put the wine bottle on top of the cabinet
+302	libero_plus	Background_Textures/libero_goal	plus	libero_goal	122	11	0	-	-	-	-	put the bowl on the plate
+303	libero_pro	object/libero_object_object	pro	libero_object_object	8	11	-	-	-	-	-	pick up the chocolate pudding and place it in the basket
+304	libero_plus	Light_Conditions/libero_object	plus	libero_object	2508	11	0	-	-	-	-	pick up the tomato sauce and place it in the basket
+305	libero_plus	Language_Instructions/libero_object	plus	libero_object	1255	11	0	-	-	-	-	As part of your kitchen duties today pick up the butter and place it in the storage basket
+306	libero_pro	swap/libero_goal_swap	pro	libero_goal_swap	8	11	-	-	-	-	-	put the bowl on the plate
+307	libero_pro	lan/libero_goal_lan	pro	libero_goal_lan	5	11	-	-	-	-	-	move the plate to the stove’s front
+308	libero_plus	Sensor_Noise/libero_10	plus	libero_10	1757	11	0	-	-	-	-	put the white mug on the plate and put the chocolate pudding to the right of the plate
+309	libero_plus	Background_Textures/libero_object	plus	libero_object	41	11	0	-	-	-	-	pick up the bbq sauce and place it in the basket
+310	libero_pro	lan/libero_10_lan	pro	libero_10_lan	9	11	-	-	-	-	-	place yellow and white mug in microwave and close door
+311	libero_pro	task/libero_object_task	pro	libero_object_task	7	11	-	-	-	-	-	Pick the butter and place it in the basket
+312	libero_pro	lan/libero_object_lan	pro	libero_object_lan	3	11	-	-	-	-	-	pick up bbq sauce and put it into basket
+313	libero_plus	Robot_Initial_States/libero_goal	plus	libero_goal	597	11	0	-	-	-	-	turn on the stove
+314	libero_plus	Language_Instructions/libero_goal	plus	libero_goal	1417	11	0	-	-	-	-	activate the kitchen appliance used for cooking food
+315	libero_plus	Language_Instructions/libero_10	plus	libero_10	1480	11	0	-	-	-	-	The microwave is ready now just place the yellow and white mug inside and shut the door behind it
+316	libero_pro	swap/libero_10_swap	pro	libero_10_swap	4	11	-	-	-	-	-	put the white mug on the left plate and put the yellow and white mug on the right plate
+317	libero_plus	Light_Conditions/libero_10	plus	libero_10	2490	11	0	-	-	-	-	put the white mug on the plate and put the chocolate pudding to the right of the plate
+318	libero_pro	swap/libero_spatial_swap	pro	libero_spatial_swap	0	11	-	-	-	-	-	pick up the black bowl between the plate and the ramekin and place it on the plate
+319	libero_plus	Sensor_Noise/libero_object	plus	libero_object	1444	11	0	-	-	-	-	pick up the cream cheese and place it in the basket
+320	libero_pro	swap/libero_object_swap	pro	libero_object_swap	8	11	-	-	-	-	-	pick up the chocolate pudding and place it in the basket
+321	libero_plus	Background_Textures/libero_spatial	plus	libero_spatial	162	11	0	-	-	-	-	pick up the black bowl on the cookie box and place it on the plate
+322	libero_plus	Language_Instructions/libero_spatial	plus	libero_spatial	1318	11	0	-	-	-	-	pick up the darkcolored rounded dish next to the flat dish for eating meals and place it on the flat dish for eating meals
+323	libero_pro	object/libero_10_object	pro	libero_10_object	1	11	-	-	-	-	-	put both the cream cheese box and the butter in the basket
+324	libero_plus	Camera_Viewpoints/libero_object	plus	libero_object	855	11	0	-	-	-	-	pick up the tomato sauce and place it in the basket
+325	libero_pro	task/libero_spatial_task	pro	libero_spatial_task	2	11	-	-	-	-	-	Pick the akita black bowl next to the plate and place it on the plate
+326	libero_plus	Light_Conditions/libero_goal	plus	libero_goal	2547	11	0	-	-	-	-	put the wine bottle on top of the cabinet
+327	libero_plus	Objects_Layout/libero_spatial	plus	libero_spatial	2009	11	0	-	-	-	-	pick up the black bowl on the ramekin and place it on the plate
+328	libero_plus	Objects_Layout/libero_10	plus	libero_10	2055	11	0	-	-	-	-	put both the alphabet soup and the cream cheese box in the basket
+329	libero_pro	task/libero_goal_task	pro	libero_goal_task	4	11	-	-	-	-	-	Put the plate on the top of the drawer
+330	libero_plus	Robot_Initial_States/libero_spatial	plus	libero_spatial	385	11	0	-	-	-	-	pick up the black bowl on the cookie box and place it on the plate
+331	libero_pro	object/libero_goal_object	pro	libero_goal_object	0	11	-	-	-	-	-	open the middle drawer of the cabinet
+332	libero_plus	Sensor_Noise/libero_goal	plus	libero_goal	1542	11	0	-	-	-	-	open the middle drawer of the cabinet
+333	libero_plus	Robot_Initial_States/libero_10	plus	libero_10	557	11	0	-	-	-	-	put the white mug on the plate and put the chocolate pudding to the right of the plate
+334	libero_pro	object/libero_spatial_object	pro	libero_spatial_object	8	11	-	-	-	-	-	pick up the black bowl next to the plate and place it on the plate
+335	libero_plus	Objects_Layout/libero_object	plus	libero_object	1996	11	0	-	-	-	-	pick up the cream cheese and place it in the basket
+336	libero_pro	task/libero_10_task	pro	libero_10_task	6	11	-	-	-	-	-	put the red mug on the plate and put the chocolate pudding to the right of the plate
+337	libero_plus	Camera_Viewpoints/libero_spatial	plus	libero_spatial	888	11	0	-	-	-	-	pick up the black bowl on the stove and place it on the plate
+338	libero_plus	Robot_Initial_States/libero_object	plus	libero_object	291	11	0	-	-	-	-	pick up the cream cheese and place it in the basket
+339	libero_plus	Sensor_Noise/libero_spatial	plus	libero_spatial	1468	11	0	-	-	-	-	pick up the black bowl from table center and place it on the plate
+340	libero_plus	Background_Textures/libero_10	plus	libero_10	111	11	0	-	-	-	-	put both moka pots on the stove
+341	libero_plus	Camera_Viewpoints/libero_goal	plus	libero_goal	1078	11	0	-	-	-	-	put the wine bottle on the rack
+342	libero_plus	Light_Conditions/libero_spatial	plus	libero_spatial	2142	11	0	-	-	-	-	pick up the black bowl between the plate and the ramekin and place it on the plate
+343	libero_pro	lan/libero_spatial_lan	pro	libero_spatial_lan	7	11	-	-	-	-	-	lift bowl from stove and set on plate
+344	libero_plus	Camera_Viewpoints/libero_10	plus	libero_10	1003	11	0	-	-	-	-	put both the alphabet soup and the cream cheese box in the basket
+345	libero_plus	Objects_Layout/libero_goal	plus	libero_goal	1898	11	0	-	-	-	-	open the middle drawer of the cabinet
+346	libero_plus	Background_Textures/libero_goal	plus	libero_goal	31	11	0	-	-	-	-	open the top drawer and put the bowl inside
+347	libero_pro	object/libero_object_object	pro	libero_object_object	0	11	-	-	-	-	-	pick up the alphabet soup and place it in the basket
+348	libero_plus	Light_Conditions/libero_object	plus	libero_object	2346	11	0	-	-	-	-	pick up the butter and place it in the basket
+349	libero_plus	Language_Instructions/libero_object	plus	libero_object	1116	11	0	-	-	-	-	Could you put the salad dressing in the basket for me
+350	libero_pro	swap/libero_goal_swap	pro	libero_goal_swap	0	11	-	-	-	-	-	open the middle drawer of the cabinet
+351	libero_pro	lan/libero_goal_lan	pro	libero_goal_lan	1	11	-	-	-	-	-	place the bowl on the stove
+352	libero_plus	Sensor_Noise/libero_10	plus	libero_10	1490	11	0	-	-	-	-	put both the alphabet soup and the tomato sauce in the basket
+353	libero_plus	Background_Textures/libero_object	plus	libero_object	70	11	0	-	-	-	-	pick up the bbq sauce and place it in the basket
+354	libero_pro	lan/libero_10_lan	pro	libero_10_lan	8	11	-	-	-	-	-	place both moka pots on stove
+355	libero_pro	task/libero_object_task	pro	libero_object_task	8	11	-	-	-	-	-	Pick the salad dressing and place it in the basket
+356	libero_pro	lan/libero_object_lan	pro	libero_object_lan	0	11	-	-	-	-	-	grab alphabet soup and put it into basket
+357	libero_plus	Robot_Initial_States/libero_goal	plus	libero_goal	575	11	0	-	-	-	-	put the cream cheese in the bowl
+358	libero_plus	Language_Instructions/libero_goal	plus	libero_goal	1432	11	0	-	-	-	-	Put the bowl on the plate but dont stack anything else on top
+359	libero_plus	Language_Instructions/libero_10	plus	libero_10	1284	11	0	-	-	-	-	On this lovely morning please place the white mug on the left plate and the yellow and white mug on the right plate
+360	libero_pro	swap/libero_10_swap	pro	libero_10_swap	7	11	-	-	-	-	-	put both the alphabet soup and the cream cheese box in the basket
+361	libero_plus	Light_Conditions/libero_10	plus	libero_10	2433	11	0	-	-	-	-	put the white mug on the left plate and put the yellow and white mug on the right plate
+362	libero_pro	swap/libero_spatial_swap	pro	libero_spatial_swap	8	11	-	-	-	-	-	pick up the black bowl next to the plate and place it on the plate
+363	libero_plus	Sensor_Noise/libero_object	plus	libero_object	1813	11	0	-	-	-	-	pick up the orange juice and place it in the basket
+364	libero_pro	swap/libero_object_swap	pro	libero_object_swap	7	11	-	-	-	-	-	pick up the milk and place it in the basket
+365	libero_plus	Background_Textures/libero_spatial	plus	libero_spatial	61	11	0	-	-	-	-	pick up the black bowl from table center and place it on the plate
+366	libero_plus	Language_Instructions/libero_spatial	plus	libero_spatial	1054	11	0	-	-	-	-	Lift the black dish adjacent to the ramekin and set it upon the platter
+367	libero_pro	object/libero_10_object	pro	libero_10_object	4	11	-	-	-	-	-	put the white mug on the left plate and put the yellow and white mug on the right plate
+368	libero_plus	Camera_Viewpoints/libero_object	plus	libero_object	986	11	0	-	-	-	-	pick up the chocolate pudding and place it in the basket
+369	libero_pro	task/libero_spatial_task	pro	libero_spatial_task	5	11	-	-	-	-	-	Pick the akita black bowl on the cookie box and place it on the plate
+370	libero_plus	Light_Conditions/libero_goal	plus	libero_goal	2388	11	0	-	-	-	-	open the top drawer and put the bowl inside
+371	libero_plus	Objects_Layout/libero_spatial	plus	libero_spatial	1981	11	0	-	-	-	-	pick up the black bowl on the cookie box and place it on the plate
+372	libero_plus	Objects_Layout/libero_10	plus	libero_10	2219	11	0	-	-	-	-	pick up the book and place it in the back compartment of the caddy
+373	libero_pro	task/libero_goal_task	pro	libero_goal_task	3	11	-	-	-	-	-	Open the top layer of the drawer and put the cream cheese inside
+374	libero_plus	Robot_Initial_States/libero_spatial	plus	libero_spatial	420	11	0	-	-	-	-	pick up the black bowl in the top drawer of the wooden cabinet and place it on the plate
+375	libero_pro	object/libero_goal_object	pro	libero_goal_object	9	11	-	-	-	-	-	put the wine bottle on the rack
+376	libero_plus	Sensor_Noise/libero_goal	plus	libero_goal	1697	11	0	-	-	-	-	put the bowl on top of the cabinet
+377	libero_plus	Robot_Initial_States/libero_10	plus	libero_10	515	11	0	-	-	-	-	pick up the book and place it in the back compartment of the caddy
+378	libero_pro	object/libero_spatial_object	pro	libero_spatial_object	2	11	-	-	-	-	-	pick up the black bowl from table center and place it on the plate
+379	libero_plus	Objects_Layout/libero_object	plus	libero_object	2201	11	0	-	-	-	-	pick up the tomato sauce and place it in the basket
+380	libero_pro	task/libero_10_task	pro	libero_10_task	7	11	-	-	-	-	-	put both the ketchup and the cream cheese box in the basket
+381	libero_plus	Camera_Viewpoints/libero_spatial	plus	libero_spatial	759	11	0	-	-	-	-	pick up the black bowl in the top drawer of the wooden cabinet and place it on the plate
+382	libero_plus	Robot_Initial_States/libero_object	plus	libero_object	492	11	0	-	-	-	-	pick up the butter and place it in the basket
+383	libero_plus	Sensor_Noise/libero_spatial	plus	libero_spatial	1390	11	0	-	-	-	-	pick up the black bowl between the plate and the ramekin and place it on the plate
+384	libero_plus	Background_Textures/libero_10	plus	libero_10	114	11	0	-	-	-	-	put both moka pots on the stove
+385	libero_plus	Camera_Viewpoints/libero_goal	plus	libero_goal	765	11	0	-	-	-	-	put the wine bottle on top of the cabinet
+386	libero_plus	Light_Conditions/libero_spatial	plus	libero_spatial	2322	11	0	-	-	-	-	pick up the black bowl on the ramekin and place it on the plate
+387	libero_pro	lan/libero_spatial_lan	pro	libero_spatial_lan	0	11	-	-	-	-	-	lift the black bowl between the plate and ramekin and set it on the plate
+388	libero_plus	Camera_Viewpoints/libero_10	plus	libero_10	738	11	0	-	-	-	-	turn on the stove and put the moka pot on it
+389	libero_plus	Objects_Layout/libero_goal	plus	libero_goal	2078	11	0	-	-	-	-	put the bowl on the stove
+390	libero_plus	Background_Textures/libero_goal	plus	libero_goal	117	11	0	-	-	-	-	put the bowl on the plate
+391	libero_pro	object/libero_object_object	pro	libero_object_object	1	11	-	-	-	-	-	pick up the cream cheese and place it in the basket
+392	libero_plus	Light_Conditions/libero_object	plus	libero_object	2426	11	0	-	-	-	-	pick up the milk and place it in the basket
+393	libero_plus	Language_Instructions/libero_object	plus	libero_object	1338	11	0	-	-	-	-	The kids will love this Pick up the chocolate pudding and place it in the basket
+394	libero_pro	swap/libero_goal_swap	pro	libero_goal_swap	9	11	-	-	-	-	-	put the wine bottle on the rack
+395	libero_pro	lan/libero_goal_lan	pro	libero_goal_lan	4	11	-	-	-	-	-	place the bowl on top of the cabinet
+396	libero_plus	Sensor_Noise/libero_10	plus	libero_10	1735	11	0	-	-	-	-	pick up the book and place it in the back compartment of the caddy
+397	libero_plus	Background_Textures/libero_object	plus	libero_object	167	11	0	-	-	-	-	pick up the milk and place it in the basket
+398	libero_pro	lan/libero_10_lan	pro	libero_10_lan	4	11	-	-	-	-	-	place white mug on left plate and yellow-white mug on right plate
+399	libero_pro	task/libero_object_task	pro	libero_object_task	4	11	-	-	-	-	-	Pick the milk and place it in the basket
+400	libero_pro	lan/libero_object_lan	pro	libero_object_lan	9	11	-	-	-	-	-	pick orange juice and put into basket
+401	libero_plus	Robot_Initial_States/libero_goal	plus	libero_goal	654	11	0	-	-	-	-	put the wine bottle on the rack
+402	libero_plus	Language_Instructions/libero_goal	plus	libero_goal	1116	11	0	-	-	-	-	slide out the central storage compartment of the wooden structure designed for holding items
+403	libero_plus	Language_Instructions/libero_10	plus	libero_10	1301	11	0	-	-	-	-	Lift the collection of printed pages bound together and insert it into the rear storage area of the small wheeled cart
+404	libero_pro	swap/libero_10_swap	pro	libero_10_swap	1	11	-	-	-	-	-	put both the cream cheese box and the butter in the basket
+405	libero_plus	Light_Conditions/libero_10	plus	libero_10	2482	11	0	-	-	-	-	put the white mug on the plate and put the chocolate pudding to the right of the plate
+406	libero_pro	swap/libero_spatial_swap	pro	libero_spatial_swap	2	11	-	-	-	-	-	pick up the black bowl from table center and place it on the plate
+407	libero_plus	Sensor_Noise/libero_object	plus	libero_object	1484	11	0	-	-	-	-	pick up the salad dressing and place it in the basket
+408	libero_pro	swap/libero_object_swap	pro	libero_object_swap	9	11	-	-	-	-	-	pick up the orange juice and place it in the basket
+409	libero_plus	Background_Textures/libero_spatial	plus	libero_spatial	100	11	0	-	-	-	-	pick up the black bowl in the top drawer of the wooden cabinet and place it on the plate
+410	libero_plus	Language_Instructions/libero_spatial	plus	libero_spatial	1074	11	0	-	-	-	-	Pick up the darkcolored vessel used for eating from the middle of the eating surface and place it onto the flat dish
+411	libero_pro	object/libero_10_object	pro	libero_10_object	9	11	-	-	-	-	-	put the yellow and white mug in the microwave and close it
+412	libero_plus	Camera_Viewpoints/libero_object	plus	libero_object	974	11	0	-	-	-	-	pick up the milk and place it in the basket
+413	libero_pro	task/libero_spatial_task	pro	libero_spatial_task	7	11	-	-	-	-	-	Pick the akita black bowl on the top of the cabinet and place it on the plate
+414	libero_plus	Light_Conditions/libero_goal	plus	libero_goal	2340	11	0	-	-	-	-	open the middle drawer of the cabinet
+415	libero_plus	Objects_Layout/libero_spatial	plus	libero_spatial	1930	11	0	-	-	-	-	pick up the black bowl next to the ramekin and place it on the plate
+416	libero_plus	Objects_Layout/libero_10	plus	libero_10	1951	11	0	-	-	-	-	turn on the stove and put the moka pot on it
+417	libero_pro	task/libero_goal_task	pro	libero_goal_task	2	11	-	-	-	-	-	put the wine bottle in the bowl
+418	libero_plus	Robot_Initial_States/libero_spatial	plus	libero_spatial	423	11	0	-	-	-	-	pick up the black bowl in the top drawer of the wooden cabinet and place it on the plate
+419	libero_pro	object/libero_goal_object	pro	libero_goal_object	3	11	-	-	-	-	-	open the top drawer and put the bowl inside
+420	libero_plus	Sensor_Noise/libero_goal	plus	libero_goal	1559	11	0	-	-	-	-	put the bowl on the stove
+421	libero_plus	Robot_Initial_States/libero_10	plus	libero_10	322	11	0	-	-	-	-	put both the alphabet soup and the tomato sauce in the basket
+422	libero_pro	object/libero_spatial_object	pro	libero_spatial_object	9	11	-	-	-	-	-	pick up the black bowl on the wooden cabinet and place it on the plate
+423	libero_plus	Objects_Layout/libero_object	plus	libero_object	1976	11	0	-	-	-	-	pick up the chocolate pudding and place it in the basket
+424	libero_pro	task/libero_10_task	pro	libero_10_task	3	11	-	-	-	-	-	put the bottle in the bottom drawer of the cabinet and close it
+425	libero_plus	Camera_Viewpoints/libero_spatial	plus	libero_spatial	835	11	0	-	-	-	-	pick up the black bowl next to the cookie box and place it on the plate
+426	libero_plus	Robot_Initial_States/libero_object	plus	libero_object	627	11	0	-	-	-	-	pick up the orange juice and place it in the basket
+427	libero_plus	Sensor_Noise/libero_spatial	plus	libero_spatial	1406	11	0	-	-	-	-	pick up the black bowl next to the ramekin and place it on the plate
+428	libero_plus	Background_Textures/libero_10	plus	libero_10	34	11	0	-	-	-	-	put the black bowl in the bottom drawer of the cabinet and close it
+429	libero_plus	Camera_Viewpoints/libero_goal	plus	libero_goal	1081	11	0	-	-	-	-	put the wine bottle on the rack
+430	libero_plus	Light_Conditions/libero_spatial	plus	libero_spatial	2324	11	0	-	-	-	-	pick up the black bowl on the ramekin and place it on the plate
+431	libero_pro	lan/libero_spatial_lan	pro	libero_spatial_lan	4	11	-	-	-	-	-	take the black bowl from the top drawer and put it on plate
+432	libero_plus	Camera_Viewpoints/libero_10	plus	libero_10	920	11	0	-	-	-	-	pick up the book and place it in the back compartment of the caddy
+433	libero_plus	Objects_Layout/libero_goal	plus	libero_goal	1971	11	0	-	-	-	-	open the top drawer and put the bowl inside
+434	libero_plus	Background_Textures/libero_goal	plus	libero_goal	261	11	0	-	-	-	-	put the wine bottle on top of the cabinet
+435	libero_pro	object/libero_object_object	pro	libero_object_object	2	11	-	-	-	-	-	pick up the salad dressing and place it in the basket
+436	libero_plus	Light_Conditions/libero_object	plus	libero_object	2231	11	0	-	-	-	-	pick up the alphabet soup and place it in the basket
+437	libero_plus	Language_Instructions/libero_object	plus	libero_object	1053	11	0	-	-	-	-	The basket is ready now please pick up the alphabet soup and place it inside
+438	libero_pro	swap/libero_goal_swap	pro	libero_goal_swap	6	11	-	-	-	-	-	put the cream cheese in the bowl
+439	libero_pro	lan/libero_goal_lan	pro	libero_goal_lan	0	11	-	-	-	-	-	open the cabinet’s middle drawer
+440	libero_plus	Sensor_Noise/libero_10	plus	libero_10	1929	11	0	-	-	-	-	put the yellow and white mug in the microwave and close it
+441	libero_plus	Background_Textures/libero_object	plus	libero_object	200	11	0	-	-	-	-	pick up the orange juice and place it in the basket
+442	libero_plus	Robot_Initial_States/libero_goal	plus	libero_goal	397	11	0	-	-	-	-	put the wine bottle on top of the cabinet
+443	libero_plus	Language_Instructions/libero_goal	plus	libero_goal	1135	11	0	-	-	-	-	Access the center compartment of the cabinet
+444	libero_plus	Language_Instructions/libero_10	plus	libero_10	1305	11	0	-	-	-	-	Please pick up the book and place it in the back compartment of the caddy
+445	libero_plus	Light_Conditions/libero_10	plus	libero_10	2368	11	0	-	-	-	-	put the yellow and white mug in the microwave and close it
+446	libero_plus	Sensor_Noise/libero_object	plus	libero_object	1711	11	0	-	-	-	-	pick up the milk and place it in the basket
+447	libero_plus	Background_Textures/libero_spatial	plus	libero_spatial	249	11	0	-	-	-	-	pick up the black bowl on the wooden cabinet and place it on the plate
+448	libero_plus	Language_Instructions/libero_spatial	plus	libero_spatial	1072	11	0	-	-	-	-	Lift the black bowl from the center of the table and position it on the plate
+449	libero_plus	Camera_Viewpoints/libero_object	plus	libero_object	970	11	0	-	-	-	-	pick up the milk and place it in the basket
+450	libero_plus	Light_Conditions/libero_goal	plus	libero_goal	2581	11	0	-	-	-	-	turn on the stove
+451	libero_plus	Objects_Layout/libero_spatial	plus	libero_spatial	2105	11	0	-	-	-	-	pick up the black bowl on the wooden cabinet and place it on the plate
+452	libero_plus	Objects_Layout/libero_10	plus	libero_10	2044	11	0	-	-	-	-	put both moka pots on the stove
+453	libero_plus	Robot_Initial_States/libero_spatial	plus	libero_spatial	483	11	0	-	-	-	-	pick up the black bowl next to the cookie box and place it on the plate
+454	libero_plus	Sensor_Noise/libero_goal	plus	libero_goal	1758	11	0	-	-	-	-	put the cream cheese in the bowl
+455	libero_plus	Robot_Initial_States/libero_10	plus	libero_10	600	11	0	-	-	-	-	put both the alphabet soup and the cream cheese box in the basket
+456	libero_plus	Objects_Layout/libero_object	plus	libero_object	2208	11	0	-	-	-	-	pick up the tomato sauce and place it in the basket
+457	libero_plus	Camera_Viewpoints/libero_spatial	plus	libero_spatial	697	11	0	-	-	-	-	pick up the black bowl on the cookie box and place it on the plate
+458	libero_plus	Robot_Initial_States/libero_object	plus	libero_object	454	11	0	-	-	-	-	pick up the tomato sauce and place it in the basket
+459	libero_plus	Sensor_Noise/libero_spatial	plus	libero_spatial	1688	11	0	-	-	-	-	pick up the black bowl on the wooden cabinet and place it on the plate
+460	libero_plus	Background_Textures/libero_10	plus	libero_10	283	11	0	-	-	-	-	pick up the book and place it in the back compartment of the caddy
+461	libero_plus	Camera_Viewpoints/libero_goal	plus	libero_goal	760	11	0	-	-	-	-	put the wine bottle on top of the cabinet
+462	libero_plus	Light_Conditions/libero_spatial	plus	libero_spatial	2191	11	0	-	-	-	-	pick up the black bowl from table center and place it on the plate
+463	libero_plus	Camera_Viewpoints/libero_10	plus	libero_10	858	11	0	-	-	-	-	put the white mug on the left plate and put the yellow and white mug on the right plate
+464	libero_plus	Objects_Layout/libero_goal	plus	libero_goal	2177	11	0	-	-	-	-	put the wine bottle on the rack
+465	libero_plus	Background_Textures/libero_goal	plus	libero_goal	62	11	0	-	-	-	-	open the top drawer and put the bowl inside
+466	libero_plus	Light_Conditions/libero_object	plus	libero_object	2254	11	0	-	-	-	-	pick up the alphabet soup and place it in the basket
+467	libero_plus	Language_Instructions/libero_object	plus	libero_object	1240	11	0	-	-	-	-	grasp the creamy dairy spread and deposit it into the woven carrying container
+468	libero_plus	Sensor_Noise/libero_10	plus	libero_10	1813	11	0	-	-	-	-	put both the alphabet soup and the cream cheese box in the basket
+469	libero_plus	Background_Textures/libero_object	plus	libero_object	97	11	0	-	-	-	-	pick up the butter and place it in the basket
+470	libero_plus	Robot_Initial_States/libero_goal	plus	libero_goal	564	11	0	-	-	-	-	put the cream cheese in the bowl
+471	libero_plus	Language_Instructions/libero_goal	plus	libero_goal	1112	11	0	-	-	-	-	Would you mind opening the cabinets middle drawer Id really appreciate it
+472	libero_plus	Language_Instructions/libero_10	plus	libero_10	1104	11	0	-	-	-	-	For tonights dinner preparation remember to put both the alphabet soup and the tomato sauce in the basket
+473	libero_plus	Light_Conditions/libero_10	plus	libero_10	2246	11	0	-	-	-	-	turn on the stove and put the moka pot on it
+474	libero_plus	Sensor_Noise/libero_object	plus	libero_object	1474	11	0	-	-	-	-	pick up the cream cheese and place it in the basket
+475	libero_plus	Background_Textures/libero_spatial	plus	libero_spatial	251	11	0	-	-	-	-	pick up the black bowl on the wooden cabinet and place it on the plate
+476	libero_plus	Language_Instructions/libero_spatial	plus	libero_spatial	1118	11	0	-	-	-	-	Lets prepare the workspace take the black bowl from the cookie box and place it on the plate
+477	libero_plus	Camera_Viewpoints/libero_object	plus	libero_object	830	11	0	-	-	-	-	pick up the tomato sauce and place it in the basket
+478	libero_plus	Light_Conditions/libero_goal	plus	libero_goal	2590	11	0	-	-	-	-	turn on the stove
+479	libero_plus	Objects_Layout/libero_spatial	plus	libero_spatial	2003	11	0	-	-	-	-	pick up the black bowl on the ramekin and place it on the plate
+480	libero_plus	Objects_Layout/libero_10	plus	libero_10	2090	11	0	-	-	-	-	put both the alphabet soup and the tomato sauce in the basket
+481	libero_plus	Robot_Initial_States/libero_spatial	plus	libero_spatial	290	11	0	-	-	-	-	pick up the black bowl next to the ramekin and place it on the plate
+482	libero_plus	Sensor_Noise/libero_goal	plus	libero_goal	1774	11	0	-	-	-	-	put the cream cheese in the bowl
+483	libero_plus	Robot_Initial_States/libero_10	plus	libero_10	301	11	0	-	-	-	-	put both the alphabet soup and the tomato sauce in the basket
+484	libero_plus	Objects_Layout/libero_object	plus	libero_object	2151	11	0	-	-	-	-	pick up the salad dressing and place it in the basket
+485	libero_plus	Camera_Viewpoints/libero_spatial	plus	libero_spatial	658	11	0	-	-	-	-	pick up the black bowl from table center and place it on the plate
+486	libero_plus	Robot_Initial_States/libero_object	plus	libero_object	521	11	0	-	-	-	-	pick up the butter and place it in the basket
+487	libero_plus	Sensor_Noise/libero_spatial	plus	libero_spatial	1594	11	0	-	-	-	-	pick up the black bowl next to the cookie box and place it on the plate
+488	libero_plus	Background_Textures/libero_10	plus	libero_10	86	11	0	-	-	-	-	put the yellow and white mug in the microwave and close it
+489	libero_plus	Camera_Viewpoints/libero_goal	plus	libero_goal	819	11	0	-	-	-	-	open the top drawer and put the bowl inside
+490	libero_plus	Light_Conditions/libero_spatial	plus	libero_spatial	2251	11	0	-	-	-	-	pick up the black bowl next to the cookie box and place it on the plate
+491	libero_plus	Camera_Viewpoints/libero_10	plus	libero_10	988	11	0	-	-	-	-	put both the alphabet soup and the cream cheese box in the basket
+492	libero_plus	Objects_Layout/libero_goal	plus	libero_goal	2265	11	0	-	-	-	-	turn on the stove
+493	libero_plus	Background_Textures/libero_goal	plus	libero_goal	51	11	0	-	-	-	-	open the top drawer and put the bowl inside
+494	libero_plus	Light_Conditions/libero_object	plus	libero_object	2311	11	0	-	-	-	-	pick up the butter and place it in the basket
+495	libero_plus	Language_Instructions/libero_object	plus	libero_object	1318	11	0	-	-	-	-	Can you put the chocolate pudding in the basket please
+496	libero_plus	Sensor_Noise/libero_10	plus	libero_10	1881	11	0	-	-	-	-	put both moka pots on the stove
+497	libero_plus	Background_Textures/libero_object	plus	libero_object	67	11	0	-	-	-	-	pick up the bbq sauce and place it in the basket
+498	libero_plus	Robot_Initial_States/libero_goal	plus	libero_goal	375	11	0	-	-	-	-	put the wine bottle on top of the cabinet
+499	libero_plus	Language_Instructions/libero_goal	plus	libero_goal	1458	11	0	-	-	-	-	Could we place the wine bottle in the rack
+500	libero_plus	Language_Instructions/libero_10	plus	libero_10	1240	11	0	-	-	-	-	Place the darkcolored bowl into the lower drawer of the cupboard and shut it
+501	libero_plus	Light_Conditions/libero_10	plus	libero_10	2473	11	0	-	-	-	-	put the white mug on the plate and put the chocolate pudding to the right of the plate
+502	libero_plus	Sensor_Noise/libero_object	plus	libero_object	1746	11	0	-	-	-	-	pick up the chocolate pudding and place it in the basket
+503	libero_plus	Background_Textures/libero_spatial	plus	libero_spatial	161	11	0	-	-	-	-	pick up the black bowl on the cookie box and place it on the plate
+504	libero_plus	Language_Instructions/libero_spatial	plus	libero_spatial	1191	11	0	-	-	-	-	Remember we need to serve this soon go ahead and transfer the black bowl from the ramekin to the plate
+505	libero_plus	Camera_Viewpoints/libero_object	plus	libero_object	949	11	0	-	-	-	-	pick up the milk and place it in the basket
+506	libero_plus	Light_Conditions/libero_goal	plus	libero_goal	2407	11	0	-	-	-	-	push the plate to the front of the stove
+507	libero_plus	Objects_Layout/libero_spatial	plus	libero_spatial	1801	11	0	-	-	-	-	pick up the black bowl from table center and place it on the plate
+508	libero_plus	Objects_Layout/libero_10	plus	libero_10	1990	11	0	-	-	-	-	put the yellow and white mug in the microwave and close it
+509	libero_plus	Robot_Initial_States/libero_spatial	plus	libero_spatial	322	11	0	-	-	-	-	pick up the black bowl next to the ramekin and place it on the plate
+510	libero_plus	Sensor_Noise/libero_goal	plus	libero_goal	1861	11	0	-	-	-	-	put the wine bottle on the rack
+511	libero_plus	Robot_Initial_States/libero_10	plus	libero_10	359	11	0	-	-	-	-	put both the cream cheese box and the butter in the basket
+512	libero_plus	Objects_Layout/libero_object	plus	libero_object	2219	11	0	-	-	-	-	pick up the tomato sauce and place it in the basket
+513	libero_plus	Camera_Viewpoints/libero_spatial	plus	libero_spatial	970	11	0	-	-	-	-	pick up the black bowl on the wooden cabinet and place it on the plate
+514	libero_plus	Robot_Initial_States/libero_object	plus	libero_object	578	11	0	-	-	-	-	pick up the chocolate pudding and place it in the basket
+515	libero_plus	Sensor_Noise/libero_spatial	plus	libero_spatial	1483	11	0	-	-	-	-	pick up the black bowl on the cookie box and place it on the plate
+516	libero_plus	Background_Textures/libero_10	plus	libero_10	153	11	0	-	-	-	-	put both the alphabet soup and the tomato sauce in the basket
+517	libero_plus	Camera_Viewpoints/libero_goal	plus	libero_goal	1084	11	0	-	-	-	-	put the wine bottle on the rack
+518	libero_plus	Light_Conditions/libero_spatial	plus	libero_spatial	2355	11	0	-	-	-	-	pick up the black bowl on the stove and place it on the plate
+519	libero_plus	Camera_Viewpoints/libero_10	plus	libero_10	991	11	0	-	-	-	-	put both the alphabet soup and the cream cheese box in the basket
+520	libero_plus	Objects_Layout/libero_goal	plus	libero_goal	2033	11	0	-	-	-	-	put the bowl on the plate
+521	libero_plus	Background_Textures/libero_goal	plus	libero_goal	129	11	0	-	-	-	-	put the bowl on the plate
+522	libero_plus	Light_Conditions/libero_object	plus	libero_object	2416	11	0	-	-	-	-	pick up the milk and place it in the basket
+523	libero_plus	Language_Instructions/libero_object	plus	libero_object	1354	11	0	-	-	-	-	The recipe calls for chilled juice so pick up the orange juice and place it in the basket to cool
+524	libero_plus	Sensor_Noise/libero_10	plus	libero_10	1550	11	0	-	-	-	-	put both the cream cheese box and the butter in the basket
+525	libero_plus	Background_Textures/libero_object	plus	libero_object	10	11	0	-	-	-	-	pick up the alphabet soup and place it in the basket
+526	libero_plus	Robot_Initial_States/libero_goal	plus	libero_goal	503	11	0	-	-	-	-	push the plate to the front of the stove
+527	libero_plus	Language_Instructions/libero_goal	plus	libero_goal	1187	11	0	-	-	-	-	place the wine container atop the cupboard
+528	libero_plus	Language_Instructions/libero_10	plus	libero_10	1288	11	0	-	-	-	-	position the palecolored cylindrical drinking vessel on the left ceramic dish designated for dining and position the bicolor yellow and white cylindrical drinking vessel on the right ceramic dish designated for dining
+529	libero_plus	Light_Conditions/libero_10	plus	libero_10	2461	11	0	-	-	-	-	put the white mug on the left plate and put the yellow and white mug on the right plate
+530	libero_plus	Sensor_Noise/libero_object	plus	libero_object	1644	11	0	-	-	-	-	pick up the tomato sauce and place it in the basket
+531	libero_plus	Background_Textures/libero_spatial	plus	libero_spatial	64	11	0	-	-	-	-	pick up the black bowl from table center and place it on the plate
+532	libero_plus	Language_Instructions/libero_spatial	plus	libero_spatial	1171	11	0	-	-	-	-	On this lovely afternoon would you mind picking up the black bowl from the ramekin and transferring it to the plate
+533	libero_plus	Camera_Viewpoints/libero_object	plus	libero_object	847	11	0	-	-	-	-	pick up the tomato sauce and place it in the basket
+534	libero_plus	Light_Conditions/libero_goal	plus	libero_goal	2339	11	0	-	-	-	-	open the middle drawer of the cabinet
+535	libero_plus	Objects_Layout/libero_spatial	plus	libero_spatial	1965	11	0	-	-	-	-	pick up the black bowl on the cookie box and place it on the plate
+536	libero_plus	Objects_Layout/libero_10	plus	libero_10	1983	11	0	-	-	-	-	put the yellow and white mug in the microwave and close it
+537	libero_plus	Robot_Initial_States/libero_spatial	plus	libero_spatial	519	11	0	-	-	-	-	pick up the black bowl on the stove and place it on the plate
+538	libero_plus	Sensor_Noise/libero_goal	plus	libero_goal	1783	11	0	-	-	-	-	put the cream cheese in the bowl
+539	libero_plus	Robot_Initial_States/libero_10	plus	libero_10	671	11	0	-	-	-	-	put the yellow and white mug in the microwave and close it
+540	libero_plus	Objects_Layout/libero_object	plus	libero_object	1994	11	0	-	-	-	-	pick up the cream cheese and place it in the basket
+541	libero_plus	Camera_Viewpoints/libero_spatial	plus	libero_spatial	908	11	0	-	-	-	-	pick up the black bowl on the stove and place it on the plate
+542	libero_plus	Robot_Initial_States/libero_object	plus	libero_object	518	11	0	-	-	-	-	pick up the butter and place it in the basket
+543	libero_plus	Sensor_Noise/libero_spatial	plus	libero_spatial	1684	11	0	-	-	-	-	pick up the black bowl next to the plate and place it on the plate
+544	libero_plus	Background_Textures/libero_10	plus	libero_10	220	11	0	-	-	-	-	put the white mug on the left plate and put the yellow and white mug on the right plate
+545	libero_plus	Camera_Viewpoints/libero_goal	plus	libero_goal	956	11	0	-	-	-	-	put the cream cheese in the bowl
+546	libero_plus	Light_Conditions/libero_spatial	plus	libero_spatial	2188	11	0	-	-	-	-	pick up the black bowl from table center and place it on the plate
+547	libero_plus	Camera_Viewpoints/libero_10	plus	libero_10	709	11	0	-	-	-	-	put both the cream cheese box and the butter in the basket
+548	libero_plus	Objects_Layout/libero_goal	plus	libero_goal	1936	11	0	-	-	-	-	open the top drawer and put the bowl inside
+549	libero_plus	Background_Textures/libero_goal	plus	libero_goal	57	11	0	-	-	-	-	open the top drawer and put the bowl inside
+550	libero_plus	Light_Conditions/libero_object	plus	libero_object	2413	11	0	-	-	-	-	pick up the milk and place it in the basket
+551	libero_plus	Language_Instructions/libero_object	plus	libero_object	1219	11	0	-	-	-	-	For our spaghetti dinner well need the tomato sauce in the basket could you handle that
+552	libero_plus	Sensor_Noise/libero_10	plus	libero_10	1616	11	0	-	-	-	-	put the black bowl in the bottom drawer of the cabinet and close it
+553	libero_plus	Background_Textures/libero_object	plus	libero_object	52	11	0	-	-	-	-	pick up the bbq sauce and place it in the basket
+554	libero_plus	Robot_Initial_States/libero_goal	plus	libero_goal	620	11	0	-	-	-	-	put the bowl on the plate
+555	libero_plus	Language_Instructions/libero_goal	plus	libero_goal	1492	11	0	-	-	-	-	place the glass container of fermented grapes on the storage framework designed for holding such items
+556	libero_plus	Language_Instructions/libero_10	plus	libero_10	1148	11	0	-	-	-	-	Remember our grocery system Put both the cream cheese box and the butter in the basket as usual
+557	libero_plus	Light_Conditions/libero_10	plus	libero_10	2261	11	0	-	-	-	-	turn on the stove and put the moka pot on it
+558	libero_plus	Sensor_Noise/libero_object	plus	libero_object	1417	11	0	-	-	-	-	pick up the alphabet soup and place it in the basket
+559	libero_plus	Background_Textures/libero_spatial	plus	libero_spatial	240	11	0	-	-	-	-	pick up the black bowl on the stove and place it on the plate
+560	libero_plus	Language_Instructions/libero_spatial	plus	libero_spatial	1270	11	0	-	-	-	-	Lift the dark bowl from the stove and set it onto the plate
+561	libero_plus	Camera_Viewpoints/libero_object	plus	libero_object	884	11	0	-	-	-	-	pick up the butter and place it in the basket
+562	libero_plus	Light_Conditions/libero_goal	plus	libero_goal	2326	11	0	-	-	-	-	open the middle drawer of the cabinet
+563	libero_plus	Objects_Layout/libero_spatial	plus	libero_spatial	1952	11	0	-	-	-	-	pick up the black bowl on the cookie box and place it on the plate
+564	libero_plus	Objects_Layout/libero_10	plus	libero_10	2043	11	0	-	-	-	-	put both moka pots on the stove
+565	libero_plus	Robot_Initial_States/libero_spatial	plus	libero_spatial	563	11	0	-	-	-	-	pick up the black bowl next to the plate and place it on the plate
+566	libero_plus	Sensor_Noise/libero_goal	plus	libero_goal	1549	11	0	-	-	-	-	open the middle drawer of the cabinet
+567	libero_plus	Robot_Initial_States/libero_10	plus	libero_10	460	11	0	-	-	-	-	put the white mug on the left plate and put the yellow and white mug on the right plate
+568	libero_plus	Objects_Layout/libero_object	plus	libero_object	1978	11	0	-	-	-	-	pick up the chocolate pudding and place it in the basket
+569	libero_plus	Camera_Viewpoints/libero_spatial	plus	libero_spatial	877	11	0	-	-	-	-	pick up the black bowl on the stove and place it on the plate
+570	libero_plus	Robot_Initial_States/libero_object	plus	libero_object	408	11	0	-	-	-	-	pick up the ketchup and place it in the basket
+571	libero_plus	Sensor_Noise/libero_spatial	plus	libero_spatial	1528	11	0	-	-	-	-	pick up the black bowl in the top drawer of the wooden cabinet and place it on the plate
+572	libero_plus	Background_Textures/libero_10	plus	libero_10	60	11	0	-	-	-	-	put the black bowl in the bottom drawer of the cabinet and close it
+573	libero_plus	Camera_Viewpoints/libero_goal	plus	libero_goal	966	11	0	-	-	-	-	put the cream cheese in the bowl
+574	libero_plus	Light_Conditions/libero_spatial	plus	libero_spatial	2269	11	0	-	-	-	-	pick up the black bowl next to the cookie box and place it on the plate
+575	libero_plus	Camera_Viewpoints/libero_10	plus	libero_10	715	11	0	-	-	-	-	put both the cream cheese box and the butter in the basket
+576	libero_plus	Objects_Layout/libero_goal	plus	libero_goal	1962	11	0	-	-	-	-	open the top drawer and put the bowl inside
+577	libero_plus	Background_Textures/libero_goal	plus	libero_goal	103	11	0	-	-	-	-	put the bowl on the plate
+578	libero_plus	Light_Conditions/libero_object	plus	libero_object	2301	11	0	-	-	-	-	pick up the bbq sauce and place it in the basket
+579	libero_plus	Language_Instructions/libero_object	plus	libero_object	1294	11	0	-	-	-	-	pick up the white liquid commonly obtained from cows and place it in the woven container used for carrying items
+580	libero_plus	Sensor_Noise/libero_10	plus	libero_10	1575	11	0	-	-	-	-	turn on the stove and put the moka pot on it
+581	libero_plus	Background_Textures/libero_object	plus	libero_object	107	11	0	-	-	-	-	pick up the chocolate pudding and place it in the basket
+582	libero_plus	Robot_Initial_States/libero_goal	plus	libero_goal	435	11	0	-	-	-	-	open the top drawer and put the bowl inside
+583	libero_plus	Language_Instructions/libero_goal	plus	libero_goal	1244	11	0	-	-	-	-	For proper storage always open the top drawer and place bowls like this one inside
+584	libero_plus	Language_Instructions/libero_10	plus	libero_10	1374	11	0	-	-	-	-	The alphabet soup and cream cheese box are on the counter please transfer them to the basket
+585	libero_plus	Light_Conditions/libero_10	plus	libero_10	2458	11	0	-	-	-	-	put the white mug on the left plate and put the yellow and white mug on the right plate
+586	libero_plus	Sensor_Noise/libero_object	plus	libero_object	1558	11	0	-	-	-	-	pick up the bbq sauce and place it in the basket
+587	libero_plus	Background_Textures/libero_spatial	plus	libero_spatial	230	11	0	-	-	-	-	pick up the black bowl on the stove and place it on the plate
+588	libero_plus	Language_Instructions/libero_spatial	plus	libero_spatial	1175	11	0	-	-	-	-	pick up the darkhued circular container on the small glazed ceramic dish and place it on the flat dishware for serving food
+589	libero_plus	Camera_Viewpoints/libero_object	plus	libero_object	707	11	0	-	-	-	-	pick up the salad dressing and place it in the basket
+590	libero_plus	Light_Conditions/libero_goal	plus	libero_goal	2535	11	0	-	-	-	-	put the wine bottle on the rack
+591	libero_plus	Objects_Layout/libero_spatial	plus	libero_spatial	1881	11	0	-	-	-	-	pick up the black bowl next to the cookie box and place it on the plate
+592	libero_plus	Objects_Layout/libero_10	plus	libero_10	2118	11	0	-	-	-	-	put both the cream cheese box and the butter in the basket
+593	libero_plus	Robot_Initial_States/libero_spatial	plus	libero_spatial	569	11	0	-	-	-	-	pick up the black bowl on the wooden cabinet and place it on the plate
+594	libero_plus	Sensor_Noise/libero_goal	plus	libero_goal	1629	11	0	-	-	-	-	open the top drawer and put the bowl inside
+595	libero_plus	Robot_Initial_States/libero_10	plus	libero_10	651	11	0	-	-	-	-	put the yellow and white mug in the microwave and close it
+596	libero_plus	Objects_Layout/libero_object	plus	libero_object	1939	11	0	-	-	-	-	pick up the butter and place it in the basket
+597	libero_plus	Camera_Viewpoints/libero_spatial	plus	libero_spatial	726	11	0	-	-	-	-	pick up the black bowl on the cookie box and place it on the plate
+598	libero_plus	Robot_Initial_States/libero_object	plus	libero_object	630	11	0	-	-	-	-	pick up the orange juice and place it in the basket
+599	libero_plus	Sensor_Noise/libero_spatial	plus	libero_spatial	1701	11	0	-	-	-	-	pick up the black bowl on the wooden cabinet and place it on the plate
+600	libero_plus	Background_Textures/libero_10	plus	libero_10	157	11	0	-	-	-	-	put both the alphabet soup and the tomato sauce in the basket
+601	libero_plus	Camera_Viewpoints/libero_goal	plus	libero_goal	766	11	0	-	-	-	-	put the wine bottle on top of the cabinet
+602	libero_plus	Light_Conditions/libero_spatial	plus	libero_spatial	2181	11	0	-	-	-	-	pick up the black bowl from table center and place it on the plate
+603	libero_plus	Camera_Viewpoints/libero_10	plus	libero_10	847	11	0	-	-	-	-	put the white mug on the left plate and put the yellow and white mug on the right plate
+604	libero_plus	Objects_Layout/libero_goal	plus	libero_goal	2011	11	0	-	-	-	-	push the plate to the front of the stove
+605	libero_plus	Background_Textures/libero_goal	plus	libero_goal	237	11	0	-	-	-	-	put the wine bottle on top of the cabinet
+606	libero_plus	Light_Conditions/libero_object	plus	libero_object	2489	11	0	-	-	-	-	pick up the salad dressing and place it in the basket
+607	libero_plus	Language_Instructions/libero_object	plus	libero_object	1175	11	0	-	-	-	-	grab the ketchup and put it in the basket
+608	libero_plus	Sensor_Noise/libero_10	plus	libero_10	1886	11	0	-	-	-	-	put the yellow and white mug in the microwave and close it
+609	libero_plus	Background_Textures/libero_object	plus	libero_object	120	11	0	-	-	-	-	pick up the chocolate pudding and place it in the basket
+610	libero_plus	Robot_Initial_States/libero_goal	plus	libero_goal	383	11	0	-	-	-	-	put the wine bottle on top of the cabinet
+611	libero_plus	Language_Instructions/libero_goal	plus	libero_goal	1281	11	0	-	-	-	-	place the rounded container for holding food onto the elevated storage unit often found in kitchens
+612	libero_plus	Language_Instructions/libero_10	plus	libero_10	1396	11	0	-	-	-	-	Make sure the alphabet soup and the cream cheese box are in the basket
+613	libero_plus	Light_Conditions/libero_10	plus	libero_10	2312	11	0	-	-	-	-	put the black bowl in the bottom drawer of the cabinet and close it
+614	libero_plus	Sensor_Noise/libero_object	plus	libero_object	1542	11	0	-	-	-	-	pick up the bbq sauce and place it in the basket
+615	libero_plus	Background_Textures/libero_spatial	plus	libero_spatial	72	11	0	-	-	-	-	pick up the black bowl from table center and place it on the plate
+616	libero_plus	Language_Instructions/libero_spatial	plus	libero_spatial	1210	11	0	-	-	-	-	Would you mind picking up that black bowl near the cookie box and transferring it to the plate Dinner is almost ready
+617	libero_plus	Camera_Viewpoints/libero_object	plus	libero_object	866	11	0	-	-	-	-	pick up the tomato sauce and place it in the basket
+618	libero_plus	Light_Conditions/libero_goal	plus	libero_goal	2381	11	0	-	-	-	-	open the top drawer and put the bowl inside
+619	libero_plus	Objects_Layout/libero_spatial	plus	libero_spatial	1893	11	0	-	-	-	-	pick up the black bowl next to the plate and place it on the plate
+620	libero_plus	Objects_Layout/libero_10	plus	libero_10	2232	11	0	-	-	-	-	pick up the book and place it in the back compartment of the caddy
+621	libero_plus	Robot_Initial_States/libero_spatial	plus	libero_spatial	426	11	0	-	-	-	-	pick up the black bowl in the top drawer of the wooden cabinet and place it on the plate
+622	libero_plus	Sensor_Noise/libero_goal	plus	libero_goal	1780	11	0	-	-	-	-	put the cream cheese in the bowl
+623	libero_plus	Robot_Initial_States/libero_10	plus	libero_10	479	11	0	-	-	-	-	put the white mug on the left plate and put the yellow and white mug on the right plate
+624	libero_plus	Objects_Layout/libero_object	plus	libero_object	2099	11	0	-	-	-	-	pick up the orange juice and place it in the basket
+625	libero_plus	Camera_Viewpoints/libero_spatial	plus	libero_spatial	879	11	0	-	-	-	-	pick up the black bowl on the stove and place it on the plate
+626	libero_plus	Robot_Initial_States/libero_object	plus	libero_object	348	11	0	-	-	-	-	pick up the salad dressing and place it in the basket
+627	libero_plus	Sensor_Noise/libero_spatial	plus	libero_spatial	1467	11	0	-	-	-	-	pick up the black bowl from table center and place it on the plate
+628	libero_plus	Background_Textures/libero_10	plus	libero_10	108	11	0	-	-	-	-	put both moka pots on the stove
+629	libero_plus	Camera_Viewpoints/libero_goal	plus	libero_goal	1092	11	0	-	-	-	-	put the wine bottle on the rack
+630	libero_plus	Light_Conditions/libero_spatial	plus	libero_spatial	2252	11	0	-	-	-	-	pick up the black bowl next to the cookie box and place it on the plate
+631	libero_plus	Camera_Viewpoints/libero_10	plus	libero_10	728	11	0	-	-	-	-	put both the cream cheese box and the butter in the basket
+632	libero_plus	Objects_Layout/libero_goal	plus	libero_goal	2130	11	0	-	-	-	-	put the cream cheese in the bowl
+633	libero_plus	Background_Textures/libero_goal	plus	libero_goal	279	11	0	-	-	-	-	turn on the stove
+634	libero_plus	Light_Conditions/libero_object	plus	libero_object	2370	11	0	-	-	-	-	pick up the chocolate pudding and place it in the basket
+635	libero_plus	Language_Instructions/libero_object	plus	libero_object	1277	11	0	-	-	-	-	lift the white liquid container and set it into the woven carrier
+636	libero_plus	Sensor_Noise/libero_10	plus	libero_10	1809	11	0	-	-	-	-	put both the alphabet soup and the cream cheese box in the basket
+637	libero_plus	Background_Textures/libero_object	plus	libero_object	144	11	0	-	-	-	-	pick up the milk and place it in the basket
+638	libero_plus	Robot_Initial_States/libero_goal	plus	libero_goal	528	11	0	-	-	-	-	push the plate to the front of the stove
+639	libero_plus	Language_Instructions/libero_goal	plus	libero_goal	1453	11	0	-	-	-	-	place the round dish used for eating soup or cereal onto the flat dish usually used for main course servings
+640	libero_plus	Language_Instructions/libero_10	plus	libero_10	1307	11	0	-	-	-	-	Would you be so kind as to pick up the book and place it in the back compartment of the caddy
+641	libero_plus	Light_Conditions/libero_10	plus	libero_10	2513	11	0	-	-	-	-	pick up the book and place it in the back compartment of the caddy
+642	libero_plus	Sensor_Noise/libero_object	plus	libero_object	1494	11	0	-	-	-	-	pick up the salad dressing and place it in the basket
+643	libero_plus	Background_Textures/libero_spatial	plus	libero_spatial	116	11	0	-	-	-	-	pick up the black bowl next to the cookie box and place it on the plate
+644	libero_plus	Language_Instructions/libero_spatial	plus	libero_spatial	1310	11	0	-	-	-	-	In our kitchen organization system we place bowls on plates So please pick up the black bowl next to the plate and move it there
+645	libero_plus	Camera_Viewpoints/libero_object	plus	libero_object	971	11	0	-	-	-	-	pick up the milk and place it in the basket
+646	libero_plus	Light_Conditions/libero_goal	plus	libero_goal	2372	11	0	-	-	-	-	open the top drawer and put the bowl inside
+647	libero_plus	Objects_Layout/libero_spatial	plus	libero_spatial	2010	11	0	-	-	-	-	pick up the black bowl on the ramekin and place it on the plate
+648	libero_plus	Objects_Layout/libero_10	plus	libero_10	2142	11	0	-	-	-	-	put the white mug on the left plate and put the yellow and white mug on the right plate
+649	libero_plus	Robot_Initial_States/libero_spatial	plus	libero_spatial	364	11	0	-	-	-	-	pick up the black bowl on the cookie box and place it on the plate
+650	libero_plus	Sensor_Noise/libero_goal	plus	libero_goal	1537	11	0	-	-	-	-	open the middle drawer of the cabinet
+651	libero_plus	Robot_Initial_States/libero_10	plus	libero_10	395	11	0	-	-	-	-	turn on the stove and put the moka pot on it
+652	libero_plus	Objects_Layout/libero_object	plus	libero_object	2001	11	0	-	-	-	-	pick up the cream cheese and place it in the basket
+653	libero_plus	Camera_Viewpoints/libero_spatial	plus	libero_spatial	745	11	0	-	-	-	-	pick up the black bowl in the top drawer of the wooden cabinet and place it on the plate
+654	libero_plus	Robot_Initial_States/libero_object	plus	libero_object	261	11	0	-	-	-	-	pick up the alphabet soup and place it in the basket
+655	libero_plus	Sensor_Noise/libero_spatial	plus	libero_spatial	1438	11	0	-	-	-	-	pick up the black bowl next to the ramekin and place it on the plate
+656	libero_plus	Background_Textures/libero_10	plus	libero_10	125	11	0	-	-	-	-	put both moka pots on the stove
+657	libero_plus	Camera_Viewpoints/libero_goal	plus	libero_goal	737	11	0	-	-	-	-	put the bowl on the stove
+658	libero_plus	Light_Conditions/libero_spatial	plus	libero_spatial	2143	11	0	-	-	-	-	pick up the black bowl between the plate and the ramekin and place it on the plate
+659	libero_plus	Camera_Viewpoints/libero_10	plus	libero_10	860	11	0	-	-	-	-	put the white mug on the left plate and put the yellow and white mug on the right plate
+660	libero_plus	Objects_Layout/libero_goal	plus	libero_goal	1924	11	0	-	-	-	-	open the middle drawer of the cabinet
+661	libero_plus	Background_Textures/libero_goal	plus	libero_goal	257	11	0	-	-	-	-	put the wine bottle on top of the cabinet
+662	libero_plus	Light_Conditions/libero_object	plus	libero_object	2504	11	0	-	-	-	-	pick up the tomato sauce and place it in the basket
+663	libero_plus	Language_Instructions/libero_object	plus	libero_object	1093	11	0	-	-	-	-	Would you mind picking up the cream cheese and moving it to the basket
+664	libero_plus	Sensor_Noise/libero_10	plus	libero_10	1901	11	0	-	-	-	-	put the yellow and white mug in the microwave and close it
+665	libero_plus	Background_Textures/libero_object	plus	libero_object	110	11	0	-	-	-	-	pick up the chocolate pudding and place it in the basket
+666	libero_plus	Robot_Initial_States/libero_goal	plus	libero_goal	322	11	0	-	-	-	-	open the middle drawer of the cabinet
+667	libero_plus	Language_Instructions/libero_goal	plus	libero_goal	1418	11	0	-	-	-	-	Ill prepare the ingredients while you turn on the stove okay
+668	libero_plus	Language_Instructions/libero_10	plus	libero_10	1410	11	0	-	-	-	-	To keep everything together place both the alphabet soup and cream cheese box in the basket
+669	libero_plus	Light_Conditions/libero_10	plus	libero_10	2497	11	0	-	-	-	-	pick up the book and place it in the back compartment of the caddy
+670	libero_plus	Sensor_Noise/libero_object	plus	libero_object	1715	11	0	-	-	-	-	pick up the milk and place it in the basket
+671	libero_plus	Background_Textures/libero_spatial	plus	libero_spatial	185	11	0	-	-	-	-	pick up the black bowl on the ramekin and place it on the plate
+672	libero_plus	Language_Instructions/libero_spatial	plus	libero_spatial	1275	11	0	-	-	-	-	Grab the dark bowl from the stove and set it on the dish
+673	libero_plus	Camera_Viewpoints/libero_object	plus	libero_object	861	11	0	-	-	-	-	pick up the tomato sauce and place it in the basket
+674	libero_plus	Light_Conditions/libero_goal	plus	libero_goal	2510	11	0	-	-	-	-	put the wine bottle on the rack
+675	libero_plus	Objects_Layout/libero_spatial	plus	libero_spatial	1944	11	0	-	-	-	-	pick up the black bowl next to the ramekin and place it on the plate
+676	libero_plus	Objects_Layout/libero_10	plus	libero_10	2185	11	0	-	-	-	-	put the white mug on the plate and put the chocolate pudding to the right of the plate
+677	libero_plus	Robot_Initial_States/libero_spatial	plus	libero_spatial	500	11	0	-	-	-	-	pick up the black bowl on the stove and place it on the plate
+678	libero_plus	Sensor_Noise/libero_goal	plus	libero_goal	1583	11	0	-	-	-	-	put the wine bottle on top of the cabinet
+679	libero_plus	Robot_Initial_States/libero_10	plus	libero_10	567	11	0	-	-	-	-	put both the alphabet soup and the cream cheese box in the basket
+680	libero_plus	Objects_Layout/libero_object	plus	libero_object	2117	11	0	-	-	-	-	pick up the orange juice and place it in the basket
+681	libero_plus	Camera_Viewpoints/libero_spatial	plus	libero_spatial	635	11	0	-	-	-	-	pick up the black bowl next to the ramekin and place it on the plate
+682	libero_plus	Robot_Initial_States/libero_object	plus	libero_object	372	11	0	-	-	-	-	pick up the bbq sauce and place it in the basket
+683	libero_plus	Sensor_Noise/libero_spatial	plus	libero_spatial	1499	11	0	-	-	-	-	pick up the black bowl on the cookie box and place it on the plate
+684	libero_plus	Background_Textures/libero_10	plus	libero_10	131	11	0	-	-	-	-	put both moka pots on the stove
+685	libero_plus	Camera_Viewpoints/libero_goal	plus	libero_goal	1096	11	0	-	-	-	-	put the wine bottle on the rack
+686	libero_plus	Light_Conditions/libero_spatial	plus	libero_spatial	2199	11	0	-	-	-	-	pick up the black bowl from table center and place it on the plate
+687	libero_plus	Camera_Viewpoints/libero_10	plus	libero_10	714	11	0	-	-	-	-	put both the cream cheese box and the butter in the basket
+688	libero_plus	Objects_Layout/libero_goal	plus	libero_goal	2266	11	0	-	-	-	-	turn on the stove
+689	libero_plus	Background_Textures/libero_goal	plus	libero_goal	207	11	0	-	-	-	-	put the wine bottle on the rack
+690	libero_plus	Light_Conditions/libero_object	plus	libero_object	2466	11	0	-	-	-	-	pick up the salad dressing and place it in the basket
+691	libero_plus	Language_Instructions/libero_object	plus	libero_object	1229	11	0	-	-	-	-	Grab the tomato sauce and set it in the basket
+692	libero_plus	Sensor_Noise/libero_10	plus	libero_10	1740	11	0	-	-	-	-	pick up the book and place it in the back compartment of the caddy
+693	libero_plus	Background_Textures/libero_object	plus	libero_object	141	11	0	-	-	-	-	pick up the milk and place it in the basket
+694	libero_plus	Robot_Initial_States/libero_goal	plus	libero_goal	614	11	0	-	-	-	-	put the bowl on the plate
+695	libero_plus	Language_Instructions/libero_goal	plus	libero_goal	1360	11	0	-	-	-	-	Put the cream cheese in the bowl thats the most important step in this recipe
+696	libero_plus	Language_Instructions/libero_10	plus	libero_10	1303	11	0	-	-	-	-	Ensure the book is stowed away in the caddys back compartment
+697	libero_plus	Light_Conditions/libero_10	plus	libero_10	2498	11	0	-	-	-	-	pick up the book and place it in the back compartment of the caddy
+698	libero_plus	Sensor_Noise/libero_object	plus	libero_object	1611	11	0	-	-	-	-	pick up the tomato sauce and place it in the basket
+699	libero_plus	Background_Textures/libero_spatial	plus	libero_spatial	200	11	0	-	-	-	-	pick up the black bowl on the ramekin and place it on the plate
+700	libero_plus	Language_Instructions/libero_spatial	plus	libero_spatial	1153	11	0	-	-	-	-	Could you do me a favor Pick up the black bowl in the top drawer of the wooden cabinet and place it on the plate near the sink
+701	libero_plus	Camera_Viewpoints/libero_object	plus	libero_object	823	11	0	-	-	-	-	pick up the ketchup and place it in the basket
+702	libero_plus	Light_Conditions/libero_goal	plus	libero_goal	2556	11	0	-	-	-	-	put the wine bottle on top of the cabinet
+703	libero_plus	Objects_Layout/libero_spatial	plus	libero_spatial	2081	11	0	-	-	-	-	pick up the black bowl on the wooden cabinet and place it on the plate
+704	libero_plus	Objects_Layout/libero_10	plus	libero_10	2240	11	0	-	-	-	-	pick up the book and place it in the back compartment of the caddy
+705	libero_plus	Robot_Initial_States/libero_spatial	plus	libero_spatial	589	11	0	-	-	-	-	pick up the black bowl on the wooden cabinet and place it on the plate
+706	libero_plus	Sensor_Noise/libero_goal	plus	libero_goal	1813	11	0	-	-	-	-	put the bowl on the plate
+707	libero_plus	Robot_Initial_States/libero_10	plus	libero_10	342	11	0	-	-	-	-	put both the cream cheese box and the butter in the basket
+708	libero_plus	Objects_Layout/libero_object	plus	libero_object	2187	11	0	-	-	-	-	pick up the tomato sauce and place it in the basket
+709	libero_plus	Camera_Viewpoints/libero_spatial	plus	libero_spatial	693	11	0	-	-	-	-	pick up the black bowl on the cookie box and place it on the plate
+710	libero_plus	Robot_Initial_States/libero_object	plus	libero_object	352	11	0	-	-	-	-	pick up the salad dressing and place it in the basket
+711	libero_plus	Sensor_Noise/libero_spatial	plus	libero_spatial	1639	11	0	-	-	-	-	pick up the black bowl on the stove and place it on the plate
+712	libero_plus	Background_Textures/libero_10	plus	libero_10	161	11	0	-	-	-	-	put both the cream cheese box and the butter in the basket
+713	libero_plus	Camera_Viewpoints/libero_goal	plus	libero_goal	1079	11	0	-	-	-	-	put the wine bottle on the rack
+714	libero_plus	Light_Conditions/libero_spatial	plus	libero_spatial	2303	11	0	-	-	-	-	pick up the black bowl on the cookie box and place it on the plate
+715	libero_plus	Camera_Viewpoints/libero_10	plus	libero_10	963	11	0	-	-	-	-	put the white mug on the plate and put the chocolate pudding to the right of the plate
+716	libero_plus	Objects_Layout/libero_goal	plus	libero_goal	2065	11	0	-	-	-	-	put the bowl on the plate
+717	libero_plus	Background_Textures/libero_goal	plus	libero_goal	139	11	0	-	-	-	-	put the bowl on top of the cabinet
+718	libero_plus	Light_Conditions/libero_object	plus	libero_object	2400	11	0	-	-	-	-	pick up the ketchup and place it in the basket
+719	libero_plus	Language_Instructions/libero_object	plus	libero_object	1301	11	0	-	-	-	-	Could you put the milk in the basket for me please
+720	libero_plus	Sensor_Noise/libero_10	plus	libero_10	1763	11	0	-	-	-	-	put the white mug on the plate and put the chocolate pudding to the right of the plate
+721	libero_plus	Background_Textures/libero_object	plus	libero_object	65	11	0	-	-	-	-	pick up the bbq sauce and place it in the basket
+722	libero_plus	Robot_Initial_States/libero_goal	plus	libero_goal	634	11	0	-	-	-	-	put the bowl on the plate
+723	libero_plus	Language_Instructions/libero_goal	plus	libero_goal	1506	11	0	-	-	-	-	Could you ensure the wine bottle ends up on the rack
+724	libero_plus	Language_Instructions/libero_10	plus	libero_10	1121	11	0	-	-	-	-	place the letterthemed broth and the red condiment into the woven container
+725	libero_plus	Light_Conditions/libero_10	plus	libero_10	2423	11	0	-	-	-	-	put both the cream cheese box and the butter in the basket
+726	libero_plus	Sensor_Noise/libero_object	plus	libero_object	1607	11	0	-	-	-	-	pick up the ketchup and place it in the basket
+727	libero_plus	Background_Textures/libero_spatial	plus	libero_spatial	180	11	0	-	-	-	-	pick up the black bowl on the ramekin and place it on the plate
+728	libero_plus	Language_Instructions/libero_spatial	plus	libero_spatial	1262	11	0	-	-	-	-	For proper table setting please move the black bowl from the stove to its place on the plate
+729	libero_plus	Camera_Viewpoints/libero_object	plus	libero_object	676	11	0	-	-	-	-	pick up the cream cheese and place it in the basket
+730	libero_plus	Light_Conditions/libero_goal	plus	libero_goal	2374	11	0	-	-	-	-	open the top drawer and put the bowl inside
+731	libero_plus	Objects_Layout/libero_spatial	plus	libero_spatial	2052	11	0	-	-	-	-	pick up the black bowl on the stove and place it on the plate
+732	libero_plus	Objects_Layout/libero_10	plus	libero_10	2152	11	0	-	-	-	-	put the white mug on the left plate and put the yellow and white mug on the right plate
+733	libero_plus	Robot_Initial_States/libero_spatial	plus	libero_spatial	271	11	0	-	-	-	-	pick up the black bowl between the plate and the ramekin and place it on the plate
+734	libero_plus	Sensor_Noise/libero_goal	plus	libero_goal	1597	11	0	-	-	-	-	put the wine bottle on top of the cabinet
+735	libero_plus	Robot_Initial_States/libero_10	plus	libero_10	505	11	0	-	-	-	-	pick up the book and place it in the back compartment of the caddy
+736	libero_plus	Objects_Layout/libero_object	plus	libero_object	2022	11	0	-	-	-	-	pick up the ketchup and place it in the basket
+737	libero_plus	Camera_Viewpoints/libero_spatial	plus	libero_spatial	929	11	0	-	-	-	-	pick up the black bowl next to the plate and place it on the plate
+738	libero_plus	Robot_Initial_States/libero_object	plus	libero_object	437	11	0	-	-	-	-	pick up the ketchup and place it in the basket
+739	libero_plus	Sensor_Noise/libero_spatial	plus	libero_spatial	1696	11	0	-	-	-	-	pick up the black bowl on the wooden cabinet and place it on the plate
+740	libero_plus	Background_Textures/libero_10	plus	libero_10	68	11	0	-	-	-	-	put the black bowl in the bottom drawer of the cabinet and close it
+741	libero_plus	Camera_Viewpoints/libero_goal	plus	libero_goal	896	11	0	-	-	-	-	push the plate to the front of the stove
+742	libero_plus	Light_Conditions/libero_spatial	plus	libero_spatial	2326	11	0	-	-	-	-	pick up the black bowl on the ramekin and place it on the plate
+743	libero_plus	Camera_Viewpoints/libero_10	plus	libero_10	879	11	0	-	-	-	-	pick up the book and place it in the back compartment of the caddy
+744	libero_plus	Objects_Layout/libero_goal	plus	libero_goal	2117	11	0	-	-	-	-	put the bowl on top of the cabinet
+745	libero_plus	Background_Textures/libero_goal	plus	libero_goal	100	11	0	-	-	-	-	push the plate to the front of the stove
+746	libero_plus	Light_Conditions/libero_object	plus	libero_object	2380	11	0	-	-	-	-	pick up the chocolate pudding and place it in the basket
+747	libero_plus	Language_Instructions/libero_object	plus	libero_object	1295	11	0	-	-	-	-	Could you put the milk in the basket for me
+748	libero_plus	Sensor_Noise/libero_10	plus	libero_10	1870	11	0	-	-	-	-	put both moka pots on the stove
+749	libero_plus	Background_Textures/libero_object	plus	libero_object	149	11	0	-	-	-	-	pick up the milk and place it in the basket
+750	libero_plus	Robot_Initial_States/libero_goal	plus	libero_goal	381	11	0	-	-	-	-	put the wine bottle on top of the cabinet
+751	libero_plus	Language_Instructions/libero_goal	plus	libero_goal	1337	11	0	-	-	-	-	Put the cream cheese in the bowl now and well mix it later with other components
+752	libero_plus	Language_Instructions/libero_10	plus	libero_10	1302	11	0	-	-	-	-	pick up the collection of written pages bound together with a cover and place it in the rear storage section of the wheeled utility cart
+753	libero_plus	Light_Conditions/libero_10	plus	libero_10	2480	11	0	-	-	-	-	put the white mug on the plate and put the chocolate pudding to the right of the plate
+754	libero_plus	Sensor_Noise/libero_object	plus	libero_object	1666	11	0	-	-	-	-	pick up the butter and place it in the basket
+755	libero_plus	Background_Textures/libero_spatial	plus	libero_spatial	42	11	0	-	-	-	-	pick up the black bowl from table center and place it on the plate
+756	libero_plus	Language_Instructions/libero_spatial	plus	libero_spatial	1110	11	0	-	-	-	-	Before the guests arrive could you transfer the black bowl from the cookie box to the plate
+757	libero_plus	Camera_Viewpoints/libero_object	plus	libero_object	902	11	0	-	-	-	-	pick up the butter and place it in the basket
+758	libero_plus	Light_Conditions/libero_goal	plus	libero_goal	2327	11	0	-	-	-	-	open the middle drawer of the cabinet
+759	libero_plus	Objects_Layout/libero_spatial	plus	libero_spatial	1867	11	0	-	-	-	-	pick up the black bowl next to the cookie box and place it on the plate
+760	libero_plus	Objects_Layout/libero_10	plus	libero_10	2088	11	0	-	-	-	-	put both the alphabet soup and the tomato sauce in the basket
+761	libero_plus	Robot_Initial_States/libero_spatial	plus	libero_spatial	488	11	0	-	-	-	-	pick up the black bowl on the stove and place it on the plate
+762	libero_plus	Sensor_Noise/libero_goal	plus	libero_goal	1833	11	0	-	-	-	-	put the bowl on the plate
+763	libero_plus	Robot_Initial_States/libero_10	plus	libero_10	571	11	0	-	-	-	-	put both the alphabet soup and the cream cheese box in the basket
+764	libero_plus	Objects_Layout/libero_object	plus	libero_object	2169	11	0	-	-	-	-	pick up the salad dressing and place it in the basket
+765	libero_plus	Camera_Viewpoints/libero_spatial	plus	libero_spatial	932	11	0	-	-	-	-	pick up the black bowl next to the plate and place it on the plate
+766	libero_plus	Robot_Initial_States/libero_object	plus	libero_object	427	11	0	-	-	-	-	pick up the ketchup and place it in the basket
+767	libero_plus	Sensor_Noise/libero_spatial	plus	libero_spatial	1432	11	0	-	-	-	-	pick up the black bowl next to the ramekin and place it on the plate
+768	libero_plus	Background_Textures/libero_10	plus	libero_10	186	11	0	-	-	-	-	put both the cream cheese box and the butter in the basket
+769	libero_plus	Camera_Viewpoints/libero_goal	plus	libero_goal	918	11	0	-	-	-	-	push the plate to the front of the stove
+770	libero_plus	Light_Conditions/libero_spatial	plus	libero_spatial	2245	11	0	-	-	-	-	pick up the black bowl in the top drawer of the wooden cabinet and place it on the plate
+771	libero_plus	Camera_Viewpoints/libero_10	plus	libero_10	1047	11	0	-	-	-	-	put both moka pots on the stove
+772	libero_plus	Objects_Layout/libero_goal	plus	libero_goal	2119	11	0	-	-	-	-	put the bowl on top of the cabinet
+773	libero_plus	Background_Textures/libero_goal	plus	libero_goal	183	11	0	-	-	-	-	put the wine bottle on the rack
+774	libero_plus	Light_Conditions/libero_object	plus	libero_object	2420	11	0	-	-	-	-	pick up the milk and place it in the basket
+775	libero_plus	Language_Instructions/libero_object	plus	libero_object	1259	11	0	-	-	-	-	pick up the yellow dairy product used for cooking and spreading and place it in the woven container for holding items
+776	libero_plus	Sensor_Noise/libero_10	plus	libero_10	1890	11	0	-	-	-	-	put the yellow and white mug in the microwave and close it
+777	libero_plus	Background_Textures/libero_object	plus	libero_object	195	11	0	-	-	-	-	pick up the orange juice and place it in the basket
+778	libero_plus	Robot_Initial_States/libero_goal	plus	libero_goal	334	11	0	-	-	-	-	put the bowl on the stove
+779	libero_plus	Language_Instructions/libero_goal	plus	libero_goal	1161	11	0	-	-	-	-	place the container used for mixing ingredients on the cooking appliance
+780	libero_plus	Language_Instructions/libero_10	plus	libero_10	1126	11	0	-	-	-	-	The basket is looking empty could you fill it with both the alphabet soup and the tomato sauce
+781	libero_plus	Light_Conditions/libero_10	plus	libero_10	2429	11	0	-	-	-	-	put both the cream cheese box and the butter in the basket
+782	libero_plus	Sensor_Noise/libero_object	plus	libero_object	1404	11	0	-	-	-	-	pick up the alphabet soup and place it in the basket
+783	libero_plus	Background_Textures/libero_spatial	plus	libero_spatial	3	11	0	-	-	-	-	pick up the black bowl between the plate and the ramekin and place it on the plate
+784	libero_plus	Language_Instructions/libero_spatial	plus	libero_spatial	1142	11	0	-	-	-	-	Ensure the black bowl from the top drawer of the wooden cabinet is on the plate
+785	libero_plus	Camera_Viewpoints/libero_object	plus	libero_object	955	11	0	-	-	-	-	pick up the milk and place it in the basket
+786	libero_plus	Light_Conditions/libero_goal	plus	libero_goal	2449	11	0	-	-	-	-	put the bowl on the plate
+787	libero_plus	Objects_Layout/libero_spatial	plus	libero_spatial	1803	11	0	-	-	-	-	pick up the black bowl from table center and place it on the plate
+788	libero_plus	Objects_Layout/libero_10	plus	libero_10	2202	11	0	-	-	-	-	pick up the book and place it in the back compartment of the caddy
+789	libero_plus	Robot_Initial_States/libero_spatial	plus	libero_spatial	508	11	0	-	-	-	-	pick up the black bowl on the stove and place it on the plate
+790	libero_plus	Sensor_Noise/libero_goal	plus	libero_goal	1665	11	0	-	-	-	-	put the bowl on top of the cabinet
+791	libero_plus	Robot_Initial_States/libero_10	plus	libero_10	388	11	0	-	-	-	-	turn on the stove and put the moka pot on it
+792	libero_plus	Objects_Layout/libero_object	plus	libero_object	1959	11	0	-	-	-	-	pick up the chocolate pudding and place it in the basket
+793	libero_plus	Camera_Viewpoints/libero_spatial	plus	libero_spatial	937	11	0	-	-	-	-	pick up the black bowl next to the plate and place it on the plate
+794	libero_plus	Robot_Initial_States/libero_object	plus	libero_object	248	11	0	-	-	-	-	pick up the alphabet soup and place it in the basket
+795	libero_plus	Sensor_Noise/libero_spatial	plus	libero_spatial	1388	11	0	-	-	-	-	pick up the black bowl between the plate and the ramekin and place it on the plate
+796	libero_plus	Background_Textures/libero_10	plus	libero_10	140	11	0	-	-	-	-	put both the alphabet soup and the cream cheese box in the basket
+797	libero_plus	Camera_Viewpoints/libero_goal	plus	libero_goal	932	11	0	-	-	-	-	put the cream cheese in the bowl
+798	libero_plus	Light_Conditions/libero_spatial	plus	libero_spatial	2246	11	0	-	-	-	-	pick up the black bowl next to the cookie box and place it on the plate
+799	libero_plus	Camera_Viewpoints/libero_10	plus	libero_10	1033	11	0	-	-	-	-	put both moka pots on the stove
+800	libero_plus	Objects_Layout/libero_goal	plus	libero_goal	1961	11	0	-	-	-	-	open the top drawer and put the bowl inside
+801	libero_plus	Background_Textures/libero_goal	plus	libero_goal	32	11	0	-	-	-	-	open the top drawer and put the bowl inside
+802	libero_plus	Light_Conditions/libero_object	plus	libero_object	2289	11	0	-	-	-	-	pick up the bbq sauce and place it in the basket
+803	libero_plus	Language_Instructions/libero_object	plus	libero_object	1102	11	0	-	-	-	-	Can you ensure the salad dressing ends up in the basket
+804	libero_plus	Sensor_Noise/libero_10	plus	libero_10	1706	11	0	-	-	-	-	put the white mug on the left plate and put the yellow and white mug on the right plate
+805	libero_plus	Background_Textures/libero_object	plus	libero_object	213	11	0	-	-	-	-	pick up the salad dressing and place it in the basket
+806	libero_plus	Robot_Initial_States/libero_goal	plus	libero_goal	288	11	0	-	-	-	-	open the middle drawer of the cabinet
+807	libero_plus	Language_Instructions/libero_goal	plus	libero_goal	1216	11	0	-	-	-	-	open the uppermost sliding storage compartment and place the rounded dish for eating within
+808	libero_plus	Language_Instructions/libero_10	plus	libero_10	1319	11	0	-	-	-	-	pick up the printed collection of bound pages and place it in the rear storage section of the mobile utility cart
+809	libero_plus	Light_Conditions/libero_10	plus	libero_10	2357	11	0	-	-	-	-	put the yellow and white mug in the microwave and close it
+810	libero_plus	Sensor_Noise/libero_object	plus	libero_object	1750	11	0	-	-	-	-	pick up the chocolate pudding and place it in the basket
+811	libero_plus	Background_Textures/libero_spatial	plus	libero_spatial	96	11	0	-	-	-	-	pick up the black bowl in the top drawer of the wooden cabinet and place it on the plate
+812	libero_plus	Language_Instructions/libero_spatial	plus	libero_spatial	1224	11	0	-	-	-	-	Lift the black dish adjacent to the biscuit container and set it on the platter
+813	libero_plus	Camera_Viewpoints/libero_object	plus	libero_object	764	11	0	-	-	-	-	pick up the bbq sauce and place it in the basket
+814	libero_plus	Light_Conditions/libero_goal	plus	libero_goal	2470	11	0	-	-	-	-	put the bowl on top of the cabinet
+815	libero_plus	Objects_Layout/libero_spatial	plus	libero_spatial	1777	11	0	-	-	-	-	pick up the black bowl from table center and place it on the plate
+816	libero_plus	Objects_Layout/libero_10	plus	libero_10	1964	11	0	-	-	-	-	put the black bowl in the bottom drawer of the cabinet and close it
+817	libero_plus	Robot_Initial_States/libero_spatial	plus	libero_spatial	459	11	0	-	-	-	-	pick up the black bowl next to the cookie box and place it on the plate
+818	libero_plus	Sensor_Noise/libero_goal	plus	libero_goal	1548	11	0	-	-	-	-	open the middle drawer of the cabinet
+819	libero_plus	Robot_Initial_States/libero_10	plus	libero_10	664	11	0	-	-	-	-	put the yellow and white mug in the microwave and close it
+820	libero_plus	Objects_Layout/libero_object	plus	libero_object	2036	11	0	-	-	-	-	pick up the ketchup and place it in the basket
+821	libero_plus	Camera_Viewpoints/libero_spatial	plus	libero_spatial	943	11	0	-	-	-	-	pick up the black bowl next to the plate and place it on the plate
+822	libero_plus	Robot_Initial_States/libero_object	plus	libero_object	259	11	0	-	-	-	-	pick up the alphabet soup and place it in the basket
+823	libero_plus	Sensor_Noise/libero_spatial	plus	libero_spatial	1675	11	0	-	-	-	-	pick up the black bowl next to the plate and place it on the plate
+824	libero_plus	Background_Textures/libero_10	plus	libero_10	156	11	0	-	-	-	-	put both the alphabet soup and the tomato sauce in the basket
+825	libero_plus	Camera_Viewpoints/libero_goal	plus	libero_goal	729	11	0	-	-	-	-	put the bowl on the stove
+826	libero_plus	Light_Conditions/libero_spatial	plus	libero_spatial	2203	11	0	-	-	-	-	pick up the black bowl in the top drawer of the wooden cabinet and place it on the plate
+827	libero_plus	Camera_Viewpoints/libero_10	plus	libero_10	1036	11	0	-	-	-	-	put both moka pots on the stove
+828	libero_plus	Objects_Layout/libero_goal	plus	libero_goal	2192	11	0	-	-	-	-	put the wine bottle on the rack
+829	libero_plus	Background_Textures/libero_goal	plus	libero_goal	84	11	0	-	-	-	-	push the plate to the front of the stove
+830	libero_plus	Light_Conditions/libero_object	plus	libero_object	2259	11	0	-	-	-	-	pick up the alphabet soup and place it in the basket
+831	libero_plus	Language_Instructions/libero_object	plus	libero_object	1344	11	0	-	-	-	-	Lift the chocolate dessert and set it in the basket
+832	libero_plus	Sensor_Noise/libero_10	plus	libero_10	1828	11	0	-	-	-	-	put both the alphabet soup and the cream cheese box in the basket
+833	libero_plus	Background_Textures/libero_object	plus	libero_object	59	11	0	-	-	-	-	pick up the bbq sauce and place it in the basket
+834	libero_plus	Robot_Initial_States/libero_goal	plus	libero_goal	646	11	0	-	-	-	-	put the bowl on the plate
+835	libero_plus	Language_Instructions/libero_goal	plus	libero_goal	1507	11	0	-	-	-	-	place the glass container of fermented grapes onto the storage unit designed for holding such items
+836	libero_plus	Language_Instructions/libero_10	plus	libero_10	1352	11	0	-	-	-	-	Position the white ceramic drinking utensil on the flat circular dish and place the sweet cocoaflavored dessert to the right side of the flat circular dish
+837	libero_plus	Light_Conditions/libero_10	plus	libero_10	2321	11	0	-	-	-	-	put the black bowl in the bottom drawer of the cabinet and close it
+838	libero_plus	Sensor_Noise/libero_object	plus	libero_object	1779	11	0	-	-	-	-	pick up the orange juice and place it in the basket
+839	libero_plus	Background_Textures/libero_spatial	plus	libero_spatial	107	11	0	-	-	-	-	pick up the black bowl next to the cookie box and place it on the plate
+840	libero_plus	Language_Instructions/libero_spatial	plus	libero_spatial	1299	11	0	-	-	-	-	The cooking show host recommends bowls on plates for presentation Lets do that with the black bowl nearby
+841	libero_plus	Camera_Viewpoints/libero_object	plus	libero_object	984	11	0	-	-	-	-	pick up the chocolate pudding and place it in the basket
+842	libero_plus	Light_Conditions/libero_goal	plus	libero_goal	2588	11	0	-	-	-	-	turn on the stove
+843	libero_plus	Objects_Layout/libero_spatial	plus	libero_spatial	1741	11	0	-	-	-	-	pick up the black bowl between the plate and the ramekin and place it on the plate
+844	libero_plus	Objects_Layout/libero_10	plus	libero_10	1937	11	0	-	-	-	-	turn on the stove and put the moka pot on it
+845	libero_plus	Robot_Initial_States/libero_spatial	plus	libero_spatial	479	11	0	-	-	-	-	pick up the black bowl next to the cookie box and place it on the plate
+846	libero_plus	Sensor_Noise/libero_goal	plus	libero_goal	1585	11	0	-	-	-	-	put the wine bottle on top of the cabinet
+847	libero_plus	Robot_Initial_States/libero_10	plus	libero_10	491	11	0	-	-	-	-	pick up the book and place it in the back compartment of the caddy
+848	libero_plus	Objects_Layout/libero_object	plus	libero_object	2125	11	0	-	-	-	-	pick up the orange juice and place it in the basket
+849	libero_plus	Camera_Viewpoints/libero_spatial	plus	libero_spatial	639	11	0	-	-	-	-	pick up the black bowl next to the ramekin and place it on the plate
+850	libero_plus	Robot_Initial_States/libero_object	plus	libero_object	457	11	0	-	-	-	-	pick up the tomato sauce and place it in the basket
+851	libero_plus	Sensor_Noise/libero_spatial	plus	libero_spatial	1487	11	0	-	-	-	-	pick up the black bowl on the cookie box and place it on the plate
+852	libero_plus	Background_Textures/libero_10	plus	libero_10	160	11	0	-	-	-	-	put both the cream cheese box and the butter in the basket
+853	libero_plus	Camera_Viewpoints/libero_goal	plus	libero_goal	835	11	0	-	-	-	-	put the bowl on top of the cabinet
+854	libero_plus	Light_Conditions/libero_spatial	plus	libero_spatial	2218	11	0	-	-	-	-	pick up the black bowl in the top drawer of the wooden cabinet and place it on the plate
+855	libero_plus	Camera_Viewpoints/libero_10	plus	libero_10	1089	11	0	-	-	-	-	put the yellow and white mug in the microwave and close it
+856	libero_plus	Objects_Layout/libero_goal	plus	libero_goal	2284	11	0	-	-	-	-	turn on the stove
+857	libero_plus	Background_Textures/libero_goal	plus	libero_goal	268	11	0	-	-	-	-	put the wine bottle on top of the cabinet
+858	libero_plus	Light_Conditions/libero_object	plus	libero_object	2405	11	0	-	-	-	-	pick up the milk and place it in the basket
+859	libero_plus	Language_Instructions/libero_object	plus	libero_object	1195	11	0	-	-	-	-	Pick up the ketchup from the table not the mustard and put it in the basket please

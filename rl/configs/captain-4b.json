@@ -1,0 +1,336 @@
+{
+ "run_dir": "${CAPTAIN_WORKSPACE}/runs/captain-4b",
+ "repo": "${CAPTAIN_ROOT}",
+ "harness": "${CAPTAIN_ROOT}/harness",
+ "base_model": "${CAPTAIN_WORKSPACE}/models/CaPtain-4B-SFT",
+ "live_dir": "${CAPTAIN_WORKSPACE}/live/captain-4b",
+ "python_train": "${CAPTAIN_WORKSPACE}/envs/train/bin/python",
+ "reward_version": "v12b",
+ "runtime_tool_contract": "python-runtime/v1",
+ "inline_task": true,
+ "nnodes": 1,
+ "single_node": "a",
+ "rollout_nodes": [
+  "e"
+ ],
+ "nodes": {
+  "a": {
+   "hostname": "${TRAINER_HOSTNAME}",
+   "host": "${TRAINER_HOST}",
+   "egl": "0",
+   "extra_policy_ports": []
+  },
+  "e": {
+   "hostname": "${ROLLOUT_HOSTNAME}",
+   "host": "${ROLLOUT_HOST}",
+   "egl": "0,1,2,3,4,5,6,7",
+   "extra_policy_ports": [],
+   "policy_workers": [
+    "http://${ROLLOUT_HOST}:8500",
+    "http://${ROLLOUT_HOST}:8501",
+    "http://${ROLLOUT_HOST}:8502",
+    "http://${ROLLOUT_HOST}:8503",
+    "http://${ROLLOUT_HOST}:8504",
+    "http://${ROLLOUT_HOST}:8505"
+   ],
+   "env_concurrency": 80,
+   "sam3_url": "http://127.0.0.1:8114",
+   "molmo_url": "http://127.0.0.1:8122/v1"
+  }
+ },
+ "train_gpus": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7
+ ],
+ "segment_bank": "${CAPTAIN_WORKSPACE}/configs/start-bank.json",
+ "segment_horizon": 4,
+ "curriculum_mode": "uniform",
+ "curriculum_sourced_only": false,
+ "curriculum_active_fraction": 0.6,
+ "curriculum_episode_fraction": 1.0,
+ "prompts_per_step": 256,
+ "num_generations": 1,
+ "env_concurrency": 80,
+ "max_infrastructure_rate": 0.15,
+ "max_infidelity_rate": 0.5,
+ "warmup_steps": 5,
+ "save_steps": 4,
+ "max_steps": 300,
+ "seed": 17,
+ "curriculum_fresh_horizon": 60,
+ "curriculum_suites": [
+  "libero_spatial",
+  "libero_object",
+  "libero_goal",
+  "libero_10"
+ ],
+ "curriculum_active_min_delta": 0.05,
+ "probe_set": null,
+ "probe_every": 1000,
+ "probe_generations": 2,
+ "curriculum_focus_set": null,
+ "segment_budget": 60,
+ "segment_min_live": 4,
+ "segment_handoff": "clean",
+ "student_python": "${CAPTAIN_WORKSPACE}/envs/student-py311/bin/python",
+ "sandbox_hide": [
+  "${CAPTAIN_WORKSPACE}/runs",
+  "${CAPTAIN_WORKSPACE}/configs",
+  "${CAPTAIN_WORKSPACE}/logs",
+  "${CAPTAIN_WORKSPACE}/critic",
+  "${CAPTAIN_WORKSPACE}/models",
+  "${CAPTAIN_WORKSPACE}/live",
+  "${CAPTAIN_WORKSPACE}/local",
+  "${CAPTAIN_WORKSPACE}/envs"
+ ],
+ "score_centering": true,
+ "sampler_topk": 20,
+ "full_finetune": true,
+ "lr": 4.24e-06,
+ "fresh_unique_states": true,
+ "raw_record_dir": "${CAPTAIN_WORKSPACE}/local/captain-4b/raw",
+ "full_state_dir": "${CAPTAIN_WORKSPACE}/local/captain-4b/fsdp",
+ "policy_workers": [
+  "http://${ROLLOUT_HOST}:8500",
+  "http://${ROLLOUT_HOST}:8501",
+  "http://${ROLLOUT_HOST}:8502",
+  "http://${ROLLOUT_HOST}:8503",
+  "http://${ROLLOUT_HOST}:8504",
+  "http://${ROLLOUT_HOST}:8505"
+ ],
+ "reward_mode": "final_success_binary_v1",
+ "loss_normalization": "trajectory_mean",
+ "skip_zero_signal": true,
+ "warmup_attempts": 512,
+ "max_training_requests": 8,
+ "offload_activations": "on",
+ "async_lookahead": 0,
+ "is_cap": null,
+ "pack_prefixes": true,
+ "solved_suffix_credit": true,
+ "code_reward_mode": "python_exec_cost_v1",
+ "code_reward_weight": 0.1,
+ "code_reward_budget": 60,
+ "pack_assignment": "pack",
+ "async_checkpoint": true,
+ "lookahead_through_checkpoints": false,
+ "advantage_mode": "physcritic",
+ "critic_dir": "${CAPTAIN_WORKSPACE}/critic/warm_start",
+ "gae_lambda": 0.9,
+ "ratio_mask_low": 0.8,
+ "ratio_mask_high": 3.0,
+ "critic_cotrain": true,
+ "critic_hidden": "none",
+ "critic_lr": 0.0001,
+ "critic_updates": 2,
+ "workspace": "${CAPTAIN_WORKSPACE}",
+ "python_env": "${CAPTAIN_WORKSPACE}/envs/libero/bin/python",
+ "minimum_free_gpu_gib": 35,
+ "nccl_socket_ifname": "${CAPTAIN_NCCL_IFNAME}",
+ "train_nodes": [
+  "a"
+ ],
+ "enable_thinking": "on",
+ "streaming": true,
+ "max_staleness": 2,
+ "max_seq_tokens": 61440,
+ "hard_max_tokens": 61440,
+ "fresh_start_pool": "${CAPTAIN_WORKSPACE}/configs/start-pool.json",
+ "fresh_seeds_only": true,
+ "false_finish_reward": -0.3,
+ "max_requests": 60,
+ "wall_time": 1080,
+ "kl_beta": 0.002,
+ "grad_accum_rounds": 4,
+ "start_weights": null,
+ "act_cost": 0.008,
+ "fail_cost": 0.02,
+ "act_ref": "${CAPTAIN_ROOT}/rl/configs/act-ref.json",
+ "missed_finish_return": 0.5,
+ "exhaust_reward": -0.1,
+ "max_actions": 120,
+ "artifact_root": "/dev/shm/captain-artifacts",
+ "ref_every": 8,
+ "early_stop": {
+  "tau": 0.02,
+  "k": 5,
+  "min_request": 5,
+  "control": 0.05,
+  "success_k": 15
+ },
+ "keep_attn_act_gib": 30.0,
+ "stream_group_size": 4,
+ "group_advantage": "group",
+ "heldout_monitor": null,
+ "harness_fast_loop": true,
+ "harness_lazy_render": true,
+ "reward_patch": {
+  "missed_finish_return": 0.25,
+  "post_success_act": true,
+  "post_success_req": 0.005,
+  "post_success_cap": 0.45
+ },
+ "attn_backend": "fa3",
+ "attn_overlay": "${CAPTAIN_WORKSPACE}/fa3/overlay",
+ "start_exclude": "${CAPTAIN_ROOT}/rl/configs/start-exclude-thin-basket.json",
+ "es_exempt": {
+  "tasks": [
+   "libero_10:3",
+   "libero_10:6",
+   "libero_10:8",
+   "libero_10:9",
+   "libero_goal:0",
+   "libero_goal:3",
+   "libero_goal:5",
+   "libero_goal:7"
+  ]
+ },
+ "staged_reward": {
+  "credit": 0.15,
+  "grasp": {
+   "eef_m": 0.13,
+   "lift_m": 0.05
+  },
+  "ladders": {
+   "libero_10:3": [
+    {
+     "goals": [
+      "goal_1"
+     ],
+     "rung": "grasp"
+    },
+    {
+     "goals": [
+      "goal_1"
+     ],
+     "rung": "place"
+    },
+    {
+     "closure": 0.2,
+     "goals": [
+      "goal_0"
+     ],
+     "rung": "joint"
+    }
+   ],
+   "libero_10:6": [
+    {
+     "goals": [
+      "goal_0",
+      "goal_1"
+     ],
+     "rung": "grasp"
+    },
+    {
+     "goals": [
+      "goal_0",
+      "goal_1"
+     ],
+     "rung": "place"
+    },
+    {
+     "goals": [
+      "goal_0",
+      "goal_1"
+     ],
+     "rung": "grasp_next"
+    }
+   ],
+   "libero_10:8": [
+    {
+     "goals": [
+      "goal_0",
+      "goal_1"
+     ],
+     "rung": "grasp"
+    },
+    {
+     "goals": [
+      "goal_0",
+      "goal_1"
+     ],
+     "rung": "place"
+    },
+    {
+     "goals": [
+      "goal_0",
+      "goal_1"
+     ],
+     "rung": "grasp_next"
+    }
+   ],
+   "libero_10:9": [
+    {
+     "goals": [
+      "goal_0"
+     ],
+     "rung": "grasp"
+    },
+    {
+     "goals": [
+      "goal_0"
+     ],
+     "rung": "place"
+    },
+    {
+     "closure": 0.2,
+     "goals": [
+      "goal_1"
+     ],
+     "rung": "joint"
+    }
+   ],
+   "libero_goal:0": [
+    {
+     "closure": 0.2,
+     "goals": [
+      "goal_0"
+     ],
+     "rung": "joint"
+    }
+   ],
+   "libero_goal:3": [
+    {
+     "goals": [
+      "goal_0"
+     ],
+     "move_m": 0.05,
+     "rung": "dest"
+    },
+    {
+     "goals": [
+      "goal_0"
+     ],
+     "rung": "grasp"
+    }
+   ],
+   "libero_goal:5": [
+    {
+     "closer_m": 0.03,
+     "goals": [
+      "goal_0"
+     ],
+     "rung": "toward"
+    }
+   ],
+   "libero_goal:7": [
+    {
+     "closure": 0.2,
+     "goals": [
+      "goal_0"
+     ],
+     "rung": "joint"
+    }
+   ]
+  }
+ },
+ "overlength_guard": {
+  "max_drops": 2
+ }
+}

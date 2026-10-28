@@ -1,0 +1,28 @@
+# Environment-server / driver interpreter (.venv-libero), Python 3.10. Versions of the environment used for all paper evaluations.
+# Install LIBERO itself from third_party/libero (scripts/setup_third_party.sh; then `pip install -e third_party/libero --no-deps`).
+mujoco==2.3.7
+robosuite==1.4.0
+bddl==1.0.1
+torch==2.6.0
+torchvision==0.21.0
+numpy==2.2.6
+scipy==1.15.3
+pillow==12.3.0
+jsonschema==4.26.0
+tiktoken==0.12.0
+opencv-python-headless==5.0.0.93
+gym==0.25.2
+hydra-core==1.3.7
+easydict==1.13
+transforms3d==0.4.2
+h5py==3.16.0
+imageio==2.37.4
+matplotlib==3.10.9
+numba==0.67.0
+pyopengl==3.1.10
+termcolor==3.3.0
+cloudpickle==3.1.2
+future==1.0.0
+pyyaml==6.0.3
+requests==2.34.2
+pytest==9.1.1

@@ -1,0 +1,244 @@
+{
+ "adjust_bottle": {
+  "class": "single",
+  "reasons": []
+ },
+ "beat_block_hammer": {
+  "class": "single",
+  "reasons": []
+ },
+ "blocks_ranking_rgb": {
+  "class": "single",
+  "reasons": []
+ },
+ "blocks_ranking_size": {
+  "class": "single",
+  "reasons": []
+ },
+ "click_alarmclock": {
+  "class": "single",
+  "reasons": []
+ },
+ "click_bell": {
+  "class": "single",
+  "reasons": []
+ },
+ "dump_bin_bigbin": {
+  "class": "dual",
+  "reasons": [
+   "A: 1 simultaneous two-arm self.move call(s)",
+   "B: same actor handled by two arm expressions {'self.deskbin': ['grasp_deskbin_arm_tag', 'place_deskbin_arm_tag']}"
+  ]
+ },
+ "grab_roller": {
+  "class": "dual",
+  "reasons": [
+   "A: 2 simultaneous two-arm self.move call(s)",
+   "B: same actor handled by two arm expressions {'self.roller': ['left_arm_tag', 'right_arm_tag']}"
+  ]
+ },
+ "handover_block": {
+  "class": "dual",
+  "reasons": [
+   "A: 1 simultaneous two-arm self.move call(s)",
+   "B: same actor handled by two arm expressions {'self.box': ['grasp_arm_tag', 'place_arm_tag']}"
+  ]
+ },
+ "handover_mic": {
+  "class": "dual",
+  "reasons": [
+   "A: 1 simultaneous two-arm self.move call(s)",
+   "B: same actor handled by two arm expressions {'self.microphone': ['grasp_arm_tag', 'handover_arm_tag']}"
+  ]
+ },
+ "hanging_mug": {
+  "class": "dual",
+  "reasons": [
+   "A: 1 simultaneous two-arm self.move call(s)",
+   "B: same actor handled by two arm expressions {'self.mug': ['grasp_arm_tag', 'hang_arm_tag']}"
+  ]
+ },
+ "lift_pot": {
+  "class": "dual",
+  "reasons": [
+   "A: 3 simultaneous two-arm self.move call(s)",
+   "B: same actor handled by two arm expressions {'self.pot': ['left_arm_tag', 'right_arm_tag']}"
+  ]
+ },
+ "move_can_pot": {
+  "class": "single",
+  "reasons": []
+ },
+ "move_pillbottle_pad": {
+  "class": "single",
+  "reasons": []
+ },
+ "move_playingcard_away": {
+  "class": "single",
+  "reasons": []
+ },
+ "move_stapler_pad": {
+  "class": "single",
+  "reasons": []
+ },
+ "open_laptop": {
+  "class": "single",
+  "reasons": []
+ },
+ "open_microwave": {
+  "class": "single",
+  "reasons": []
+ },
+ "pick_diverse_bottles": {
+  "class": "dual",
+  "reasons": [
+   "A: 3 simultaneous two-arm self.move call(s)"
+  ]
+ },
+ "pick_dual_bottles": {
+  "class": "dual",
+  "reasons": [
+   "A: 3 simultaneous two-arm self.move call(s)"
+  ]
+ },
+ "place_a2b_left": {
+  "class": "single",
+  "reasons": []
+ },
+ "place_a2b_right": {
+  "class": "single",
+  "reasons": []
+ },
+ "place_bread_basket": {
+  "class": "dual",
+  "reasons": [
+   "A: 3 simultaneous two-arm self.move call(s)",
+   "B: same actor handled by two arm expressions {'self.bread[id]': [\"'left'\", 'arm_tag']}"
+  ]
+ },
+ "place_bread_skillet": {
+  "class": "dual",
+  "reasons": [
+   "A: 2 simultaneous two-arm self.move call(s)"
+  ]
+ },
+ "place_burger_fries": {
+  "class": "dual",
+  "reasons": [
+   "A: 3 simultaneous two-arm self.move call(s)"
+  ]
+ },
+ "place_can_basket": {
+  "class": "dual",
+  "reasons": [
+   "A: 2 simultaneous two-arm self.move call(s)"
+  ]
+ },
+ "place_cans_plasticbox": {
+  "class": "dual",
+  "reasons": [
+   "A: 3 simultaneous two-arm self.move call(s)"
+  ]
+ },
+ "place_container_plate": {
+  "class": "single",
+  "reasons": []
+ },
+ "place_dual_shoes": {
+  "class": "dual",
+  "reasons": [
+   "A: 4 simultaneous two-arm self.move call(s)"
+  ]
+ },
+ "place_empty_cup": {
+  "class": "single",
+  "reasons": []
+ },
+ "place_fan": {
+  "class": "single",
+  "reasons": []
+ },
+ "place_mouse_pad": {
+  "class": "single",
+  "reasons": []
+ },
+ "place_object_basket": {
+  "class": "dual",
+  "reasons": [
+   "A: 2 simultaneous two-arm self.move call(s)"
+  ]
+ },
+ "place_object_scale": {
+  "class": "single",
+  "reasons": []
+ },
+ "place_object_stand": {
+  "class": "single",
+  "reasons": []
+ },
+ "place_phone_stand": {
+  "class": "single",
+  "reasons": []
+ },
+ "place_shoe": {
+  "class": "single",
+  "reasons": []
+ },
+ "press_stapler": {
+  "class": "single",
+  "reasons": []
+ },
+ "put_bottles_dustbin": {
+  "class": "dual",
+  "reasons": [
+   "A: 2 simultaneous two-arm self.move call(s)",
+   "B: same actor handled by two arm expressions {'bottle': [\"'left'\", 'arm_tag']}"
+  ]
+ },
+ "put_object_cabinet": {
+  "class": "single",
+  "reasons": []
+ },
+ "rotate_qrcode": {
+  "class": "single",
+  "reasons": []
+ },
+ "scan_object": {
+  "class": "dual",
+  "reasons": [
+   "A: 2 simultaneous two-arm self.move call(s)"
+  ]
+ },
+ "shake_bottle": {
+  "class": "single",
+  "reasons": []
+ },
+ "shake_bottle_horizontally": {
+  "class": "single",
+  "reasons": []
+ },
+ "stack_blocks_three": {
+  "class": "single",
+  "reasons": []
+ },
+ "stack_blocks_two": {
+  "class": "single",
+  "reasons": []
+ },
+ "stack_bowls_three": {
+  "class": "single",
+  "reasons": []
+ },
+ "stack_bowls_two": {
+  "class": "single",
+  "reasons": []
+ },
+ "stamp_seal": {
+  "class": "single",
+  "reasons": []
+ },
+ "turn_switch": {
+  "class": "single",
+  "reasons": []
+ }
+}

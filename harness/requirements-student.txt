@@ -1,0 +1,5 @@
+# The agent's own Python (the `python` tool runs this interpreter inside the bwrap sandbox): Python 3.11.16.
+# These exact versions are what CaPtain-4B was trained and evaluated with; the driver probes them before every episode.
+numpy==1.26.4
+scipy==1.13.1
+Pillow==10.4.0

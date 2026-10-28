@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "note": "Pinned upstream dependencies (fetch with scripts/setup_third_party.sh). LIBERO is required by the environment server (simulator, BDDL tasks, assets, official init states). CaP-X is the lineage of the capability layer; the harness does not import it, but the SAM3 perception service (services/sam3_server.py) runs CaP-X's SAM3 server with its sam3 submodule. OpenETA is recorded for provenance only; its services are not used.",
+  "dependencies": {
+    "libero": {
+      "path": "third_party/libero",
+      "url": "https://github.com/Lifelong-Robot-Learning/LIBERO",
+      "revision": "8f1084e3132a39270c3a13ebe37270a43ece2a01"
+    },
+    "cap_x": {
+      "path": "third_party/cap-x",
+      "url": "https://github.com/capgym/cap-x",
+      "revision": "53e9966d7a8e2fa7494676772bccc35280f5c0ed",
+      "experiment_submodules": {
+        "capx/third_party/sam3": "6fe87d64a5beb9084923d7a9e002741178635b09"
+      }
+    },
+    "openeta": {
+      "path": "third_party/openeta",
+      "url": "https://github.com/OpenMOSS/OpenETA",
+      "revision": "7d4a0a1522ba8ebbd362bde880bad81d2a98f15e",
+      "pinned_upstream_revision": "e03e98e75a5d97ab5ece751f4d499381a18ea10e"
+    }
+  }
+}

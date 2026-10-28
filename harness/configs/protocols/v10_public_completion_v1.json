@@ -1,0 +1,13 @@
+{
+  "schema_version": "captain-public-completion/v1",
+  "protocol_id": "libero-public-completion-v10",
+  "min_on_footprint_overlap": 0.83,
+  "min_mark_distance_m": 0.05,
+  "max_mark_distance_m": 0.1,
+  "mark_distance_destination_ratio": 0.45,
+  "min_eef_clearance_m": 0.12,
+  "max_eef_clearance_m": 0.3,
+  "eef_clearance_extent_ratio": 1.5,
+  "min_extent_ratio": 0.5,
+  "max_extent_ratio": 1.5
+}

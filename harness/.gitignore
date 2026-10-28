@@ -1,0 +1,12 @@
+*.pyc
+__pycache__/
+.pytest_cache/
+.tokenizer-cache
+.libero-config*
+.venv*/
+outputs/
+runs/
+logs/
+weights/
+third_party/*
+!third_party/manifest.json

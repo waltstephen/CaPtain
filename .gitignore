@@ -1,0 +1,44 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+build/
+dist/
+
+# environments
+.venv*/
+venv/
+.env
+
+# run outputs, logs, caches
+runs/
+outputs/
+logs/
+wandb/
+*.log
+.tokenizer-cache
+.libero-config*
+
+# weights and large data (published on Hugging Face, not in git)
+weights/
+models/
+checkpoints/
+*.safetensors
+*.pt
+*.pth
+*.bin
+*.ckpt
+*.npz
+*.h5
+
+# fetched third-party code
+harness/third_party/*
+!harness/third_party/manifest.json
+
+# editors / OS
+.idea/
+.vscode/
+.DS_Store

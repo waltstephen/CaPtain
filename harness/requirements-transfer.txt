@@ -1,0 +1,14 @@
+# Harness interpreter for the RoboTwin 2.0 / RoboDojo / SimplerEnv backends (Python 3.11; the simulators themselves run in
+# their own environments and talk to the harness over a pipe). Versions of the environment used for the paper runs.
+jsonschema==4.26.0
+mujoco==3.3.7
+numpy==2.4.6
+opencv-python-headless==5.0.0.93
+pillow==13.0.0
+PyOpenGL==3.1.10
+requests==2.34.2
+scipy==1.17.1
+tiktoken==0.12.0
+trimesh==5.2.0
+fast_simplification==0.2.0
+websockets==17.3

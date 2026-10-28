@@ -1,0 +1,63 @@
+{
+ "schema_version": "captain-calibration/v2",
+ "profile_id": "robotwin-aloha-arx5-v0",
+ "frame": "robot_base",
+ "calibration_residual_m": 0.0,
+ "residual_basis": "RoboTwin 2.0 aloha-agilex (two ARX5 arms, arx5_description_isaac.urdf): EEF = link6 rotated (z=link6 x approach, x=link6 y jaw axis), 0.140 m along the approach axis (pad centre); twin cut from the embodiment URDF (adapted from bench-robodojo's X5 profile).",
+ "tcp_offset_local_m": [
+  0.0,
+  0.0,
+  -0.1
+ ],
+ "pyroki_hand_to_libero_eef_4x4": [
+  -0.0004926243561613662,
+  0.9999998786606146,
+  0.0,
+  0.0,
+  -0.9999998786606146,
+  -0.0004926243561613782,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  1.0,
+  0.09650000000000002,
+  0.0,
+  0.0,
+  0.0,
+  1.0
+ ],
+ "graspnet_to_libero_eef_4x4": [
+  0.0,
+  0.0,
+  1.0,
+  0.10010000000000002,
+  0.9999998786606146,
+  0.0004926243561613782,
+  0.0,
+  0.0,
+  -0.0004926243561613662,
+  0.9999998786606146,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  1.0
+ ],
+ "graspnet_calibration": {
+  "calibration_id": "graspnet-eef-panda-p8",
+  "status": "unused_on_robotwin",
+  "source": "third_party/openeta/agent/calibrations/candidate/graspnet-eef-panda-p8.json",
+  "source_sha256": "4e3103eda6e5c24869995b5bd66db94b953e0dcbda4e19961ae62e67a4d6b030",
+  "openeta_revision": "8989fbe936109364e71b20032b8dc870df87a855",
+  "integration_correction": "compose OpenETA mixed Panda hand frame with pyroki_hand_to_libero_eef_4x4",
+  "diagnostic_evidence": "outputs/v10-grasp-alignment-diagnostic-20260828-v1"
+ },
+ "gripper": {
+  "profile_id": "arx5-parallel-v0",
+  "max_width_m": 0.0953,
+  "fingertip_depth_m": 0.071,
+  "finger_height_m": 0.02
+ }
+}

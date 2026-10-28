@@ -1,0 +1,86 @@
+{
+  "completion_candidate_profile": {
+    "hard_mark_centering_condition": false,
+    "hard_support_gap_condition": false,
+    "max_mark_vertical_delta_m": 0.12,
+    "max_static_displacement_m": 0.01,
+    "min_mark_vertical_delta_m": -0.02,
+    "min_xy_overlap_ratio": 0.7,
+    "recommendation_only": true,
+    "required_boolean_evidence": [
+      "gripper_released",
+      "target_destination_distinct",
+      "centroid_inside_destination_xy",
+      "mark_inside_destination_xy"
+    ],
+    "rule_id": "R1_xy_overlap_mark_vertical"
+  },
+  "confidence_weights": {
+    "centroid_inside_destination_xy": 0.12,
+    "eef_clearance_m": 0.06,
+    "gripper_released": 0.22,
+    "mark_vertical_delta_m": 0.12,
+    "target_destination_distinct": 0.08,
+    "target_static_after_release_m": 0.18,
+    "xy_overlap_ratio": 0.22
+  },
+  "eef_clearance_extent_ratio": 1.5,
+  "mark_distance_destination_ratio": 0.45,
+  "max_eef_clearance_m": 0.3,
+  "max_extent_ratio": 1.5,
+  "max_mark_distance_m": 0.1,
+  "min_eef_clearance_m": 0.12,
+  "min_extent_ratio": 0.5,
+  "min_mark_distance_m": 0.05,
+  "min_on_footprint_overlap": 0.83,
+  "protocol_id": "libero-public-completion-v11",
+  "replay_calibration": {
+    "fit_split": "replicate_0",
+    "hidden_predicate_derived_labels_declared": true,
+    "holdout_split": "replicate_1",
+    "labels": "host_final_success",
+    "selected_rule_results": {
+      "all_rows": {
+        "false_positive_rate": 0.0,
+        "false_positives": 0,
+        "negatives": 44,
+        "positives": 16,
+        "recall": 0.9375,
+        "rows": 60,
+        "true_positives": 15
+      },
+      "replicate_0_fit": {
+        "false_positive_rate": 0.0,
+        "false_positives": 0,
+        "negatives": 20,
+        "positives": 10,
+        "recall": 0.9,
+        "rows": 30,
+        "true_positives": 9
+      },
+      "replicate_1_holdout": {
+        "false_positive_rate": 0.0,
+        "false_positives": 0,
+        "negatives": 24,
+        "positives": 6,
+        "recall": 1.0,
+        "rows": 30,
+        "true_positives": 6
+      }
+    },
+    "source_bundle": "internal development batch (not released)",
+    "source_trials_sha256": "e6715e3da547d69c23b22fa8776b3515f93455e3fbf5cb8d6887ef0f212add26",
+    "unevaluable_missed_rows": [
+      "libero_goal:4:seed-1:v10_dehardcoded_s3_kernel:S3:replicate-0"
+    ]
+  },
+  "schema_version": "captain-public-completion/v2",
+  "signal_reliability_high_to_low": [
+    "gripper_released",
+    "target_static_after_release_m",
+    "xy_overlap_ratio",
+    "mark_vertical_delta_m",
+    "robust_vertical_gap_m",
+    "support_gap_bounds_m"
+  ]
+}
