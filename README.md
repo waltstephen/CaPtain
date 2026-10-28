@@ -22,6 +22,8 @@ and decides itself when the task is done. Everything needed to reproduce and use
 - **CaPtain-Harness** — a persistent, sandboxed Python session with 22 low-level capabilities (perception, geometric
   measurement, IK-level motion) and `finish()`, no high-level skills and no VLA. Every call returns a text receipt. The
   same API runs on LIBERO, LIBERO-PRO / Plus / MAX, RoboTwin 2.0, RoboDojo, SimplerEnv, CaP-Bench and real robots.
+  The harness lives in its own repository, [CaPtain-Harness](https://github.com/waltstephen/CaPtain-Harness), and is
+  included here as a pinned git submodule at `harness/`.
 - **The pipeline** — SFT on synthetic agent trajectories collected in the harness, then RL with a **simulator critic**: a
   small critic reads the simulator's physical state (object poses, grasp state, sub-goal progress) and turns the change
   in its predicted success across each model request into that request's credit. The policy never sees this state.
@@ -81,8 +83,11 @@ Linux x86_64 with NVIDIA GPUs (EGL for MuJoCo; Vulkan for the SAPIEN / Isaac Sim
 | + transfer environments | run RoboTwin 2.0, RoboDojo or SimplerEnv ([`harness/eval/transfer/`](harness/eval/transfer/README.md)) |
 | + training | reproduce SFT ([`sft/`](sft/README.md)) and RL ([`rl/`](rl/README.md)) |
 
+The harness is a git submodule ([CaPtain-Harness](https://github.com/waltstephen/CaPtain-Harness), pinned to the commit
+used for this release), so clone recursively. In an existing clone, run `git submodule update --init`.
+
 ```bash
-git clone https://github.com/waltstephen/CaPtain.git && cd CaPtain/harness
+git clone --recursive https://github.com/waltstephen/CaPtain.git && cd CaPtain/harness
 scripts/setup_third_party.sh                                   # LIBERO @ pinned revision into third_party/
 python3.10 -m venv .venv-libero && .venv-libero/bin/pip install -r requirements-libero.txt \
   && .venv-libero/bin/pip install -e third_party/libero --no-deps && .venv-libero/bin/pip install -e . --no-deps
@@ -90,7 +95,8 @@ python3.11 -m venv ~/envs/student-py311 && ~/envs/student-py311/bin/pip install 
 python3.11 -m venv .venv-transfer && .venv-transfer/bin/pip install -r requirements-transfer.txt              # only for RoboTwin / RoboDojo / SimplerEnv
 ```
 
-Perception services (SAM 3, Molmo2-8B) and the policy server (vLLM 0.29) are described in [`harness/README.md`](harness/README.md).
+Model weights (SAM 3, Molmo2-8B, CaPtain-4B): `harness/scripts/download_models.sh`. Perception services, the policy server
+(vLLM 0.29) and per-benchmark simulator installs are described in [`harness/INSTALL.md`](harness/INSTALL.md).
 
 ## Quick Start
 
@@ -115,7 +121,7 @@ python3 eval/run_jobs.py eval/tasks/libero_official_240.tsv --out runs/captain-4
 python3 eval/summarize.py eval/tasks/libero_official_240.tsv runs/captain-4b
 ```
 
-The other task lists (LIBERO-PRO, LIBERO-Plus, LIBERO-MAX) are in [`harness/README.md`](harness/README.md); the transfer
+The other task lists (LIBERO-PRO, LIBERO-Plus, LIBERO-MAX) are in [`harness/docs/harness.md`](harness/docs/harness.md); the transfer
 benchmarks in [`harness/eval/transfer/README.md`](harness/eval/transfer/README.md).
 
 **3. Train**
@@ -129,7 +135,7 @@ benchmarks in [`harness/eval/transfer/README.md`](harness/eval/transfer/README.m
 
 | Path | What it is |
 |---|---|
-| [`harness/`](harness/README.md) | **CaPtain-Harness**: the `python` tool, the 22-capability robot API, receipts, completion gate, context compaction, perception services, all backends, evaluation runners, task lists and scorers |
+| [`harness/`](harness/README.md) | **CaPtain-Harness** (git submodule, pinned; [repository](https://github.com/waltstephen/CaPtain-Harness)): the `python` tool, the 22-capability robot API, receipts, completion gate, context compaction, perception services, all backends, evaluation runners, task lists and scorers |
 | [`harness/eval/transfer/`](harness/eval/transfer/README.md) | zero-shot transfer: install notes, official protocol settings, task lists, run and scoring scripts per benchmark |
 | [`sft/`](sft/README.md) | SFT for CaPtain-4B-SFT: data format, trainer (DeepSpeed ZeRO-3), launch script, exact configuration |
 | [`rl/`](rl/README.md) | RL for CaPtain-4B: streaming rollout and environment servers, the simulator critic, advantages, SAO-style update, trainer, run supervisor, final-run configuration |

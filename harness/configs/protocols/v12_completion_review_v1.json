@@ -1,9 +1,0 @@
-{
-  "max_need_more_rounds": 2,
-  "max_review_rounds": 2,
-  "preset_id": "libero-independent-completion-review-v12",
-  "review_mode": "enforcing",
-  "reviewer_max_images": 3,
-  "reviewer_sees_claim_reasoning": false,
-  "schema_version": "captain-completion-review/v1"
-}

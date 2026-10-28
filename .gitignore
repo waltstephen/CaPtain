@@ -34,10 +34,6 @@ checkpoints/
 *.npz
 *.h5
 
-# fetched third-party code
-harness/third_party/*
-!harness/third_party/manifest.json
-
 # editors / OS
 .idea/
 .vscode/

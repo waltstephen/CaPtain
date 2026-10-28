@@ -8,6 +8,11 @@ CaPtain is a pipeline that turns a small vision-language model into a code-as-po
 CaPtain-Harness (the environment the agent acts in) → SFT on agent trajectories → RL with a simulator critic.
 It is meant to be used as infrastructure: run your own model in the harness, add a robot or benchmark, or retrain.
 
+`harness/` is a git submodule: [CaPtain-Harness](https://github.com/waltstephen/CaPtain-Harness), pinned to the commit
+of this release (clone with `git clone --recursive`, or run `git submodule update --init`). Harness changes are made and
+committed in CaPtain-Harness, following its own `harness/AGENTS.md`; this repository then bumps the submodule pin.
+Keep the pin on a commit whose fast CPU checks pass, and note pin changes in the commit message.
+
 ## Map
 
 | You want to… | Go to |
