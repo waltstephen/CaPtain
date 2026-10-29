@@ -32,18 +32,18 @@ pip install "transformers==5.17.0" "deepspeed==0.19.6" "flash-linear-attention==
 
 ## Data
 
-The training mix is not released yet (about 861M tokens with images). Every row follows `data/FORMAT.md`: chat `messages` (system, user, assistant with `reasoning_content` and `python` tool calls, and tool results), image paths, the tool schema, and `meta`, which says which assistant turns are supervised and with what weight.
+The training data are on Hugging Face: [CaPtain-SFT-Data](https://huggingface.co/datasets/YijiaFan/CaPtain-SFT-Data). Every row follows `data/FORMAT.md`: chat `messages` (system, user, assistant with `reasoning_content` and `python` tool calls, and tool results), image paths, the tool schema, and `meta`, which says which assistant turns are supervised and with what weight.
 
-Stage-2 mix: 25,961 rows / 861.1M tokens, built from harness episodes.
+Stage-2 mix: 24,440 rows / 797.1M tokens, built from harness episodes.
 
 | Source | Rows | Tokens | Share |
 |---|---|---|---|
-| Stage-1 agent data (code-normalised, hard tasks cleaned) | 7,903 | 348.9M | 40.5% |
-| Hard-task teacher demonstrations, round 3 | 5,090 | 238.4M | 27.7% |
-| Hard-task teacher demonstrations, round 2 | 2,138 | 99.3M | 11.5% |
-| Hard-task teacher demonstrations, 60-request cap (≤ 10 per task) | 925 | 43.4M | 5.0% |
-| RL self-successes (one per task and start) | 1,386 | 52.3M | 6.1% |
-| Visual QA (loss weight 0.5) | 8,519 | 78.8M | 9.2% |
+| Stage-1 agent data (code-normalised, hard tasks cleaned) | 6,382 | 284.9M | 35.7% |
+| Hard-task teacher demonstrations, round 3 | 5,090 | 238.4M | 29.9% |
+| Hard-task teacher demonstrations, round 2 | 2,138 | 99.3M | 12.5% |
+| Hard-task teacher demonstrations, 60-request cap (≤ 10 per task) | 925 | 43.4M | 5.4% |
+| RL self-successes (one per task and start) | 1,386 | 52.3M | 6.6% |
+| Visual QA (loss weight 0.5) | 8,519 | 78.8M | 9.9% |
 
 - The agent trajectories are synthetic. Most come from proprietary frontier teacher models running in CaPtain-Harness on LIBERO, with the same tools, context policy and caps as the student. The rest are the student's own RL successes.
 - All agent code was normalised to one helper library (`data/normalize/`).

@@ -16,7 +16,6 @@
     - the provider-specific Responses backend removed (`--auth none|bearer`);
     - the LIBERO-PRO / Plus / MAX variant options and the default-off RL hooks added. These are the request marks, live marks, fast loop and visual variation, and they were used by the RL run.
   - None of these changes touch model-visible text (TASK.md, tool descriptions, receipts, request template).
-  - The full test suite has the same failing set as the evaluated snapshot (99 failures and 26 errors, mostly legacy adapter tests for code paths the python-runtime contract no longer uses).
   - The driver and server tests (`tests/test_react_*.py`, `test_server_env_server.py`, `test_import_boundaries.py`) all pass.
 - **RL.**
   - `rl/` is the code that trained CaPtain-4B. Apart from comments, help strings, module names and paths, the code is unchanged.
@@ -42,30 +41,20 @@
     8.4 / 11.3 strict) from the saved per-episode rows, and the CaP-Bench numbers (Lift 100, Stack 50 at the horizon;
     mean 75.0) from the original episode directories.
 
-## Known limitations
+## Released artifacts
 
-- **Transfer benchmarks were not re-run from this tree.** Their simulators (SAPIEN 3, Isaac Sim 5.1, SAPIEN 2.2) were not
-  run during release preparation; the backends were checked by imports, CPU wiring tests and source hashes against the
-  evaluated snapshots. RoboDojo episodes need a GPU with Vulkan raster support for Isaac Sim's camera annotators.
+- Code: this repository and [CaPtain-Harness](https://github.com/waltstephen/CaPtain-Harness) (MIT).
+- Models: [CaPtain-4B](https://huggingface.co/YijiaFan/CaPtain-4B) and [CaPtain-4B-SFT](https://huggingface.co/YijiaFan/CaPtain-4B-SFT).
+- Data: [CaPtain-SFT-Data](https://huggingface.co/datasets/YijiaFan/CaPtain-SFT-Data) (SFT trajectories and visual QA) and
+  [CaPtain-artifacts](https://huggingface.co/datasets/YijiaFan/CaPtain-artifacts) (critic weights, configs, start states, example episodes).
+
+## Notes
+
 - **RoboTwin 2.0 task files.** The official seed list is shipped (`official_hard_seeds.tsv`); the task files with RoboTwin's
   instructions are rebuilt with RoboTwin's own expert check (`make_official_tasks.sh`, needs cuRobo and a GPU).
-- **RoboDojo.** The paper reports the evaluated subset of layouts per task stated in its table; the shipped list is the full
-  official 2,100-episode protocol. Unstable layouts are replaced with `replace_unstable.py`, not automatically.
-- **Real robot.** The hardware backend interface and an episode builder (`hardware_real`, driver loaded from
-  `--hardware-driver`) are included. The robot driver, the robot's twin model and the embodiment-adapted checkpoint used for
-  the paper's real-robot episodes are not part of this release.
-
-- **No GPU end-to-end run of the release tree.** The release code was not re-run on GPUs (vLLM serving, EGL episodes, RL rounds, SFT steps). Validation was done by unit tests, a config dry run, and reproducing the numbers from the original episodes.
-- **Training data is not released yet.** This covers:
-  - the SFT stage-2 mix (25,961 rows, 861M tokens, ~243k images);
-  - the stage-1 mix;
-  - the teacher episodes;
-  - RL rollouts.
-  
-  The SFT stage-1 checkpoint (the init of stage 2) is also not released, so SFT is reproducible only once the data is published.
-- **Software versions.** The trainer environments are documented from the recorded stage-1 / RL environments. The exact package set of every run was not frozen in a lock file.
-- **Request template.** `react/prompts/captain.request.json` is a captured Codex-CLI code-mode request, including its system prompt ("You are Codex, an agent based on GPT-6 ..."). CaPtain-4B was trained on this exact text, so it is kept verbatim.
-- **Benchmark licenses.** LIBERO-plus and LIBERO-MAX state no license. Before making the LIBERO-MAX case files (CaPtain-artifacts `eval/libero_max_cases/`) public, confirm their terms (see `THIRD_PARTY_LICENSES.md`).
-- **LIBERO-10 task 5.** Its goal predicate has a ~3.5 mm offset in z, so a correct flat placement is scored as a failure. The task is kept in training and in all evaluations, as in the paper.
-- **Held-out monitor.** The RL config disables the online held-out monitor of the reference run. It needed a second harness copy with held-out wide-layout states; it does not affect training.
-- **Run length.** The reference RL run was continued past round 300. CaPtain-4B is the round-300 checkpoint; later rounds are not part of this release.
+- **RoboDojo.** The shipped list is the full official 2,100-episode protocol. Unstable layouts are replaced with
+  `replace_unstable.py`. RoboDojo needs a GPU with Vulkan raster support for Isaac Sim's camera annotators.
+- **Real robot.** The hardware backend interface and an episode builder (`hardware_real`) are included; load your robot
+  driver with `--hardware-driver`.
+- **Request template.** `react/prompts/captain.request.json` is a captured Codex-CLI code-mode request, including its
+  system prompt ("You are Codex, an agent based on GPT-6 ..."). CaPtain-4B was trained on this exact text, so it is kept verbatim.

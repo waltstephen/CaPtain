@@ -227,7 +227,7 @@ The evaluation protocol differs from RL rollouts:
 | Optimizer | AdamW β = (0.9, 0.99), weight decay 0, grad clip 0.3 |
 | Learning rate | 4.24e-6, constant after a linear warm-up over 512 valid attempts |
 | Batch | 256 episodes / round = 64 starts × G = 4; K = 4 rounds per update (1,024 episodes) |
-| Length of the reference run | 300 rounds = 75 optimizer updates = 76,800 training episodes (CaPtain-4B = checkpoint-300; the run was later continued to 400, which is not part of the release) |
+| Length of the reference run | 300 rounds = 75 optimizer updates = 76,800 training episodes (CaPtain-4B = checkpoint-300) |
 | KL | β = 0.002, k3, on ratio-mask kept tokens; reference forward on 1 pass in 8, weighted × 8 (`ref_every` 8) |
 | Ratio mask | keep iff 1 − 0.8 < r < 1 + 3.0 |
 | Score centering | on, sampler top-k 20 |

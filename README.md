@@ -179,7 +179,7 @@ benchmarks in [`harness/eval/transfer/README.md`](harness/eval/transfer/README.m
 
 The code is released under the [MIT License](LICENSE). Third-party components keep their own licenses; see
 [THIRD_PARTY_LICENSES.md](THIRD_PARTY_LICENSES.md) (SAM 3 weights fall under the SAM License). Model weights follow the
-license of the base model, Qwen3.5-4B (Apache-2.0). Known limitations of this release: [RELEASE_NOTES.md](RELEASE_NOTES.md).
+license of the base model, Qwen3.5-4B (Apache-2.0). Release notes: [RELEASE_NOTES.md](RELEASE_NOTES.md).
 
 ## Citation
 

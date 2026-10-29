@@ -67,9 +67,8 @@ python data/normalize/normalize.py --out-dir norm/ --report norm/report.json --w
 python data/normalize/verify.py norm/*.jsonl
 ```
 
-## Stage-2 data filters (applied before mixing; documented, script not released)
+## Stage-2 data filters (applied before mixing)
 
-The filters depend on host-side episode labels that are not part of this release:
 - **Excluded tasks.** libero_10 task 5 is excluded: its success predicate has a 3.5 mm z offset.
 - **Drawer task.** For libero_goal task 0, only episodes whose drawer ends pulled ≥ 0.1595 m are kept.
 - **Unsupervised requests.** These requests stay as context of later rows but are not supervised:
