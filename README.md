@@ -6,6 +6,7 @@
 
 [![Project Page](https://img.shields.io/badge/Project-Page-blue?logo=github)](https://waltstephen.github.io/captain/)
 [![Hugging Face](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Models%20%26%20Data-orange)](https://huggingface.co/YijiaFan/CaPtain-4B)
+[![Video](https://img.shields.io/badge/Video-YouTube-red?logo=youtube)](https://youtu.be/KMy-Bx5HXsg)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
 <img src="docs/assets/teaser.jpg" width="100%" alt="CaPtain-4B at a glance">
