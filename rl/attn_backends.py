@@ -1,4 +1,4 @@
-"""Trainer attention backends for the language model's full-attention layers (the reference run used FA3).
+"""Trainer attention backends for the language model's full-attention layers (CaPtain-4B used FA3).
 
   None / "sdpa"   transformers' default SDPA (PyTorch picks its FlashAttention-2 kernel on H100 for bf16 causal) = default
   "fa3"           FlashAttention-3: the prebuilt kernels-community/flash-attn3 build for this torch/CUDA, imported from an overlay

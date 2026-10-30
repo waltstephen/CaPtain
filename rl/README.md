@@ -1,7 +1,7 @@
 # CaPtain RL
 
 This directory holds the reinforcement-learning stage of **CaPtain**, the pipeline from "CaPtain: A Pipeline for Post-Training Code-as-Policy Robot Agents".
-- It starts from **CaPtain-4B-SFT** and produces **CaPtain-4B**: round 300 of the reference run, 75 optimizer updates.
+- It starts from **CaPtain-4B-SFT** and produces **CaPtain-4B** (300 rounds, 75 optimizer updates).
 - The policy acts only through **CaPtain-Harness** (`../harness`): the same python tool, robot API, receipts and completion gate as in evaluation.
 
 What the RL stage adds on top of plain outcome RL:
@@ -55,12 +55,12 @@ What the RL stage adds on top of plain outcome RL:
 | `code_reward.py`, `reward.py`, `reward_segment.py` | Code-execution cost, episode verdict and logged shaped score. |
 | `grad_accum.py`, `stream_pool.py`, `infra_pipeline.py`, `rollout_storage.py`, `training_resume.py`, `attn_backends.py`, `nccl_refit.py`, `vllm_worker_ext.py`, `toolchain_preflight.py` | Infrastructure: accumulation, streaming pool, storage, resume checks, FA3, refit, sandbox preflight. |
 | `make_start_weights.py` | Optional prioritized start sampling (not used by the reference config). |
-| `configs/captain-4b.json` | Run config of the reference run: 16 GPUs = trainer node + rollout node. |
+| `configs/captain-4b.json` | Run config of CaPtain-4B: 16 GPUs = trainer node + rollout node. |
 | `configs/captain-4b.8gpu.json` | The same training semantics on one 8-GPU node. |
 | `configs/staged-reward-spec.json` | Hard-task ladders and early-stop exemptions, as in the config. |
 | `configs/act-ref.json` | Per-task action reference for the action cost (1.5 × median physical actions of successful demonstrations). |
 | `configs/start-exclude-thin-basket.json` | 649 libero_object starts never drawn. In these starts the LIBERO basket region is too thin, so a correct placement would score as failure. |
-| `configs/start-pool.reference.json` | The reference run's start pool: 40 tasks × 184 starts, with per-file sha256 and bank sha256. |
+| `configs/start-pool.reference.json` | The start pool of CaPtain-4B: 40 tasks × 184 starts, with per-file sha256 and bank sha256. |
 | `configs/official-heldout-states.json` | Per task, the official LIBERO init-state indices used for training (0–10, 17–49) and the held-out evaluation indices (11–16). |
 | `scripts/` | `env.sh` (common env), `rl_run.sh` (lifecycle on one node), `policies.sh` (policy vLLMs), `run_stream.sh` (supervisor), `prepare_starts.sh`, `export_checkpoint.sh`, `verify_dcp.py`. |
 | `tests/` | CPU unit tests of the production path (`python -m pytest -q rl/tests`). |
@@ -82,7 +82,7 @@ Each round collects 256 episodes, as 64 starts × G = 4 rollouts of the same sta
 
 ## Install
 
-Environments of the reference run (Linux, NVIDIA H100):
+Environments used for CaPtain-4B (Linux, NVIDIA H100):
 
 | Env (`$CAPTAIN_WORKSPACE/envs/...`) | Used for | Key packages |
 |---|---|---|
@@ -107,14 +107,14 @@ huggingface-cli download YijiaFan/CaPtain-artifacts --repo-type dataset --includ
 #  -> $CAPTAIN_WORKSPACE/critic/warm_start/{critic_default.pt, critic_split.pt, feature_spec.json, metrics_sameT.json}
 ```
 
-The warm-start critic is an offline fit on "phase-0" rollouts of an earlier SFT student, all from fresh initial states, before RL. It is trained on the 0/1 host success; `feature_spec.json` documents the features, the standardisation and the same-t rule. `critic_dir` points at this directory.
+The warm-start critic is an offline fit on SFT-policy rollouts from fresh initial states, collected before RL. It is trained on the 0/1 host success; `feature_spec.json` documents the features, the standardisation and the same-t rule. `critic_dir` points at this directory.
 
 ### Training starts
 
 Training draws only fresh initial states (harness seeds ≥ 1000, where seed 1000 + k selects state k of the harness's
 `data/libero_fresh_init/`). The official evaluation states (seeds 11–16 → init states 11–16) can never be drawn.
 
-**Exact reproduction (recommended).** The reference run used 7,360 starts: 184 per task = 140 wide-layout states with
+**Exact reproduction (recommended).** CaPtain-4B was trained on 7,360 starts: 184 per task = 140 wide-layout states with
 lighting/camera/material variation + 44 official non-evaluation states (indices 0–10, 17–49). They are in
 `CaPtain-artifacts/starts/libero_fresh_init_rl/`. Install them as the harness's fresh-init set, then build the pool:
 
@@ -169,11 +169,11 @@ The same steps by hand, one node at a time:
 bash rl/scripts/rl_run.sh init rl/configs/captain-4b.json a                       # trainer node: creates <run_dir>/manifest.json
 INIT=$CAPTAIN_WORKSPACE/models/CaPtain-4B-SFT bash rl/scripts/policies.sh up "2 3 4 5 6 7" 0.65   # rollout node
 bash rl/scripts/rl_run.sh services rl/configs/captain-4b.json e                   # rollout node: preflight, proxy :8512, env :8402
-eval "$(source rl/scripts/env.sh; echo export $(default_train_env))"               # trainer env of the reference run
+eval "$(source rl/scripts/env.sh; echo export $(default_train_env))"               # trainer env used for CaPtain-4B
 bash rl/scripts/rl_run.sh train rl/configs/captain-4b.json a [--resume]          # trainer node
 ```
 
-**8 GPUs on one node** (`configs/captain-4b.8gpu.json`). This layout ran rounds 293–300 of the reference run, with identical training semantics:
+**8 GPUs on one node** (`configs/captain-4b.8gpu.json`), with identical training semantics:
 - GPU 0: SAM3 + Molmo (0.55) + EGL.
 - GPUs 1–3: three policies.
 - GPUs 4–7: trainer, FSDP world 4. The trainer GPUs run close to 80 GB.
@@ -227,7 +227,7 @@ The evaluation protocol differs from RL rollouts:
 | Optimizer | AdamW β = (0.9, 0.99), weight decay 0, grad clip 0.3 |
 | Learning rate | 4.24e-6, constant after a linear warm-up over 512 valid attempts |
 | Batch | 256 episodes / round = 64 starts × G = 4; K = 4 rounds per update (1,024 episodes) |
-| Length of the reference run | 300 rounds = 75 optimizer updates = 76,800 training episodes (CaPtain-4B = checkpoint-300) |
+| Training length | 300 rounds = 75 optimizer updates = 76,800 training episodes (CaPtain-4B = checkpoint-300) |
 | KL | β = 0.002, k3, on ratio-mask kept tokens; reference forward on 1 pass in 8, weighted × 8 (`ref_every` 8) |
 | Ratio mask | keep iff 1 − 0.8 < r < 1 + 3.0 |
 | Score centering | on, sampler top-k 20 |

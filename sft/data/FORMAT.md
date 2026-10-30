@@ -53,7 +53,7 @@ Both need `meta.total_tokens` and `meta.source` (`qapack` marks packed QA rows).
 
 ## Helper-library code normalisation (`data/normalize/`)
 
-All agent rows in the stage-2 mix were rewritten to one small helper library. The library, `stdlib.PREAMBLE`, defines `val`, `need`, `downq` and `go` (preview, then `move_to`). It is prepended to the first python cell of each episode, so the model learns to write the library itself in its first request. No harness change is needed.
+All agent rows in the SFT mix were rewritten to one small helper library. The library, `stdlib.PREAMBLE`, defines `val`, `need`, `downq` and `go` (preview, then `move_to`). It is prepended to the first python cell of each episode, so the model learns to write the library itself in its first request. No harness change is needed.
 
 `normalize.py` handles the teacher's own helpers as follows:
 - It checks each helper definition against a recording mock robot, per call site.
@@ -67,7 +67,7 @@ python data/normalize/normalize.py --out-dir norm/ --report norm/report.json --w
 python data/normalize/verify.py norm/*.jsonl
 ```
 
-## Stage-2 data filters (applied before mixing)
+## Data filters (applied before mixing)
 
 - **Excluded tasks.** libero_10 task 5 is excluded: its success predicate has a 3.5 mm z offset.
 - **Drawer task.** For libero_goal task 0, only episodes whose drawer ends pulled ≥ 0.1595 m are kept.
@@ -76,4 +76,4 @@ python data/normalize/verify.py norm/*.jsonl
   - "struggle" segments (retry loops of failed actions), about 3.6% of requests;
   - rows whose target cell introspects a helper (`meta.nosup_reason`).
 - **Narrow-layout demonstrations.** These are capped at 10 per task when ≥ 20 wide-layout demonstrations exist.
-- **RL self-successes.** These must meet all of: success, `finish()` called, no false finish, ≤ 3 failed cells, and no evaluation states. One is kept per (task, start).
+- **Student self-successes.** These must meet all of: success, `finish()` called, no false finish, ≤ 3 failed cells, and no evaluation states. One is kept per (task, start).

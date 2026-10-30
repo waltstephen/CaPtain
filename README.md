@@ -127,7 +127,7 @@ benchmarks in [`harness/eval/transfer/README.md`](harness/eval/transfer/README.m
 
 **3. Train**
 
-- SFT (2 × 8 GPUs): [`sft/README.md`](sft/README.md) — data format, the two stages and `train/launch_sft.sh`.
+- SFT (2 × 8 GPUs): [`sft/README.md`](sft/README.md) — data format, recipe and `train/launch_sft.sh`.
 - RL (16 GPUs: 8 trainer + 8 rollout; an 8-GPU config is included): [`rl/README.md`](rl/README.md) —
   `bash rl/scripts/run_stream.sh rl/configs/captain-4b.json` starts perception, policy servers, the environment server and
   the trainer under one supervisor.
@@ -172,7 +172,7 @@ benchmarks in [`harness/eval/transfer/README.md`](harness/eval/transfer/README.m
 
 | Stage | Hardware | Time |
 |---|---|---|
-| SFT (stage 2) | 16 × H100-80GB | ~7.6 h (~120 GPU-hours) |
+| SFT | 16 × H100-80GB | ~7.6 h (~120 GPU-hours) |
 | RL (CaPtain-4B, 300 rounds of 256 episodes) | 16 × H100-80GB: 8 trainer; 8 rollout (6 vLLM policies, SAM 3, Molmo2-8B, EGL rendering) | ~1,290 GPU-hours |
 | Evaluation | 1 GPU for the policy plus 1 for perception and rendering | ~6 min median per LIBERO episode |
 

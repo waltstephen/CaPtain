@@ -3,7 +3,7 @@
 
 The final CaPtain pipeline trains on the binary host outcome plus the simulator-critic shaping (reward_mode
 final_success_binary_v1, advantage_mode physcritic); this scorer still produces the episode verdict and the logged
-shaped score (RL_REWARD_VERSION v12b in the reference run). The earlier shaped versions (v11a-v11i, v12a) are kept
+shaped score (RL_REWARD_VERSION v12b for CaPtain-4B). The earlier shaped versions (v11a-v11i, v12a) are kept
 for reproducibility of ablations.
 
     score_episode(episode_dir) -> {"reward": float, "verdict": str, "components": {...}, "diagnostics": {...}}

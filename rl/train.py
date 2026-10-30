@@ -258,7 +258,7 @@ def gate_open(version: int | None, log, urls: list[str] | None = None) -> dict:
     return {"gate/held_s": out.get("held_s")}
 
 
-# Hybrid refit (r5): policy servers on a preemptible node take the weights by file (export -> push -> reload_weights, all
+# Hybrid refit: policy servers on a preemptible node take the weights by file (export -> push -> reload_weights, all
 # with timeouts, in a background thread on rank 0) instead of joining the NCCL group, where a vanished peer would hang the
 # broadcast. RL_REFIT_FILE_URLS = those policy servers, RL_GATE_FILE_URLS = the proxy in front of them,
 # RL_LIVE_HOSTS_FILE = their host(s) for push_live.sh. A failure marks the group dead (warning) and the run continues.
@@ -664,7 +664,7 @@ def sample_loss(model, core, lm_head, inputs: dict, mask: torch.Tensor, s: dict,
                 mask_stats: list | None = None, kl_stats: list | None = None,
                 ref_weight: float = 1.0) -> tuple[torch.Tensor, torch.Tensor, torch.Tensor | None]:
     """One trained request: (loss to backpropagate, weighted k3 KL (detached), score-centering stats row or None).
-    The KL-to-SFT anchor (earlier runs collapsed without it) uses the same weights with the LoRA adapters
+    The KL-to-SFT anchor uses the same weights with the LoRA adapters
     disabled as reference (``reference(inputs, mask)`` -> per-token log-probs overrides it, e.g. a frozen full copy). With score_centering and the sampler's top-k in the sample, the advantage term uses the
     centered log-probability; a sample without top-k is trained plainly (the caller counts it).
     Simulator critic (rl/physics_critic.py): a sample with ``token_advantage`` (per-request critic advantages, advantage 1.0) scales
@@ -1257,7 +1257,7 @@ def sync_vllm(live_dir: Path, log, push: bool = True) -> None:
     with ThreadPoolExecutor(max_workers=len(urls)) as pool:
         list(pool.map(lambda u: _sync_one(u, live_dir, log), urls))
     log(f"[sync] {len(urls)} vLLM reloaded in {time.time() - t0:.0f}s")
-    try:     # the layerwise reload leaves 4.6-6 GiB cached per server (r5 13:55): give it back (vllm_worker_ext hook)
+    try:     # the layerwise reload leaves 4.6-6 GiB cached per server: give it back (vllm_worker_ext hook)
         from nccl_refit import release_server_cache
         log(f"[sync] released server caches: {release_server_cache(urls, log)}")
     except Exception as exc:  # noqa: BLE001
@@ -1285,7 +1285,7 @@ def refit_vllm_nccl(model, sender, meta, device, is_main: bool, log) -> dict:
     if is_main:
         with ThreadPoolExecutor(max_workers=len(urls)) as pool:
             list(pool.map(lambda u: requests.post(f"{u}/pause", params={"mode": "wait"}, timeout=1800).raise_for_status(), urls))
-        # r5 13:47: a server on an EGL-shared GPU (38.2 of 39.5 GB used, 1.77 GiB of it its own cache) OOMed receiving the
+        # A server on an EGL-shared GPU (38.2 of 39.5 GB used, 1.77 GiB of it its own cache) OOMed receiving the
         # 1.89 GiB embedding: with the servers paused, return their caches before the transfer allocates
         from nccl_refit import release_server_cache
         info_pre = release_server_cache(urls, log)
@@ -1852,7 +1852,7 @@ def main() -> None:
         ap.error("output already contains metrics; use a new run directory or a full-state resume")
 
     # the env phase (rank 0 collects rollouts, ranks 1-3 wait in broadcast_object_list) can exceed NCCL's default 10 min once episodes
-    # run to the 900 s wall / request cap instead of dying on context (v11c+window, step 51 crashed on the watchdog timeout)
+    # run to the 900 s wall / request cap
     from datetime import timedelta
     if "LOCAL_RANK" in os.environ:      # bind the GPU before NCCL init (else every rank leaves a ~0.4 GiB context on GPU 0)
         torch.cuda.set_device(int(os.environ["LOCAL_RANK"]))
@@ -1871,7 +1871,7 @@ def main() -> None:
     torch.cuda.set_device(local_rank)
     # CUDA's current device is per thread and new threads start on cuda:0.
     # The worker threads of dcp.async_save (and the checkpoint publish thread) each opened a ~0.4 GiB context on GPU 0 of
-    # their node, 7 x 416 MiB on local rank 0, which then OOMed in r4 round 6. Bind every later thread to this rank's
+    # their node, 7 x 416 MiB on local rank 0, which can OOM. Bind every later thread to this rank's
     # device first (binding the existing primary context allocates nothing).
     import threading as _threading
     _thread_run = _threading.Thread.run
@@ -2548,7 +2548,7 @@ def main() -> None:
         t_env = time.time() - t_step
         infrastructure_rate = sum(r.get("verdict") == "infrastructure_error" for r in results) / max(1, len(results))
         infidelity_rate = sum(r.get("verdict") == "replay_infidelity" for r in results) / max(1, len(results))
-        # r5 (RL_INFRA_WARN_ONLY=1): a batch over the infrastructure / infidelity limits is trained on its valid episodes only
+        # RL_INFRA_WARN_ONLY=1: a batch over the infrastructure / infidelity limits is trained on its valid episodes only
         # (infra-error and diverged-replay episodes carry no sample and are excluded below anyway) and logged loudly
         warn_only = os.environ.get("RL_INFRA_WARN_ONLY") == "1"
         if infidelity_rate > args.max_infidelity_rate:
@@ -2867,7 +2867,7 @@ def main() -> None:
             loss_sum += loss.detach()
             del inputs, loss
             with _PTime("t_empty_cache"):
-                # RL_EMPTY_CACHE=1 (default, = r4): release the allocator cache after every pass (~3-8 s/pass measured);
+                # RL_EMPTY_CACHE=1 (default): release the allocator cache after every pass (~3-8 s/pass measured);
                 # 0: never; auto: only when the device has less than RL_MIN_FREE_GIB (3) free, so nvidia-smi headroom stays
                 ec = os.environ.get("RL_EMPTY_CACHE", "1")
                 if ec == "1" or (ec == "auto" and torch.cuda.mem_get_info()[0] < float(os.environ.get("RL_MIN_FREE_GIB", "3")) * 2**30):
@@ -3163,8 +3163,8 @@ if __name__ == "__main__":
             os._exit(exc.code if isinstance(exc.code, int) else 1)
         raise
     except BaseException:  # noqa: BLE001
-        # r5 13:47: rank 0 raised in the refit, but the non-daemon rollout-pool / checkpoint threads kept the interpreter
-        # alive, every other rank waited in NCCL and the supervisor (process liveness) saw no crash: exit hard instead
+        # If rank 0 raises in the refit while the non-daemon rollout-pool / checkpoint threads keep the interpreter
+        # alive, every other rank waits in NCCL and the supervisor (process liveness) sees no crash: exit hard instead
         import traceback
         traceback.print_exc()
         sys.stdout.flush()

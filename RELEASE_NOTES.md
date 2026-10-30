@@ -21,7 +21,7 @@
   - `rl/` is the code that trained CaPtain-4B. Apart from comments, help strings, module names and paths, the code is unchanged.
   - The 387 CPU unit tests pass.
   - `fresh_run init` with `rl/configs/captain-4b.json` and the reference start states from CaPtain-artifacts validates. The start bank it builds has exactly the reference sha256 (`df69fab6…`).
-  - All training keys equal those of the reference run; only paths, hosts and layout differ.
+  - All training keys equal those used for CaPtain-4B; only paths, hosts and layout differ.
 - **SFT.**
   - `sft/train/train_sft.py` is functionally identical to the trainer of CaPtain-4B-SFT: only comments changed, an unused vision-probe callback was removed, and `--model` became required.
   - The CPU loss test passes.
@@ -29,11 +29,10 @@
 - **Weights.** The SHA-256 of the uploaded safetensors equals that of the evaluated checkpoints.
 - **Transfer backends** (`harness/src/captain_harness/adapters/{robotwin2,robodojo,simplerenv,capgym,hardware}`, `harness/eval/transfer/`).
   - Each backend is the code of the evaluated harness snapshot for that benchmark, with the package renamed:
-    - RoboTwin 2.0: the frozen harness of the official Hard run (its source hash was re-computed and matches the run record);
-    - RoboDojo: harness revision r9 of the 42-task run (the hashes of its changed files match the run record); its copy of
-      the dual-arm tool adapter is kept as `adapters/robodojo/dual_arm.py`, because RoboTwin used a later revision;
-    - SimplerEnv: the harness of the WidowX runs (after the last fix before the counted episodes);
-    - CaP-Bench: the CaP-Gym backend of the counted runs.
+    - RoboTwin 2.0: the harness of the official Hard evaluation;
+    - RoboDojo: the harness of the 42-task evaluation; its dual-arm tool adapter is kept as `adapters/robodojo/dual_arm.py`;
+    - SimplerEnv: the harness of the WidowX evaluation;
+    - CaP-Bench: the CaP-Gym backend of the evaluation.
   - The shared LIBERO/CaP-X modules gained the RoboDojo options as opt-in attributes (stiff-arm force model, step profile,
     gripper settle, re-tare, reach hints, an IK-branch check). They are inactive unless the RoboDojo builder sets them, so
     the LIBERO code path is unchanged; the CPU test subset that covers these modules has the same result as before the merge.

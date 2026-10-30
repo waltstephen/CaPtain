@@ -1,5 +1,4 @@
-# CaPtain-4B-SFT recipe (two stages). Values are those of the run that produced the released CaPtain-4B-SFT checkpoint.
-# Stage 2 is the released recipe; stage 1 produced its initialisation.
+# CaPtain-4B-SFT recipe.
 base_model: Qwen/Qwen3.5-4B            # the post-trained release (not -Base)
 base_preprocessing: scripts/untie_base.py   # lm_head.weight = copy of embed_tokens, tie_word_embeddings false, mtp.* dropped
 
@@ -18,21 +17,12 @@ common:
   attention: sdpa
   step_order: sequential (SFT_SAMPLING=sequential) over the file order written by train/mix_order.py --world <ranks>
 
-stage1:
-  init: base model, untied
-  data: earlier agent-trajectory mix, 27,053 rows / ~440M tokens (agent 80.4%, auxiliary visual QA 5.2%, general visual QA 14.4%)
-  world_size: 16
-  max_length: 65536
-  schedule: 2 epochs = 3,382 steps (cosine), stopped early; checkpoint at step 1,700 is the stage-2 init
-  loss: mean over supervised tokens of the global batch (no constant normaliser), all rows weight 1.0
-
-stage2:                                 # = CaPtain-4B-SFT
-  init: stage-1 checkpoint (step 1,700), fresh optimizer
-  data: agent-trajectory mix, 25,961 rows / 861.1M tokens (table in README.md), helper-library code normalisation applied
+sft:                                    # = CaPtain-4B-SFT
+  data: CaPtain-SFT-Data (table in README.md), helper-library code normalisation applied
   world_size: 16                        # 2 nodes x 8 H100-80GB
   epochs: 1.5                           # = 2,435 optimizer steps (1,623 steps / epoch at 16 ranks)
   max_length: 66048                     # rows are packed to <= ~65,536 tokens; 3 rows encode slightly longer
-  loss_tokens_per_step: 13177.1         # C_w: constant global per-token normaliser (sup_tokens.py, QA_W=0.5, world 16)
+  loss_tokens_per_step: C_w             # constant global per-token normaliser: sup_tokens.py (QA_W=0.5, world 16)
   qa_loss_weight: 0.5                   # per-token weight of visual-QA / general rows; agent rows 1.0
   row_loss_weight: meta.loss_weight     # 2.0 for side-approach / pivot re-plan demonstrations
   save_steps: 200
