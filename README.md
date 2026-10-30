@@ -4,6 +4,7 @@
 
 **The first fully open, all-stage pipeline for a small, pure code-as-policy model**
 
+[![Paper](https://img.shields.io/badge/Paper-PDF-b31b1b?logo=adobeacrobatreader)](https://waltstephen.github.io/captain/assets/paper/CaPtain.pdf)
 [![Project Page](https://img.shields.io/badge/Project-Page-blue?logo=github)](https://waltstephen.github.io/captain/)
 [![Hugging Face](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Models%20%26%20Data-orange)](https://huggingface.co/collections/YijiaFan/captain-6ae3314bcf088fae95904168)
 [![Video](https://img.shields.io/badge/Video-YouTube-red?logo=youtube)](https://youtu.be/KMy-Bx5HXsg)
