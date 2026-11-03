@@ -185,11 +185,14 @@ license of the base model, Qwen3.5-4B (Apache-2.0). Release notes: [RELEASE_NOTE
 ## Citation
 
 ```bibtex
-@article{fan2026captain,
-  title   = {CaPtain: A Pipeline for Post-Training Code-as-Policy Robot Agents},
-  author  = {Fan, Yijia and He, Xilin and Jiang, Yilei and Wu, Dongming and Wang, Jiaxu and Yue, Xiangyu},
-  journal = {arXiv preprint},
-  year    = {2026}
+@misc{fan2026captainpipelineposttrainingcodeaspolicy,
+      title={CaPtain: A Pipeline for Post-Training Code-as-Policy Robot Agents}, 
+      author={Yijia Fan and Xilin He and Yilei Jiang and Dongming Wu and Jiaxu Wang and Xiangyu Yue},
+      year={2026},
+      eprint={2610.40799},
+      archivePrefix={arXiv},
+      primaryClass={cs.RO},
+      url={https://arxiv.org/abs/2610.40799}, 
 }
 ```
 
