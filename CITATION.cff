@@ -35,4 +35,8 @@ preferred-citation:
     - family-names: "Yue"
       given-names: "Xiangyu"
   year: 2026
-  notes: "Preprint; arXiv identifier coming soon."
+  journal: "arXiv preprint arXiv:2610.40799"
+  identifiers:
+    - type: other
+      value: "arXiv:2610.40799"
+  url: "https://arxiv.org/pdf/2610.40799"
