@@ -1,0 +1,50 @@
+{
+ "id": "cube_v_stack_small_on_large",
+ "tid": 220,
+ "version": 1,
+ "domain": "cube",
+ "split": "train",
+ "provenance": "hand",
+ "difficulty": 2,
+ "builder": "declarative",
+ "objects": [
+  {
+   "role": "destination",
+   "kind": "cube",
+   "count": 1,
+   "where": {
+    "size_class": {
+     "min": 4.0
+    }
+   }
+  },
+  {
+   "role": "target",
+   "kind": "cube",
+   "count": 1,
+   "where": {
+    "size_class": {
+     "max_role": "destination",
+     "not_role": "destination"
+    }
+   }
+  }
+ ],
+ "layout": [],
+ "goal": [
+  {
+   "pred": "on_top",
+   "args": [
+    "@target",
+    "@destination"
+   ]
+  }
+ ],
+ "instructions": [
+  "Put the smaller cube on top of the bigger one.",
+  "Stack the small cube on the large cube.",
+  "Place the smaller of the two cubes on the larger one.",
+  "Build a two-cube tower with the big cube at the bottom."
+ ],
+ "notes": "div2 variant (tools/make_variants.py)."
+}

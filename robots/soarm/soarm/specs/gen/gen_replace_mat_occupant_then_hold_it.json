@@ -1,0 +1,102 @@
+{
+ "id": "gen_replace_mat_occupant_then_hold_it",
+ "tid": 1129,
+ "version": 1,
+ "domain": "cube",
+ "split": "train",
+ "provenance": "llm",
+ "difficulty": 2,
+ "builder": "declarative",
+ "objects": [
+  {
+   "role": "mat",
+   "kind": "pad",
+   "count": 1,
+   "where": {
+    "size_class": 9.0
+   }
+  },
+  {
+   "role": "occupant",
+   "kind": "cube",
+   "count": 1,
+   "where": {
+    "size_class": 3.0,
+    "color": [
+     "blue",
+     "green",
+     "cyan"
+    ]
+   }
+  },
+  {
+   "role": "replacement",
+   "kind": "cube",
+   "count": 1,
+   "where": {
+    "size_class": 3.5,
+    "color": {
+     "not_role": "occupant"
+    }
+   }
+  }
+ ],
+ "layout": [
+  {
+   "type": "on",
+   "role": "occupant",
+   "support": "@mat"
+  }
+ ],
+ "goal": [
+  {
+   "pred": "in_region",
+   "args": [
+    "@replacement",
+    "@mat"
+   ]
+  },
+  {
+   "pred": "lifted",
+   "args": [
+    "@occupant"
+   ],
+   "params": {
+    "height": 0.04
+   }
+  }
+ ],
+ "instructions": [
+  "Set the cube from {mat} aside on the table, put the other cube on the mat, then pick up the original occupant and hold it at least four centimetres above the table.",
+  "Replace the mat's cube with the other cube, and finish holding the mat's original occupant at least four centimetres above the table. Temporarily set the original occupant on the table while making the replacement.",
+  "First remove the lone cube from {mat} and set it down. Next place the other cube on {mat}. Finally lift the removed cube and keep it at least four centimetres above the table.",
+  "The other cube should finish resting on {mat}, while the cube that started there is held at least four centimetres above the table. Use the table as a temporary resting place for the original occupant.",
+  "Temporarily park the mat's original cube on the table, fill its place on {mat} with the other cube, and then hold the parked cube at least four centimetres above the table.",
+  "Make room on {mat} by setting its occupant on the table; move the remaining cube onto the mat, then pick the former occupant back up and hold it at least four centimetres above the table.",
+  "Take the cube off {mat} and set it on the table for now. Put the other cube on {mat}, then pick up the first cube again and hold it at least four centimetres above the table.",
+  "Please place the cube currently on {mat} on the table temporarily, move the other cube onto {mat}, and only then lift the original cube and hold it at least four centimetres above the table.",
+  "The other cube should end up on {mat}, and the original occupant should end up held at least four centimetres above the table. To get there, first set the original occupant on the table, then place the other cube on {mat}, and finally pick the original occupant back up.",
+  "Clear {mat} by putting its cube down on the table. Fill the vacated spot with the other cube. Finish by lifting the removed cube and holding it at least four centimetres above the table.",
+  "First, park the block from {mat} on the table. Second, put the other block on {mat}. Third, retrieve the parked block and keep it held at least four centimetres above the table.",
+  "Swap in the other cube on {mat}: set the original cube on the table first, place the other cube on {mat} next, and then raise the original cube and hold it at least four centimetres above the table.",
+  "Begin by moving the cube occupying {mat} onto the table as a temporary resting place. After placing the other cube on {mat}, pick up the displaced cube and hold it at least four centimetres above the table.",
+  "Set the original occupant of {mat} down on the table, put the other cube in its place on {mat}, and then take the original occupant back into your grasp, holding it at least four centimetres above the table.",
+  "Please leave the other block resting on {mat} and finish holding the block that began there at least four centimetres above the table. First rest the original block on the table, next position the other block on {mat}, and then lift the original block again.",
+  "Move the cube from {mat} to the table for a short stop; next move the other cube onto {mat}; finally pick up the cube you set aside and keep it at least four centimetres above the table.",
+  "Give the other cube the spot on {mat}, but first put the current occupant down on the table. Once the other cube is on {mat}, pick the former occupant up again and hold it at least four centimetres above the table.",
+  "Remove the block resting on {mat} and let it rest on the table temporarily. Then place the other block on {mat}. Complete the task with the removed block held at least four centimetres above the table.",
+  "Use this sequence: put the cube from {mat} down on the table, put the other cube onto {mat}, and pick the first cube back up to hold it at least four centimetres above the table.",
+  "Keep the original cube off {mat} by first setting it on the table, then putting the other cube on {mat}, and finally lifting the original cube from the table and holding it at least four centimetres above the table.",
+  "Could you set the cube on {mat} aside on the table, place the other cube on {mat}, and then pick up the set-aside cube and keep it held at least four centimetres above the table?",
+  "Start with a temporary move to the table for the cube occupying {mat}. Follow that by placing the other cube on {mat}, and end by picking up the original occupant and holding it at least four centimetres above the table.",
+  "Put the block that starts on {mat} onto the table for now. Once the other block has been placed on {mat}, lift the first block again and maintain it at least four centimetres above the table.",
+  "The final arrangement should have the other cube resting on {mat} and the original cube held at least four centimetres above the table. First move the original cube to the table, then put the other cube on {mat}, and only afterward lift and hold the original cube.",
+  "Empty {mat} by setting its lone cube on the table temporarily; place the other cube on {mat}; then reclaim the cube from the table and hold it at least four centimetres above the table.",
+  "Please make the replacement in three stages: rest the original occupant of {mat} on the table, place the other cube on {mat}, and lift the original occupant again, keeping it at least four centimetres above the table.",
+  "Before putting the other block on {mat}, take the block already there and set it on the table. After the other block is in place, pick up the original block and hold it at least four centimetres above the table.",
+  "Set aside the cube currently occupying {mat}, using the table as its temporary resting place. Next, settle the other cube on {mat}. Lastly, raise the set-aside cube and keep it held at least four centimetres above the table.",
+  "Finish with the original occupant of {mat} in your grasp at least four centimetres above the table and the other cube on {mat}. Accomplish this by setting the original occupant on the table first, placing the other cube on {mat} second, and picking the original occupant back up last.",
+  "Take the original block off {mat}, put it down on the table, and then place the other block on {mat}. Only after that replacement is in place, pick up the original block and hold it at least four centimetres above the table."
+ ],
+ "notes": "Requires temporarily buffering a mat occupant to replace it before achieving a final lifted state for that same original occupant."
+}

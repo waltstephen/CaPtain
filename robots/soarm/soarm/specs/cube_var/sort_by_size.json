@@ -1,0 +1,102 @@
+{
+ "id": "cube_v_sort_by_size",
+ "tid": 242,
+ "version": 1,
+ "domain": "cube",
+ "split": "train",
+ "provenance": "hand",
+ "difficulty": 3,
+ "builder": "declarative",
+ "objects": [
+  {
+   "role": "big_mat",
+   "kind": "pad",
+   "count": 1
+  },
+  {
+   "role": "small_mat",
+   "kind": "pad",
+   "count": 1,
+   "where": {
+    "color": {
+     "not_role": "big_mat"
+    }
+   }
+  },
+  {
+   "role": "big",
+   "kind": "cube",
+   "count": 1,
+   "where": {
+    "size_class": {
+     "min": 4.5
+    }
+   }
+  },
+  {
+   "role": "small",
+   "kind": "cube",
+   "count": 1,
+   "where": {
+    "size_class": {
+     "max": 3.0
+    }
+   }
+  }
+ ],
+ "layout": [
+  {
+   "type": "region",
+   "role": "big",
+   "r": [
+    0.15,
+    0.26
+   ],
+   "angle_deg": [
+    -60,
+    60
+   ]
+  },
+  {
+   "type": "region",
+   "role": "small",
+   "r": [
+    0.15,
+    0.26
+   ],
+   "angle_deg": [
+    -60,
+    60
+   ]
+  }
+ ],
+ "goal": [
+  {
+   "pred": "in_region",
+   "args": [
+    "@big",
+    "@big_mat"
+   ]
+  },
+  {
+   "pred": "in_region",
+   "args": [
+    "@small",
+    "@small_mat"
+   ]
+  }
+ ],
+ "instructions": [
+  "Put the large cube on {big_mat} and the small cube on {small_mat}.",
+  "Sort by size: the big cube goes on {big_mat}, the small one on {small_mat}.",
+  "Place the bigger cube onto {big_mat} and the smaller cube onto {small_mat}."
+ ],
+ "workspace": {
+  "r": [
+   0.13,
+   0.29
+  ],
+  "angle_deg": 70
+ },
+ "notes": "div2 variant (tools/make_variants.py)."
+}

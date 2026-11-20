@@ -1,0 +1,92 @@
+{
+ "comment": "Real SO-101 on armhost for suite soarm_real (soarm/real_episode.py, soarm/real_driver.py). Calibration = the so101_armhost_*.json files next to this one ($SOARM_CODE is set by env.sh; roll zero 1915 since 2026-11-13); recalibrate for your own arm and cameras. Cameras come from tools/camstream.py (armcal), undistorted, cropped to a square and resized to image_size.",
+ "robot": "so101-armhost",
+ "port": "/dev/ttyACM0",
+ "calibration": {
+  "joint_map": "$SOARM_CODE/configs/hardware/so101_armhost_joint_map.json",
+  "kinematics": "$SOARM_CODE/configs/hardware/so101_armhost_kinematics.json",
+  "cameras": "$SOARM_CODE/configs/hardware/so101_armhost_cameras.json"
+ },
+ "control": {
+  "control_frequency_hz": 20
+ },
+ "servo": {
+  "torque_limit": [
+   500,
+   800,
+   800,
+   650,
+   400,
+   500
+  ],
+  "speed": 2400,
+  "acceleration": 150
+ },
+ "camstream_url": "http://127.0.0.1:8090/snap/{}",
+ "image_size": [
+  512,
+  512
+ ],
+ "cameras": {
+  "agentview": {
+   "stream": "2",
+   "calibration": "fixed",
+   "crop": [
+    388,
+    0,
+    720
+   ],
+   "xy_correction_m": [
+    0.0035,
+    -0.0065
+   ]
+  },
+  "robot0_eye_in_hand": {
+   "stream": "0",
+   "calibration": "wrist",
+   "crop": [
+    280,
+    0,
+    720
+   ]
+  }
+ },
+ "workspace_box_robot_base_m": {
+  "min": [
+   0.05,
+   -0.3,
+   0.005
+  ],
+  "max": [
+   0.42,
+   0.3,
+   0.3
+  ]
+ },
+ "mono_depth": {
+  "table_footprint_m": {
+   "x": [
+    0.08,
+    0.38
+   ],
+   "y": [
+    -0.25,
+    0.25
+   ]
+  }
+ },
+ "standard_rest_raw": [
+  2080,
+  1428,
+  3000,
+  2340,
+  1945,
+  2340
+ ],
+ "grip_squeeze_raw": 120,
+ "grip_offset_eef_m": [
+  0.0055,
+  0.0,
+  0.0
+ ]
+}

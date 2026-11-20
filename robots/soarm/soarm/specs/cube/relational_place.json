@@ -1,0 +1,58 @@
+{
+ "id": "cube_relational_place",
+ "tid": 116,
+ "version": 1,
+ "domain": "cube",
+ "split": "train",
+ "provenance": "hand",
+ "difficulty": 2,
+ "builder": "declarative",
+ "objects": [
+  {
+   "role": "reference",
+   "kind": [
+    "cube",
+    "bowl",
+    "box",
+    "pad"
+   ],
+   "count": 1
+  },
+  {
+   "role": "target",
+   "kind": "cube",
+   "count": 1
+  },
+  {
+   "role": "distractors",
+   "kind": "cube",
+   "count": [
+    0,
+    2
+   ]
+  }
+ ],
+ "layout": [],
+ "goal": [
+  {
+   "pred": "relation",
+   "args": [
+    "@target",
+    "@reference",
+    "%dir"
+   ]
+  }
+ ],
+ "instructions": [
+  "Place {target} {%dir} {reference}.",
+  "Put {target} on the table {%dir} {reference}."
+ ],
+ "vars": {
+  "dir": {
+   "left": "to the left of",
+   "right": "to the right of",
+   "front": "in front of",
+   "behind": "behind"
+  }
+ }
+}

@@ -1,0 +1,57 @@
+{
+ "id": "cube_v_stack_large",
+ "tid": 224,
+ "version": 1,
+ "domain": "cube",
+ "split": "train",
+ "provenance": "hand",
+ "difficulty": 2,
+ "builder": "declarative",
+ "objects": [
+  {
+   "role": "destination",
+   "kind": "cube",
+   "count": 1,
+   "where": {
+    "size_class": {
+     "min": 4.5
+    }
+   }
+  },
+  {
+   "role": "target",
+   "kind": "cube",
+   "count": 1,
+   "where": {
+    "size_class": {
+     "max_role": "destination"
+    }
+   }
+  },
+  {
+   "role": "distractors",
+   "kind": "cube",
+   "count": [
+    0,
+    2
+   ]
+  }
+ ],
+ "layout": [],
+ "goal": [
+  {
+   "pred": "on_top",
+   "args": [
+    "@target",
+    "@destination"
+   ]
+  }
+ ],
+ "instructions": [
+  "Stack {target} on top of {destination}.",
+  "Put {target} on {destination}.",
+  "Place {target} on top of {destination}.",
+  "Set {target} down on top of {destination}."
+ ],
+ "notes": "div2 variant (tools/make_variants.py)."
+}

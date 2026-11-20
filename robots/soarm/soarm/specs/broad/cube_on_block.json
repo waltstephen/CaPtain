@@ -1,0 +1,54 @@
+{
+ "id": "obj_cube_on_block",
+ "tid": 10007,
+ "version": 1,
+ "domain": "broad",
+ "split": "train",
+ "provenance": "hand",
+ "difficulty": 2,
+ "builder": "declarative",
+ "objects": [
+  {
+   "role": "destination",
+   "kind": "block",
+   "count": 1
+  },
+  {
+   "role": "target",
+   "kind": "cube",
+   "count": 1,
+   "where": {
+    "size_class": {
+     "max": 3.5
+    }
+   }
+  },
+  {
+   "role": "distractors",
+   "kind": [
+    "cylinder"
+   ],
+   "count": [
+    0,
+    1
+   ]
+  }
+ ],
+ "layout": [],
+ "goal": [
+  {
+   "pred": "on_top",
+   "args": [
+    "@target",
+    "@destination"
+   ]
+  }
+ ],
+ "instructions": [
+  "Stack {target} on top of {destination}.",
+  "Put {target} on {destination}.",
+  "Place {target} on top of {destination}.",
+  "Set {target} down on top of {destination}."
+ ],
+ "notes": "div2 variant (tools/make_variants.py)."
+}

@@ -1,0 +1,3 @@
+{"table_mount": "edge3", "camera": "train", "layout": "div3", "table_textures": "all", "lights": "random3",
+ "clutter": [0, 3], "clutter_kinds": ["cylinder", "block", "cup"], "platforms": 0.3, "platforms_max": 2,
+ "distractor_stacks": 0.15, "cube_size_weights": [0.5, 0.7, 1.2, 1.3, 1.3]}

@@ -1,0 +1,10 @@
+{
+ "id": "broad",
+ "description": "Non-cube objects: the 16 legacy families (blocks, cylinders, balls, tiles, cups/bowls/boxes) + held-out broad-domain specs (tid 10000+, split heldout); div2's train broad specs are excluded.",
+ "select": [
+  {"domain": "legacy"},
+  {"domain": "broad", "split": "heldout"}
+ ],
+ "seeds": "9000-9002",
+ "config": {}
+}

@@ -1,0 +1,45 @@
+{
+ "id": "cube_v_line_small",
+ "tid": 235,
+ "version": 1,
+ "domain": "cube",
+ "split": "train",
+ "provenance": "hand",
+ "difficulty": 3,
+ "builder": "declarative",
+ "objects": [
+  {
+   "role": "items",
+   "kind": "cube",
+   "count": 3,
+   "where": {
+    "size_class": {
+     "max": 3.5
+    }
+   }
+  },
+  {
+   "role": "distractors",
+   "kind": "cube",
+   "count": [
+    0,
+    1
+   ]
+  }
+ ],
+ "layout": [],
+ "goal": [
+  {
+   "pred": "in_line",
+   "args": [
+    "@items*"
+   ]
+  }
+ ],
+ "instructions": [
+  "Line up {items} in a straight row.",
+  "Arrange {items} in a straight line, a few centimetres apart.",
+  "Put {items} in one straight row."
+ ],
+ "notes": "div2 variant (tools/make_variants.py)."
+}

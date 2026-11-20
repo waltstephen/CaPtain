@@ -1,0 +1,109 @@
+{
+ "id": "cube_v_sort_colors_two_mats",
+ "tid": 265,
+ "version": 1,
+ "domain": "cube",
+ "split": "train",
+ "provenance": "hand",
+ "difficulty": 3,
+ "builder": "declarative",
+ "objects": [
+  {
+   "role": "mats",
+   "kind": "big_mat",
+   "count": 2,
+   "where": {
+    "color": {
+     "distinct": true
+    }
+   }
+  },
+  {
+   "role": "group0",
+   "kind": "cube",
+   "count": [
+    1,
+    2
+   ],
+   "where": {
+    "color": {
+     "same_role": "mats[0]"
+    },
+    "size_class": {
+     "max": 4.0
+    }
+   }
+  },
+  {
+   "role": "group1",
+   "kind": "cube",
+   "count": 1,
+   "where": {
+    "color": {
+     "same_role": "mats[1]"
+    },
+    "size_class": {
+     "max": 4.0
+    }
+   }
+  }
+ ],
+ "layout": [
+  {
+   "type": "region",
+   "role": "group0",
+   "r": [
+    0.15,
+    0.26
+   ],
+   "angle_deg": [
+    -60,
+    60
+   ]
+  },
+  {
+   "type": "region",
+   "role": "group1",
+   "r": [
+    0.15,
+    0.26
+   ],
+   "angle_deg": [
+    -60,
+    60
+   ]
+  }
+ ],
+ "goal": [
+  {
+   "pred": "in_region",
+   "for_each": "group0",
+   "args": [
+    "$",
+    "@mats[0]"
+   ]
+  },
+  {
+   "pred": "in_region",
+   "for_each": "group1",
+   "args": [
+    "$",
+    "@mats[1]"
+   ]
+  }
+ ],
+ "instructions": [
+  "Put each cube on the mat of the same colour.",
+  "Sort the cubes onto the mats that match their colours.",
+  "Match every cube to the mat of its colour.",
+  "Move the cubes so each one sits on the mat with its colour."
+ ],
+ "workspace": {
+  "r": [
+   0.13,
+   0.29
+  ],
+  "angle_deg": 70
+ },
+ "notes": "div3 variant (tools/make_variants.py)."
+}

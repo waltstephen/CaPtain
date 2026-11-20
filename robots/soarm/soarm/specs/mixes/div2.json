@@ -1,0 +1,916 @@
+{
+ "id": "div2",
+ "description": "div2 teacher mix (11-11): edge-mounted arm, random table, mixed layouts, train camera views, 0-2 clutter objects, p 0.2 platform; cube tasks first (hand specs, parameterised variants, taskgen), 20 % non-cube primitives. Weights are shares of strict successes.",
+ "intro": "v4",
+ "config": {
+  "table_mount": "edge",
+  "camera": "train",
+  "layout": "mixed",
+  "table_textures": "all",
+  "lights": "random",
+  "clutter": [
+   0,
+   2
+  ],
+  "platforms": 0.2
+ },
+ "retire": {
+  "min_attempts": 10,
+  "min_yield": 0.15
+ },
+ "groups": {
+  "cube_base": {
+   "share": 0.3077,
+   "tasks": 14
+  },
+  "cube_var": {
+   "share": 0.4923,
+   "tasks": 49
+  },
+  "cube_llm": {
+   "share": 0.0,
+   "tasks": 0
+  },
+  "noncube": {
+   "share": 0.2,
+   "tasks": 16
+  }
+ },
+ "tasks": [
+  {
+   "id": "cube_clear_region",
+   "group": "cube_base",
+   "weight": 0.025,
+   "scripted": [
+    10,
+    10
+   ],
+   "difficulty": 2,
+   "layouts": 10
+  },
+  {
+   "id": "cube_line_up",
+   "group": "cube_base",
+   "weight": 0.02293,
+   "scripted": [
+    10,
+    10
+   ],
+   "difficulty": 3,
+   "layouts": 10
+  },
+  {
+   "id": "cube_line_up_ordered",
+   "group": "cube_base",
+   "weight": 0.01783,
+   "scripted": [
+    10,
+    10
+   ],
+   "difficulty": 4,
+   "layouts": 10
+  },
+  {
+   "id": "cube_multi_step",
+   "group": "cube_base",
+   "weight": 0.01605,
+   "scripted": [
+    9,
+    10
+   ],
+   "difficulty": 4,
+   "layouts": 10
+  },
+  {
+   "id": "cube_ordinal_stack",
+   "group": "cube_base",
+   "weight": 0.02293,
+   "scripted": [
+    10,
+    10
+   ],
+   "difficulty": 3,
+   "layouts": 10
+  },
+  {
+   "id": "cube_pick_lift",
+   "group": "cube_base",
+   "weight": 0.025,
+   "scripted": [
+    10,
+    10
+   ],
+   "difficulty": 1,
+   "layouts": 10
+  },
+  {
+   "id": "cube_push_to_region",
+   "group": "cube_base",
+   "weight": 0.025,
+   "scripted": [
+    10,
+    10
+   ],
+   "difficulty": 2,
+   "layouts": 10
+  },
+  {
+   "id": "cube_put_all_in_container",
+   "group": "cube_base",
+   "weight": 0.01605,
+   "scripted": [
+    7,
+    10
+   ],
+   "difficulty": 3,
+   "layouts": 10
+  },
+  {
+   "id": "cube_put_in_container",
+   "group": "cube_base",
+   "weight": 0.025,
+   "scripted": [
+    10,
+    10
+   ],
+   "difficulty": 1,
+   "layouts": 10
+  },
+  {
+   "id": "cube_relational_place",
+   "group": "cube_base",
+   "weight": 0.025,
+   "scripted": [
+    10,
+    10
+   ],
+   "difficulty": 2,
+   "layouts": 10
+  },
+  {
+   "id": "cube_slot_insert",
+   "group": "cube_base",
+   "weight": 0.01834,
+   "scripted": [
+    8,
+    10
+   ],
+   "difficulty": 3,
+   "layouts": 10
+  },
+  {
+   "id": "cube_sort_by_color",
+   "group": "cube_base",
+   "weight": 0.02064,
+   "scripted": [
+    9,
+    10
+   ],
+   "difficulty": 3,
+   "layouts": 10
+  },
+  {
+   "id": "cube_stack_three",
+   "group": "cube_base",
+   "weight": 0.02293,
+   "scripted": [
+    10,
+    10
+   ],
+   "difficulty": 3,
+   "layouts": 10
+  },
+  {
+   "id": "cube_stack_two",
+   "group": "cube_base",
+   "weight": 0.025,
+   "scripted": [
+    10,
+    10
+   ],
+   "difficulty": 2,
+   "layouts": 10
+  },
+  {
+   "id": "cube_v_all_color_in_container",
+   "group": "cube_var",
+   "weight": 0.00968,
+   "scripted": [
+    9,
+    10
+   ],
+   "difficulty": 2,
+   "layouts": 10
+  },
+  {
+   "id": "cube_v_all_on_mat",
+   "group": "cube_var",
+   "weight": 0.00753,
+   "scripted": [
+    7,
+    10
+   ],
+   "difficulty": 2,
+   "layouts": 10
+  },
+  {
+   "id": "cube_v_clear_mat_one",
+   "group": "cube_var",
+   "weight": 0.01076,
+   "scripted": [
+    10,
+    10
+   ],
+   "difficulty": 1,
+   "layouts": 10
+  },
+  {
+   "id": "cube_v_container_and_relation",
+   "group": "cube_var",
+   "weight": 0.00968,
+   "scripted": [
+    9,
+    10
+   ],
+   "difficulty": 2,
+   "layouts": 10
+  },
+  {
+   "id": "cube_v_container_to_mat",
+   "group": "cube_var",
+   "weight": 0.00646,
+   "scripted": [
+    6,
+    10
+   ],
+   "difficulty": 2,
+   "layouts": 10
+  },
+  {
+   "id": "cube_v_empty_container",
+   "group": "cube_var",
+   "weight": 0.00538,
+   "scripted": [
+    5,
+    10
+   ],
+   "difficulty": 2,
+   "layouts": 10
+  },
+  {
+   "id": "cube_v_in_and_on",
+   "group": "cube_var",
+   "weight": 0.00968,
+   "scripted": [
+    9,
+    10
+   ],
+   "difficulty": 2,
+   "layouts": 10
+  },
+  {
+   "id": "cube_v_in_bowl",
+   "group": "cube_var",
+   "weight": 0.01076,
+   "scripted": [
+    10,
+    10
+   ],
+   "difficulty": 1,
+   "layouts": 10
+  },
+  {
+   "id": "cube_v_in_box",
+   "group": "cube_var",
+   "weight": 0.01076,
+   "scripted": [
+    10,
+    10
+   ],
+   "difficulty": 1,
+   "layouts": 10
+  },
+  {
+   "id": "cube_v_in_container_large",
+   "group": "cube_var",
+   "weight": 0.01076,
+   "scripted": [
+    10,
+    10
+   ],
+   "difficulty": 2,
+   "layouts": 10
+  },
+  {
+   "id": "cube_v_in_container_largest",
+   "group": "cube_var",
+   "weight": 0.01076,
+   "scripted": [
+    10,
+    10
+   ],
+   "difficulty": 1,
+   "layouts": 10
+  },
+  {
+   "id": "cube_v_in_container_small",
+   "group": "cube_var",
+   "weight": 0.01076,
+   "scripted": [
+    10,
+    10
+   ],
+   "difficulty": 1,
+   "layouts": 10
+  },
+  {
+   "id": "cube_v_in_container_smallest",
+   "group": "cube_var",
+   "weight": 0.00968,
+   "scripted": [
+    9,
+    10
+   ],
+   "difficulty": 1,
+   "layouts": 10
+  },
+  {
+   "id": "cube_v_in_container_wood",
+   "group": "cube_var",
+   "weight": 0.01076,
+   "scripted": [
+    10,
+    10
+   ],
+   "difficulty": 1,
+   "layouts": 10
+  },
+  {
+   "id": "cube_v_lift_dense",
+   "group": "cube_var",
+   "weight": 0.01076,
+   "scripted": [
+    10,
+    10
+   ],
+   "difficulty": 1,
+   "layouts": 10
+  },
+  {
+   "id": "cube_v_lift_large",
+   "group": "cube_var",
+   "weight": 0.01076,
+   "scripted": [
+    10,
+    10
+   ],
+   "difficulty": 1,
+   "layouts": 10
+  },
+  {
+   "id": "cube_v_lift_largest",
+   "group": "cube_var",
+   "weight": 0.01076,
+   "scripted": [
+    10,
+    10
+   ],
+   "difficulty": 1,
+   "layouts": 10
+  },
+  {
+   "id": "cube_v_lift_small",
+   "group": "cube_var",
+   "weight": 0.01076,
+   "scripted": [
+    10,
+    10
+   ],
+   "difficulty": 1,
+   "layouts": 10
+  },
+  {
+   "id": "cube_v_lift_smallest",
+   "group": "cube_var",
+   "weight": 0.01076,
+   "scripted": [
+    10,
+    10
+   ],
+   "difficulty": 1,
+   "layouts": 10
+  },
+  {
+   "id": "cube_v_lift_wood",
+   "group": "cube_var",
+   "weight": 0.01076,
+   "scripted": [
+    10,
+    10
+   ],
+   "difficulty": 1,
+   "layouts": 10
+  },
+  {
+   "id": "cube_v_line_front_to_back",
+   "group": "cube_var",
+   "weight": 0.00968,
+   "scripted": [
+    10,
+    10
+   ],
+   "difficulty": 3,
+   "layouts": 10
+  },
+  {
+   "id": "cube_v_line_same_color",
+   "group": "cube_var",
+   "weight": 0.00968,
+   "scripted": [
+    10,
+    10
+   ],
+   "difficulty": 3,
+   "layouts": 10
+  },
+  {
+   "id": "cube_v_line_small",
+   "group": "cube_var",
+   "weight": 0.00968,
+   "scripted": [
+    10,
+    10
+   ],
+   "difficulty": 3,
+   "layouts": 10
+  },
+  {
+   "id": "cube_v_mat_then_stack",
+   "group": "cube_var",
+   "weight": 0.00968,
+   "scripted": [
+    10,
+    10
+   ],
+   "difficulty": 3,
+   "layouts": 10
+  },
+  {
+   "id": "cube_v_mat_to_container",
+   "group": "cube_var",
+   "weight": 0.01076,
+   "scripted": [
+    10,
+    10
+   ],
+   "difficulty": 1,
+   "layouts": 10
+  },
+  {
+   "id": "cube_v_mat_to_mat",
+   "group": "cube_var",
+   "weight": 0.01076,
+   "scripted": [
+    10,
+    10
+   ],
+   "difficulty": 1,
+   "layouts": 10
+  },
+  {
+   "id": "cube_v_on_mat",
+   "group": "cube_var",
+   "weight": 0.01076,
+   "scripted": [
+    10,
+    10
+   ],
+   "difficulty": 1,
+   "layouts": 10
+  },
+  {
+   "id": "cube_v_on_mat_large",
+   "group": "cube_var",
+   "weight": 0.01076,
+   "scripted": [
+    10,
+    10
+   ],
+   "difficulty": 1,
+   "layouts": 10
+  },
+  {
+   "id": "cube_v_on_mat_of_two",
+   "group": "cube_var",
+   "weight": 0.01076,
+   "scripted": [
+    10,
+    10
+   ],
+   "difficulty": 1,
+   "layouts": 10
+  },
+  {
+   "id": "cube_v_on_mat_small",
+   "group": "cube_var",
+   "weight": 0.01076,
+   "scripted": [
+    10,
+    10
+   ],
+   "difficulty": 1,
+   "layouts": 10
+  },
+  {
+   "id": "cube_v_place_then_lift",
+   "group": "cube_var",
+   "weight": 0.01076,
+   "scripted": [
+    10,
+    10
+   ],
+   "difficulty": 2,
+   "layouts": 10
+  },
+  {
+   "id": "cube_v_rel_behind_cube",
+   "group": "cube_var",
+   "weight": 0.00968,
+   "scripted": [
+    9,
+    10
+   ],
+   "difficulty": 2,
+   "layouts": 10
+  },
+  {
+   "id": "cube_v_rel_behind_landmark",
+   "group": "cube_var",
+   "weight": 0.00861,
+   "scripted": [
+    8,
+    10
+   ],
+   "difficulty": 2,
+   "layouts": 10
+  },
+  {
+   "id": "cube_v_rel_front_cube",
+   "group": "cube_var",
+   "weight": 0.01076,
+   "scripted": [
+    10,
+    10
+   ],
+   "difficulty": 2,
+   "layouts": 10
+  },
+  {
+   "id": "cube_v_rel_front_landmark",
+   "group": "cube_var",
+   "weight": 0.01076,
+   "scripted": [
+    10,
+    10
+   ],
+   "difficulty": 2,
+   "layouts": 10
+  },
+  {
+   "id": "cube_v_rel_left_cube",
+   "group": "cube_var",
+   "weight": 0.01076,
+   "scripted": [
+    10,
+    10
+   ],
+   "difficulty": 2,
+   "layouts": 10
+  },
+  {
+   "id": "cube_v_rel_left_landmark",
+   "group": "cube_var",
+   "weight": 0.01076,
+   "scripted": [
+    10,
+    10
+   ],
+   "difficulty": 2,
+   "layouts": 10
+  },
+  {
+   "id": "cube_v_rel_right_cube",
+   "group": "cube_var",
+   "weight": 0.01076,
+   "scripted": [
+    10,
+    10
+   ],
+   "difficulty": 2,
+   "layouts": 10
+  },
+  {
+   "id": "cube_v_rel_right_landmark",
+   "group": "cube_var",
+   "weight": 0.01076,
+   "scripted": [
+    10,
+    10
+   ],
+   "difficulty": 2,
+   "layouts": 10
+  },
+  {
+   "id": "cube_v_slot_small",
+   "group": "cube_var",
+   "weight": 0.00581,
+   "scripted": [
+    6,
+    10
+   ],
+   "difficulty": 3,
+   "layouts": 10
+  },
+  {
+   "id": "cube_v_sort_by_size",
+   "group": "cube_var",
+   "weight": 0.00968,
+   "scripted": [
+    10,
+    10
+   ],
+   "difficulty": 3,
+   "layouts": 10
+  },
+  {
+   "id": "cube_v_sort_one_each",
+   "group": "cube_var",
+   "weight": 0.00968,
+   "scripted": [
+    9,
+    10
+   ],
+   "difficulty": 2,
+   "layouts": 10
+  },
+  {
+   "id": "cube_v_stack_and_relation",
+   "group": "cube_var",
+   "weight": 0.00775,
+   "scripted": [
+    8,
+    10
+   ],
+   "difficulty": 3,
+   "layouts": 10
+  },
+  {
+   "id": "cube_v_stack_dense",
+   "group": "cube_var",
+   "weight": 0.01076,
+   "scripted": [
+    10,
+    10
+   ],
+   "difficulty": 2,
+   "layouts": 10
+  },
+  {
+   "id": "cube_v_stack_large",
+   "group": "cube_var",
+   "weight": 0.01076,
+   "scripted": [
+    10,
+    10
+   ],
+   "difficulty": 2,
+   "layouts": 10
+  },
+  {
+   "id": "cube_v_stack_on_mat_cube",
+   "group": "cube_var",
+   "weight": 0.01076,
+   "scripted": [
+    10,
+    10
+   ],
+   "difficulty": 2,
+   "layouts": 10
+  },
+  {
+   "id": "cube_v_stack_on_wood",
+   "group": "cube_var",
+   "weight": 0.01076,
+   "scripted": [
+    10,
+    10
+   ],
+   "difficulty": 2,
+   "layouts": 10
+  },
+  {
+   "id": "cube_v_stack_same_color",
+   "group": "cube_var",
+   "weight": 0.01076,
+   "scripted": [
+    10,
+    10
+   ],
+   "difficulty": 2,
+   "layouts": 10
+  },
+  {
+   "id": "cube_v_stack_small_on_large",
+   "group": "cube_var",
+   "weight": 0.01076,
+   "scripted": [
+    10,
+    10
+   ],
+   "difficulty": 2,
+   "layouts": 10
+  },
+  {
+   "id": "obj_block_in_container",
+   "group": "noncube",
+   "weight": 0.0133,
+   "scripted": [
+    10,
+    10
+   ],
+   "difficulty": 1,
+   "layouts": 10
+  },
+  {
+   "id": "obj_block_lift",
+   "group": "noncube",
+   "weight": 0.0133,
+   "scripted": [
+    10,
+    10
+   ],
+   "difficulty": 1,
+   "layouts": 10
+  },
+  {
+   "id": "obj_block_on_block",
+   "group": "noncube",
+   "weight": 0.0133,
+   "scripted": [
+    10,
+    10
+   ],
+   "difficulty": 2,
+   "layouts": 10
+  },
+  {
+   "id": "obj_block_on_mat",
+   "group": "noncube",
+   "weight": 0.0133,
+   "scripted": [
+    10,
+    10
+   ],
+   "difficulty": 1,
+   "layouts": 10
+  },
+  {
+   "id": "obj_block_relation",
+   "group": "noncube",
+   "weight": 0.0133,
+   "scripted": [
+    10,
+    10
+   ],
+   "difficulty": 2,
+   "layouts": 10
+  },
+  {
+   "id": "obj_clear_mat_shape",
+   "group": "noncube",
+   "weight": 0.0133,
+   "scripted": [
+    10,
+    10
+   ],
+   "difficulty": 1,
+   "layouts": 10
+  },
+  {
+   "id": "obj_cube_in_cup",
+   "group": "noncube",
+   "weight": 0.0133,
+   "scripted": [
+    10,
+    10
+   ],
+   "difficulty": 2,
+   "layouts": 10
+  },
+  {
+   "id": "obj_cube_on_block",
+   "group": "noncube",
+   "weight": 0.0133,
+   "scripted": [
+    10,
+    10
+   ],
+   "difficulty": 2,
+   "layouts": 10
+  },
+  {
+   "id": "obj_cylinder_in_container",
+   "group": "noncube",
+   "weight": 0.0133,
+   "scripted": [
+    10,
+    10
+   ],
+   "difficulty": 1,
+   "layouts": 10
+  },
+  {
+   "id": "obj_cylinder_lift",
+   "group": "noncube",
+   "weight": 0.0133,
+   "scripted": [
+    10,
+    10
+   ],
+   "difficulty": 1,
+   "layouts": 10
+  },
+  {
+   "id": "obj_cylinder_on_mat",
+   "group": "noncube",
+   "weight": 0.0133,
+   "scripted": [
+    10,
+    10
+   ],
+   "difficulty": 1,
+   "layouts": 10
+  },
+  {
+   "id": "obj_cylinder_relation",
+   "group": "noncube",
+   "weight": 0.01064,
+   "scripted": [
+    8,
+    10
+   ],
+   "difficulty": 2,
+   "layouts": 10
+  },
+  {
+   "id": "obj_line_mixed",
+   "group": "noncube",
+   "weight": 0.01197,
+   "scripted": [
+    10,
+    10
+   ],
+   "difficulty": 3,
+   "layouts": 10
+  },
+  {
+   "id": "obj_mixed_all_in_box",
+   "group": "noncube",
+   "weight": 0.01064,
+   "scripted": [
+    8,
+    10
+   ],
+   "difficulty": 2,
+   "layouts": 10
+  },
+  {
+   "id": "obj_shape_in_container",
+   "group": "noncube",
+   "weight": 0.0133,
+   "scripted": [
+    10,
+    10
+   ],
+   "difficulty": 1,
+   "layouts": 10
+  },
+  {
+   "id": "obj_shapes_to_mats",
+   "group": "noncube",
+   "weight": 0.00718,
+   "scripted": [
+    6,
+    10
+   ],
+   "difficulty": 3,
+   "layouts": 10
+  }
+ ],
+ "excluded": [
+  {
+   "id": "cube_sort_by_color3",
+   "reason": "verifier stage layouts: only 4/10 valid layouts in 80 draws"
+  }
+ ]
+}

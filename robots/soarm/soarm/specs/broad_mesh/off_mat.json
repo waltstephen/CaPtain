@@ -1,0 +1,60 @@
+{
+ "id": "mesh_off_mat",
+ "tid": 11003,
+ "version": 1,
+ "domain": "broad",
+ "split": "train",
+ "provenance": "hand",
+ "difficulty": 1,
+ "builder": "declarative",
+ "objects": [
+  {
+   "role": "mat",
+   "kind": "pad",
+   "count": 1
+  },
+  {
+   "role": "target",
+   "kind": "registry",
+   "count": 1,
+   "where": {
+    "footprint": {
+     "max": 0.08
+    }
+   }
+  },
+  {
+   "role": "distractors",
+   "kind": [
+    "cube",
+    "cylinder"
+   ],
+   "count": [
+    0,
+    2
+   ]
+  }
+ ],
+ "layout": [
+  {
+   "type": "on",
+   "role": "target",
+   "support": "@mat"
+  }
+ ],
+ "goal": [
+  {
+   "pred": "off_region",
+   "args": [
+    "@target",
+    "@mat"
+   ]
+  }
+ ],
+ "instructions": [
+  "Take {target} off {mat} and put it on the table.",
+  "Move {target} off {mat}.",
+  "Remove {target} from {mat}."
+ ],
+ "notes": "div3 variant (tools/make_variants.py)."
+}

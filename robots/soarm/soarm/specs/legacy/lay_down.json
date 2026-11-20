@@ -1,0 +1,40 @@
+{
+ "id": "lay_down",
+ "tid": 2,
+ "version": 1,
+ "domain": "legacy",
+ "split": "heldout",
+ "provenance": "hand",
+ "difficulty": 2,
+ "builder": "legacy:lay_down",
+ "objects": [
+  {
+   "role": "target",
+   "kind": "cylinder",
+   "count": 1
+  },
+  {
+   "role": "distractors",
+   "kind": "cube",
+   "count": [
+    1,
+    2
+   ]
+  }
+ ],
+ "layout": [],
+ "goal": [
+  {
+   "pred": "lying",
+   "args": [
+    "@target"
+   ]
+  }
+ ],
+ "instructions": [
+  "Lay {target} on its side.",
+  "Tip {target} over so it lies on its side on the table.",
+  "Put {target} down lying flat on its side."
+ ],
+ "notes": "Legacy family (pre-pivot). Sampled by families.py (builder legacy:*), bit-identical to the pre-spec sampler; objects/goal/instructions here describe it (object kinds vary per seed in the generator) and are not interpreted."
+}

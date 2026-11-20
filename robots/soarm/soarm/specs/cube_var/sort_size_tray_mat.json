@@ -1,0 +1,98 @@
+{
+ "id": "cube_v_sort_size_tray_mat",
+ "tid": 266,
+ "version": 1,
+ "domain": "cube",
+ "split": "train",
+ "provenance": "hand",
+ "difficulty": 2,
+ "builder": "declarative",
+ "objects": [
+  {
+   "role": "destination",
+   "kind": "tray",
+   "count": 1
+  },
+  {
+   "role": "mat",
+   "kind": "big_mat",
+   "count": 1
+  },
+  {
+   "role": "big",
+   "kind": "cube",
+   "count": 1,
+   "where": {
+    "size_class": {
+     "min": 4.5
+    }
+   }
+  },
+  {
+   "role": "small",
+   "kind": "cube",
+   "count": 1,
+   "where": {
+    "size_class": {
+     "max": 3.5
+    }
+   }
+  }
+ ],
+ "layout": [
+  {
+   "type": "region",
+   "role": "big",
+   "r": [
+    0.15,
+    0.26
+   ],
+   "angle_deg": [
+    -60,
+    60
+   ]
+  },
+  {
+   "type": "region",
+   "role": "small",
+   "r": [
+    0.15,
+    0.26
+   ],
+   "angle_deg": [
+    -60,
+    60
+   ]
+  }
+ ],
+ "goal": [
+  {
+   "pred": "inside",
+   "args": [
+    "@big",
+    "@destination"
+   ]
+  },
+  {
+   "pred": "in_region",
+   "args": [
+    "@small",
+    "@mat"
+   ]
+  }
+ ],
+ "instructions": [
+  "Put the large cube in {destination} and the small cube on {mat}.",
+  "Sort by size: the big cube goes into {destination}, the small one onto {mat}.",
+  "Place the bigger cube in {destination} and the smaller cube on {mat}.",
+  "The larger cube belongs in {destination}; the smaller one belongs on {mat}."
+ ],
+ "workspace": {
+  "r": [
+   0.13,
+   0.29
+  ],
+  "angle_deg": 70
+ },
+ "notes": "div3 variant (tools/make_variants.py)."
+}

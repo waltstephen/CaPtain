@@ -1,0 +1,64 @@
+{
+ "id": "cube_slot_insert",
+ "tid": 117,
+ "version": 1,
+ "domain": "cube",
+ "split": "train",
+ "provenance": "hand",
+ "difficulty": 3,
+ "builder": "declarative",
+ "objects": [
+  {
+   "role": "target",
+   "kind": "cube",
+   "count": 1,
+   "where": {
+    "size_class": {
+     "max": 4.5
+    }
+   }
+  },
+  {
+   "role": "destination",
+   "kind": "slot",
+   "count": 1,
+   "where": {
+    "size_class": {
+     "same_role": "target"
+    }
+   }
+  },
+  {
+   "role": "distractors",
+   "kind": "cube",
+   "count": [
+    0,
+    2
+   ]
+  }
+ ],
+ "layout": [
+  {
+   "type": "region",
+   "role": "destination",
+   "r": [
+    0.17,
+    0.25
+   ]
+  }
+ ],
+ "goal": [
+  {
+   "pred": "inside",
+   "args": [
+    "@target",
+    "@destination"
+   ]
+  }
+ ],
+ "instructions": [
+  "Fit {target} into {destination}; the opening is only a few millimetres wider than the cube.",
+  "Insert {target} into the tight {destination.color} holder."
+ ],
+ "notes": "Slot near the base (r < 0.17 m) failed 6/6 scripted placements of 3 cm cubes; the slot stays at r 0.17-0.27 m."
+}

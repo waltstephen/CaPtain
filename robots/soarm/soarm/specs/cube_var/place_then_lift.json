@@ -1,0 +1,60 @@
+{
+ "id": "cube_v_place_then_lift",
+ "tid": 245,
+ "version": 1,
+ "domain": "cube",
+ "split": "train",
+ "provenance": "hand",
+ "difficulty": 2,
+ "builder": "declarative",
+ "objects": [
+  {
+   "role": "container",
+   "kind": [
+    "bowl",
+    "box"
+   ],
+   "count": 1
+  },
+  {
+   "role": "first",
+   "kind": "cube",
+   "count": 1
+  },
+  {
+   "role": "second",
+   "kind": "cube",
+   "count": 1
+  },
+  {
+   "role": "distractors",
+   "kind": "cube",
+   "count": [
+    0,
+    1
+   ]
+  }
+ ],
+ "layout": [],
+ "goal": [
+  {
+   "pred": "inside",
+   "args": [
+    "@first",
+    "@container"
+   ]
+  },
+  {
+   "pred": "lifted",
+   "args": [
+    "@second"
+   ]
+  }
+ ],
+ "instructions": [
+  "Put {first} in {container}, then pick up {second} and hold it in the air.",
+  "Drop {first} into {container}; afterwards lift {second} and keep holding it.",
+  "First place {first} into {container}, then grab {second} and raise it."
+ ],
+ "notes": "div2 variant (tools/make_variants.py)."
+}

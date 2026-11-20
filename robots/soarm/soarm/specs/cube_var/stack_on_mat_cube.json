@@ -1,0 +1,63 @@
+{
+ "id": "cube_v_stack_on_mat_cube",
+ "tid": 223,
+ "version": 1,
+ "domain": "cube",
+ "split": "train",
+ "provenance": "hand",
+ "difficulty": 2,
+ "builder": "declarative",
+ "objects": [
+  {
+   "role": "mat",
+   "kind": "pad",
+   "count": 1
+  },
+  {
+   "role": "destination",
+   "kind": "cube",
+   "count": 1
+  },
+  {
+   "role": "target",
+   "kind": "cube",
+   "count": 1,
+   "where": {
+    "size_class": {
+     "max_role": "destination"
+    }
+   }
+  },
+  {
+   "role": "distractors",
+   "kind": "cube",
+   "count": [
+    0,
+    2
+   ]
+  }
+ ],
+ "layout": [
+  {
+   "type": "on",
+   "role": "destination",
+   "support": "@mat"
+  }
+ ],
+ "goal": [
+  {
+   "pred": "on_top",
+   "args": [
+    "@target",
+    "@destination"
+   ]
+  }
+ ],
+ "instructions": [
+  "Stack {target} on {destination}, the cube on {mat}.",
+  "Put {target} on top of the cube that is on {mat}.",
+  "Place {target} onto {destination}.",
+  "Set {target} down on top of {destination}, which sits on {mat}."
+ ],
+ "notes": "div2 variant (tools/make_variants.py)."
+}

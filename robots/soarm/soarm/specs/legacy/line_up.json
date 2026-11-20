@@ -1,0 +1,39 @@
+{
+ "id": "line_up",
+ "tid": 3,
+ "version": 1,
+ "domain": "legacy",
+ "split": "train",
+ "provenance": "hand",
+ "difficulty": 3,
+ "builder": "legacy:line_up",
+ "objects": [
+  {
+   "role": "items",
+   "kind": "cube",
+   "count": 3
+  },
+  {
+   "role": "distractors",
+   "kind": "ball",
+   "count": [
+    0,
+    1
+   ]
+  }
+ ],
+ "layout": [],
+ "goal": [
+  {
+   "pred": "in_line",
+   "args": [
+    "@items*"
+   ]
+  }
+ ],
+ "instructions": [
+  "Line up {items} in a straight row.",
+  "Arrange {items} in a straight line, a few centimetres apart."
+ ],
+ "notes": "Legacy family (pre-pivot). Sampled by families.py (builder legacy:*), bit-identical to the pre-spec sampler; objects/goal/instructions here describe it (object kinds vary per seed in the generator) and are not interpreted."
+}

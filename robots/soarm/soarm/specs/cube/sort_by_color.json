@@ -1,0 +1,84 @@
+{
+ "id": "cube_sort_by_color",
+ "tid": 108,
+ "version": 1,
+ "domain": "cube",
+ "split": "train",
+ "provenance": "hand",
+ "difficulty": 3,
+ "builder": "declarative",
+ "objects": [
+  {
+   "role": "bins",
+   "kind": "pad",
+   "count": 2,
+   "where": {
+    "color": {
+     "distinct": true
+    }
+   }
+  },
+  {
+   "role": "items0",
+   "kind": "cube",
+   "count": [
+    1,
+    2
+   ],
+   "where": {
+    "color": {
+     "same_role": "bins[0]"
+    }
+   }
+  },
+  {
+   "role": "items1",
+   "kind": "cube",
+   "count": [
+    1,
+    2
+   ],
+   "where": {
+    "color": {
+     "same_role": "bins[1]"
+    }
+   }
+  },
+  {
+   "role": "distractors",
+   "kind": "cube",
+   "count": [
+    0,
+    1
+   ],
+   "where": {
+    "color": {
+     "not_role": "bins"
+    }
+   }
+  }
+ ],
+ "layout": [],
+ "goal": [
+  {
+   "pred": "in_region",
+   "for_each": "items0",
+   "args": [
+    "$",
+    "@bins[0]"
+   ]
+  },
+  {
+   "pred": "in_region",
+   "for_each": "items1",
+   "args": [
+    "$",
+    "@bins[1]"
+   ]
+  }
+ ],
+ "instructions": [
+  "Sort the cubes by colour: put each {items0.color} or {items1.color} cube on the mat of the same colour.",
+  "Put every {items0.color} cube on the {items0.color} mat and every {items1.color} cube on the {items1.color} mat."
+ ]
+}

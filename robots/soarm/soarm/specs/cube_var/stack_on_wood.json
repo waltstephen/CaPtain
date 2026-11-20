@@ -1,0 +1,59 @@
+{
+ "id": "cube_v_stack_on_wood",
+ "tid": 221,
+ "version": 1,
+ "domain": "cube",
+ "split": "train",
+ "provenance": "hand",
+ "difficulty": 2,
+ "builder": "declarative",
+ "objects": [
+  {
+   "role": "destination",
+   "kind": "cube",
+   "count": 1,
+   "where": {
+    "texture": "wood"
+   }
+  },
+  {
+   "role": "target",
+   "kind": "cube",
+   "count": 1,
+   "where": {
+    "size_class": {
+     "max_role": "destination"
+    },
+    "texture": "plain"
+   }
+  },
+  {
+   "role": "distractors",
+   "kind": "cube",
+   "count": [
+    0,
+    2
+   ],
+   "where": {
+    "texture": "plain"
+   }
+  }
+ ],
+ "layout": [],
+ "goal": [
+  {
+   "pred": "on_top",
+   "args": [
+    "@target",
+    "@destination"
+   ]
+  }
+ ],
+ "instructions": [
+  "Stack {target} on the wooden cube.",
+  "Put {target} on top of the wood cube.",
+  "Place {target} onto the cube made of wood.",
+  "Set {target} down on top of the wooden cube."
+ ],
+ "notes": "div2 variant (tools/make_variants.py)."
+}

@@ -1,0 +1,120 @@
+{
+ "id": "gen_empty_tray_with_size_based_destinations",
+ "tid": 1225,
+ "version": 1,
+ "domain": "cube",
+ "split": "train",
+ "provenance": "llm",
+ "difficulty": 2,
+ "builder": "declarative",
+ "objects": [
+  {
+   "role": "tray",
+   "kind": "tray",
+   "count": 1,
+   "where": {
+    "size_class": 14.0
+   }
+  },
+  {
+   "role": "mat",
+   "kind": "big_mat",
+   "count": 1,
+   "where": {
+    "size_class": 12.0
+   }
+  },
+  {
+   "role": "smaller",
+   "kind": "cube",
+   "count": 1,
+   "where": {
+    "size_class": 3.0
+   }
+  },
+  {
+   "role": "larger",
+   "kind": "cube",
+   "count": 1,
+   "where": {
+    "size_class": 3.5,
+    "color": {
+     "not_role": "smaller"
+    }
+   }
+  }
+ ],
+ "layout": [
+  {
+   "type": "on",
+   "role": "smaller",
+   "support": "@tray"
+  },
+  {
+   "type": "on",
+   "role": "larger",
+   "support": "@tray"
+  },
+  {
+   "type": "region",
+   "role": "tray",
+   "r": [
+    0.17,
+    0.24
+   ],
+   "angle_deg": [
+    -50,
+    50
+   ]
+  }
+ ],
+ "goal": [
+  {
+   "pred": "in_region",
+   "args": [
+    "@smaller",
+    "@mat"
+   ]
+  },
+  {
+   "pred": "off_region",
+   "args": [
+    "@larger",
+    "@tray"
+   ]
+  }
+ ],
+ "instructions": [
+  "Empty {tray}: put its smaller cube directly on {mat}, and put its larger cube on the bare table completely clear of the tray.",
+  "Take both cubes out of {tray}. The smaller one goes on {mat}; the larger one goes directly on the table, entirely outside the tray.",
+  "Compare the two cubes in {tray}. Move the smaller onto {mat}, then set the larger on the bare table with no part over the tray.",
+  "Clear {tray} by sending its smaller cube to {mat} and its larger cube to the bare table completely outside the tray.",
+  "The tray should end empty, with its original smaller cube resting directly on {mat} and its original larger cube resting on the table clear of {tray}.",
+  "Unload the two tray cubes according to size: smaller onto {mat}, larger onto the bare table entirely clear of {tray}.",
+  "Remove both cubes from {tray}: place the smaller directly on {mat}, then place the larger on the bare table entirely outside the tray.",
+  "Please empty {tray}, putting its smaller cube directly on {mat} and its larger cube directly on the table with no part overlapping the tray.",
+  "Leave {tray} empty. Its original smaller cube should rest directly on {mat}, and its original larger cube should rest on the bare table completely clear of the tray.",
+  "Unload {tray} by size: the smaller block belongs directly on {mat}; the larger belongs on the bare table, wholly outside the tray.",
+  "First move the smaller of the two cubes in {tray} directly onto {mat}. Then move the larger onto the bare table, making sure none of it extends over the tray.",
+  "Could you take both cubes out of {tray}, setting the smaller directly on {mat} and the larger directly on the table entirely clear of the tray?",
+  "Clear out {tray}: smaller cube directly onto {mat}, larger cube onto the bare table with no overlap over the tray.",
+  "The two cubes currently in {tray} need separate destinations: put the smaller directly on {mat} and the larger on the bare table completely outside the tray.",
+  "Make {tray} empty by relocating its smaller cube directly to {mat} and its larger cube to the bare table, leaving the larger wholly clear of the tray.",
+  "Take the smaller cube out of {tray} and set it directly on {mat}; follow by placing the larger cube on the bare table with every part outside the tray.",
+  "Please sort the two cubes from {tray} by size as you unload them: smaller directly onto {mat}, larger directly onto the table completely clear of the tray.",
+  "With {tray} emptied, its original smaller block should be directly on {mat}, while its original larger block should be on the bare table with no part over the tray.",
+  "Transfer both cubes out of {tray}. Set the smaller directly on {mat}, and set the larger directly on the table beyond the tray's entire footprint.",
+  "Give the two cubes in {tray} these final positions: the smaller resting directly on {mat}, the larger resting on the bare table entirely outside the tray, and the tray empty.",
+  "Start by identifying the smaller cube in {tray} and placing it directly on {mat}. Finish by putting the larger cube on the bare table completely clear of the tray.",
+  "Empty {tray} of its two blocks, moving the smaller directly onto {mat} and the larger onto the bare table without any part remaining over the tray.",
+  "Move both tray cubes out of {tray}: the smaller goes directly on {mat}, and the larger goes directly on the table wholly clear of the tray.",
+  "Arrange for {tray} to end up empty, its original smaller cube directly on {mat} and its original larger cube on the bare table entirely outside the tray.",
+  "For the two cubes in {tray}, use size to choose their destinations: place the smaller directly on {mat} and the larger on the bare table with no overlap over the tray.",
+  "Put the smaller cube from {tray} directly onto {mat}, then remove the larger cube to the bare table, entirely outside the tray, leaving the tray empty.",
+  "Please clear both cubes from {tray}. Rest the smaller directly on {mat}; rest the larger directly on the table so that no part lies over the tray.",
+  "Unload both blocks from {tray}, placing the smaller directly on {mat} before setting the larger on the bare table completely clear of the tray.",
+  "The required result is an empty {tray}, with its original smaller cube directly on {mat} and its original larger cube directly on the table, wholly outside the tray.",
+  "Compare the sizes of the two blocks in {tray}, move the smaller directly onto {mat}, and then place the larger on the bare table with none of it over the tray."
+ ],
+ "notes": "Introduces complete tray evacuation with destinations determined by the relative sizes of the two contained cubes."
+}

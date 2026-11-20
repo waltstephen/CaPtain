@@ -1,0 +1,47 @@
+{
+ "id": "cube_v_lift_wood",
+ "tid": 203,
+ "version": 1,
+ "domain": "cube",
+ "split": "train",
+ "provenance": "hand",
+ "difficulty": 1,
+ "builder": "declarative",
+ "objects": [
+  {
+   "role": "target",
+   "kind": "cube",
+   "count": 1,
+   "where": {
+    "texture": "wood"
+   }
+  },
+  {
+   "role": "distractors",
+   "kind": "cube",
+   "count": [
+    1,
+    3
+   ],
+   "where": {
+    "texture": "plain"
+   }
+  }
+ ],
+ "layout": [],
+ "goal": [
+  {
+   "pred": "lifted",
+   "args": [
+    "@target"
+   ]
+  }
+ ],
+ "instructions": [
+  "Pick up the wooden cube and hold it up.",
+  "Lift the wooden cube off the table.",
+  "Grab the cube made of wood and raise it.",
+  "Take the wooden cube in the gripper and hold it above the table."
+ ],
+ "notes": "div2 variant (tools/make_variants.py)."
+}

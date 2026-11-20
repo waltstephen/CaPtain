@@ -1,0 +1,125 @@
+{
+ "id": "gen_unload_tray_by_mat_colour_and_hold_other",
+ "tid": 1228,
+ "version": 1,
+ "domain": "cube",
+ "split": "train",
+ "provenance": "llm",
+ "difficulty": 2,
+ "builder": "declarative",
+ "objects": [
+  {
+   "role": "tray",
+   "kind": "tray",
+   "count": 1,
+   "where": {
+    "size_class": 14.0
+   }
+  },
+  {
+   "role": "mat",
+   "kind": "big_mat",
+   "count": 1,
+   "where": {
+    "size_class": 12.0
+   }
+  },
+  {
+   "role": "matching",
+   "kind": "cube",
+   "count": 1,
+   "where": {
+    "size_class": 3.0,
+    "color": {
+     "same_role": "mat"
+    }
+   }
+  },
+  {
+   "role": "other",
+   "kind": "cube",
+   "count": 1,
+   "where": {
+    "size_class": 3.0,
+    "color": {
+     "not_role": "mat"
+    }
+   }
+  }
+ ],
+ "layout": [
+  {
+   "type": "on",
+   "role": "matching",
+   "support": "@tray"
+  },
+  {
+   "type": "on",
+   "role": "other",
+   "support": "@tray"
+  },
+  {
+   "type": "region",
+   "role": "tray",
+   "r": [
+    0.17,
+    0.24
+   ],
+   "angle_deg": [
+    -50,
+    50
+   ]
+  }
+ ],
+ "goal": [
+  {
+   "pred": "in_region",
+   "args": [
+    "@matching",
+    "@mat"
+   ]
+  },
+  {
+   "pred": "lifted",
+   "args": [
+    "@other"
+   ],
+   "params": {
+    "height": 0.04
+   }
+  }
+ ],
+ "instructions": [
+  "Of the two cubes in {tray}, put the one matching {mat}'s colour directly on the mat. Then pick up the other cube and hold it at least four centimetres above the table.",
+  "Empty {tray} by placing its mat-coloured cube on {mat} and finishing with the differently coloured cube held at least four centimetres above the table.",
+  "Find the tray cube whose colour matches {mat}. Set it on the mat, then lift the remaining tray cube and keep it at least four centimetres above the table.",
+  "The matching-colour tray cube belongs on {mat}; the nonmatching tray cube should finish held at least four centimetres above the table.",
+  "First transfer the cube matching {mat} from {tray} onto the mat. Next grasp the other tray cube and hold it at least four centimetres above the table.",
+  "Use {mat}'s colour to split the tray contents: matching cube directly onto the mat, differently coloured cube lifted and held at least four centimetres above the table.",
+  "Take the cube in {tray} that matches {mat}'s colour and place it directly on the mat. Then pick up the other cube and keep it held at least four centimetres above the table.",
+  "Please move the mat-coloured block from {tray} directly onto {mat}, then grasp the differently coloured block and hold it at least four centimetres above the table.",
+  "First, put the colour-matching cube from {tray} directly on {mat}. Second, lift the nonmatching cube from the tray and maintain a hold at least four centimetres above the table.",
+  "The two cubes should leave {tray} in this order: the cube matching {mat}'s colour goes directly onto the mat, then the other cube is picked up and held at least four centimetres above the table.",
+  "Start with the cube in {tray} whose colour is the same as {mat}'s: set it directly on the mat. Follow by picking up the differently coloured cube and holding it at least four centimetres above the table.",
+  "Clear {tray}: place the matching-colour cube directly on {mat} first, and finish by holding the other cube at least four centimetres above the table.",
+  "Could you place the cube from {tray} that matches {mat}'s colour directly on the mat, then pick up the other cube and keep it at least four centimetres above the table?",
+  "Move the matching block out of {tray} and directly onto {mat}; only after that, lift the nonmatching block and hold it at least four centimetres above the table.",
+  "Use {mat} as the colour reference for the two cubes in {tray}. Put the matching cube directly on the mat, then hold the other cube at least four centimetres above the table.",
+  "Your first action is to transfer the cube matching {mat}'s colour from {tray} directly onto the mat. Your next action is to pick up the other cube and keep it held at least four centimetres above the table.",
+  "Match the colour of one of the two blocks in {tray} to {mat}, and place that block directly on the mat. Afterwards, grasp the remaining block and hold it at least four centimetres above the table.",
+  "Finish with the matching cube directly on {mat} and the differently coloured cube held at least four centimetres above the table, moving the matching cube out of {tray} first and then lifting the other.",
+  "From {tray}, select the cube of the same colour as {mat}. Put it directly on the mat before lifting the other cube and holding it at least four centimetres above the table.",
+  "Deposit the mat-coloured cube from {tray} directly onto {mat}. Once it is there, pick up the differently coloured cube from the tray and maintain it at least four centimetres above the table.",
+  "Handle the two tray cubes one after the other: first move the one matching {mat}'s colour from {tray} directly onto the mat; then lift and hold the other at least four centimetres above the table.",
+  "Please empty {tray} in two steps: set its colour-matching block directly on {mat}, then pick up its nonmatching block and keep it held at least four centimetres above the table.",
+  "Put the cube that shares {mat}'s colour directly on the mat, taking it from {tray}. After placing it, grasp the other tray cube and hold it at least four centimetres above the table.",
+  "Begin by moving the matching-colour cube in {tray} directly onto {mat}; end by holding the differently coloured cube at least four centimetres above the table.",
+  "The cube matching {mat} in colour should end up directly on the mat. Transfer it there from {tray} first, then pick up the other cube and leave it held at least four centimetres above the table.",
+  "Identify the mat-coloured member of the pair of cubes in {tray} and set it directly on {mat}. Next, raise the other member of the pair and keep it in your grasp at least four centimetres above the table.",
+  "Matching block onto {mat} first, other block held at least four centimetres above the table second: take both blocks from {tray}, using the mat's colour to tell them apart and placing the matching block directly on the mat.",
+  "After you have placed the cube matching {mat}'s colour from {tray} directly on the mat, pick up the differently coloured cube from the tray and hold it at least four centimetres above the table.",
+  "Sort the two cubes out of {tray} by their relation to {mat}'s colour: place the same-coloured cube directly on the mat first, then lift the differently coloured cube and keep it held at least four centimetres above the table.",
+  "Carry out this sequence with the two blocks in {tray}: transfer the block matching {mat}'s colour directly onto the mat, then grasp the other block and finish holding it at least four centimetres above the table."
+ ],
+ "notes": "Introduces complete two-cube tray unloading in which destination colour determines which cube is placed and which is held."
+}

@@ -1,0 +1,53 @@
+{
+ "id": "obj_shape_in_container",
+ "tid": 10006,
+ "version": 1,
+ "domain": "broad",
+ "split": "train",
+ "provenance": "hand",
+ "difficulty": 1,
+ "builder": "declarative",
+ "objects": [
+  {
+   "role": "destination",
+   "kind": [
+    "bowl",
+    "box"
+   ],
+   "count": 1
+  },
+  {
+   "role": "target",
+   "kind": [
+    "cylinder",
+    "block"
+   ],
+   "count": 1
+  },
+  {
+   "role": "distractors",
+   "kind": "cube",
+   "count": [
+    1,
+    2
+   ]
+  }
+ ],
+ "layout": [],
+ "goal": [
+  {
+   "pred": "inside",
+   "args": [
+    "@target",
+    "@destination"
+   ]
+  }
+ ],
+ "instructions": [
+  "Put {target} in {destination}.",
+  "Place {target} into {destination}.",
+  "Drop {target} into {destination}.",
+  "Move {target} into {destination}."
+ ],
+ "notes": "div2 variant (tools/make_variants.py). the one non-cube object among cubes"
+}

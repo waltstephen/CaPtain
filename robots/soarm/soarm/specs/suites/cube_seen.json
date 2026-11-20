@@ -1,0 +1,11 @@
+{
+ "id": "cube_seen",
+ "description": "The 15 hand-written train cube specs (tids 100-199) on unseen layout seeds (eval range), default scene; div2 variants and taskgen specs are evaluated by the div2 suites.",
+ "select": {
+  "domain": "cube",
+  "split": "train",
+  "tids": [100, 199]
+ },
+ "seeds": "9000-9003",
+ "config": {}
+}

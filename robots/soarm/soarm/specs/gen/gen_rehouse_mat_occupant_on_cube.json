@@ -1,0 +1,130 @@
+{
+ "id": "gen_rehouse_mat_occupant_on_cube",
+ "tid": 1112,
+ "version": 1,
+ "domain": "cube",
+ "split": "train",
+ "provenance": "llm",
+ "difficulty": 2,
+ "builder": "declarative",
+ "objects": [
+  {
+   "role": "mat",
+   "kind": "pad",
+   "count": 1,
+   "where": {
+    "size_class": 9.0
+   }
+  },
+  {
+   "role": "occupant",
+   "kind": "cube",
+   "count": 1,
+   "where": {
+    "size_class": 3.0,
+    "color": "blue"
+   }
+  },
+  {
+   "role": "base",
+   "kind": "cube",
+   "count": 1,
+   "where": {
+    "size_class": 4.0,
+    "color": "yellow"
+   }
+  },
+  {
+   "role": "replacement",
+   "kind": "cube",
+   "count": 1,
+   "where": {
+    "size_class": [
+     3.0,
+     3.5
+    ],
+    "color": "red"
+   }
+  }
+ ],
+ "layout": [
+  {
+   "type": "on",
+   "role": "occupant",
+   "support": "@mat"
+  },
+  {
+   "type": "region",
+   "role": "mat",
+   "r": [
+    0.17,
+    0.23
+   ],
+   "angle_deg": [
+    -35,
+    35
+   ]
+  },
+  {
+   "type": "region",
+   "role": "base",
+   "r": [
+    0.18,
+    0.24
+   ],
+   "angle_deg": [
+    -45,
+    45
+   ]
+  }
+ ],
+ "goal": [
+  {
+   "pred": "on_top",
+   "args": [
+    "@occupant",
+    "@base"
+   ]
+  },
+  {
+   "pred": "in_region",
+   "args": [
+    "@replacement",
+    "@mat"
+   ]
+  }
+ ],
+ "instructions": [
+  "Move {occupant} off {mat} onto {base}, then put {replacement} on the freed mat.",
+  "Replace {occupant} on {mat} with {replacement}; the displaced cube belongs on top of {base}.",
+  "First stack the cube currently on {mat} onto {base}. Then place {replacement} on {mat}.",
+  "The final arrangement should have {occupant} on top of {base} and {replacement} resting on {mat}.",
+  "Free {mat} by stacking {occupant} on {base}, and use the cleared mat for {replacement}.",
+  "Rehouse {occupant} on top of {base}, then fill its former spot on {mat} with {replacement}.",
+  "Lift {occupant} off {mat} and set it on top of {base}; afterward, place {replacement} on {mat}.",
+  "Please transfer {occupant} from {mat} to the top of {base}, then put {replacement} on the vacated mat.",
+  "First, move {occupant} from {mat} onto {base}. Second, place {replacement} on the mat you just cleared.",
+  "Clear {mat} by moving {occupant} onto the top of {base}, then settle {replacement} on the cleared mat.",
+  "Take {occupant} away from {mat}, stack it on {base}, and only then put {replacement} in its former place on the mat.",
+  "Please make room on {mat}: stack {occupant} on top of {base}, then place {replacement} on the newly available mat.",
+  "Move {occupant} from {mat} to the top of {base} before placing {replacement} on the mat.",
+  "Put {replacement} on {mat}, but first remove {occupant} from that mat and stack it on {base}.",
+  "The arrangement should end with {occupant} on top of {base} and {replacement} on {mat}; move the occupant first.",
+  "To give {replacement} the space on {mat}, first relocate {occupant} onto the top of {base}, then place the replacement on the mat.",
+  "Stack {occupant} on {base} to vacate {mat}; follow that by placing {replacement} on the mat.",
+  "Could you move {occupant} off {mat} and onto the top of {base}, and then put {replacement} on the freed mat?",
+  "Start by taking {occupant} from {mat} and setting it atop {base}. Finish by putting {replacement} on that mat.",
+  "Transfer {occupant} from {mat} onto {base}; once that transfer is complete, move {replacement} onto the mat.",
+  "Give {occupant} a new position on top of {base}, clearing it off {mat}, and then place {replacement} on the mat.",
+  "Leave {occupant} stacked on {base} and {replacement} resting on {mat}, relocating the occupant from the mat before placing the replacement there.",
+  "In two steps: move {occupant} off {mat} onto the top of {base}, then set {replacement} on the vacated mat.",
+  "Use {base} to support {occupant} after removing it from {mat}; next, put {replacement} on the cleared mat.",
+  "Before setting {replacement} on {mat}, take {occupant} off that mat and place it on top of {base}.",
+  "Empty {mat} of {occupant} by stacking it onto {base}. Then occupy the cleared mat with {replacement}.",
+  "Please put {occupant} atop {base} instead of leaving it on {mat}; afterward, set {replacement} on the mat.",
+  "The space on {mat} should go to {replacement}: first move {occupant} from there onto {base}, then place the replacement in that space.",
+  "Relocate {occupant} from {mat} to the top of {base}. With the mat now free, place {replacement} there.",
+  "Complete the transfer of {occupant} from {mat} onto {base}, then finish by placing {replacement} on the freed mat."
+ ],
+ "notes": "The occupied destination must be freed by stacking its occupant elsewhere before a replacement cube can use it."
+}

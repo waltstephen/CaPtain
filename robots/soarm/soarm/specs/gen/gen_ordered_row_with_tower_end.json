@@ -1,0 +1,116 @@
+{
+ "id": "gen_ordered_row_with_tower_end",
+ "tid": 1117,
+ "version": 1,
+ "domain": "cube",
+ "split": "train",
+ "provenance": "llm",
+ "difficulty": 5,
+ "builder": "declarative",
+ "objects": [
+  {
+   "role": "left_cube",
+   "kind": "cube",
+   "count": 1,
+   "where": {
+    "size_class": 3.5,
+    "color": "cyan"
+   }
+  },
+  {
+   "role": "middle_cube",
+   "kind": "cube",
+   "count": 1,
+   "where": {
+    "size_class": 3.5,
+    "color": "orange"
+   }
+  },
+  {
+   "role": "base",
+   "kind": "cube",
+   "count": 1,
+   "where": {
+    "size_class": 4.0,
+    "color": "purple"
+   }
+  },
+  {
+   "role": "cap",
+   "kind": "cube",
+   "count": 1,
+   "where": {
+    "size_class": 3.0,
+    "color": "green"
+   }
+  }
+ ],
+ "layout": [
+  {
+   "type": "region",
+   "role": "base",
+   "r": [
+    0.18,
+    0.22
+   ],
+   "angle_deg": [
+    15,
+    25
+   ]
+  }
+ ],
+ "goal": [
+  {
+   "pred": "in_line",
+   "args": [
+    "@left_cube",
+    "@middle_cube",
+    "@base"
+   ],
+   "params": {
+    "order": "left_to_right",
+    "max_residual": 0.015,
+    "min_gap": 0.0,
+    "max_gap": 0.035
+   }
+  },
+  {
+   "pred": "on_top",
+   "args": [
+    "@cap",
+    "@base"
+   ]
+  }
+ ],
+ "instructions": [
+  "Make a closely spaced straight row of {left_cube}, {middle_cube}, and {base}, in that camera-left-to-right order, then stack {cap} on the row's rightmost cube.",
+  "Build a row ending in a tower: the table-level cubes should be {left_cube}, {middle_cube}, and {base} from left to right, with {cap} on {base}. Use the camera view and keep the gaps small.",
+  "Arrange {left_cube} and {middle_cube} beside {base} to form a close straight row in the order {left_cube}, {middle_cube}, {base}, as seen from in front of the robot. Put {cap} on top of {base}.",
+  "The finished arrangement should be a close camera-left-to-right row of {left_cube}, {middle_cube}, and {base}, with a second level formed by {cap} above the rightmost cube.",
+  "First form a close straight row on the table, ordered {left_cube}, {middle_cube}, {base} from camera-left to camera-right. Then turn its right-hand end into a two-cube tower by adding {cap}.",
+  "Place {left_cube} and {middle_cube} immediately along the camera-left side of {base}, in that left-to-right order, so all three bases form a straight row; stack {cap} on {base}.",
+  "Set up a straight, closely spaced row on the table with {left_cube}, {middle_cube}, and {base} running from camera-left to camera-right. Stack {cap} on {base}.",
+  "Please arrange {left_cube}, {middle_cube}, and {base} in a straight table-level row, in that order from the camera's left to its right, leaving only small gaps. Place {cap} on top of {base}.",
+  "The result should have {left_cube}, {middle_cube}, and {base} closely aligned in a straight row on the table from camera-left to camera-right, with {cap} resting on {base}.",
+  "Start with {base} at the camera-right end of a straight row on the table. Put {middle_cube} just to its camera-left and {left_cube} just to the camera-left of {middle_cube}, keeping the gaps small, then stack {cap} on {base}.",
+  "Form a compact straight row on the table: {left_cube}, then {middle_cube}, then {base}, reading left to right in the camera view. Top {base} with {cap}.",
+  "Could you make a straight, closely spaced table-level row of {left_cube}, {middle_cube}, and {base}, in that camera-left-to-right order, and place {cap} directly on top of {base}?",
+  "Put {cap} on {base}, and arrange the supporting table-level row so that {left_cube}, {middle_cube}, and {base} run in a straight line from camera-left to camera-right with small gaps.",
+  "Create a two-level arrangement whose lower level is a close straight row of {left_cube}, {middle_cube}, and {base}, ordered from the camera's left to its right, and whose upper level is {cap} on {base}.",
+  "Line up {left_cube}, {middle_cube}, and {base} closely on the table, preserving that order from camera-left to camera-right. Finish by stacking {cap} on the rightmost member, {base}.",
+  "Make the table-level row straight and keep its gaps small: {left_cube} belongs at camera-left, {middle_cube} in the middle, and {base} at camera-right. Place {cap} on {base}.",
+  "Arrange a close straight row across the table as viewed by the camera, with {middle_cube} between {left_cube} on the left and {base} on the right. Stack {cap} on {base}.",
+  "Please build a two-cube tower using {base} underneath {cap}, with {middle_cube} and then {left_cube} extending to its camera-left in a straight, closely spaced table-level row.",
+  "At completion, {cap} should sit on {base}, while {left_cube}, {middle_cube}, and {base} should stand on the table in a straight, tightly spaced row ordered from camera-left to camera-right.",
+  "Working from camera-left toward camera-right, place {left_cube}, {middle_cube}, and {base} on the table in a straight row with little space between neighbors. Add {cap} on top of {base}.",
+  "Give the arrangement a tower at its camera-right end: align {left_cube}, {middle_cube}, and {base} closely in a straight table-level row in that left-to-right order, with {cap} stacked on {base}.",
+  "Keep {left_cube}, {middle_cube}, and {base} at table level, close together and in a straight line in that order from the camera's left to its right. Set {cap} atop {base}.",
+  "First place {middle_cube} between {left_cube} and {base} in a straight row on the table, with {left_cube} camera-left and {base} camera-right. Keep the gaps small, and then put {cap} on {base}.",
+  "Build a compact row-and-tower arrangement on the table: the straight row must read {left_cube}, {middle_cube}, {base} from camera-left to camera-right, and {cap} must rest on {base}.",
+  "Please leave a straight, closely spaced row on the table in the camera-left-to-right sequence {left_cube}, {middle_cube}, {base}, with {cap} forming a second level on {base}.",
+  "Use the camera view to order a straight row on the table: {left_cube} leftmost, {middle_cube} next, and {base} rightmost. Keep neighboring pieces close and place {cap} on top of {base}.",
+  "Make a straight row on the table with only small gaps, placing {left_cube} before {middle_cube} and {middle_cube} before {base} when viewed from camera-left to camera-right. Crown {base} with {cap}.",
+  "The finished layout should read {left_cube}, {middle_cube}, {base} across a close straight table-level row from the camera's left to its right. Its right-hand end should be two cubes high, with {cap} on {base}."
+ ],
+ "notes": "The goal combines an ordered horizontal row with a vertical extension at its designated endpoint, excluding the cap from the table-level line."
+}

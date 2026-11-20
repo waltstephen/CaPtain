@@ -1,0 +1,100 @@
+{
+ "id": "gen_clear_nonmatching_cube_and_hold_match",
+ "tid": 1145,
+ "version": 1,
+ "domain": "cube",
+ "split": "train",
+ "provenance": "llm",
+ "difficulty": 2,
+ "builder": "declarative",
+ "objects": [
+  {
+   "role": "mat",
+   "kind": "pad",
+   "count": 1,
+   "where": {
+    "size_class": 10.0
+   }
+  },
+  {
+   "role": "occupant",
+   "kind": "cube",
+   "count": 1,
+   "where": {
+    "size_class": 3.5,
+    "color": {
+     "not_role": "mat"
+    }
+   }
+  },
+  {
+   "role": "matching",
+   "kind": "cube",
+   "count": 1,
+   "where": {
+    "size_class": 3.5,
+    "color": {
+     "same_role": "mat"
+    }
+   }
+  }
+ ],
+ "layout": [
+  {
+   "type": "on",
+   "role": "occupant",
+   "support": "@mat"
+  }
+ ],
+ "goal": [
+  {
+   "pred": "off_region",
+   "args": [
+    "@occupant",
+    "@mat"
+   ]
+  },
+  {
+   "pred": "lifted",
+   "args": [
+    "@matching"
+   ],
+   "params": {
+    "height": 0.04
+   }
+  }
+ ],
+ "instructions": [
+  "Move the cube on {mat} onto the bare table completely clear of the mat. Then pick up the cube whose colour matches the mat and hold it at least four centimetres above the table.",
+  "Clear the nonmatching cube off {mat} onto the table, leaving no overlap with the mat, and finish holding the matching-colour cube at least four centimetres above the table.",
+  "The cube that starts on {mat} should end on the table fully outside the mat. The cube of the mat's own colour should be held at least four centimetres above the table.",
+  "First set the mat's current occupant on the bare table, completely off the mat. Next lift the other cube, which matches {mat} in colour, and keep it at least four centimetres above the table.",
+  "Leave {mat} clear by parking its original occupant fully outside it on the table; hold the cube matching the mat's colour at least four centimetres above the table.",
+  "Take the differently coloured cube off {mat} and set it completely clear on the table. Do not put the matching cube on the mat: pick it up and hold it at least four centimetres above the table instead.",
+  "First move the differently coloured cube from {mat} to the bare table, with no part overlapping the mat. Then lift the cube matching the mat's colour and keep it at least four centimetres above the table.",
+  "Please place the cube currently on {mat} entirely off the mat on the bare table. After that, pick up the mat-coloured cube and hold it four centimetres or more above the table.",
+  "Begin by clearing the nonmatching block from {mat}, setting it on the bare table completely outside the mat. Finish by holding the matching-colour block at least four centimetres above the table.",
+  "The original occupant of {mat} should first end up resting on the bare table without overlapping the mat; the cube of the same colour as the mat should then be lifted and held at least four centimetres above the table.",
+  "Move the cube that starts on {mat} onto the bare table, entirely beyond the mat's boundary. Only then pick up the matching-colour cube and keep it at least four centimetres above the table.",
+  "Clear {mat}: set its differently coloured occupant on the bare table with no overlap, then raise the cube of the mat's colour and hold it at least four centimetres above the table.",
+  "Could you first put the block occupying {mat} fully outside it on the bare table, then pick up the block matching the mat's colour and hold it at least four centimetres above the table?",
+  "Step one: transfer the nonmatching cube from {mat} to a bare spot on the table, leaving it completely clear of the mat. Step two: lift and hold the matching cube at least four centimetres above the table.",
+  "Set the current occupant of {mat} down on the bare table, wholly outside the mat. Next, take hold of the cube whose colour matches the mat and keep it raised at least four centimetres above the table.",
+  "First leave {mat} unoccupied by moving its original block onto the bare table without any overlap. Then finish with the mat-coloured block held at least four centimetres above the table.",
+  "Relocate the differently coloured block sitting on {mat} to the bare tabletop, completely off the mat; afterward, pick up and hold the matching-colour block at least four centimetres above the table.",
+  "Please clear the cube off {mat} onto the bare table so that none of it overlaps the mat. Once that is done, lift the cube of the mat's colour and hold it at a height of at least four centimetres above the table.",
+  "The final arrangement should follow these steps: first place the original occupant of {mat} on the bare table entirely outside the mat, then hold the matching-colour cube at least four centimetres above the table.",
+  "Take the nonmatching cube off {mat} and park it on the bare table, wholly clear of the mat. Follow this by picking up the matching cube and keeping it at least four centimetres above the table.",
+  "Before lifting the mat-coloured cube, move the cube occupying {mat} onto the bare table with no overlap with the mat. Then lift the mat-coloured cube and hold it at least four centimetres above the table.",
+  "Start with the block resting on {mat}: put it on the bare table completely outside the mat. Next handle the block that matches the mat in colour, lifting it and keeping it at least four centimetres above the table.",
+  "Empty {mat} by setting its original occupant on the bare tabletop, leaving every part of that cube outside the mat. Afterward, hold the matching-colour cube at least four centimetres above the table.",
+  "First get the differently coloured cube completely off {mat} and onto the bare table. Then, rather than placing the matching-colour cube on the mat, pick it up and hold it at least four centimetres above the table.",
+  "Put the cube now on {mat} down on a bare area of the table, ensuring it does not overlap the mat at all. Once it is there, raise the cube matching the mat's colour and keep it at least four centimetres above the table.",
+  "Your first task is to leave the original occupant of {mat} resting entirely outside the mat on the bare table. Your second is to lift the matching-colour cube and finish holding it at least four centimetres above the table.",
+  "Remove the nonmatching block from {mat}; set it on the bare table, completely clear of the mat. Then grasp the matching-colour block, lift it, and maintain it at least four centimetres above the table.",
+  "After moving the original occupant of {mat} to the bare table with no part left overlapping the mat, pick up the cube of the mat's own colour and keep it at least four centimetres above the table.",
+  "First, the cube sitting on {mat} must be placed on the bare table fully beyond the mat's edges. Then the matching-colour cube must be picked up and held no less than four centimetres above the table.",
+  "Please move the differently coloured occupant of {mat} onto the bare table so it is entirely clear of the mat; only afterward, lift the cube whose colour matches the mat and finish holding it at least four centimetres above the table."
+ ],
+ "notes": "Combines clearing a nonmatching mat occupant with holding the colour-matched cube rather than sorting it onto the mat."
+}

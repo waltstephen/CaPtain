@@ -1,0 +1,45 @@
+{
+ "id": "cube_line_up_ordered",
+ "tid": 111,
+ "version": 1,
+ "domain": "cube",
+ "split": "train",
+ "provenance": "hand",
+ "difficulty": 4,
+ "builder": "declarative",
+ "objects": [
+  {
+   "role": "items",
+   "kind": "cube",
+   "count": 3,
+   "where": {
+    "color": {
+     "distinct": true
+    }
+   }
+  },
+  {
+   "role": "distractors",
+   "kind": "cube",
+   "count": [
+    0,
+    1
+   ]
+  }
+ ],
+ "layout": [],
+ "goal": [
+  {
+   "pred": "in_line",
+   "args": [
+    "@items*"
+   ],
+   "params": {
+    "order": "left_to_right"
+   }
+  }
+ ],
+ "instructions": [
+  "Arrange {items} in a straight row from left to right, in that order (left and right as seen from in front of the robot, facing it)."
+ ]
+}

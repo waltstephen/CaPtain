@@ -1,0 +1,108 @@
+{
+ "id": "gen_consolidate_on_smaller_cubes_colour_mat",
+ "tid": 1211,
+ "version": 1,
+ "domain": "cube",
+ "split": "train",
+ "provenance": "llm",
+ "difficulty": 2,
+ "builder": "declarative",
+ "objects": [
+  {
+   "role": "destination_mat",
+   "kind": "big_mat",
+   "count": 1,
+   "where": {
+    "size_class": 12.0,
+    "color": [
+     "red",
+     "blue",
+     "green",
+     "yellow"
+    ]
+   }
+  },
+  {
+   "role": "source_mat",
+   "kind": "big_mat",
+   "count": 1,
+   "where": {
+    "size_class": 12.0,
+    "color": {
+     "not_role": "destination_mat"
+    }
+   }
+  },
+  {
+   "role": "smaller",
+   "kind": "cube",
+   "count": 1,
+   "where": {
+    "size_class": 3.0,
+    "color": {
+     "same_role": "destination_mat"
+    }
+   }
+  },
+  {
+   "role": "larger",
+   "kind": "cube",
+   "count": 1,
+   "where": {
+    "size_class": 3.5,
+    "color": {
+     "same_role": "source_mat"
+    }
+   }
+  }
+ ],
+ "layout": [
+  {
+   "type": "on",
+   "role": "larger",
+   "support": "@source_mat"
+  }
+ ],
+ "goal": [
+  {
+   "pred": "in_region",
+   "args": [
+    "@smaller",
+    "@destination_mat"
+   ]
+  },
+  {
+   "pred": "in_region",
+   "args": [
+    "@larger",
+    "@destination_mat"
+   ]
+  }
+ ],
+ "instructions": [
+  "Find the smaller cube, then put both cubes directly on the mat matching that smaller cube's colour.",
+  "Use the smaller cube's colour to choose one mat. Move both cubes onto that mat, including the larger cube currently on the other mat.",
+  "Compare the two cubes by size. Choose the mat with the smaller cube's colour, and place both cubes directly on it.",
+  "Put the smaller cube on its colour-matching mat. Then move the larger cube off its current mat and onto that same destination mat.",
+  "Identify the smaller of the two cubes first, then place both cubes directly on the mat of that cube's colour.",
+  "Both blocks should end up directly on the mat whose colour is the same as the smaller block's.",
+  "Compare the cubes' sizes, select the mat matching the smaller cube's colour, and put both cubes directly on that mat.",
+  "Place the smaller block on its matching-colour mat, then transfer the larger block from the other mat to join it.",
+  "Clear the other mat by bringing the larger cube over to the smaller cube's colour-matching mat, and make sure both cubes rest directly on that destination mat.",
+  "Use the colour of the smaller block\u2014not the larger one\u2014to select the destination mat, and move both blocks directly onto it.",
+  "First find the smaller cube. Next choose the mat of the same colour. Finally, put both cubes directly on that mat.",
+  "Please put the two cubes side by side directly on the mat matching the smaller cube's colour, with neither cube remaining on the other mat.",
+  "Gather the two blocks directly onto the smaller block's matching-colour mat.",
+  "Choose the destination by looking at the smaller cube's colour; place both cubes directly on the mat of that colour, moving the larger cube off the other mat.",
+  "Set the smaller cube directly on the mat of its own colour. After that, move the larger cube off its current mat and set it directly on the same mat.",
+  "Bring both blocks together on the mat that shares the smaller block's colour, with each block resting directly on the mat.",
+  "Determine which cube is smaller before choosing its colour-matching mat, then place both cubes directly there.",
+  "Could you move both cubes directly onto the mat matching the smaller cube's colour, including the larger cube that is on the other mat?",
+  "Put both blocks directly on one mat: the one whose colour matches the smaller block.",
+  "The smaller cube determines the destination by its colour. Move both cubes directly onto the mat that matches it.",
+  "After comparing the two blocks by size, pick the mat of the smaller block's colour and set both blocks directly on it.",
+  "Start by putting the smaller block on the mat matching its colour; then take the larger block from its current mat and place it directly on that same mat.",
+  "Rather than leaving the cubes on separate mats, place both directly on the mat of the smaller cube's colour."
+ ],
+ "notes": "Selects a shared destination through a size-to-colour reasoning chain rather than independently matching each cube to its own mat."
+}

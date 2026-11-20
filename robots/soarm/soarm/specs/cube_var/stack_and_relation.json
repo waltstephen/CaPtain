@@ -1,0 +1,70 @@
+{
+ "id": "cube_v_stack_and_relation",
+ "tid": 247,
+ "version": 1,
+ "domain": "cube",
+ "split": "train",
+ "provenance": "hand",
+ "difficulty": 3,
+ "builder": "declarative",
+ "objects": [
+  {
+   "role": "base",
+   "kind": "cube",
+   "count": 1
+  },
+  {
+   "role": "top",
+   "kind": "cube",
+   "count": 1,
+   "where": {
+    "size_class": {
+     "max_role": "base"
+    }
+   }
+  },
+  {
+   "role": "third",
+   "kind": "cube",
+   "count": 1
+  },
+  {
+   "role": "distractors",
+   "kind": "cube",
+   "count": [
+    0,
+    1
+   ]
+  }
+ ],
+ "layout": [],
+ "goal": [
+  {
+   "pred": "on_top",
+   "args": [
+    "@top",
+    "@base"
+   ]
+  },
+  {
+   "pred": "relation",
+   "args": [
+    "@third",
+    "@base",
+    "%dir"
+   ]
+  }
+ ],
+ "instructions": [
+  "Stack {top} on {base}, then put {third} {%dir} {base}.",
+  "Put {top} on top of {base} and place {third} on the table {%dir} the tower.",
+  "Build a tower of {top} on {base}; set {third} down {%dir} it."
+ ],
+ "vars": {
+  "dir": {
+   "left": "to the left of",
+   "right": "to the right of"
+  }
+ },
+ "notes": "div2 variant (tools/make_variants.py)."
+}

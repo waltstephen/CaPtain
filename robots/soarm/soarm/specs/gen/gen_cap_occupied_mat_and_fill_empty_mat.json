@@ -1,0 +1,108 @@
+{
+ "id": "gen_cap_occupied_mat_and_fill_empty_mat",
+ "tid": 1124,
+ "version": 1,
+ "domain": "cube",
+ "split": "train",
+ "provenance": "llm",
+ "difficulty": 2,
+ "builder": "declarative",
+ "objects": [
+  {
+   "role": "occupied_mat",
+   "kind": "pad",
+   "count": 1,
+   "where": {
+    "size_class": 9.0,
+    "color": [
+     "gray",
+     "white"
+    ]
+   }
+  },
+  {
+   "role": "empty_mat",
+   "kind": "pad",
+   "count": 1,
+   "where": {
+    "size_class": 9.0,
+    "color": {
+     "not_role": "occupied_mat"
+    }
+   }
+  },
+  {
+   "role": "base",
+   "kind": "cube",
+   "count": 1,
+   "where": {
+    "size_class": 4.0,
+    "color": [
+     "blue",
+     "green"
+    ]
+   }
+  },
+  {
+   "role": "cap",
+   "kind": "cube",
+   "count": 1,
+   "where": {
+    "size_class": 3.0,
+    "color": [
+     "red",
+     "orange"
+    ]
+   }
+  },
+  {
+   "role": "incoming",
+   "kind": "cube",
+   "count": 1,
+   "where": {
+    "size_class": 3.5,
+    "color": [
+     "yellow",
+     "purple"
+    ]
+   }
+  }
+ ],
+ "layout": [
+  {
+   "type": "on",
+   "role": "base",
+   "support": "@occupied_mat"
+  }
+ ],
+ "goal": [
+  {
+   "pred": "on_top",
+   "args": [
+    "@cap",
+    "@base"
+   ]
+  },
+  {
+   "pred": "in_region",
+   "args": [
+    "@incoming",
+    "@empty_mat"
+   ]
+  }
+ ],
+ "instructions": [
+  "Stack {cap} on the cube already on a mat, and put {incoming} directly on the initially empty mat.",
+  "Use the cube on the occupied mat as the base for {cap}; place {incoming} on the other, initially empty mat.",
+  "Make a two-cube tower on the occupied mat by adding {cap}, and fill the empty mat with {incoming}.",
+  "First place {cap} on top of the cube that starts on a mat. Then put {incoming} on the mat that starts empty.",
+  "The cube already on a mat should support {cap}, while {incoming} should rest directly on the initially empty mat.",
+  "Keep the mat's original cube as the tower base: cap it with {cap}, and place {incoming} on the other mat, which starts empty.",
+  "{cap} should end up supported by the cube that starts on a mat, and {incoming} should end up directly on the mat that starts empty.",
+  "First, add {cap} to the top of the cube already on a mat. Next, set {incoming} directly on the initially empty mat.",
+  "Use the occupied mat's existing cube to support {cap}, and use the initially empty mat itself to support {incoming}.",
+  "Stack {cap} on the mat's original cube; set {incoming} directly on the initially unoccupied mat.",
+  "Could you put {cap} on top of the cube already resting on a mat and place {incoming} directly on the mat that is initially empty?"
+ ],
+ "notes": "Combines identifying occupied versus empty supports with capping an existing mat occupant and independently filling the empty mat."
+}

@@ -1,0 +1,77 @@
+{
+ "id": "cube_v_tray_to_mat",
+ "tid": 262,
+ "version": 1,
+ "domain": "cube",
+ "split": "train",
+ "provenance": "hand",
+ "difficulty": 2,
+ "builder": "declarative",
+ "objects": [
+  {
+   "role": "container",
+   "kind": "tray",
+   "count": 1
+  },
+  {
+   "role": "destination",
+   "kind": "big_mat",
+   "count": 1
+  },
+  {
+   "role": "target",
+   "kind": "cube",
+   "count": 1
+  },
+  {
+   "role": "distractors",
+   "kind": "cube",
+   "count": [
+    0,
+    1
+   ]
+  }
+ ],
+ "layout": [
+  {
+   "type": "on",
+   "role": "target",
+   "support": "@container"
+  },
+  {
+   "type": "region",
+   "role": "distractors",
+   "r": [
+    0.15,
+    0.26
+   ],
+   "angle_deg": [
+    -60,
+    60
+   ]
+  }
+ ],
+ "goal": [
+  {
+   "pred": "in_region",
+   "args": [
+    "@target",
+    "@destination"
+   ]
+  }
+ ],
+ "instructions": [
+  "Take {target} out of {container} and put it on {destination}.",
+  "Move {target} from {container} to {destination}.",
+  "Transfer {target} from {container} onto {destination}.",
+  "Put the cube that is in {container} on {destination}."
+ ],
+ "workspace": {
+  "r": [
+   0.13,
+   0.29
+  ],
+  "angle_deg": 70
+ },
+ "notes": "div3 variant (tools/make_variants.py)."
+}

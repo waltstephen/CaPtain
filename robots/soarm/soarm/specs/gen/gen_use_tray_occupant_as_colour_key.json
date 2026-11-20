@@ -1,0 +1,138 @@
+{
+ "id": "gen_use_tray_occupant_as_colour_key",
+ "tid": 1209,
+ "version": 1,
+ "domain": "cube",
+ "split": "train",
+ "provenance": "llm",
+ "difficulty": 3,
+ "builder": "declarative",
+ "objects": [
+  {
+   "role": "tray",
+   "kind": "tray",
+   "count": 1,
+   "where": {
+    "size_class": 18.0
+   }
+  },
+  {
+   "role": "mat",
+   "kind": "big_mat",
+   "count": 1,
+   "where": {
+    "size_class": 12.0
+   }
+  },
+  {
+   "role": "key_cube",
+   "kind": "cube",
+   "count": 1,
+   "where": {
+    "size_class": 3.5,
+    "color": [
+     "red",
+     "blue",
+     "yellow",
+     "green"
+    ]
+   }
+  },
+  {
+   "role": "matching_cube",
+   "kind": "cube",
+   "count": 1,
+   "where": {
+    "size_class": 3.5,
+    "color": {
+     "same_role": "key_cube"
+    }
+   }
+  },
+  {
+   "role": "other_cube",
+   "kind": "cube",
+   "count": 1,
+   "where": {
+    "size_class": 3.5,
+    "color": {
+     "not_role": "key_cube"
+    }
+   }
+  }
+ ],
+ "layout": [
+  {
+   "type": "region",
+   "role": "tray",
+   "r": [
+    0.17,
+    0.24
+   ],
+   "angle_deg": [
+    -50,
+    50
+   ]
+  },
+  {
+   "type": "on",
+   "role": "key_cube",
+   "support": "@tray"
+  }
+ ],
+ "goal": [
+  {
+   "pred": "off_region",
+   "args": [
+    "@key_cube",
+    "@tray"
+   ]
+  },
+  {
+   "pred": "in_region",
+   "args": [
+    "@matching_cube",
+    "@mat"
+   ]
+  },
+  {
+   "pred": "inside",
+   "args": [
+    "@other_cube",
+    "@tray"
+   ]
+  }
+ ],
+ "instructions": [
+  "Use the cube initially in {tray} as the colour key. Move that cube onto the bare table completely clear of the tray, put its loose colour match on {mat}, and put the differently coloured loose cube in {tray}.",
+  "Set the original tray occupant on the bare table outside the tray. Of the two loose cubes, put the one matching that original occupant on {mat} and the other in {tray}.",
+  "Replace the tray's original cube with the loose cube of a different colour. Leave the original occupant on the bare table completely clear of the tray, and put its loose colour mate directly on {mat}.",
+  "First move the cube from {tray} onto the bare table clear of the tray. Next put its matching-colour loose cube on {mat}. Finally put the differently coloured loose cube in {tray}.",
+  "The original tray cube should end on the bare table outside the tray; its colour mate should end on {mat}; the cube of the other colour should end inside {tray}.",
+  "Take the cube that starts in {tray} and set it on the bare tabletop entirely clear of the tray. Put the loose cube of the same colour directly on {mat}, and place the differently coloured loose cube inside {tray}.",
+  "Please remember the colour of the original cube in {tray}, then move that cube onto the bare table outside the tray. Place its loose colour match on {mat} and the other loose cube inside {tray}.",
+  "The cube originally occupying {tray} should finish on the bare tabletop, completely outside the tray. Its loose colour mate should finish directly on {mat}, while the differently coloured loose cube should finish inside {tray}.",
+  "First remove the starting cube from {tray} and leave it on the bare table completely clear of the tray. Next place the matching-colour loose cube on {mat}. Finally place the other loose cube inside {tray}.",
+  "Swap the original occupant of {tray} for the loose cube of a different colour, leaving the original cube on the bare tabletop entirely outside the tray. Set the loose cube matching the original occupant directly on {mat}.",
+  "Use the starting occupant of {tray} to identify the matching loose block. Move the starting block to the bare table, completely clear of the tray; put its match on {mat}; put the differently coloured loose block inside {tray}.",
+  "Put the loose cube matching the original occupant of {tray} directly on {mat}. Leave the original occupant on the bare table completely outside the tray, and put the remaining loose cube inside {tray}.",
+  "Clear the original cube out of {tray} onto the bare tabletop, with no part of it over the tray. Place the loose cube sharing its colour on {mat}, and place the loose cube of the other colour inside {tray}.",
+  "Arrange the three cubes as follows: the original occupant of {tray} on the bare table entirely clear of the tray, its loose colour match directly on {mat}, and the differently coloured loose cube inside {tray}.",
+  "Could you move the cube initially inside {tray} onto the bare table completely outside the tray, put its same-coloured loose partner on {mat}, and put the differently coloured loose cube inside {tray}?",
+  "Keep track of which colour starts in {tray}. Transfer that original cube to the bare tabletop clear of the tray, send its loose colour mate to {mat}, and put the other loose cube inside {tray}.",
+  "Starting with the cube in {tray}, move it onto the bare table wholly outside the tray. Then set the loose block of that same colour directly on {mat}. End by placing the differently coloured loose block inside {tray}.",
+  "Leave {tray} holding the loose cube whose colour differs from its original occupant. The original occupant must be on the bare table completely clear of the tray, and its loose colour match must be directly on {mat}.",
+  "The loose cube of the same colour as the cube initially in {tray} belongs on {mat}. Move that initial tray cube to the bare tabletop entirely outside the tray, and place the differently coloured loose cube inside {tray}.",
+  "Remove the original block from {tray} to the bare table, completely clear of the tray. Of the two loose blocks, set its colour twin directly on {mat} and put the nonmatching one inside {tray}.",
+  "Make the original occupant of {tray} the colour reference: leave that cube on the bare tabletop wholly outside the tray, place its loose match on {mat}, and place the differently coloured loose cube inside {tray}.",
+  "Please replace the cube that starts in {tray} with the differently coloured loose cube. Put the displaced original cube on the bare table completely clear of the tray, and set its loose colour mate directly on {mat}.",
+  "Three placements are needed: move the cube originally in {tray} to the bare table entirely outside the tray; place the loose cube matching it on {mat}; place the loose cube of the other colour inside {tray}.",
+  "Begin by setting the original cube from {tray} on the bare tabletop completely clear of the tray. Follow that by putting its matching loose cube directly on {mat}, then finish with the differently coloured loose cube inside {tray}.",
+  "Use the colour of the original cube in {tray} to sort the two loose cubes: the matching one goes directly on {mat}, and the other goes inside {tray}. The original cube goes on the bare table, completely outside the tray.",
+  "Have the loose colour mate of the original occupant of {tray} end up on {mat}. Have the original occupant end up on the bare tabletop entirely clear of the tray, and the differently coloured loose cube end up inside {tray}.",
+  "Take note of the cube initially occupying {tray}. Set it on the bare table wholly outside the tray, put the loose cube with the same colour directly on {mat}, and tuck the differently coloured loose cube inside {tray}.",
+  "Empty {tray} of its original cube by moving that cube to the bare tabletop completely clear of the tray. Put the same-coloured loose cube on {mat}, and refill {tray} with the differently coloured loose cube.",
+  "Give the three cubes these final locations: the starting cube from {tray} on the bare table completely outside the tray, the loose cube matching its colour directly on {mat}, and the differently coloured loose cube inside {tray}."
+ ],
+ "notes": "Uses an initial container occupant as a remembered colour key while replacing it and routing its colour mate separately."
+}

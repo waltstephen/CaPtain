@@ -1,0 +1,121 @@
+{
+ "id": "gen_reverse_tower_onto_mat",
+ "tid": 1118,
+ "version": 1,
+ "domain": "cube",
+ "split": "train",
+ "provenance": "llm",
+ "difficulty": 2,
+ "builder": "declarative",
+ "objects": [
+  {
+   "role": "lower",
+   "kind": "cube",
+   "count": 1,
+   "where": {
+    "size_class": 3.5
+   }
+  },
+  {
+   "role": "upper",
+   "kind": "cube",
+   "count": 1,
+   "where": {
+    "size_class": 3.5,
+    "color": {
+     "not_role": "lower"
+    }
+   }
+  },
+  {
+   "role": "mat",
+   "kind": "pad",
+   "count": 1,
+   "where": {
+    "size_class": 10.0
+   }
+  }
+ ],
+ "layout": [
+  {
+   "type": "region",
+   "role": "lower",
+   "r": [
+    0.18,
+    0.24
+   ],
+   "angle_deg": [
+    -45,
+    -20
+   ]
+  },
+  {
+   "type": "stack",
+   "roles": [
+    "@lower",
+    "@upper"
+   ]
+  },
+  {
+   "type": "region",
+   "role": "mat",
+   "r": [
+    0.18,
+    0.24
+   ],
+   "angle_deg": [
+    20,
+    45
+   ]
+  }
+ ],
+ "goal": [
+  {
+   "pred": "in_region",
+   "args": [
+    "@upper",
+    "@mat"
+   ]
+  },
+  {
+   "pred": "on_top",
+   "args": [
+    "@lower",
+    "@upper"
+   ]
+  }
+ ],
+ "instructions": [
+  "Rebuild the two-cube tower on {mat} in reverse order: put the original top cube directly on the mat, then put the original bottom cube on it.",
+  "Reverse the tower's bottom-to-top colour order on {mat}. The {upper.color} cube should rest on the mat, with the {lower.color} cube above it.",
+  "First move {upper} from the top of the tower onto {mat}; then stack {lower} on it.",
+  "Make a tower on {mat} with {upper} underneath {lower}, reversing their starting positions in the tower.",
+  "The finished tower should stand on {mat}, with the original upper cube at the bottom and the original lower cube at the top.",
+  "Take the tower apart and rebuild it on {mat}: its current top cube becomes the new base, and its current base becomes the new top.",
+  "Reverse the two-cube tower on {mat}: set the original top cube directly on the mat, then place the original bottom cube directly on that cube.",
+  "Please dismantle the tower and rebuild it on {mat}, using its former top cube as the base and its former bottom cube as the top.",
+  "Move {upper} off the top of the tower and directly onto {mat}, then place {lower} directly on it.",
+  "The rebuilt tower should have {upper} resting directly on {mat} and {lower} resting directly on {upper}, opposite their original order.",
+  "On {mat}, build the two-cube tower with the {upper.color} cube as its base and the {lower.color} cube directly above it, reversing the starting colour order.",
+  "Swap the tower's vertical order as you rebuild it on {mat}: the original upper cube goes directly on the mat, and the original lower cube goes directly on top.",
+  "First place {upper} directly on {mat}. Finish by stacking {lower} directly on it.",
+  "Please reverse the tower's bottom-to-top colours on {mat}, placing the {upper.color} cube directly on the mat and the {lower.color} cube directly on that cube.",
+  "Reassemble the tower on {mat} so that its original base is now its top and its original top rests directly on the mat.",
+  "Take {upper} from the top of the tower, set it directly on {mat}, and stack {lower} directly on it.",
+  "The final two-cube stack on {mat} should run from the {upper.color} cube at the bottom to the {lower.color} cube at the top, the reverse of the starting order.",
+  "Undo the existing stack and reconstruct it on {mat} in the opposite order, with the former upper cube directly on the mat beneath the former lower cube.",
+  "Use {upper} as the new base directly on {mat}; then put {lower} directly on top to reverse the tower.",
+  "Please make the original bottom cube the top cube by rebuilding the tower on {mat}, with the original top cube directly underneath it on the mat.",
+  "Rebuild the tower on {mat} in reversed colour order: the {upper.color} cube must touch the mat, and the {lower.color} cube must sit directly on it.",
+  "Put {upper} directly on {mat} before placing {lower} directly on {upper}, reversing their positions in the original tower.",
+  "Turn the tower's stacking order around on {mat}. Its current top cube should become the base on the mat, supporting its current bottom cube.",
+  "Could you rebuild the two-cube tower on {mat} with the {upper.color} cube directly on the mat and the {lower.color} cube directly on top, reversing their initial order?",
+  "Start by removing {upper} from the tower and setting it directly on {mat}; next, complete the reversed stack by placing {lower} directly on it.",
+  "Keep the same two cubes but reverse their levels when rebuilding the tower on {mat}: original top directly on the mat, original bottom directly above it.",
+  "The tower's starting colour order should be reversed on {mat}, leaving the {upper.color} cube directly beneath the {lower.color} cube and directly on the mat.",
+  "Make {upper} the bottom of the rebuilt tower on {mat}, resting directly on the mat, and place {lower} directly above it as the new top.",
+  "Dismantle, reverse, and restack the two-cube tower on {mat}: place the former top directly on the mat before adding the former bottom directly on top.",
+  "Please relocate {upper} from the top of the tower to a position directly on {mat}, then set {lower} directly on it to complete the reversal."
+ ],
+ "notes": "Unlike ordinary stacking or moving a base onto a mat, this family requires reversing an existing support order while relocating the tower."
+}

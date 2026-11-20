@@ -1,0 +1,167 @@
+{
+ "schema_version": "captain-joint-map/v1",
+ "robot": "SO-ARM101 follower (6x Feetech STS3215, 12 V)",
+  "port": "/dev/ttyACM0",
+ "baudrate": 1000000,
+ "date": "2026-11-12 (pan re-measured after the base was turned 180 deg)",
+ "method": "autonomous: torque-limited (30-60 %) slow sweeps with stall detection (tools/arm_probe.py), wrist-camera snapshots per stop; raw->MJCF zero/sign from the camera view at all-2048 (looks straight ahead) and the rest/up/back views matched against MuJoCo FK of robotstudio_so101",
+ "convention": "q_mjcf = sign * (raw - raw_at_mjcf_zero) * rad_per_step; raw read with the homing offsets below unchanged",
+ "rest_pose_raw": {
+  "shoulder_pan": 2072,
+  "shoulder_lift": 1297,
+  "elbow_flex": 3017,
+  "wrist_flex": 1807,
+  "wrist_roll": 3961,
+  "gripper": 2060
+ },
+ "soft_limit_margin_steps": 50,
+ "joints": {
+  "shoulder_pan": {
+   "id": 1,
+   "homing_offset_register": 3809,
+   "homing_offset": -1761,
+   "raw_at_mjcf_zero": 2048,
+   "sign": 1,
+   "rad_per_step": 0.0015339807878856412,
+   "stall_raw": {
+    "min": 706,
+    "max": 3392
+   },
+   "stall_source": {
+    "min": "hard_stop (re-measured 19:50 after the base was turned 180 deg; compact pose, hand 0.5 m up)",
+    "max": "no stop up to the sweep limit 3392 (symmetric with min: +-1342 steps = +-118 deg)"
+   },
+   "soft_limit_raw": {
+    "min": 756,
+    "max": 3342
+   },
+   "mjcf_range_rad": [
+    -1.91986,
+    1.91986
+   ]
+  },
+  "shoulder_lift": {
+   "id": 2,
+   "homing_offset_register": 3794,
+   "homing_offset": -1746,
+   "raw_at_mjcf_zero": 2048,
+   "sign": 1,
+   "rad_per_step": 0.0015339807878856412,
+   "stall_raw": {
+    "min": 881,
+    "max": 3333
+   },
+   "stall_source": {
+    "min": "hard_stop (arm folded back, rest side)",
+    "max": "stall with arm pointing down over the counter edge (snapshot lift_plus): hard stop or counter side, not separable"
+   },
+   "soft_limit_raw": {
+    "min": 931,
+    "max": 3283
+   },
+   "mjcf_range_rad": [
+    -1.74533,
+    1.74533
+   ]
+  },
+  "elbow_flex": {
+   "id": 3,
+   "homing_offset_register": 1879,
+   "homing_offset": 1879,
+   "raw_at_mjcf_zero": 2048,
+   "sign": 1,
+   "rad_per_step": 0.0015339807878856412,
+   "stall_raw": {
+    "min": 788,
+    "max": 3026
+   },
+   "stall_source": {
+    "min": "hard_stop (lift at 0, forearm swung up/back in air)",
+    "max": "forearm pointing down over the counter edge (snapshot el_plus): likely the counter side; MJCF stop would be ~3149"
+   },
+   "soft_limit_raw": {
+    "min": 838,
+    "max": 2976
+   },
+   "mjcf_range_rad": [
+    -1.69,
+    1.69
+   ]
+  },
+  "wrist_flex": {
+   "id": 4,
+   "homing_offset_register": 1887,
+   "homing_offset": 1887,
+   "raw_at_mjcf_zero": 2048,
+   "sign": 1,
+   "rad_per_step": 0.0015339807878856412,
+   "stall_raw": {
+    "min": 821,
+    "max": 3180
+   },
+   "stall_source": {
+    "min": "hard_stop (in air)",
+    "max": "hard_stop (in air)"
+   },
+   "soft_limit_raw": {
+    "min": 871,
+    "max": 3130
+   },
+   "mjcf_range_rad": [
+    -1.65806,
+    1.65806
+   ]
+  },
+  "wrist_roll": {
+   "id": 5,
+   "homing_offset_register": 2946,
+   "homing_offset": -898,
+   "raw_at_mjcf_zero": 1915,
+   "sign": 1,
+   "rad_per_step": 0.0015339807878856412,
+   "stall_raw": {
+    "min": null,
+    "max": 4010
+   },
+   "stall_source": {
+    "min": "not a stop: turned freely to raw 1915 (-180 deg from upright), peak load 76 = unloaded rotation (2026-11-12 20:40); 2026-11-13 20:20: turned freely on to raw 815 (-97 deg), load 15 % as anywhere else -> soft min 815",
+    "max": "stop in free air 47 steps past upright (cable or mechanism)"
+   },
+   "soft_limit_raw": {
+    "min": 815,
+    "max": 3980
+   },
+   "mjcf_range_rad": [
+    -2.74385,
+    2.84121
+   ],
+   "note": "raw_at_mjcf_zero 1915 (11-13): 3963 (camera image upright, an inference) was 180 deg off; the hand-eye had absorbed it, so the model's fixed and moving jaws were swapped (seen in jaw_open/closed wrist images). Hand-eye rotated 180 deg about the roll axis with it; camera poses unchanged."
+  },
+  "gripper": {
+   "id": 6,
+   "homing_offset_register": 1055,
+   "homing_offset": 1055,
+   "raw_at_mjcf_zero": 2141,
+   "sign": 1,
+   "rad_per_step": 0.0015339807878856412,
+   "stall_raw": {
+    "min": 2027,
+    "max": 3561
+   },
+   "stall_source": {
+    "min": "jaws closed on each other",
+    "max": "fully open, in air"
+   },
+   "soft_limit_raw": {
+    "min": 2077,
+    "max": 3511
+   },
+   "mjcf_range_rad": [
+    -0.17453,
+    1.74533
+   ],
+   "note": "raw 2027 closed = MJCF -0.17; 3561 open = 2.18 rad, beyond the MJCF 1.745 cap: clip commands"
+  }
+ },
+ "rest_pose_note": "pose the arm was left in after turning the base (hand forward at ~0.17 m); the folded pose of the first session was lift 1064 / elbow 1151 / wrist 937"
+}

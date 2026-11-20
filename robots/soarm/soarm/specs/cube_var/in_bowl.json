@@ -1,0 +1,47 @@
+{
+ "id": "cube_v_in_bowl",
+ "tid": 206,
+ "version": 1,
+ "domain": "cube",
+ "split": "train",
+ "provenance": "hand",
+ "difficulty": 1,
+ "builder": "declarative",
+ "objects": [
+  {
+   "role": "destination",
+   "kind": "bowl",
+   "count": 1
+  },
+  {
+   "role": "target",
+   "kind": "cube",
+   "count": 1
+  },
+  {
+   "role": "distractors",
+   "kind": "cube",
+   "count": [
+    0,
+    3
+   ]
+  }
+ ],
+ "layout": [],
+ "goal": [
+  {
+   "pred": "inside",
+   "args": [
+    "@target",
+    "@destination"
+   ]
+  }
+ ],
+ "instructions": [
+  "Put {target} in {destination}.",
+  "Place {target} into {destination}.",
+  "Drop {target} into {destination}.",
+  "Move {target} into {destination}."
+ ],
+ "notes": "div2 variant (tools/make_variants.py)."
+}

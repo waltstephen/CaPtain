@@ -1,0 +1,52 @@
+{
+ "id": "swap",
+ "tid": 15,
+ "version": 1,
+ "domain": "legacy",
+ "split": "heldout",
+ "provenance": "hand",
+ "difficulty": 3,
+ "builder": "legacy:swap",
+ "objects": [
+  {
+   "role": "a",
+   "kind": "cube",
+   "count": 1
+  },
+  {
+   "role": "b",
+   "kind": "cube",
+   "count": 1
+  },
+  {
+   "role": "distractors",
+   "kind": "cube",
+   "count": [
+    0,
+    1
+   ]
+  }
+ ],
+ "layout": [],
+ "goal": [
+  {
+   "pred": "at_initial_of",
+   "args": [
+    "@a",
+    "@b"
+   ]
+  },
+  {
+   "pred": "at_initial_of",
+   "args": [
+    "@b",
+    "@a"
+   ]
+  }
+ ],
+ "instructions": [
+  "Swap the positions of {a} and {b}.",
+  "Exchange the places of {a} and {b}."
+ ],
+ "notes": "Legacy family (pre-pivot). Sampled by families.py (builder legacy:*), bit-identical to the pre-spec sampler; objects/goal/instructions here describe it (object kinds vary per seed in the generator) and are not interpreted."
+}

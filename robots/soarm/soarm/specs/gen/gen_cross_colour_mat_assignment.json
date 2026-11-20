@@ -1,0 +1,110 @@
+{
+ "id": "gen_cross_colour_mat_assignment",
+ "tid": 1206,
+ "version": 1,
+ "domain": "cube",
+ "split": "train",
+ "provenance": "llm",
+ "difficulty": 2,
+ "builder": "declarative",
+ "objects": [
+  {
+   "role": "first_mat",
+   "kind": "big_mat",
+   "count": 1,
+   "where": {
+    "size_class": 12.0,
+    "color": "blue"
+   }
+  },
+  {
+   "role": "second_mat",
+   "kind": "big_mat",
+   "count": 1,
+   "where": {
+    "size_class": 12.0,
+    "color": {
+     "not_role": "first_mat"
+    }
+   }
+  },
+  {
+   "role": "first_cube",
+   "kind": "cube",
+   "count": 1,
+   "where": {
+    "size_class": [
+     3.0,
+     4.0
+    ],
+    "color": {
+     "same_role": "first_mat"
+    }
+   }
+  },
+  {
+   "role": "second_cube",
+   "kind": "cube",
+   "count": 1,
+   "where": {
+    "size_class": [
+     3.0,
+     4.0
+    ],
+    "color": {
+     "same_role": "second_mat"
+    }
+   }
+  }
+ ],
+ "layout": [],
+ "goal": [
+  {
+   "pred": "in_region",
+   "args": [
+    "@first_cube",
+    "@second_mat"
+   ]
+  },
+  {
+   "pred": "in_region",
+   "args": [
+    "@second_cube",
+    "@first_mat"
+   ]
+  }
+ ],
+ "instructions": [
+  "Put each cube on the mat whose colour does not match that cube.",
+  "Cross the colours: put {first_cube} on {second_mat}, and {second_cube} on {first_mat}.",
+  "Each mat should hold the cube of the other colour, not its matching cube.",
+  "Place both cubes on mats, deliberately using the differently coloured mat for each cube.",
+  "Put {first_cube} directly on {second_mat}. Then put {second_cube} directly on {first_mat}.",
+  "Arrange the cubes so that neither cube matches the colour of the mat beneath it, with one cube on each mat.",
+  "Move {first_cube} onto {second_mat}, and move {second_cube} onto {first_mat}.",
+  "Please place one cube on each mat, choosing the mat of the opposite colour for each cube.",
+  "{first_cube} should end up on {second_mat}, while {second_cube} should end up on {first_mat}.",
+  "Swap the colour pairing: each mat must receive the cube that does not share its colour.",
+  "First place {first_cube} directly on {second_mat}; next place {second_cube} directly on {first_mat}.",
+  "Set the two blocks on the two mats, one per mat, with neither block matching its mat's colour.",
+  "Please put {first_cube} on {second_mat} and {second_cube} on {first_mat}.",
+  "Arrange one cube per mat so that both cube\u2013mat colour pairings are mismatched.",
+  "Place {second_cube} on {first_mat}, and place {first_cube} on {second_mat}.",
+  "Give each cube the mat of the other colour, leaving one cube on each mat.",
+  "Put {first_cube} directly onto {second_mat} before putting {second_cube} directly onto {first_mat}.",
+  "Both cubes should finish on mats of colours different from their own, with a single cube on each mat.",
+  "The required arrangement is {first_cube} on {second_mat} and {second_cube} on {first_mat}.",
+  "Please arrange the blocks with one on each mat and no block on a mat of its own colour.",
+  "Set {first_cube} on {second_mat}; set {second_cube} on {first_mat}.",
+  "Use both mats: put a cube on each, always pairing different colours.",
+  "Begin by placing {first_cube} directly on {second_mat}. After that, place {second_cube} directly on {first_mat}.",
+  "Make each mat hold exactly one of the two cubes, choosing the cube whose colour differs from that mat.",
+  "Position {second_cube} on {first_mat} and {first_cube} on {second_mat}.",
+  "Put the two cubes on the two mats in the nonmatching colour arrangement, one cube per mat.",
+  "Please complete these steps in order: put {first_cube} directly on {second_mat}, then put {second_cube} directly on {first_mat}.",
+  "Neither cube should sit on its matching-colour mat; place each on the other mat instead.",
+  "For the final layout, place {first_cube} on {second_mat} and {second_cube} on {first_mat}.",
+  "Pair each block with the differently coloured mat and place it there, using each mat for exactly one block."
+ ],
+ "notes": "Uses deliberate colour mismatching rather than the existing same-colour sorting rule."
+}

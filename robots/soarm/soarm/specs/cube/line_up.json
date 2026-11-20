@@ -1,0 +1,38 @@
+{
+ "id": "cube_line_up",
+ "tid": 110,
+ "version": 1,
+ "domain": "cube",
+ "split": "train",
+ "provenance": "hand",
+ "difficulty": 3,
+ "builder": "declarative",
+ "objects": [
+  {
+   "role": "items",
+   "kind": "cube",
+   "count": 3
+  },
+  {
+   "role": "distractors",
+   "kind": "cube",
+   "count": [
+    0,
+    1
+   ]
+  }
+ ],
+ "layout": [],
+ "goal": [
+  {
+   "pred": "in_line",
+   "args": [
+    "@items*"
+   ]
+  }
+ ],
+ "instructions": [
+  "Line up {items} in a straight row.",
+  "Arrange {items} in a straight line, a few centimetres apart."
+ ]
+}

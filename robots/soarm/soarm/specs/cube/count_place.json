@@ -1,0 +1,78 @@
+{
+ "id": "cube_count_place",
+ "tid": 107,
+ "version": 2,
+ "domain": "cube",
+ "split": "heldout",
+ "provenance": "hand",
+ "difficulty": 3,
+ "builder": "declarative",
+ "objects": [
+  {
+   "role": "destination",
+   "kind": [
+    "bowl",
+    "box"
+   ],
+   "count": 1
+  },
+  {
+   "role": "pool",
+   "kind": "cube",
+   "count": 3,
+   "where": {
+    "color": {
+     "same_role": "pool[0]"
+    },
+    "size_class": {
+     "max": 4.0
+    }
+   }
+  },
+  {
+   "role": "distractors",
+   "kind": "cube",
+   "count": [
+    0,
+    1
+   ],
+   "where": {
+    "color": {
+     "not_role": "pool"
+    }
+   }
+  }
+ ],
+ "layout": [
+  {
+   "type": "region",
+   "role": "destination",
+   "r": [
+    0.17,
+    0.24
+   ],
+   "angle_deg": [
+    -50,
+    50
+   ]
+  }
+ ],
+ "goal": [
+  {
+   "count": {
+    "pred": "inside",
+    "args": [
+     "$",
+     "@destination"
+    ]
+   },
+   "over": "pool",
+   "eq": 2
+  }
+ ],
+ "instructions": [
+  "Put exactly {count} of the {pool.color} cubes in {destination}.",
+  "Place {count} {pool.color} cubes into {destination} and leave the third one out."
+ ],
+ "notes": "Reach fix (soarm-taskgen measurement 11-10): as first written 0-4/100 layouts were reachable; this version solved 8-10/10 by script."
+}

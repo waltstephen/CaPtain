@@ -1,0 +1,101 @@
+{
+ "id": "cube_v_clear_then_store",
+ "tid": 270,
+ "version": 1,
+ "domain": "cube",
+ "split": "train",
+ "provenance": "hand",
+ "difficulty": 2,
+ "builder": "declarative",
+ "objects": [
+  {
+   "role": "container",
+   "kind": "tray",
+   "count": 1
+  },
+  {
+   "role": "mat",
+   "kind": "pad",
+   "count": 1
+  },
+  {
+   "role": "first",
+   "kind": "cube",
+   "count": 1
+  },
+  {
+   "role": "second",
+   "kind": "cube",
+   "count": 1
+  },
+  {
+   "role": "distractors",
+   "kind": "cube",
+   "count": [
+    0,
+    1
+   ]
+  }
+ ],
+ "layout": [
+  {
+   "type": "on",
+   "role": "first",
+   "support": "@mat"
+  },
+  {
+   "type": "region",
+   "role": "second",
+   "r": [
+    0.15,
+    0.26
+   ],
+   "angle_deg": [
+    -60,
+    60
+   ]
+  },
+  {
+   "type": "region",
+   "role": "distractors",
+   "r": [
+    0.15,
+    0.26
+   ],
+   "angle_deg": [
+    -60,
+    60
+   ]
+  }
+ ],
+ "goal": [
+  {
+   "pred": "off_region",
+   "args": [
+    "@first",
+    "@mat"
+   ]
+  },
+  {
+   "pred": "inside",
+   "args": [
+    "@second",
+    "@container"
+   ]
+  }
+ ],
+ "instructions": [
+  "Take {first} off {mat} and put {second} in {container}.",
+  "Clear {mat} by moving {first} to the table, then drop {second} into {container}.",
+  "Move {first} off {mat}; afterwards store {second} in {container}.",
+  "First remove {first} from {mat}, then place {second} into {container}."
+ ],
+ "workspace": {
+  "r": [
+   0.13,
+   0.29
+  ],
+  "angle_deg": 70
+ },
+ "notes": "div3 variant (tools/make_variants.py)."
+}

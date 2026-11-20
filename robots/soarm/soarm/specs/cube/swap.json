@@ -1,0 +1,51 @@
+{
+ "id": "cube_swap",
+ "tid": 112,
+ "version": 1,
+ "domain": "cube",
+ "split": "heldout",
+ "provenance": "hand",
+ "difficulty": 3,
+ "builder": "declarative",
+ "objects": [
+  {
+   "role": "a",
+   "kind": "cube",
+   "count": 1
+  },
+  {
+   "role": "b",
+   "kind": "cube",
+   "count": 1
+  },
+  {
+   "role": "distractors",
+   "kind": "cube",
+   "count": [
+    0,
+    1
+   ]
+  }
+ ],
+ "layout": [],
+ "goal": [
+  {
+   "pred": "at_initial_of",
+   "args": [
+    "@a",
+    "@b"
+   ]
+  },
+  {
+   "pred": "at_initial_of",
+   "args": [
+    "@b",
+    "@a"
+   ]
+  }
+ ],
+ "instructions": [
+  "Swap the positions of {a} and {b}.",
+  "Exchange the places of {a} and {b}."
+ ]
+}

@@ -1,0 +1,50 @@
+{
+ "id": "obj_block_in_big_bowl",
+ "tid": 10022,
+ "version": 1,
+ "domain": "broad",
+ "split": "train",
+ "provenance": "hand",
+ "difficulty": 1,
+ "builder": "declarative",
+ "objects": [
+  {
+   "role": "destination",
+   "kind": "big_bowl",
+   "count": 1
+  },
+  {
+   "role": "target",
+   "kind": "block",
+   "count": 1
+  },
+  {
+   "role": "distractors",
+   "kind": [
+    "cube",
+    "cylinder"
+   ],
+   "count": [
+    0,
+    2
+   ]
+  }
+ ],
+ "layout": [],
+ "goal": [
+  {
+   "pred": "inside",
+   "args": [
+    "@target",
+    "@destination"
+   ]
+  }
+ ],
+ "instructions": [
+  "Put {target} in {destination}.",
+  "Place {target} into {destination}.",
+  "Drop {target} into {destination}.",
+  "Move {target} into {destination}."
+ ],
+ "notes": "div3 variant (tools/make_variants.py)."
+}

@@ -1,0 +1,61 @@
+{
+ "id": "cube_v_stack_same_color",
+ "tid": 222,
+ "version": 1,
+ "domain": "cube",
+ "split": "train",
+ "provenance": "hand",
+ "difficulty": 2,
+ "builder": "declarative",
+ "objects": [
+  {
+   "role": "destination",
+   "kind": "cube",
+   "count": 1,
+   "where": {
+    "size_class": {
+     "min": 4.5
+    },
+    "texture": "plain"
+   }
+  },
+  {
+   "role": "target",
+   "kind": "cube",
+   "count": 1,
+   "where": {
+    "color": {
+     "same_role": "destination"
+    },
+    "size_class": {
+     "max": 3.0
+    }
+   }
+  },
+  {
+   "role": "distractors",
+   "kind": "cube",
+   "count": [
+    0,
+    2
+   ]
+  }
+ ],
+ "layout": [],
+ "goal": [
+  {
+   "pred": "on_top",
+   "args": [
+    "@target",
+    "@destination"
+   ]
+  }
+ ],
+ "instructions": [
+  "Stack {target} on top of {destination}.",
+  "Put {target} on {destination}.",
+  "Place {target} on top of {destination}.",
+  "Set {target} down on top of {destination}."
+ ],
+ "notes": "div2 variant (tools/make_variants.py). two cubes of one colour: larger/smaller references"
+}

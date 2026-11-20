@@ -1,0 +1,107 @@
+{
+ "id": "gen_between_two_landmarks",
+ "tid": 1100,
+ "version": 1,
+ "domain": "cube",
+ "split": "train",
+ "provenance": "llm",
+ "difficulty": 2,
+ "builder": "declarative",
+ "objects": [
+  {
+   "role": "left_anchor",
+   "kind": "cube",
+   "count": 1,
+   "where": {
+    "size_class": 4.0,
+    "color": [
+     "red",
+     "orange"
+    ]
+   }
+  },
+  {
+   "role": "right_anchor",
+   "kind": "cube",
+   "count": 1,
+   "where": {
+    "size_class": 4.0,
+    "color": [
+     "blue",
+     "cyan"
+    ]
+   }
+  },
+  {
+   "role": "target",
+   "kind": "cube",
+   "count": 1,
+   "where": {
+    "size_class": 3.0,
+    "color": [
+     "green",
+     "yellow"
+    ]
+   }
+  }
+ ],
+ "layout": [
+  {
+   "type": "region",
+   "role": "left_anchor",
+   "r": [
+    0.2,
+    0.21
+   ],
+   "angle_deg": [
+    -26,
+    -24
+   ]
+  },
+  {
+   "type": "region",
+   "role": "right_anchor",
+   "r": [
+    0.2,
+    0.21
+   ],
+   "angle_deg": [
+    24,
+    26
+   ]
+  }
+ ],
+ "goal": [
+  {
+   "pred": "relation",
+   "args": [
+    "@target",
+    "@left_anchor",
+    "right"
+   ],
+   "params": {
+    "far": 0.12,
+    "lateral": 0.035
+   }
+  },
+  {
+   "pred": "relation",
+   "args": [
+    "@target",
+    "@right_anchor",
+    "left"
+   ],
+   "params": {
+    "far": 0.12,
+    "lateral": 0.035
+   }
+  }
+ ],
+ "instructions": [
+  "Place {target} on the table between {left_anchor} and {right_anchor}, to the right of the former and left of the latter, as seen from in front of the robot.",
+  "Put {target} in the gap between {left_anchor} and {right_anchor}. It should be right of {left_anchor} and left of {right_anchor} in the camera view.",
+  "The goal is for {target} to rest between the two other cubes: right of {left_anchor} and left of {right_anchor}, viewed from in front of the robot.",
+  "Find the space right of {left_anchor} and left of {right_anchor}, using the view from in front of the robot, and set {target} there on the table."
+ ],
+ "notes": "Requires one movable cube to satisfy opposing spatial relations to two separate landmarks simultaneously."
+}

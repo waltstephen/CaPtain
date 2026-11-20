@@ -1,0 +1,61 @@
+{
+ "id": "cube_v_mat_to_container",
+ "tid": 240,
+ "version": 1,
+ "domain": "cube",
+ "split": "train",
+ "provenance": "hand",
+ "difficulty": 1,
+ "builder": "declarative",
+ "objects": [
+  {
+   "role": "mat",
+   "kind": "pad",
+   "count": 1
+  },
+  {
+   "role": "destination",
+   "kind": [
+    "bowl",
+    "box"
+   ],
+   "count": 1
+  },
+  {
+   "role": "target",
+   "kind": "cube",
+   "count": 1
+  },
+  {
+   "role": "distractors",
+   "kind": "cube",
+   "count": [
+    0,
+    1
+   ]
+  }
+ ],
+ "layout": [
+  {
+   "type": "on",
+   "role": "target",
+   "support": "@mat"
+  }
+ ],
+ "goal": [
+  {
+   "pred": "inside",
+   "args": [
+    "@target",
+    "@destination"
+   ]
+  }
+ ],
+ "instructions": [
+  "Move {target} from {mat} into {destination}.",
+  "Take {target} off {mat} and drop it into {destination}.",
+  "Put the cube that is on {mat} into {destination}.",
+  "Transfer {target} from {mat} to {destination}."
+ ],
+ "notes": "div2 variant (tools/make_variants.py)."
+}

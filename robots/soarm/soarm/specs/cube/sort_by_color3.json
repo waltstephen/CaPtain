@@ -1,0 +1,125 @@
+{
+ "id": "cube_sort_by_color3",
+ "tid": 109,
+ "version": 1,
+ "domain": "cube",
+ "split": "train",
+ "provenance": "hand",
+ "difficulty": 4,
+ "builder": "declarative",
+ "objects": [
+  {
+   "role": "bins",
+   "kind": "pad",
+   "count": 3,
+   "where": {
+    "color": {
+     "distinct": true
+    }
+   }
+  },
+  {
+   "role": "items0",
+   "kind": "cube",
+   "count": 1,
+   "where": {
+    "color": {
+     "same_role": "bins[0]"
+    }
+   }
+  },
+  {
+   "role": "items1",
+   "kind": "cube",
+   "count": 1,
+   "where": {
+    "color": {
+     "same_role": "bins[1]"
+    }
+   }
+  },
+  {
+   "role": "items2",
+   "kind": "cube",
+   "count": 1,
+   "where": {
+    "color": {
+     "same_role": "bins[2]"
+    }
+   }
+  }
+ ],
+ "layout": [
+  {
+   "type": "region",
+   "role": "items0",
+   "r": [
+    0.15,
+    0.26
+   ],
+   "angle_deg": [
+    -60,
+    60
+   ]
+  },
+  {
+   "type": "region",
+   "role": "items1",
+   "r": [
+    0.15,
+    0.26
+   ],
+   "angle_deg": [
+    -60,
+    60
+   ]
+  },
+  {
+   "type": "region",
+   "role": "items2",
+   "r": [
+    0.15,
+    0.26
+   ],
+   "angle_deg": [
+    -60,
+    60
+   ]
+  }
+ ],
+ "goal": [
+  {
+   "pred": "in_region",
+   "args": [
+    "@items0",
+    "@bins[0]"
+   ]
+  },
+  {
+   "pred": "in_region",
+   "args": [
+    "@items1",
+    "@bins[1]"
+   ]
+  },
+  {
+   "pred": "in_region",
+   "args": [
+    "@items2",
+    "@bins[2]"
+   ]
+  }
+ ],
+ "instructions": [
+  "Sort the cubes: put each cube on the mat of its own colour.",
+  "Put the {items0.color} cube on the {items0.color} mat, the {items1.color} cube on the {items1.color} mat and the {items2.color} cube on the {items2.color} mat."
+ ],
+ "workspace": {
+  "r": [
+   0.13,
+   0.29
+  ],
+  "angle_deg": 70
+ },
+ "notes": "Three mats do not fit the reliable band r 0.15-0.26: mats use the legacy annulus, the cubes stay in the band."
+}

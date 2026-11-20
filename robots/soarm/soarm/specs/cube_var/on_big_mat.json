@@ -1,0 +1,47 @@
+{
+ "id": "cube_v_on_big_mat",
+ "tid": 257,
+ "version": 1,
+ "domain": "cube",
+ "split": "train",
+ "provenance": "hand",
+ "difficulty": 1,
+ "builder": "declarative",
+ "objects": [
+  {
+   "role": "destination",
+   "kind": "big_mat",
+   "count": 1
+  },
+  {
+   "role": "target",
+   "kind": "cube",
+   "count": 1
+  },
+  {
+   "role": "distractors",
+   "kind": "cube",
+   "count": [
+    0,
+    3
+   ]
+  }
+ ],
+ "layout": [],
+ "goal": [
+  {
+   "pred": "in_region",
+   "args": [
+    "@target",
+    "@destination"
+   ]
+  }
+ ],
+ "instructions": [
+  "Put {target} on {destination}.",
+  "Place {target} onto {destination}.",
+  "Move {target} onto {destination}.",
+  "Set {target} down on {destination}."
+ ],
+ "notes": "div3 variant (tools/make_variants.py). 12-15 cm mat"
+}

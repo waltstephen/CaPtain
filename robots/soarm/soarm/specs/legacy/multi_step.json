@@ -1,0 +1,62 @@
+{
+ "id": "multi_step",
+ "tid": 4,
+ "version": 1,
+ "domain": "legacy",
+ "split": "train",
+ "provenance": "hand",
+ "difficulty": 4,
+ "builder": "legacy:multi_step",
+ "objects": [
+  {
+   "role": "container",
+   "kind": "bowl",
+   "count": 1
+  },
+  {
+   "role": "step1",
+   "kind": "cube",
+   "count": 1
+  },
+  {
+   "role": "base",
+   "kind": "cube",
+   "count": 1
+  },
+  {
+   "role": "top",
+   "kind": "cube",
+   "count": 1
+  },
+  {
+   "role": "distractors",
+   "kind": "cylinder",
+   "count": [
+    0,
+    1
+   ]
+  }
+ ],
+ "layout": [],
+ "goal": [
+  {
+   "pred": "inside",
+   "args": [
+    "@step1",
+    "@container"
+   ]
+  },
+  {
+   "pred": "on_top",
+   "args": [
+    "@top",
+    "@base"
+   ]
+  }
+ ],
+ "instructions": [
+  "First put {step1} in {container}, then stack {top} on {base}.",
+  "Put {step1} into {container}. After that, place {top} on top of {base}."
+ ],
+ "notes": "Legacy family (pre-pivot). Sampled by families.py (builder legacy:*), bit-identical to the pre-spec sampler; objects/goal/instructions here describe it (object kinds vary per seed in the generator) and are not interpreted."
+}

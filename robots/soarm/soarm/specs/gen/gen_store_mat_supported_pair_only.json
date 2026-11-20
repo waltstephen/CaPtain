@@ -1,0 +1,93 @@
+{
+ "id": "gen_store_mat_supported_pair_only",
+ "tid": 1213,
+ "version": 1,
+ "domain": "cube",
+ "split": "train",
+ "provenance": "llm",
+ "difficulty": 2,
+ "builder": "declarative",
+ "objects": [
+  {
+   "role": "source_mat",
+   "kind": "big_mat",
+   "count": 1,
+   "where": {
+    "size_class": 14.0,
+    "color": [
+     "blue",
+     "cyan"
+    ]
+   }
+  },
+  {
+   "role": "tray",
+   "kind": "tray",
+   "count": 1,
+   "where": {
+    "size_class": 16.0
+   }
+  },
+  {
+   "role": "supported",
+   "kind": "cube",
+   "count": 2,
+   "where": {
+    "size_class": 3.0,
+    "color": [
+     "red",
+     "orange"
+    ]
+   }
+  },
+  {
+   "role": "loose",
+   "kind": "cube",
+   "count": 1,
+   "where": {
+    "size_class": 3.5,
+    "color": {
+     "not_role": "supported"
+    }
+   }
+  }
+ ],
+ "layout": [
+  {
+   "type": "on",
+   "role": "supported",
+   "support": "@source_mat"
+  },
+  {
+   "type": "region",
+   "role": "tray",
+   "r": [
+    0.17,
+    0.24
+   ],
+   "angle_deg": [
+    -50,
+    50
+   ]
+  }
+ ],
+ "goal": [
+  {
+   "pred": "inside",
+   "for_each": "supported",
+   "args": [
+    "$",
+    "@tray"
+   ]
+  }
+ ],
+ "instructions": [
+  "Put both cubes that start on {source_mat} into {tray}; the loose table cube is not part of this transfer.",
+  "Transfer the two mat-supported cubes into {tray}, leaving the cube on the bare table alone.",
+  "Empty {source_mat} into {tray}, moving its two cubes but not the loose cube.",
+  "Find the two cubes resting on the mat and place both inside {tray}. Do not collect the table cube.",
+  "The tray should receive the mat's two cubes, not the cube that starts directly on the table.",
+  "Move one cube from {source_mat} into {tray}, then move the other cube from that same mat into the tray. Leave the loose cube where it is."
+ ],
+ "notes": "Selects a subset for storage by shared initial support while excluding a visible loose cube."
+}

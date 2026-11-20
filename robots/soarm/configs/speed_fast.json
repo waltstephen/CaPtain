@@ -1,0 +1,33 @@
+{
+ "description": "soarm-speed stacked fast profile: deploy/eval only, never teacher collection. Motion options NEED A HUMAN SAFETY REVIEW before the real arm. Compaction keeps 8 k of recent turns (release 16 k): fewer compact-before-every-request cycles in long episodes (A/B 11-12: prefill -22 %, success 8 vs 7 of 60 per arm, privileged). Thinking budget 256 / output cap 768 (was 1024 / 1536; privileged A/B 11-12: strict 8/18 vs 4/18, real-arm -21 % per request; final realistic run 11/90). MoGe-2 ViT-L at resolution level 0 (54 vs 87 ms per depth call, 0.9 % median depth change; realistic A/B strict 4/18 vs 5/18).",
+ "driver": {
+  "temperature": 0.7,
+  "thinking_token_budget": 256,
+  "max_output_tokens": 768,
+  "max_images": 12,
+  "image_drop_chunk": 6,
+  "server_poll_s": 0.02,
+  "server_grace_s": 0,
+  "keep_recent_tokens": 8000
+ },
+ "tool_backend_options": {
+  "motion_speed_scale": 3,
+  "default_max_speed_m_s": 0.1,
+  "default_max_angular_speed_rad_s": 1.0,
+  "concurrent_label_check": true
+ },
+ "backend_options": {
+  "gripper_settle_min_steps": 6,
+  "step_profile": {
+   "speed_scale": 3,
+   "slow_zone_m": 0.03,
+   "settle_samples_needed": 1,
+   "gripper_still_needed": 2
+  }
+ },
+ "services": {
+  "sam3_cache_images": 8,
+  "molmo_stop_after_coords": true,
+  "depth_resolution_level": 0
+ }
+}

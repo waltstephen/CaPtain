@@ -1,0 +1,134 @@
+{
+ "id": "gen_replace_mat_cube_with_smaller_and_store_",
+ "tid": 1210,
+ "version": 1,
+ "domain": "cube",
+ "split": "train",
+ "provenance": "llm",
+ "difficulty": 3,
+ "builder": "declarative",
+ "objects": [
+  {
+   "role": "tray",
+   "kind": "tray",
+   "count": 1,
+   "where": {
+    "size_class": 18.0
+   }
+  },
+  {
+   "role": "mat",
+   "kind": "big_mat",
+   "count": 1,
+   "where": {
+    "size_class": 12.0
+   }
+  },
+  {
+   "role": "occupant",
+   "kind": "cube",
+   "count": 1,
+   "where": {
+    "size_class": 3.5,
+    "color": "orange"
+   }
+  },
+  {
+   "role": "smaller",
+   "kind": "cube",
+   "count": 1,
+   "where": {
+    "size_class": 3.0,
+    "color": {
+     "not_role": "occupant"
+    }
+   }
+  },
+  {
+   "role": "larger",
+   "kind": "cube",
+   "count": 1,
+   "where": {
+    "size_class": 4.0,
+    "color": {
+     "not_role": "occupant"
+    }
+   }
+  }
+ ],
+ "layout": [
+  {
+   "type": "region",
+   "role": "tray",
+   "r": [
+    0.17,
+    0.24
+   ],
+   "angle_deg": [
+    -50,
+    50
+   ]
+  },
+  {
+   "type": "on",
+   "role": "occupant",
+   "support": "@mat"
+  }
+ ],
+ "goal": [
+  {
+   "pred": "inside",
+   "args": [
+    "@occupant",
+    "@tray"
+   ]
+  },
+  {
+   "pred": "inside",
+   "args": [
+    "@larger",
+    "@tray"
+   ]
+  },
+  {
+   "pred": "in_region",
+   "args": [
+    "@smaller",
+    "@mat"
+   ]
+  }
+ ],
+ "instructions": [
+  "Compare the loose cubes with the cube initially on {mat}. Replace that occupant with the smaller loose cube, and put both the original occupant and the larger loose cube in {tray}.",
+  "Put the cube from {mat} into {tray}. Of the loose cubes, place the one smaller than that original occupant on {mat}, and put the larger one in {tray}.",
+  "Use the initial mat occupant as the size reference: the loose cube smaller than it goes on {mat}; the reference cube and the loose cube larger than it go in {tray}.",
+  "Replace the mat's cube with its smaller loose neighbour in size. Store the original mat cube and the larger loose cube together in {tray}.",
+  "First identify which loose cube is smaller than the cube on {mat}. Move the mat occupant into {tray}, put that smaller cube on the freed mat, and put the remaining loose cube in {tray}.",
+  "At the end, {mat} should hold the loose cube that was smaller than its original occupant, while {tray} should contain the original occupant and the larger loose cube.",
+  "Move the cube initially on {mat} into {tray}, replace it with the loose cube smaller than it, and add the larger loose cube to {tray}.",
+  "Please compare the loose blocks against the block starting on {mat}. Put the smaller loose block on {mat} and place both the starting block and the larger loose block in {tray}.",
+  "The smaller of the loose cubes, measured against the original cube on {mat}, should end up on {mat}; the original cube and the loose cube larger than it should end up in {tray}.",
+  "Identify the cube on {mat} and use its size as your reference. Transfer it to {tray}, set the smaller loose cube on {mat}, and transfer the larger loose cube to {tray}.",
+  "Swap the starting occupant of {mat} for the loose block smaller than it, storing the displaced block and the loose block larger than it together in {tray}.",
+  "Clear {mat} by putting its original cube in {tray}. Fill the vacated spot with the loose cube smaller than the original, then put the larger loose cube in {tray}.",
+  "Using the initial cube on {mat} as the comparison, send the smaller loose cube to {mat} and send both the reference cube and the larger loose cube to {tray}.",
+  "Arrange the three cubes so that {mat} holds the loose cube smaller than its starting occupant, and {tray} holds that starting occupant along with the loose cube larger than it.",
+  "Please give {mat} a smaller replacement: move its starting block into {tray}, put the loose block smaller than that starting block on {mat}, and place the larger loose block in {tray}.",
+  "Take the original cube off {mat} and put it in {tray}. Of the loose cubes, put the one smaller than that original cube on {mat} and the one larger than it in {tray}.",
+  "Make the initial mat block the size benchmark. The loose block below that benchmark belongs on {mat}; move the benchmark block and the loose block above it into {tray}.",
+  "Put the larger loose cube in {tray}, judging its size relative to the cube initially on {mat}. Move that initial cube into {tray} as well, and put the smaller loose cube on {mat}.",
+  "Replace the cube starting on {mat} with the loose cube that is smaller than it. Place the removed cube and the loose cube that is larger than it together in {tray}.",
+  "For the final arrangement, leave the smaller-than-original loose block on {mat}, with the original occupant of {mat} and the larger-than-original loose block both inside {tray}.",
+  "First compare each loose cube with the starting cube on {mat}. Next move the starting cube to {tray}, put its smaller loose counterpart on {mat}, and put its larger loose counterpart in {tray}.",
+  "Relocate the starting occupant of {mat} to {tray}; use the loose cube smaller than that occupant to refill {mat}, and store the loose cube larger than it in {tray}.",
+  "Please put two blocks in {tray}: the block originally on {mat} and the loose block larger than that block. Put the loose block smaller than the original on {mat}.",
+  "Use the size of the original cube on {mat} to sort the loose pair. Place the smaller one on {mat}, after moving the original cube into {tray}, and put the larger one in {tray} too.",
+  "Give {mat} the loose cube smaller than its original occupant. To do so, move the original occupant into {tray}, and also put the loose cube larger than that occupant in {tray}.",
+  "The cube originally occupying {mat} must join the loose cube larger than it in {tray}; the loose cube smaller than that original occupant must take its place on {mat}.",
+  "Compare sizes before moving anything: find the loose block smaller than the block on {mat} and the loose block larger than it. Move the mat block into {tray}, put the smaller block on {mat}, and put the larger block in {tray}.",
+  "Move the original mat cube and its larger loose counterpart into {tray}, and place its smaller loose counterpart on {mat}. Use the original mat cube's size for both comparisons.",
+  "Please exchange the starting cube on {mat} for the loose cube smaller than it, placing the starting cube in {tray}. Finish by putting the loose cube larger than the starting cube in {tray} as well.",
+  "Leave {mat} occupied by the loose block that is smaller than the block that began there. Put that original block, together with the loose block larger than it, inside {tray}."
+ ],
+ "notes": "Uses the initial mat occupant as a size threshold and replaces it with the qualifying smaller cube while storing both nonqualifying cubes."
+}

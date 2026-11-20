@@ -1,0 +1,1999 @@
+{
+ "id": "div3",
+ "description": "div3 teacher mix (11-11): div2 tasks + MoGe-2-tolerant cube variants (trays, big bowls/mats, multi-object to-region, clearing, sorting into regions, two-step chains), bigger primitives, GSO/YCB meshes, taskgen specs (round 1 + div3 depth-tolerant round); depth-precise tasks kept at 0.35x weight; edge3 tables, div3 layouts (sub-bands, grid, two clusters, receptacle bands, yaw modes, distractor stacks, 1-2 platforms, 0-3 clutter), random3 lights, cube sizes biased to 4-5 cm, train camera views. Weights are shares of strict successes.",
+ "intro": "v4",
+ "config": {
+  "table_mount": "edge3",
+  "camera": "train",
+  "layout": "div3",
+  "table_textures": "all",
+  "lights": "random3",
+  "clutter": [
+   0,
+   3
+  ],
+  "clutter_kinds": [
+   "cylinder",
+   "block",
+   "cup"
+  ],
+  "platforms": 0.3,
+  "platforms_max": 2,
+  "distractor_stacks": 0.15,
+  "cube_size_weights": [
+   0.5,
+   0.7,
+   1.2,
+   1.3,
+   1.3
+  ]
+ },
+ "retire": {
+  "min_attempts": 10,
+  "min_yield": 0.15
+ },
+ "max_share": 0.025,
+ "precise_factor": 0.35,
+ "groups": {
+  "cube_base": {
+   "share": 0.14,
+   "tasks": 14
+  },
+  "cube_var": {
+   "share": 0.2,
+   "tasks": 47
+  },
+  "cube_div3": {
+   "share": 0.24,
+   "tasks": 22
+  },
+  "cube_llm": {
+   "share": 0.14,
+   "tasks": 53
+  },
+  "noncube": {
+   "share": 0.16,
+   "tasks": 27
+  },
+  "mesh": {
+   "share": 0.12,
+   "tasks": 6
+  }
+ },
+ "tasks": [
+  {
+   "id": "cube_clear_region",
+   "group": "cube_base",
+   "weight": 0.0214,
+   "scripted": [
+    10,
+    10
+   ],
+   "difficulty": 2,
+   "layouts": 10
+  },
+  {
+   "id": "cube_line_up",
+   "group": "cube_base",
+   "weight": 0.00674,
+   "scripted": [
+    10,
+    10
+   ],
+   "difficulty": 3,
+   "layouts": 10,
+   "precise": "in_line"
+  },
+  {
+   "id": "cube_line_up_ordered",
+   "group": "cube_base",
+   "weight": 0.00472,
+   "scripted": [
+    9,
+    10
+   ],
+   "difficulty": 4,
+   "layouts": 10,
+   "precise": "in_line"
+  },
+  {
+   "id": "cube_multi_step",
+   "group": "cube_base",
+   "weight": 0.00367,
+   "scripted": [
+    7,
+    10
+   ],
+   "difficulty": 4,
+   "layouts": 10,
+   "precise": "on_top"
+  },
+  {
+   "id": "cube_ordinal_stack",
+   "group": "cube_base",
+   "weight": 0.00674,
+   "scripted": [
+    10,
+    10
+   ],
+   "difficulty": 3,
+   "layouts": 10,
+   "precise": "stacked"
+  },
+  {
+   "id": "cube_pick_lift",
+   "group": "cube_base",
+   "weight": 0.00749,
+   "scripted": [
+    10,
+    10
+   ],
+   "difficulty": 1,
+   "layouts": 10,
+   "precise": "collapsed under MoGe-2 (11-11 paired smoke)"
+  },
+  {
+   "id": "cube_push_to_region",
+   "group": "cube_base",
+   "weight": 0.0214,
+   "scripted": [
+    10,
+    10
+   ],
+   "difficulty": 2,
+   "layouts": 10
+  },
+  {
+   "id": "cube_put_all_in_container",
+   "group": "cube_base",
+   "weight": 0.00607,
+   "scripted": [
+    9,
+    10
+   ],
+   "difficulty": 3,
+   "layouts": 10,
+   "precise": "collapsed under MoGe-2 (11-11 paired smoke)"
+  },
+  {
+   "id": "cube_put_in_container",
+   "group": "cube_base",
+   "weight": 0.01926,
+   "scripted": [
+    9,
+    10
+   ],
+   "difficulty": 1,
+   "layouts": 10
+  },
+  {
+   "id": "cube_relational_place",
+   "group": "cube_base",
+   "weight": 0.00749,
+   "scripted": [
+    10,
+    10
+   ],
+   "difficulty": 2,
+   "layouts": 10,
+   "precise": "collapsed under MoGe-2 (11-11 paired smoke)"
+  },
+  {
+   "id": "cube_slot_insert",
+   "group": "cube_base",
+   "weight": 0.00539,
+   "scripted": [
+    8,
+    10
+   ],
+   "difficulty": 3,
+   "layouts": 10,
+   "precise": "tight slot"
+  },
+  {
+   "id": "cube_sort_by_color",
+   "group": "cube_base",
+   "weight": 0.01541,
+   "scripted": [
+    8,
+    10
+   ],
+   "difficulty": 3,
+   "layouts": 10
+  },
+  {
+   "id": "cube_stack_three",
+   "group": "cube_base",
+   "weight": 0.00674,
+   "scripted": [
+    10,
+    10
+   ],
+   "difficulty": 3,
+   "layouts": 10,
+   "precise": "stacked"
+  },
+  {
+   "id": "cube_stack_two",
+   "group": "cube_base",
+   "weight": 0.00749,
+   "scripted": [
+    10,
+    10
+   ],
+   "difficulty": 2,
+   "layouts": 10,
+   "precise": "on_top"
+  },
+  {
+   "id": "cube_v_all_color_in_container",
+   "group": "cube_var",
+   "weight": 0.00429,
+   "scripted": [
+    7,
+    10
+   ],
+   "difficulty": 2,
+   "layouts": 10
+  },
+  {
+   "id": "cube_v_all_on_mat",
+   "group": "cube_var",
+   "weight": 0.00613,
+   "scripted": [
+    10,
+    10
+   ],
+   "difficulty": 2,
+   "layouts": 10
+  },
+  {
+   "id": "cube_v_clear_mat_one",
+   "group": "cube_var",
+   "weight": 0.00613,
+   "scripted": [
+    10,
+    10
+   ],
+   "difficulty": 1,
+   "layouts": 10
+  },
+  {
+   "id": "cube_v_container_and_relation",
+   "group": "cube_var",
+   "weight": 0.00613,
+   "scripted": [
+    10,
+    10
+   ],
+   "difficulty": 2,
+   "layouts": 10
+  },
+  {
+   "id": "cube_v_empty_container",
+   "group": "cube_var",
+   "weight": 0.00107,
+   "scripted": [
+    5,
+    10
+   ],
+   "difficulty": 2,
+   "layouts": 10,
+   "precise": "collapsed under MoGe-2 (11-11 paired smoke)"
+  },
+  {
+   "id": "cube_v_in_and_on",
+   "group": "cube_var",
+   "weight": 0.00613,
+   "scripted": [
+    10,
+    10
+   ],
+   "difficulty": 2,
+   "layouts": 10
+  },
+  {
+   "id": "cube_v_in_bowl",
+   "group": "cube_var",
+   "weight": 0.0049,
+   "scripted": [
+    8,
+    10
+   ],
+   "difficulty": 1,
+   "layouts": 10
+  },
+  {
+   "id": "cube_v_in_box",
+   "group": "cube_var",
+   "weight": 0.00613,
+   "scripted": [
+    10,
+    10
+   ],
+   "difficulty": 1,
+   "layouts": 10
+  },
+  {
+   "id": "cube_v_in_container_large",
+   "group": "cube_var",
+   "weight": 0.00551,
+   "scripted": [
+    9,
+    10
+   ],
+   "difficulty": 2,
+   "layouts": 10
+  },
+  {
+   "id": "cube_v_in_container_largest",
+   "group": "cube_var",
+   "weight": 0.00613,
+   "scripted": [
+    10,
+    10
+   ],
+   "difficulty": 1,
+   "layouts": 10
+  },
+  {
+   "id": "cube_v_in_container_small",
+   "group": "cube_var",
+   "weight": 0.00613,
+   "scripted": [
+    10,
+    10
+   ],
+   "difficulty": 1,
+   "layouts": 10
+  },
+  {
+   "id": "cube_v_in_container_smallest",
+   "group": "cube_var",
+   "weight": 0.00613,
+   "scripted": [
+    10,
+    10
+   ],
+   "difficulty": 1,
+   "layouts": 10
+  },
+  {
+   "id": "cube_v_in_container_wood",
+   "group": "cube_var",
+   "weight": 0.00613,
+   "scripted": [
+    10,
+    10
+   ],
+   "difficulty": 1,
+   "layouts": 10
+  },
+  {
+   "id": "cube_v_lift_dense",
+   "group": "cube_var",
+   "weight": 0.00613,
+   "scripted": [
+    10,
+    10
+   ],
+   "difficulty": 1,
+   "layouts": 10
+  },
+  {
+   "id": "cube_v_lift_large",
+   "group": "cube_var",
+   "weight": 0.00613,
+   "scripted": [
+    10,
+    10
+   ],
+   "difficulty": 1,
+   "layouts": 10
+  },
+  {
+   "id": "cube_v_lift_largest",
+   "group": "cube_var",
+   "weight": 0.00613,
+   "scripted": [
+    10,
+    10
+   ],
+   "difficulty": 1,
+   "layouts": 10
+  },
+  {
+   "id": "cube_v_lift_small",
+   "group": "cube_var",
+   "weight": 0.00214,
+   "scripted": [
+    10,
+    10
+   ],
+   "difficulty": 1,
+   "layouts": 10,
+   "precise": "collapsed under MoGe-2 (11-11 paired smoke)"
+  },
+  {
+   "id": "cube_v_lift_smallest",
+   "group": "cube_var",
+   "weight": 0.00214,
+   "scripted": [
+    10,
+    10
+   ],
+   "difficulty": 1,
+   "layouts": 10,
+   "precise": "collapsed under MoGe-2 (11-11 paired smoke)"
+  },
+  {
+   "id": "cube_v_lift_wood",
+   "group": "cube_var",
+   "weight": 0.00551,
+   "scripted": [
+    9,
+    10
+   ],
+   "difficulty": 1,
+   "layouts": 10
+  },
+  {
+   "id": "cube_v_line_front_to_back",
+   "group": "cube_var",
+   "weight": 0.00193,
+   "scripted": [
+    10,
+    10
+   ],
+   "difficulty": 3,
+   "layouts": 10,
+   "precise": "in_line"
+  },
+  {
+   "id": "cube_v_line_same_color",
+   "group": "cube_var",
+   "weight": 0.00193,
+   "scripted": [
+    10,
+    10
+   ],
+   "difficulty": 3,
+   "layouts": 10,
+   "precise": "in_line"
+  },
+  {
+   "id": "cube_v_line_small",
+   "group": "cube_var",
+   "weight": 0.00193,
+   "scripted": [
+    10,
+    10
+   ],
+   "difficulty": 3,
+   "layouts": 10,
+   "precise": "in_line"
+  },
+  {
+   "id": "cube_v_mat_then_stack",
+   "group": "cube_var",
+   "weight": 0.00174,
+   "scripted": [
+    9,
+    10
+   ],
+   "difficulty": 3,
+   "layouts": 10,
+   "precise": "on_top"
+  },
+  {
+   "id": "cube_v_mat_to_container",
+   "group": "cube_var",
+   "weight": 0.00551,
+   "scripted": [
+    9,
+    10
+   ],
+   "difficulty": 1,
+   "layouts": 10
+  },
+  {
+   "id": "cube_v_mat_to_mat",
+   "group": "cube_var",
+   "weight": 0.00613,
+   "scripted": [
+    10,
+    10
+   ],
+   "difficulty": 1,
+   "layouts": 10
+  },
+  {
+   "id": "cube_v_on_mat",
+   "group": "cube_var",
+   "weight": 0.0049,
+   "scripted": [
+    8,
+    10
+   ],
+   "difficulty": 1,
+   "layouts": 10
+  },
+  {
+   "id": "cube_v_on_mat_large",
+   "group": "cube_var",
+   "weight": 0.00613,
+   "scripted": [
+    10,
+    10
+   ],
+   "difficulty": 1,
+   "layouts": 10
+  },
+  {
+   "id": "cube_v_on_mat_of_two",
+   "group": "cube_var",
+   "weight": 0.00613,
+   "scripted": [
+    10,
+    10
+   ],
+   "difficulty": 1,
+   "layouts": 10
+  },
+  {
+   "id": "cube_v_on_mat_small",
+   "group": "cube_var",
+   "weight": 0.00613,
+   "scripted": [
+    10,
+    10
+   ],
+   "difficulty": 1,
+   "layouts": 10
+  },
+  {
+   "id": "cube_v_place_then_lift",
+   "group": "cube_var",
+   "weight": 0.00613,
+   "scripted": [
+    10,
+    10
+   ],
+   "difficulty": 2,
+   "layouts": 10
+  },
+  {
+   "id": "cube_v_rel_behind_cube",
+   "group": "cube_var",
+   "weight": 0.00214,
+   "scripted": [
+    10,
+    10
+   ],
+   "difficulty": 2,
+   "layouts": 10,
+   "precise": "relation to a cube"
+  },
+  {
+   "id": "cube_v_rel_behind_landmark",
+   "group": "cube_var",
+   "weight": 0.0049,
+   "scripted": [
+    8,
+    10
+   ],
+   "difficulty": 2,
+   "layouts": 10
+  },
+  {
+   "id": "cube_v_rel_front_cube",
+   "group": "cube_var",
+   "weight": 0.00214,
+   "scripted": [
+    10,
+    10
+   ],
+   "difficulty": 2,
+   "layouts": 10,
+   "precise": "relation to a cube"
+  },
+  {
+   "id": "cube_v_rel_left_cube",
+   "group": "cube_var",
+   "weight": 0.00193,
+   "scripted": [
+    9,
+    10
+   ],
+   "difficulty": 2,
+   "layouts": 10,
+   "precise": "relation to a cube"
+  },
+  {
+   "id": "cube_v_rel_left_landmark",
+   "group": "cube_var",
+   "weight": 0.00551,
+   "scripted": [
+    9,
+    10
+   ],
+   "difficulty": 2,
+   "layouts": 10
+  },
+  {
+   "id": "cube_v_rel_right_cube",
+   "group": "cube_var",
+   "weight": 0.00214,
+   "scripted": [
+    10,
+    10
+   ],
+   "difficulty": 2,
+   "layouts": 10,
+   "precise": "relation to a cube"
+  },
+  {
+   "id": "cube_v_rel_right_landmark",
+   "group": "cube_var",
+   "weight": 0.00613,
+   "scripted": [
+    10,
+    10
+   ],
+   "difficulty": 2,
+   "layouts": 10
+  },
+  {
+   "id": "cube_v_slot_small",
+   "group": "cube_var",
+   "weight": 0.00174,
+   "scripted": [
+    9,
+    10
+   ],
+   "difficulty": 3,
+   "layouts": 10,
+   "precise": "tight slot"
+  },
+  {
+   "id": "cube_v_sort_by_size",
+   "group": "cube_var",
+   "weight": 0.00496,
+   "scripted": [
+    9,
+    10
+   ],
+   "difficulty": 3,
+   "layouts": 10
+  },
+  {
+   "id": "cube_v_sort_one_each",
+   "group": "cube_var",
+   "weight": 0.00613,
+   "scripted": [
+    10,
+    10
+   ],
+   "difficulty": 2,
+   "layouts": 10
+  },
+  {
+   "id": "cube_v_stack_and_relation",
+   "group": "cube_var",
+   "weight": 0.00174,
+   "scripted": [
+    9,
+    10
+   ],
+   "difficulty": 3,
+   "layouts": 10,
+   "precise": "on_top"
+  },
+  {
+   "id": "cube_v_stack_dense",
+   "group": "cube_var",
+   "weight": 0.00214,
+   "scripted": [
+    10,
+    10
+   ],
+   "difficulty": 2,
+   "layouts": 10,
+   "precise": "on_top"
+  },
+  {
+   "id": "cube_v_stack_large",
+   "group": "cube_var",
+   "weight": 0.00214,
+   "scripted": [
+    10,
+    10
+   ],
+   "difficulty": 2,
+   "layouts": 10,
+   "precise": "on_top"
+  },
+  {
+   "id": "cube_v_stack_on_mat_cube",
+   "group": "cube_var",
+   "weight": 0.00214,
+   "scripted": [
+    10,
+    10
+   ],
+   "difficulty": 2,
+   "layouts": 10,
+   "precise": "on_top"
+  },
+  {
+   "id": "cube_v_stack_on_wood",
+   "group": "cube_var",
+   "weight": 0.00214,
+   "scripted": [
+    10,
+    10
+   ],
+   "difficulty": 2,
+   "layouts": 10,
+   "precise": "on_top"
+  },
+  {
+   "id": "cube_v_stack_same_color",
+   "group": "cube_var",
+   "weight": 0.00214,
+   "scripted": [
+    10,
+    10
+   ],
+   "difficulty": 2,
+   "layouts": 10,
+   "precise": "on_top"
+  },
+  {
+   "id": "cube_v_stack_small_on_large",
+   "group": "cube_var",
+   "weight": 0.00214,
+   "scripted": [
+    10,
+    10
+   ],
+   "difficulty": 2,
+   "layouts": 10,
+   "precise": "on_top"
+  },
+  {
+   "id": "cube_v_clear_big_mat",
+   "group": "cube_div3",
+   "weight": 0.01188,
+   "scripted": [
+    10,
+    10
+   ],
+   "difficulty": 2,
+   "layouts": 10
+  },
+  {
+   "id": "cube_v_clear_then_store",
+   "group": "cube_div3",
+   "weight": 0.01188,
+   "scripted": [
+    10,
+    10
+   ],
+   "difficulty": 2,
+   "layouts": 10
+  },
+  {
+   "id": "cube_v_color_in_tray",
+   "group": "cube_div3",
+   "weight": 0.0095,
+   "scripted": [
+    8,
+    10
+   ],
+   "difficulty": 2,
+   "layouts": 10
+  },
+  {
+   "id": "cube_v_empty_tray",
+   "group": "cube_div3",
+   "weight": 0.00832,
+   "scripted": [
+    7,
+    10
+   ],
+   "difficulty": 2,
+   "layouts": 10
+  },
+  {
+   "id": "cube_v_in_big_bowl",
+   "group": "cube_div3",
+   "weight": 0.01069,
+   "scripted": [
+    9,
+    10
+   ],
+   "difficulty": 1,
+   "layouts": 10
+  },
+  {
+   "id": "cube_v_in_bin_large",
+   "group": "cube_div3",
+   "weight": 0.01188,
+   "scripted": [
+    10,
+    10
+   ],
+   "difficulty": 1,
+   "layouts": 10
+  },
+  {
+   "id": "cube_v_in_tray",
+   "group": "cube_div3",
+   "weight": 0.01188,
+   "scripted": [
+    10,
+    10
+   ],
+   "difficulty": 1,
+   "layouts": 10
+  },
+  {
+   "id": "cube_v_in_tray_large",
+   "group": "cube_div3",
+   "weight": 0.01188,
+   "scripted": [
+    10,
+    10
+   ],
+   "difficulty": 1,
+   "layouts": 10
+  },
+  {
+   "id": "cube_v_mat_then_tray",
+   "group": "cube_div3",
+   "weight": 0.00832,
+   "scripted": [
+    7,
+    10
+   ],
+   "difficulty": 2,
+   "layouts": 10
+  },
+  {
+   "id": "cube_v_mat_to_tray",
+   "group": "cube_div3",
+   "weight": 0.0095,
+   "scripted": [
+    8,
+    10
+   ],
+   "difficulty": 1,
+   "layouts": 10
+  },
+  {
+   "id": "cube_v_on_big_mat",
+   "group": "cube_div3",
+   "weight": 0.01188,
+   "scripted": [
+    10,
+    10
+   ],
+   "difficulty": 1,
+   "layouts": 10
+  },
+  {
+   "id": "cube_v_sort_colors_two_mats",
+   "group": "cube_div3",
+   "weight": 0.01069,
+   "scripted": [
+    10,
+    10
+   ],
+   "difficulty": 3,
+   "layouts": 10
+  },
+  {
+   "id": "cube_v_sort_mat_and_tray",
+   "group": "cube_div3",
+   "weight": 0.01188,
+   "scripted": [
+    10,
+    10
+   ],
+   "difficulty": 2,
+   "layouts": 10
+  },
+  {
+   "id": "cube_v_sort_one_each_big",
+   "group": "cube_div3",
+   "weight": 0.01188,
+   "scripted": [
+    10,
+    10
+   ],
+   "difficulty": 2,
+   "layouts": 10
+  },
+  {
+   "id": "cube_v_sort_size_tray_mat",
+   "group": "cube_div3",
+   "weight": 0.01188,
+   "scripted": [
+    10,
+    10
+   ],
+   "difficulty": 2,
+   "layouts": 10
+  },
+  {
+   "id": "cube_v_three_in_tray",
+   "group": "cube_div3",
+   "weight": 0.01188,
+   "scripted": [
+    10,
+    10
+   ],
+   "difficulty": 2,
+   "layouts": 10
+  },
+  {
+   "id": "cube_v_three_on_big_mat",
+   "group": "cube_div3",
+   "weight": 0.01188,
+   "scripted": [
+    10,
+    10
+   ],
+   "difficulty": 2,
+   "layouts": 10
+  },
+  {
+   "id": "cube_v_tray_then_lift",
+   "group": "cube_div3",
+   "weight": 0.0095,
+   "scripted": [
+    8,
+    10
+   ],
+   "difficulty": 2,
+   "layouts": 10
+  },
+  {
+   "id": "cube_v_tray_to_mat",
+   "group": "cube_div3",
+   "weight": 0.01188,
+   "scripted": [
+    10,
+    10
+   ],
+   "difficulty": 2,
+   "layouts": 10
+  },
+  {
+   "id": "cube_v_two_in_big_bowl",
+   "group": "cube_div3",
+   "weight": 0.0095,
+   "scripted": [
+    8,
+    10
+   ],
+   "difficulty": 2,
+   "layouts": 10
+  },
+  {
+   "id": "cube_v_two_in_tray",
+   "group": "cube_div3",
+   "weight": 0.0095,
+   "scripted": [
+    8,
+    10
+   ],
+   "difficulty": 2,
+   "layouts": 10
+  },
+  {
+   "id": "cube_v_two_on_big_mat",
+   "group": "cube_div3",
+   "weight": 0.01188,
+   "scripted": [
+    10,
+    10
+   ],
+   "difficulty": 2,
+   "layouts": 10
+  },
+  {
+   "id": "gen_between_two_landmarks",
+   "group": "cube_llm",
+   "weight": 0.00157,
+   "scripted": [
+    10,
+    10
+   ],
+   "difficulty": 2,
+   "layouts": 10,
+   "precise": "relation to a cube"
+  },
+  {
+   "id": "gen_build_left_then_behind_chain",
+   "group": "cube_llm",
+   "weight": 0.00157,
+   "scripted": [
+    10,
+    10
+   ],
+   "difficulty": 2,
+   "layouts": 10,
+   "precise": "relation to a cube"
+  },
+  {
+   "id": "gen_cap_occupied_mat_and_fill_empty_mat",
+   "group": "cube_llm",
+   "weight": 0.00141,
+   "scripted": [
+    9,
+    10
+   ],
+   "difficulty": 2,
+   "layouts": 10,
+   "precise": "on_top"
+  },
+  {
+   "id": "gen_clear_mat_and_store_other_cube",
+   "group": "cube_llm",
+   "weight": 0.00447,
+   "scripted": [
+    10,
+    10
+   ],
+   "difficulty": 2,
+   "layouts": 10
+  },
+  {
+   "id": "gen_clear_mat_and_tray_to_bare_table",
+   "group": "cube_llm",
+   "weight": 0.00242,
+   "scripted": [
+    6,
+    10
+   ],
+   "difficulty": 3,
+   "layouts": 10
+  },
+  {
+   "id": "gen_clear_mat_then_unload_tray",
+   "group": "cube_llm",
+   "weight": 0.00358,
+   "scripted": [
+    8,
+    10
+   ],
+   "difficulty": 2,
+   "layouts": 10
+  },
+  {
+   "id": "gen_clear_nonmatching_cube_and_hold_match",
+   "group": "cube_llm",
+   "weight": 0.00447,
+   "scripted": [
+    10,
+    10
+   ],
+   "difficulty": 2,
+   "layouts": 10
+  },
+  {
+   "id": "gen_collect_mat_residents_colour_into_tray",
+   "group": "cube_llm",
+   "weight": 0.00403,
+   "scripted": [
+    9,
+    10
+   ],
+   "difficulty": 2,
+   "layouts": 10
+  },
+  {
+   "id": "gen_colour_pair_row_with_optional_mat_parkin",
+   "group": "cube_llm",
+   "weight": 0.00127,
+   "scripted": [
+    9,
+    10
+   ],
+   "difficulty": 3,
+   "layouts": 10,
+   "precise": "in_line"
+  },
+  {
+   "id": "gen_compare_loose_cubes_with_tray_resident",
+   "group": "cube_llm",
+   "weight": 0.00447,
+   "scripted": [
+    10,
+    10
+   ],
+   "difficulty": 2,
+   "layouts": 10
+  },
+  {
+   "id": "gen_consolidate_on_smaller_cubes_colour_mat",
+   "group": "cube_llm",
+   "weight": 0.00447,
+   "scripted": [
+    10,
+    10
+   ],
+   "difficulty": 2,
+   "layouts": 10
+  },
+  {
+   "id": "gen_cross_colour_mat_assignment",
+   "group": "cube_llm",
+   "weight": 0.00447,
+   "scripted": [
+    10,
+    10
+   ],
+   "difficulty": 2,
+   "layouts": 10
+  },
+  {
+   "id": "gen_exchange_tray_and_mat_contents",
+   "group": "cube_llm",
+   "weight": 0.00362,
+   "scripted": [
+    9,
+    10
+   ],
+   "difficulty": 3,
+   "layouts": 10
+  },
+  {
+   "id": "gen_extract_tray_cube_not_matching_mat",
+   "group": "cube_llm",
+   "weight": 0.00268,
+   "scripted": [
+    6,
+    10
+   ],
+   "difficulty": 1,
+   "layouts": 10
+  },
+  {
+   "id": "gen_extract_tray_cubes_above_reference_size",
+   "group": "cube_llm",
+   "weight": 0.00268,
+   "scripted": [
+    6,
+    10
+   ],
+   "difficulty": 2,
+   "layouts": 10
+  },
+  {
+   "id": "gen_flank_cube_with_named_pair",
+   "group": "cube_llm",
+   "weight": 0.00157,
+   "scripted": [
+    10,
+    10
+   ],
+   "difficulty": 2,
+   "layouts": 10,
+   "precise": "relation to a cube"
+  },
+  {
+   "id": "gen_free_destination_mat_and_park_beside_sou",
+   "group": "cube_llm",
+   "weight": 0.00447,
+   "scripted": [
+    10,
+    10
+   ],
+   "difficulty": 2,
+   "layouts": 10
+  },
+  {
+   "id": "gen_horizontal_rank_to_vertical_order",
+   "group": "cube_llm",
+   "weight": 0.00157,
+   "scripted": [
+    10,
+    10
+   ],
+   "difficulty": 2,
+   "layouts": 10,
+   "precise": "stacked"
+  },
+  {
+   "id": "gen_join_cube_on_occupied_mat",
+   "group": "cube_llm",
+   "weight": 0.00447,
+   "scripted": [
+    10,
+    10
+   ],
+   "difficulty": 1,
+   "layouts": 10
+  },
+  {
+   "id": "gen_lift_second_from_left",
+   "group": "cube_llm",
+   "weight": 0.00447,
+   "scripted": [
+    10,
+    10
+   ],
+   "difficulty": 1,
+   "layouts": 10
+  },
+  {
+   "id": "gen_mat_tower_with_optional_storage",
+   "group": "cube_llm",
+   "weight": 0.00141,
+   "scripted": [
+    10,
+    10
+   ],
+   "difficulty": 3,
+   "layouts": 10,
+   "precise": "on_top"
+  },
+  {
+   "id": "gen_merge_occupied_mat_and_optional_loose_cu",
+   "group": "cube_llm",
+   "weight": 0.00447,
+   "scripted": [
+    10,
+    10
+   ],
+   "difficulty": 2,
+   "layouts": 10
+  },
+  {
+   "id": "gen_move_mat_base_to_table_and_cap",
+   "group": "cube_llm",
+   "weight": 0.00157,
+   "scripted": [
+    10,
+    10
+   ],
+   "difficulty": 2,
+   "layouts": 10,
+   "precise": "on_top"
+  },
+  {
+   "id": "gen_optional_mat_clearance_to_reference_side",
+   "group": "cube_llm",
+   "weight": 0.00157,
+   "scripted": [
+    10,
+    10
+   ],
+   "difficulty": 1,
+   "layouts": 10,
+   "precise": "relation to a cube"
+  },
+  {
+   "id": "gen_order_loose_pair_then_hold_mat_cube",
+   "group": "cube_llm",
+   "weight": 0.0011,
+   "scripted": [
+    10,
+    10
+   ],
+   "difficulty": 4,
+   "layouts": 10,
+   "precise": "in_line"
+  },
+  {
+   "id": "gen_ordered_pair_with_optional_front_apex",
+   "group": "cube_llm",
+   "weight": 0.00141,
+   "scripted": [
+    10,
+    10
+   ],
+   "difficulty": 3,
+   "layouts": 10,
+   "precise": "in_line"
+  },
+  {
+   "id": "gen_ordered_row_with_tower_end",
+   "group": "cube_llm",
+   "weight": 0.00063,
+   "scripted": [
+    8,
+    10
+   ],
+   "difficulty": 5,
+   "layouts": 10,
+   "precise": "in_line"
+  },
+  {
+   "id": "gen_park_beside_tower_base",
+   "group": "cube_llm",
+   "weight": 0.00157,
+   "scripted": [
+    10,
+    10
+   ],
+   "difficulty": 1,
+   "layouts": 10,
+   "precise": "relation to a cube"
+  },
+  {
+   "id": "gen_park_two_smallest_and_hold_largest",
+   "group": "cube_llm",
+   "weight": 0.00403,
+   "scripted": [
+    10,
+    10
+   ],
+   "difficulty": 3,
+   "layouts": 10
+  },
+  {
+   "id": "gen_place_larger_colour_mate_and_hold_smalle",
+   "group": "cube_llm",
+   "weight": 0.00157,
+   "scripted": [
+    10,
+    10
+   ],
+   "difficulty": 2,
+   "layouts": 10,
+   "precise": "relation to a cube"
+  },
+  {
+   "id": "gen_rank_matched_colour_towers",
+   "group": "cube_llm",
+   "weight": 0.00141,
+   "scripted": [
+    9,
+    10
+   ],
+   "difficulty": 2,
+   "layouts": 10,
+   "precise": "on_top"
+  },
+  {
+   "id": "gen_rehouse_mat_occupant_on_cube",
+   "group": "cube_llm",
+   "weight": 0.00157,
+   "scripted": [
+    10,
+    10
+   ],
+   "difficulty": 2,
+   "layouts": 10,
+   "precise": "on_top"
+  },
+  {
+   "id": "gen_relocate_landmark_then_park_beside",
+   "group": "cube_llm",
+   "weight": 0.00157,
+   "scripted": [
+    10,
+    10
+   ],
+   "difficulty": 2,
+   "layouts": 10,
+   "precise": "relation to a cube"
+  },
+  {
+   "id": "gen_replace_mat_cube_with_smaller_and_store_",
+   "group": "cube_llm",
+   "weight": 0.00403,
+   "scripted": [
+    10,
+    10
+   ],
+   "difficulty": 3,
+   "layouts": 10
+  },
+  {
+   "id": "gen_replace_mat_occupant_then_hold_it",
+   "group": "cube_llm",
+   "weight": 0.00358,
+   "scripted": [
+    8,
+    10
+   ],
+   "difficulty": 2,
+   "layouts": 10
+  },
+  {
+   "id": "gen_replace_mat_occupant_with_tower",
+   "group": "cube_llm",
+   "weight": 0.00141,
+   "scripted": [
+    10,
+    10
+   ],
+   "difficulty": 3,
+   "layouts": 10,
+   "precise": "on_top"
+  },
+  {
+   "id": "gen_replace_occupied_mat_with_pair",
+   "group": "cube_llm",
+   "weight": 0.00282,
+   "scripted": [
+    7,
+    10
+   ],
+   "difficulty": 3,
+   "layouts": 10
+  },
+  {
+   "id": "gen_reverse_tower_onto_mat",
+   "group": "cube_llm",
+   "weight": 0.00157,
+   "scripted": [
+    10,
+    10
+   ],
+   "difficulty": 2,
+   "layouts": 10,
+   "precise": "on_top"
+  },
+  {
+   "id": "gen_route_repeated_colour_and_singleton",
+   "group": "cube_llm",
+   "weight": 0.00362,
+   "scripted": [
+    9,
+    10
+   ],
+   "difficulty": 3,
+   "layouts": 10
+  },
+  {
+   "id": "gen_route_tower_layers_to_destinations",
+   "group": "cube_llm",
+   "weight": 0.00157,
+   "scripted": [
+    5,
+    10
+   ],
+   "difficulty": 4,
+   "layouts": 10
+  },
+  {
+   "id": "gen_size_route_to_storage_mat_and_side",
+   "group": "cube_llm",
+   "weight": 0.00127,
+   "scripted": [
+    9,
+    10
+   ],
+   "difficulty": 3,
+   "layouts": 10,
+   "precise": "relation to a cube"
+  },
+  {
+   "id": "gen_stack_smallest_and_hold_largest",
+   "group": "cube_llm",
+   "weight": 0.00157,
+   "scripted": [
+    10,
+    10
+   ],
+   "difficulty": 2,
+   "layouts": 10,
+   "precise": "on_top"
+  },
+  {
+   "id": "gen_store_caps_and_stack_tower_bases",
+   "group": "cube_llm",
+   "weight": 0.00099,
+   "scripted": [
+    7,
+    10
+   ],
+   "difficulty": 3,
+   "layouts": 10,
+   "precise": "on_top"
+  },
+  {
+   "id": "gen_store_mat_occupant_and_pair_remaining_cu",
+   "group": "cube_llm",
+   "weight": 0.0011,
+   "scripted": [
+    10,
+    10
+   ],
+   "difficulty": 4,
+   "layouts": 10,
+   "precise": "in_line"
+  },
+  {
+   "id": "gen_store_mat_supported_pair_only",
+   "group": "cube_llm",
+   "weight": 0.00447,
+   "scripted": [
+    10,
+    10
+   ],
+   "difficulty": 2,
+   "layouts": 10
+  },
+  {
+   "id": "gen_store_median_and_order_size_extremes",
+   "group": "cube_llm",
+   "weight": 0.0011,
+   "scripted": [
+    10,
+    10
+   ],
+   "difficulty": 4,
+   "layouts": 10,
+   "precise": "in_line"
+  },
+  {
+   "id": "gen_store_only_mismatched_mat_occupant",
+   "group": "cube_llm",
+   "weight": 0.00447,
+   "scripted": [
+    10,
+    10
+   ],
+   "difficulty": 1,
+   "layouts": 10
+  },
+  {
+   "id": "gen_store_size_match_of_mat_resident",
+   "group": "cube_llm",
+   "weight": 0.00447,
+   "scripted": [
+    10,
+    10
+   ],
+   "difficulty": 1,
+   "layouts": 10
+  },
+  {
+   "id": "gen_store_smallest_cube_above_reference_size",
+   "group": "cube_llm",
+   "weight": 0.00447,
+   "scripted": [
+    10,
+    10
+   ],
+   "difficulty": 1,
+   "layouts": 10
+  },
+  {
+   "id": "gen_three_level_tower_with_optional_spare_st",
+   "group": "cube_llm",
+   "weight": 0.00125,
+   "scripted": [
+    8,
+    10
+   ],
+   "difficulty": 2,
+   "layouts": 10,
+   "precise": "stacked"
+  },
+  {
+   "id": "gen_two_destinations_with_optional_final_hol",
+   "group": "cube_llm",
+   "weight": 0.00403,
+   "scripted": [
+    10,
+    10
+   ],
+   "difficulty": 3,
+   "layouts": 10
+  },
+  {
+   "id": "gen_unload_tray_by_mat_colour_and_hold_other",
+   "group": "cube_llm",
+   "weight": 0.00224,
+   "scripted": [
+    5,
+    10
+   ],
+   "difficulty": 2,
+   "layouts": 10
+  },
+  {
+   "id": "gen_use_tray_occupant_as_colour_key",
+   "group": "cube_llm",
+   "weight": 0.00242,
+   "scripted": [
+    6,
+    10
+   ],
+   "difficulty": 3,
+   "layouts": 10
+  },
+  {
+   "id": "obj_big_block_lift",
+   "group": "noncube",
+   "weight": 0.00688,
+   "scripted": [
+    10,
+    10
+   ],
+   "difficulty": 1,
+   "layouts": 10
+  },
+  {
+   "id": "obj_big_block_on_big_mat",
+   "group": "noncube",
+   "weight": 0.00688,
+   "scripted": [
+    10,
+    10
+   ],
+   "difficulty": 1,
+   "layouts": 10
+  },
+  {
+   "id": "obj_big_cylinder_in_big_bowl",
+   "group": "noncube",
+   "weight": 0.0055,
+   "scripted": [
+    8,
+    10
+   ],
+   "difficulty": 1,
+   "layouts": 10
+  },
+  {
+   "id": "obj_big_cylinder_lift",
+   "group": "noncube",
+   "weight": 0.00688,
+   "scripted": [
+    10,
+    10
+   ],
+   "difficulty": 1,
+   "layouts": 10
+  },
+  {
+   "id": "obj_block_in_big_bowl",
+   "group": "noncube",
+   "weight": 0.00688,
+   "scripted": [
+    10,
+    10
+   ],
+   "difficulty": 1,
+   "layouts": 10
+  },
+  {
+   "id": "obj_block_in_container",
+   "group": "noncube",
+   "weight": 0.00688,
+   "scripted": [
+    10,
+    10
+   ],
+   "difficulty": 1,
+   "layouts": 10
+  },
+  {
+   "id": "obj_block_in_tray",
+   "group": "noncube",
+   "weight": 0.00619,
+   "scripted": [
+    9,
+    10
+   ],
+   "difficulty": 1,
+   "layouts": 10
+  },
+  {
+   "id": "obj_block_lift",
+   "group": "noncube",
+   "weight": 0.00688,
+   "scripted": [
+    10,
+    10
+   ],
+   "difficulty": 1,
+   "layouts": 10
+  },
+  {
+   "id": "obj_block_on_block",
+   "group": "noncube",
+   "weight": 0.00241,
+   "scripted": [
+    10,
+    10
+   ],
+   "difficulty": 2,
+   "layouts": 10,
+   "precise": "on_top"
+  },
+  {
+   "id": "obj_block_on_mat",
+   "group": "noncube",
+   "weight": 0.00688,
+   "scripted": [
+    10,
+    10
+   ],
+   "difficulty": 1,
+   "layouts": 10
+  },
+  {
+   "id": "obj_block_relation",
+   "group": "noncube",
+   "weight": 0.00619,
+   "scripted": [
+    9,
+    10
+   ],
+   "difficulty": 2,
+   "layouts": 10
+  },
+  {
+   "id": "obj_clear_mat_shape",
+   "group": "noncube",
+   "weight": 0.00619,
+   "scripted": [
+    9,
+    10
+   ],
+   "difficulty": 1,
+   "layouts": 10
+  },
+  {
+   "id": "obj_clear_mat_two_shapes",
+   "group": "noncube",
+   "weight": 0.0055,
+   "scripted": [
+    8,
+    10
+   ],
+   "difficulty": 2,
+   "layouts": 10
+  },
+  {
+   "id": "obj_cube_and_cylinder_on_big_mat",
+   "group": "noncube",
+   "weight": 0.00481,
+   "scripted": [
+    7,
+    10
+   ],
+   "difficulty": 2,
+   "layouts": 10
+  },
+  {
+   "id": "obj_cube_in_cup",
+   "group": "noncube",
+   "weight": 0.00688,
+   "scripted": [
+    10,
+    10
+   ],
+   "difficulty": 2,
+   "layouts": 10
+  },
+  {
+   "id": "obj_cube_on_block",
+   "group": "noncube",
+   "weight": 0.00241,
+   "scripted": [
+    10,
+    10
+   ],
+   "difficulty": 2,
+   "layouts": 10,
+   "precise": "on_top"
+  },
+  {
+   "id": "obj_cylinder_in_container",
+   "group": "noncube",
+   "weight": 0.00688,
+   "scripted": [
+    10,
+    10
+   ],
+   "difficulty": 1,
+   "layouts": 10
+  },
+  {
+   "id": "obj_cylinder_in_tray",
+   "group": "noncube",
+   "weight": 0.00688,
+   "scripted": [
+    10,
+    10
+   ],
+   "difficulty": 1,
+   "layouts": 10
+  },
+  {
+   "id": "obj_cylinder_lift",
+   "group": "noncube",
+   "weight": 0.00688,
+   "scripted": [
+    10,
+    10
+   ],
+   "difficulty": 1,
+   "layouts": 10
+  },
+  {
+   "id": "obj_cylinder_on_mat",
+   "group": "noncube",
+   "weight": 0.00688,
+   "scripted": [
+    10,
+    10
+   ],
+   "difficulty": 1,
+   "layouts": 10
+  },
+  {
+   "id": "obj_cylinder_relation",
+   "group": "noncube",
+   "weight": 0.00688,
+   "scripted": [
+    10,
+    10
+   ],
+   "difficulty": 2,
+   "layouts": 10
+  },
+  {
+   "id": "obj_line_mixed",
+   "group": "noncube",
+   "weight": 0.00173,
+   "scripted": [
+    8,
+    10
+   ],
+   "difficulty": 3,
+   "layouts": 10,
+   "precise": "in_line"
+  },
+  {
+   "id": "obj_mixed_all_in_box",
+   "group": "noncube",
+   "weight": 0.0055,
+   "scripted": [
+    8,
+    10
+   ],
+   "difficulty": 2,
+   "layouts": 10
+  },
+  {
+   "id": "obj_shape_in_container",
+   "group": "noncube",
+   "weight": 0.00688,
+   "scripted": [
+    10,
+    10
+   ],
+   "difficulty": 1,
+   "layouts": 10
+  },
+  {
+   "id": "obj_shapes_in_tray",
+   "group": "noncube",
+   "weight": 0.0055,
+   "scripted": [
+    8,
+    10
+   ],
+   "difficulty": 2,
+   "layouts": 10
+  },
+  {
+   "id": "obj_shapes_to_mats",
+   "group": "noncube",
+   "weight": 0.00495,
+   "scripted": [
+    8,
+    10
+   ],
+   "difficulty": 3,
+   "layouts": 10
+  },
+  {
+   "id": "obj_sort_shapes_tray_mat",
+   "group": "noncube",
+   "weight": 0.00688,
+   "scripted": [
+    10,
+    10
+   ],
+   "difficulty": 2,
+   "layouts": 10
+  },
+  {
+   "id": "mesh_in_container",
+   "group": "mesh",
+   "weight": 0.01929,
+   "scripted": [
+    9,
+    10
+   ],
+   "difficulty": 1,
+   "layouts": 10
+  },
+  {
+   "id": "mesh_in_container_among_cubes",
+   "group": "mesh",
+   "weight": 0.02143,
+   "scripted": [
+    10,
+    10
+   ],
+   "difficulty": 2,
+   "layouts": 10
+  },
+  {
+   "id": "mesh_in_container_two_meshes",
+   "group": "mesh",
+   "weight": 0.02143,
+   "scripted": [
+    10,
+    10
+   ],
+   "difficulty": 2,
+   "layouts": 10
+  },
+  {
+   "id": "mesh_lift",
+   "group": "mesh",
+   "weight": 0.01929,
+   "scripted": [
+    9,
+    10
+   ],
+   "difficulty": 1,
+   "layouts": 10
+  },
+  {
+   "id": "mesh_off_mat",
+   "group": "mesh",
+   "weight": 0.01929,
+   "scripted": [
+    9,
+    10
+   ],
+   "difficulty": 1,
+   "layouts": 10
+  },
+  {
+   "id": "mesh_on_mat",
+   "group": "mesh",
+   "weight": 0.01929,
+   "scripted": [
+    9,
+    10
+   ],
+   "difficulty": 1,
+   "layouts": 10
+  }
+ ],
+ "excluded": [
+  {
+   "id": "cube_sort_by_color3",
+   "reason": "verifier stage layouts: only 4/10 valid layouts in 60 draws"
+  },
+  {
+   "id": "cube_v_container_to_mat",
+   "reason": "scripted 3/10 < 50%"
+  },
+  {
+   "id": "cube_v_rel_front_landmark",
+   "reason": "verifier stage layouts: only 9/10 valid layouts in 120 draws"
+  },
+  {
+   "id": "gen_empty_tray_with_size_based_destinations",
+   "reason": "scripted 4/10 < 50%"
+  }
+ ]
+}

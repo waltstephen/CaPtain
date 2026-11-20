@@ -1,0 +1,118 @@
+{
+ "id": "gen_merge_occupied_mat_and_optional_loose_cu",
+ "tid": 1218,
+ "version": 1,
+ "domain": "cube",
+ "split": "train",
+ "provenance": "llm",
+ "difficulty": 2,
+ "builder": "declarative",
+ "objects": [
+  {
+   "role": "source",
+   "kind": "pad",
+   "count": 1,
+   "where": {
+    "size_class": 9.0,
+    "color": "gray"
+   }
+  },
+  {
+   "role": "destination",
+   "kind": "big_mat",
+   "count": 1,
+   "where": {
+    "size_class": 14.0,
+    "color": "white"
+   }
+  },
+  {
+   "role": "resident",
+   "kind": "cube",
+   "count": 1,
+   "where": {
+    "size_class": 3.5,
+    "color": [
+     "red",
+     "orange",
+     "yellow"
+    ]
+   }
+  },
+  {
+   "role": "loose",
+   "kind": "cube",
+   "count": [
+    0,
+    1
+   ],
+   "where": {
+    "size_class": 3.5,
+    "color": {
+     "not_role": "resident",
+     "not": [
+      "gray",
+      "white"
+     ]
+    }
+   }
+  }
+ ],
+ "layout": [
+  {
+   "type": "on",
+   "role": "resident",
+   "support": "@source"
+  }
+ ],
+ "goal": [
+  {
+   "pred": "in_region",
+   "args": [
+    "@resident",
+    "@destination"
+   ]
+  },
+  {
+   "pred": "in_region",
+   "for_each": "loose",
+   "args": [
+    "$",
+    "@destination"
+   ]
+  }
+ ],
+ "instructions": [
+  "Move the cube from the occupied mat directly onto the initially empty large mat. If there is a loose table cube, put it directly on that large mat too.",
+  "Consolidate all the cubes on {destination}: transfer the cube from {source}, and include the loose cube if one is present. Place each cube directly on the mat.",
+  "Empty {source} onto {destination}. If another cube starts on the bare table, move that cube onto {destination} as well, without stacking.",
+  "The initially empty large mat should hold every cube directly on its surface. Move the current mat occupant there, together with any loose table cube.",
+  "First transfer the cube on {source} directly to {destination}. Then, if a loose cube is present, place it beside the transferred cube on the same mat.",
+  "Put the cube from the occupied mat on the empty large mat, and put any cube starting on the bare table on that large mat too. Keep the cubes directly on the mat rather than stacked.",
+  "Transfer the cube from the occupied mat to the initially empty large mat, setting it directly on the surface. If a cube is loose on the table, move it directly onto that large mat as well.",
+  "Please gather every cube on {destination}: move the cube off {source}, and bring over any loose table cube too. Set each one directly on the mat, not on another cube.",
+  "Clear {source} by placing its cube directly on {destination}. If there is another cube on the bare table, place it directly on {destination} too.",
+  "Every cube should end up resting directly on the initially empty large mat. Relocate the cube from the occupied mat and include any cube that starts loose on the table.",
+  "Start by moving the cube from {source} directly onto {destination}. After that, if a loose table cube is present, set it beside the first cube on the same mat.",
+  "Move the occupied mat's block onto the empty large mat. Bring any block from the bare table onto that large mat too, with both resting on the mat rather than stacked.",
+  "Use the initially empty large mat as the new home for all cubes: transfer the occupied mat's cube there, along with any loose table cube, placing each directly on the mat.",
+  "Please move the cube from {source} onto {destination}, and include the loose cube from the table if there is one. All cubes must rest directly on the destination mat.",
+  "Leave {source} empty and place its cube directly on {destination}. Any additional cube starting on the bare table belongs directly on {destination} as well, without stacking.",
+  "The cube on the occupied mat, plus any loose cube on the table, should be relocated to the initially empty large mat. Each must sit directly on its surface.",
+  "First place the cube from {source} directly on {destination}; then place any loose table cube beside it on that mat.",
+  "Put all cubes directly on the initially empty large mat: the one from the occupied mat and, if present, the one from the bare table. Do not stack them.",
+  "Please take the cube off the occupied mat and set it directly on the initially empty large mat. If a loose table cube is present, set that directly on the large mat too.",
+  "Gather the cubes on {destination}, taking the cube from {source} and adding the loose table cube if present. Place them on the mat's surface, not on top of each other.",
+  "Move the occupant of {source} directly onto {destination}, leaving {source} clear. If another cube is on the bare table, move it directly onto {destination} too; do not stack the cubes.",
+  "Make the initially empty large mat hold all cubes directly on its surface, including the cube currently on the occupied mat and any loose table cube.",
+  "Begin with the cube on {source}: transfer it directly to {destination}. Once that is done, move any loose table cube onto the same mat beside it.",
+  "Relocate the block from the occupied mat to the empty large mat, and relocate any block starting on the bare table there as well. Keep every block directly on the mat.",
+  "The initially empty large mat is where every cube should finish. Move the occupied mat's cube there and bring over any loose table cube, with no cube resting on another.",
+  "Transfer the cube from {source} to {destination}, together with any loose cube on the table. Give each cube a position directly on the mat rather than stacking them.",
+  "Please empty {source} by moving its cube onto {destination}. Also move any cube that starts on the bare table onto {destination}, placing each directly on the mat.",
+  "Have the cube from the occupied mat and any loose table cube end up directly on the initially empty large mat. Neither cube should be stacked on the other.",
+  "Move the cube on {source} first, setting it directly on {destination}. If there is a loose table cube, move it next and place it beside the transferred cube on the mat.",
+  "Clear the occupied mat of its cube by transferring it directly onto the empty large mat. Include any cube starting on the bare table, placing it on the large mat itself rather than on another cube."
+ ],
+ "notes": "Combines an occupied source mat and an optional loose cube into one initially empty destination rather than merely transferring a single occupant or joining an existing resident."
+}

@@ -1,0 +1,123 @@
+{
+ "id": "gen_store_size_match_of_mat_resident",
+ "tid": 1215,
+ "version": 1,
+ "domain": "cube",
+ "split": "train",
+ "provenance": "llm",
+ "difficulty": 1,
+ "builder": "declarative",
+ "objects": [
+  {
+   "role": "mat",
+   "kind": "big_mat",
+   "count": 1,
+   "where": {
+    "size_class": 12.0
+   }
+  },
+  {
+   "role": "container",
+   "kind": "big_bowl",
+   "count": 1,
+   "where": {
+    "size_class": 14.0
+   }
+  },
+  {
+   "role": "reference",
+   "kind": "cube",
+   "count": 1,
+   "where": {
+    "size_class": 3.0,
+    "color": [
+     "white",
+     "gray"
+    ]
+   }
+  },
+  {
+   "role": "size_match",
+   "kind": "cube",
+   "count": 1,
+   "where": {
+    "size_class": 3.0,
+    "color": [
+     "red",
+     "orange"
+    ]
+   }
+  },
+  {
+   "role": "other",
+   "kind": "cube",
+   "count": 1,
+   "where": {
+    "size_class": 4.5,
+    "color": {
+     "not": [
+      "white",
+      "gray"
+     ],
+     "not_role": "size_match"
+    }
+   }
+  }
+ ],
+ "layout": [
+  {
+   "type": "on",
+   "role": "reference",
+   "support": "@mat"
+  },
+  {
+   "type": "region",
+   "role": "container",
+   "r": [
+    0.17,
+    0.24
+   ],
+   "angle_deg": [
+    -50,
+    50
+   ]
+  }
+ ],
+ "goal": [
+  {
+   "pred": "inside",
+   "args": [
+    "@size_match",
+    "@container"
+   ]
+  }
+ ],
+ "instructions": [
+  "Put the loose cube that is the same size as the cube on {mat} into {container}.",
+  "Use the cube on the mat as a size reference. Place its loose size match inside {container}.",
+  "Compare each loose cube with the cube resting on {mat}, then put the equally sized loose cube in {container}.",
+  "The bowl should receive the loose cube matching the mat cube's size, regardless of colour.",
+  "Find the cube on the mat, identify the loose cube of equal size, and place that loose cube inside {container}.",
+  "Move into {container} the loose cube equal in size to the cube on {mat}.",
+  "Please place the loose block that matches the size of the block on {mat} inside {container}.",
+  "The loose cube with the same dimensions as the cube on {mat} should end up inside {container}.",
+  "First check the size of the cube on {mat}; then put the loose cube of that size into {container}.",
+  "Into {container}, put the size-matching loose cube, using the cube on {mat} as your reference.",
+  "Of the two loose blocks, place the one equal in size to the block on {mat} inside {container}.",
+  "Could you put the loose cube that is just as large as the cube on {mat} into {container}?",
+  "Use size rather than colour to choose the loose cube matching the cube on the mat, and put your choice inside {container}.",
+  "Check the block resting on {mat}. Find the loose block of matching size and move it into {container}.",
+  "Place inside {container} whichever of the two loose cubes has the same size as the cube on {mat}.",
+  "The cube on {mat} is the size guide: put the loose cube that matches it into {container}.",
+  "Choose the loose cube whose dimensions match those of the cube on the mat; it should end up in {container}, irrespective of colour.",
+  "Match a loose cube to the size of the cube on {mat}, then deposit that loose cube in {container}.",
+  "Please use the cube resting on {mat} to determine which loose cube belongs inside {container}: choose the one of equal size.",
+  "Put the size match in {container}: it is the loose block as large as the block on {mat}.",
+  "The loose block matching the mat block in size, not necessarily in colour, should be placed inside {container}.",
+  "Look at the cube on {mat}, compare the sizes of the two loose cubes against it, and put the matching loose cube into {container}.",
+  "Select by size alone: move the loose cube equal in size to the mat cube into {container}.",
+  "Take the loose cube that matches the size of the cube on {mat} and set it inside {container}.",
+  "Determine how large the block on {mat} is, then place the loose block of equal size into {container}."
+ ],
+ "notes": "Uses an initially supported cube as a size-equality reference instead of selecting a global size extreme."
+}

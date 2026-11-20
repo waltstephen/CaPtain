@@ -1,0 +1,98 @@
+{
+ "id": "cube_v_sort_one_each_big",
+ "tid": 267,
+ "version": 1,
+ "domain": "cube",
+ "split": "train",
+ "provenance": "hand",
+ "difficulty": 2,
+ "builder": "declarative",
+ "objects": [
+  {
+   "role": "bins",
+   "kind": "big_mat",
+   "count": 2,
+   "where": {
+    "color": {
+     "distinct": true
+    }
+   }
+  },
+  {
+   "role": "item0",
+   "kind": "cube",
+   "count": 1,
+   "where": {
+    "color": {
+     "same_role": "bins[0]"
+    }
+   }
+  },
+  {
+   "role": "item1",
+   "kind": "cube",
+   "count": 1,
+   "where": {
+    "color": {
+     "same_role": "bins[1]"
+    }
+   }
+  }
+ ],
+ "layout": [
+  {
+   "type": "region",
+   "role": "item0",
+   "r": [
+    0.15,
+    0.26
+   ],
+   "angle_deg": [
+    -60,
+    60
+   ]
+  },
+  {
+   "type": "region",
+   "role": "item1",
+   "r": [
+    0.15,
+    0.26
+   ],
+   "angle_deg": [
+    -60,
+    60
+   ]
+  }
+ ],
+ "goal": [
+  {
+   "pred": "in_region",
+   "args": [
+    "@item0",
+    "@bins[0]"
+   ]
+  },
+  {
+   "pred": "in_region",
+   "args": [
+    "@item1",
+    "@bins[1]"
+   ]
+  }
+ ],
+ "instructions": [
+  "Put each cube on the mat of the same colour.",
+  "Sort the two cubes onto the mats that match their colours.",
+  "Put {item0} on the {item0.color} mat and {item1} on the {item1.color} mat.",
+  "Match the cubes to the mats by colour."
+ ],
+ "workspace": {
+  "r": [
+   0.13,
+   0.29
+  ],
+  "angle_deg": 70
+ },
+ "notes": "div3 variant (tools/make_variants.py)."
+}

@@ -1,0 +1,10 @@
+{
+ "id": "cube_heldout_families",
+ "description": "The 4 held-out cube specs (never in teacher/SFT data), training scene distribution.",
+ "select": {
+  "domain": "cube",
+  "split": "heldout"
+ },
+ "seeds": "9000-9009",
+ "config": {}
+}

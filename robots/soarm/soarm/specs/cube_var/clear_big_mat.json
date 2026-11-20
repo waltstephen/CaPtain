@@ -1,0 +1,62 @@
+{
+ "id": "cube_v_clear_big_mat",
+ "tid": 260,
+ "version": 1,
+ "domain": "cube",
+ "split": "train",
+ "provenance": "hand",
+ "difficulty": 2,
+ "builder": "declarative",
+ "objects": [
+  {
+   "role": "mat",
+   "kind": "big_mat",
+   "count": 1
+  },
+  {
+   "role": "items",
+   "kind": "cube",
+   "count": [
+    1,
+    2
+   ],
+   "where": {
+    "size_class": {
+     "max": 4.5
+    }
+   }
+  },
+  {
+   "role": "distractors",
+   "kind": "cube",
+   "count": [
+    0,
+    1
+   ]
+  }
+ ],
+ "layout": [
+  {
+   "type": "on",
+   "role": "items",
+   "support": "@mat"
+  }
+ ],
+ "goal": [
+  {
+   "pred": "off_region",
+   "for_each": "items",
+   "args": [
+    "$",
+    "@mat"
+   ]
+  }
+ ],
+ "instructions": [
+  "Clear {mat}: move every cube on it to the table.",
+  "Take the cubes off {mat} and put them on the table.",
+  "Remove everything from {mat}.",
+  "Move the cubes that are on {mat} somewhere else on the table."
+ ],
+ "notes": "div3 variant (tools/make_variants.py)."
+}

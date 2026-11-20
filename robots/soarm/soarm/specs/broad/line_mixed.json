@@ -1,0 +1,49 @@
+{
+ "id": "obj_line_mixed",
+ "tid": 10015,
+ "version": 1,
+ "domain": "broad",
+ "split": "train",
+ "provenance": "hand",
+ "difficulty": 3,
+ "builder": "declarative",
+ "objects": [
+  {
+   "role": "a",
+   "kind": "cube",
+   "count": 1,
+   "where": {
+    "size_class": {
+     "max": 4.0
+    }
+   }
+  },
+  {
+   "role": "b",
+   "kind": "cylinder",
+   "count": 1
+  },
+  {
+   "role": "c",
+   "kind": "block",
+   "count": 1
+  }
+ ],
+ "layout": [],
+ "goal": [
+  {
+   "pred": "in_line",
+   "args": [
+    "@a",
+    "@b",
+    "@c"
+   ]
+  }
+ ],
+ "instructions": [
+  "Line up {a}, {b} and {c} in a straight row.",
+  "Arrange {a}, {b} and {c} in a straight line.",
+  "Put {a}, {b} and {c} in one straight row, a few centimetres apart."
+ ],
+ "notes": "div2 variant (tools/make_variants.py)."
+}

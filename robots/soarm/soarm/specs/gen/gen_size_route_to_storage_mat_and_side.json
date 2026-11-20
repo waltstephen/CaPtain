@@ -1,0 +1,126 @@
+{
+ "id": "gen_size_route_to_storage_mat_and_side",
+ "tid": 1146,
+ "version": 1,
+ "domain": "cube",
+ "split": "train",
+ "provenance": "llm",
+ "difficulty": 3,
+ "builder": "declarative",
+ "objects": [
+  {
+   "role": "smallest",
+   "kind": "cube",
+   "count": 1,
+   "where": {
+    "size_class": 3.0
+   }
+  },
+  {
+   "role": "middle",
+   "kind": "cube",
+   "count": 1,
+   "where": {
+    "size_class": 3.5,
+    "color": {
+     "same_role": "smallest"
+    }
+   }
+  },
+  {
+   "role": "largest",
+   "kind": "cube",
+   "count": 1,
+   "where": {
+    "size_class": 4.0,
+    "color": {
+     "same_role": "smallest"
+    }
+   }
+  },
+  {
+   "role": "container",
+   "kind": "bowl",
+   "count": 1,
+   "where": {
+    "size_class": 10.0
+   }
+  },
+  {
+   "role": "mat",
+   "kind": "pad",
+   "count": 1,
+   "where": {
+    "size_class": 8.5
+   }
+  }
+ ],
+ "layout": [
+  {
+   "type": "region",
+   "role": "container",
+   "r": [
+    0.17,
+    0.24
+   ],
+   "angle_deg": [
+    -50,
+    50
+   ]
+  }
+ ],
+ "goal": [
+  {
+   "pred": "inside",
+   "args": [
+    "@smallest",
+    "@container"
+   ]
+  },
+  {
+   "pred": "in_region",
+   "args": [
+    "@middle",
+    "@mat"
+   ]
+  },
+  {
+   "pred": "relation",
+   "args": [
+    "@largest",
+    "@middle",
+    "right"
+   ],
+   "params": {
+    "near": 0.03,
+    "far": 0.1,
+    "lateral": 0.05
+   }
+  }
+ ],
+ "instructions": [
+  "Put the smallest cube in {container} and the middle-sized cube directly on {mat}. Place the largest cube on the bare table just to the right of the middle-sized cube in its new position. Judge right from in front of the robot.",
+  "Route the cubes by size: smallest into {container}, middle-sized onto {mat}, and largest onto the table just right of the cube on the mat. Right is as seen from in front of the robot, facing it.",
+  "First store the smallest cube in {container}. Next put the cube that is neither smallest nor largest on {mat}. Finally set the largest cube on the bare table just to that cube's right, using the view from in front of the robot.",
+  "The smallest cube should be inside {container}, the middle-sized cube should rest directly on {mat}, and the largest should rest on the table just to the right of that middle-sized cube. Use the viewpoint in front of the robot.",
+  "Arrange the three size ranks in different places: store the smallest in {container}, park the middle-sized one on {mat}, then place the largest beside it on the bare table to its right as viewed from in front of the robot.",
+  "Leave the smallest cube in {container}. Make the middle-sized cube the occupant of {mat}, then position the largest on the table just to the right of that occupant. Judge right while facing the robot from the front.",
+  "Put the smallest cube inside {container}, then set the middle-sized cube directly on {mat}. Finish by placing the largest cube on the bare tabletop just to the middle cube's right, judging right while facing the robot from the front.",
+  "Please place the smallest block in {container} and the block of intermediate size directly on {mat}. Then put the largest block on the bare table just to the right of the intermediate block in its new location. Use the view from in front of the robot, facing it.",
+  "Store the smallest of the three cubes inside {container}; after that, rest the intermediate-sized cube directly on {mat}. Position the largest cube last, on the bare tabletop just to the right of the intermediate-sized cube, judging right from in front of and facing the robot.",
+  "Make these placements one after another: the smallest block inside {container}, the middle-sized block directly on {mat}, and the largest block on the bare table just right of the middle-sized block. For the last placement, use right as seen from in front of the robot while facing it.",
+  "First ensure that the smallest cube is inside {container}. Then ensure that the cube that is neither the smallest nor the largest rests directly on {mat}. Finally, place the largest cube on the bare table just to that cube's right, viewed from in front of the robot, facing it.",
+  "Please start by placing the smallest block into {container}, continue by setting the middle-sized block directly on {mat}, and end by setting the largest block on the bare tabletop just to the right of the middle-sized block in its new location. Right is from the perspective of someone facing the robot from the front.",
+  "Work from smallest to largest. Put the smallest cube inside {container}, the middle-sized cube directly on {mat}, and then the largest cube on the bare table just to the right of the middle-sized cube. Read right from the viewpoint in front of the robot, facing it.",
+  "The requested arrangement is the smallest cube inside {container}, the middle-sized cube directly on {mat}, and the largest cube on the bare tabletop just right of the middle-sized cube. Establish these positions in that order, judging right while facing the robot from the front.",
+  "Take the front-facing view of the robot: stand in front of it and face it when deciding right. First place the smallest cube inside {container}; next place the middle-sized cube directly on {mat}; last place the largest cube on the bare table just to the middle-sized cube's right.",
+  "Put the smallest block in {container} before moving the middle-sized block directly onto {mat}. Once the middle-sized block is there, set the largest block on the bare tabletop just to its right, using the viewpoint of someone in front of and facing the robot.",
+  "Give each size rank its destination, proceeding from smallest to largest: the smallest cube goes inside {container}, the middle-sized cube rests directly on {mat}, and the largest cube rests on the bare table just to the right of the middle-sized cube. Use right as viewed from in front of the robot, facing it.",
+  "Begin with the smallest block inside {container}, then place the intermediate-sized block directly on {mat}. To finish, put the largest block on the bare table just to the right of the intermediate-sized block's new position. Determine right while looking at the robot from directly in front of it.",
+  "Please arrange the three cubes in the following sequence. Store the smallest inside {container}; set the middle-sized one directly on {mat}; place the largest on the bare tabletop just right of the middle-sized one. Interpret right from in front of the robot, facing it.",
+  "First, move the smallest cube into {container}. Second, move the middle-sized cube directly onto {mat}. Third, move the largest cube onto the bare table just to the right of the middle-sized cube where it now rests. Judge right from the front of the robot while facing it.",
+  "Place the smallest cube inside {container} to start. Follow with the middle-sized cube, setting it directly on {mat}. Finish with the largest cube, setting it on the bare table just right of the middle-sized cube, as viewed by someone standing in front of and facing the robot.",
+  "Working in ascending size order, leave the smallest block inside {container}, the middle-sized block directly on {mat}, and the largest block on the bare tabletop just to the right of the middle-sized block. Use the viewpoint from in front of the robot, facing it, for the rightward placement."
+ ],
+ "notes": "Routes three size ranks to three different geometric goals, with the table placement referenced to a cube that must first be moved onto a mat."
+}

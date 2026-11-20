@@ -1,0 +1,106 @@
+{
+ "id": "gen_store_only_mismatched_mat_occupant",
+ "tid": 1216,
+ "version": 1,
+ "domain": "cube",
+ "split": "train",
+ "provenance": "llm",
+ "difficulty": 1,
+ "builder": "declarative",
+ "objects": [
+  {
+   "role": "correct_mat",
+   "kind": "pad",
+   "count": 1,
+   "where": {
+    "size_class": 9.0,
+    "color": [
+     "blue",
+     "cyan"
+    ]
+   }
+  },
+  {
+   "role": "incorrect_mat",
+   "kind": "pad",
+   "count": 1,
+   "where": {
+    "size_class": 9.0,
+    "color": [
+     "yellow",
+     "orange"
+    ]
+   }
+  },
+  {
+   "role": "tray",
+   "kind": "tray",
+   "count": 1,
+   "where": {
+    "size_class": 14.0
+   }
+  },
+  {
+   "role": "correct_cube",
+   "kind": "cube",
+   "count": 1,
+   "where": {
+    "size_class": 3.0,
+    "color": {
+     "same_role": "correct_mat"
+    }
+   }
+  },
+  {
+   "role": "incorrect_cube",
+   "kind": "cube",
+   "count": 1,
+   "where": {
+    "size_class": 3.0,
+    "color": [
+     "purple",
+     "pink"
+    ]
+   }
+  }
+ ],
+ "layout": [
+  {
+   "type": "on",
+   "role": "correct_cube",
+   "support": "@correct_mat"
+  },
+  {
+   "type": "on",
+   "role": "incorrect_cube",
+   "support": "@incorrect_mat"
+  },
+  {
+   "type": "region",
+   "role": "tray",
+   "r": [
+    0.17,
+    0.24
+   ],
+   "angle_deg": [
+    -50,
+    50
+   ]
+  }
+ ],
+ "goal": [
+  {
+   "pred": "inside",
+   "args": [
+    "@incorrect_cube",
+    "@tray"
+   ]
+  }
+ ],
+ "instructions": [
+  "One cube matches its mat and one does not. Store the mismatched cube in {tray}.",
+  "Compare each cube with the mat directly beneath it. Put the nonmatching cube into {tray}.",
+  "Find the mat whose cube has a different colour from the mat, then move that cube into {tray}."
+ ],
+ "notes": "Selects an object by detecting an incorrect cube-support colour pairing rather than sorting every object into a destination."
+}

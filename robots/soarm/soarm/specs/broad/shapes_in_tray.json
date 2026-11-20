@@ -1,0 +1,59 @@
+{
+ "id": "obj_shapes_in_tray",
+ "tid": 10018,
+ "version": 1,
+ "domain": "broad",
+ "split": "train",
+ "provenance": "hand",
+ "difficulty": 2,
+ "builder": "declarative",
+ "objects": [
+  {
+   "role": "destination",
+   "kind": "tray",
+   "count": 1
+  },
+  {
+   "role": "a",
+   "kind": "cylinder",
+   "count": 1
+  },
+  {
+   "role": "b",
+   "kind": "block",
+   "count": 1
+  },
+  {
+   "role": "distractors",
+   "kind": "cube",
+   "count": [
+    0,
+    1
+   ]
+  }
+ ],
+ "layout": [],
+ "goal": [
+  {
+   "pred": "inside",
+   "args": [
+    "@a",
+    "@destination"
+   ]
+  },
+  {
+   "pred": "inside",
+   "args": [
+    "@b",
+    "@destination"
+   ]
+  }
+ ],
+ "instructions": [
+  "Put {a} and {b} in {destination}.",
+  "Place both {a} and {b} into {destination}.",
+  "Pack {a} and {b} into {destination}.",
+  "Collect {a} and {b} in {destination}."
+ ],
+ "notes": "div3 variant (tools/make_variants.py)."
+}

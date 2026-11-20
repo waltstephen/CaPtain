@@ -1,0 +1,72 @@
+{
+ "id": "obj_clear_mat_two_shapes",
+ "tid": 10024,
+ "version": 1,
+ "domain": "broad",
+ "split": "train",
+ "provenance": "hand",
+ "difficulty": 2,
+ "builder": "declarative",
+ "objects": [
+  {
+   "role": "mat",
+   "kind": "big_mat",
+   "count": 1
+  },
+  {
+   "role": "a",
+   "kind": "cylinder",
+   "count": 1
+  },
+  {
+   "role": "b",
+   "kind": "block",
+   "count": 1
+  },
+  {
+   "role": "distractors",
+   "kind": [
+    "cube"
+   ],
+   "count": [
+    0,
+    1
+   ]
+  }
+ ],
+ "layout": [
+  {
+   "type": "on",
+   "role": "a",
+   "support": "@mat"
+  },
+  {
+   "type": "on",
+   "role": "b",
+   "support": "@mat"
+  }
+ ],
+ "goal": [
+  {
+   "pred": "off_region",
+   "args": [
+    "@a",
+    "@mat"
+   ]
+  },
+  {
+   "pred": "off_region",
+   "args": [
+    "@b",
+    "@mat"
+   ]
+  }
+ ],
+ "instructions": [
+  "Clear {mat}: move {a} and {b} to the table.",
+  "Take {a} and {b} off {mat}.",
+  "Remove both objects from {mat}.",
+  "Move {a} and {b} off {mat} onto the table."
+ ],
+ "notes": "div3 variant (tools/make_variants.py)."
+}

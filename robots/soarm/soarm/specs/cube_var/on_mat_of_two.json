@@ -1,0 +1,57 @@
+{
+ "id": "cube_v_on_mat_of_two",
+ "tid": 214,
+ "version": 1,
+ "domain": "cube",
+ "split": "train",
+ "provenance": "hand",
+ "difficulty": 1,
+ "builder": "declarative",
+ "objects": [
+  {
+   "role": "destination",
+   "kind": "pad",
+   "count": 1
+  },
+  {
+   "role": "other_mat",
+   "kind": "pad",
+   "count": 1,
+   "where": {
+    "color": {
+     "not_role": "destination"
+    }
+   }
+  },
+  {
+   "role": "target",
+   "kind": "cube",
+   "count": 1
+  },
+  {
+   "role": "distractors",
+   "kind": "cube",
+   "count": [
+    0,
+    2
+   ]
+  }
+ ],
+ "layout": [],
+ "goal": [
+  {
+   "pred": "in_region",
+   "args": [
+    "@target",
+    "@destination"
+   ]
+  }
+ ],
+ "instructions": [
+  "Put {target} on {destination}.",
+  "Place {target} onto {destination}.",
+  "Move {target} onto {destination}.",
+  "Set {target} down on {destination}."
+ ],
+ "notes": "div2 variant (tools/make_variants.py). two mats of different colours"
+}

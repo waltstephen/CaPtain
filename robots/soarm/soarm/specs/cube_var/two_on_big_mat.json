@@ -1,0 +1,56 @@
+{
+ "id": "cube_v_two_on_big_mat",
+ "tid": 258,
+ "version": 1,
+ "domain": "cube",
+ "split": "train",
+ "provenance": "hand",
+ "difficulty": 2,
+ "builder": "declarative",
+ "objects": [
+  {
+   "role": "destination",
+   "kind": "big_mat",
+   "count": 1
+  },
+  {
+   "role": "items",
+   "kind": "cube",
+   "count": 2,
+   "where": {
+    "color": {
+     "distinct": true
+    },
+    "size_class": {
+     "max": 4.5
+    }
+   }
+  },
+  {
+   "role": "distractors",
+   "kind": "cube",
+   "count": [
+    0,
+    2
+   ]
+  }
+ ],
+ "layout": [],
+ "goal": [
+  {
+   "pred": "in_region",
+   "for_each": "items",
+   "args": [
+    "$",
+    "@destination"
+   ]
+  }
+ ],
+ "instructions": [
+  "Put {items} on {destination}.",
+  "Place both {items} onto {destination}.",
+  "Move {items} onto {destination}.",
+  "Set {items} down on {destination}."
+ ],
+ "notes": "div3 variant (tools/make_variants.py)."
+}

@@ -38,6 +38,7 @@ and decides itself when the task is done. Everything needed to reproduce and use
 
 ## News
 
+- **[2026/11]** 🦾 SO-101 fast version (branch `so101-fast`): CaPtain-4B fine-tuned on native SO-ARM101 twin rollouts and a fast serving stack for two RTX 4090s, deployed on a real SO-101; code in [`robots/soarm/`](robots/soarm/README.md#fast-version-so-101), model [CaPtain-4B-SO101-Fast](https://huggingface.co/YijiaFan/CaPtain-4B-SO101-Fast), data [CaPtain-SO101-SFT-Data](https://huggingface.co/datasets/YijiaFan/CaPtain-SO101-SFT-Data).
 - **[2026/10]** 🔥 Code release: CaPtain-Harness with all benchmark backends, SFT and RL training code.
 - **[2026/10]** 🤗 Models and data on Hugging Face: [CaPtain-4B](https://huggingface.co/YijiaFan/CaPtain-4B), [CaPtain-4B-SFT](https://huggingface.co/YijiaFan/CaPtain-4B-SFT), [CaPtain-SFT-Data](https://huggingface.co/datasets/YijiaFan/CaPtain-SFT-Data), [CaPtain-artifacts](https://huggingface.co/datasets/YijiaFan/CaPtain-artifacts) · 🌐 [project page](https://waltstephen.github.io/captain/).
 
@@ -140,6 +141,7 @@ benchmarks in [`harness/eval/transfer/README.md`](harness/eval/transfer/README.m
 | [`harness/eval/transfer/`](harness/eval/transfer/README.md) | zero-shot transfer: install notes, official protocol settings, task lists, run and scoring scripts per benchmark |
 | [`sft/`](sft/README.md) | SFT for CaPtain-4B-SFT: data format, trainer (DeepSpeed ZeRO-3), launch script, exact configuration |
 | [`rl/`](rl/README.md) | RL for CaPtain-4B: streaming rollout and environment servers, the simulator critic, advantages, SAO-style update, trainer, run supervisor, final-run configuration |
+| [`robots/soarm/`](robots/soarm/README.md) | SO-ARM101 (SO-101): MuJoCo twin, task specs, teacher-data and SFT pipeline, fast serving stack (quantization, MTP drafter, vLLM patches, speed profiles), real-arm backend and calibration tools; see "Fast version (SO-101)" |
 | [`docs/`](docs) | figures used in this README |
 
 ## For AI agents

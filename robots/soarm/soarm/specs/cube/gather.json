@@ -1,0 +1,48 @@
+{
+ "id": "cube_gather",
+ "tid": 113,
+ "version": 1,
+ "domain": "cube",
+ "split": "heldout",
+ "provenance": "hand",
+ "difficulty": 2,
+ "builder": "declarative",
+ "objects": [
+  {
+   "role": "items",
+   "kind": "cube",
+   "count": 3,
+   "where": {
+    "color": {
+     "same_role": "items[0]"
+    }
+   }
+  },
+  {
+   "role": "distractors",
+   "kind": "cube",
+   "count": [
+    1,
+    2
+   ],
+   "where": {
+    "color": {
+     "not_role": "items"
+    }
+   }
+  }
+ ],
+ "layout": [],
+ "goal": [
+  {
+   "pred": "grouped",
+   "args": [
+    "@items*"
+   ]
+  }
+ ],
+ "instructions": [
+  "Gather all the {items.color} cubes close together.",
+  "Bring the three {items.color} cubes together into one small group."
+ ]
+}

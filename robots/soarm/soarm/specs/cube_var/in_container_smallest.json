@@ -1,0 +1,56 @@
+{
+ "id": "cube_v_in_container_smallest",
+ "tid": 209,
+ "version": 1,
+ "domain": "cube",
+ "split": "train",
+ "provenance": "hand",
+ "difficulty": 1,
+ "builder": "declarative",
+ "objects": [
+  {
+   "role": "destination",
+   "kind": [
+    "bowl",
+    "box"
+   ],
+   "count": 1
+  },
+  {
+   "role": "distractors",
+   "kind": "cube",
+   "count": [
+    1,
+    2
+   ]
+  },
+  {
+   "role": "target",
+   "kind": "cube",
+   "count": 1,
+   "where": {
+    "size_class": {
+     "max_role": "distractors",
+     "not_role": "distractors"
+    }
+   }
+  }
+ ],
+ "layout": [],
+ "goal": [
+  {
+   "pred": "inside",
+   "args": [
+    "@target",
+    "@destination"
+   ]
+  }
+ ],
+ "instructions": [
+  "Put the smallest cube in {destination}.",
+  "Place the smallest cube into {destination}.",
+  "Find the smallest cube and drop it into {destination}.",
+  "Move the tiniest cube into {destination}."
+ ],
+ "notes": "div2 variant (tools/make_variants.py)."
+}

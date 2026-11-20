@@ -1,0 +1,46 @@
+{
+ "id": "push_to_region",
+ "tid": 7,
+ "version": 1,
+ "domain": "legacy",
+ "split": "train",
+ "provenance": "hand",
+ "difficulty": 2,
+ "builder": "legacy:push_to_region",
+ "objects": [
+  {
+   "role": "destination",
+   "kind": "pad",
+   "count": 1
+  },
+  {
+   "role": "target",
+   "kind": "tile",
+   "count": 1
+  },
+  {
+   "role": "distractors",
+   "kind": "cube",
+   "count": [
+    0,
+    2
+   ]
+  }
+ ],
+ "layout": [],
+ "goal": [
+  {
+   "pred": "in_region",
+   "args": [
+    "@target",
+    "@destination"
+   ]
+  }
+ ],
+ "instructions": [
+  "Push {target} onto {destination}.",
+  "Slide {target} along the table until it is on {destination}.",
+  "Move {target} onto {destination} (it is wide and flat; pushing works)."
+ ],
+ "notes": "Legacy family (pre-pivot). Sampled by families.py (builder legacy:*), bit-identical to the pre-spec sampler; objects/goal/instructions here describe it (object kinds vary per seed in the generator) and are not interpreted."
+}

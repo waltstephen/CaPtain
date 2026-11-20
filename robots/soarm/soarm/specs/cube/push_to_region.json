@@ -1,0 +1,57 @@
+{
+ "id": "cube_push_to_region",
+ "tid": 114,
+ "version": 1,
+ "domain": "cube",
+ "split": "train",
+ "provenance": "hand",
+ "difficulty": 2,
+ "builder": "declarative",
+ "objects": [
+  {
+   "role": "destination",
+   "kind": "pad",
+   "count": 1
+  },
+  {
+   "role": "target",
+   "kind": "cube",
+   "count": 1,
+   "where": {
+    "size_class": {
+     "min": 4.0
+    }
+   }
+  },
+  {
+   "role": "distractors",
+   "kind": "cube",
+   "count": [
+    0,
+    2
+   ]
+  }
+ ],
+ "layout": [
+  {
+   "type": "distance",
+   "a": "@destination",
+   "b": "@target",
+   "min": 0.12,
+   "max": 0.15
+  }
+ ],
+ "goal": [
+  {
+   "pred": "in_region",
+   "args": [
+    "@target",
+    "@destination"
+   ]
+  }
+ ],
+ "instructions": [
+  "Push {target} onto {destination}.",
+  "Slide {target} along the table until it is on {destination}."
+ ]
+}

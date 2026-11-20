@@ -1,0 +1,48 @@
+{
+ "id": "cube_v_three_on_big_mat",
+ "tid": 259,
+ "version": 1,
+ "domain": "cube",
+ "split": "train",
+ "provenance": "hand",
+ "difficulty": 2,
+ "builder": "declarative",
+ "objects": [
+  {
+   "role": "destination",
+   "kind": "big_mat",
+   "count": 1
+  },
+  {
+   "role": "items",
+   "kind": "cube",
+   "count": 3,
+   "where": {
+    "color": {
+     "distinct": true
+    },
+    "size_class": {
+     "max": 3.5
+    }
+   }
+  }
+ ],
+ "layout": [],
+ "goal": [
+  {
+   "pred": "in_region",
+   "for_each": "items",
+   "args": [
+    "$",
+    "@destination"
+   ]
+  }
+ ],
+ "instructions": [
+  "Put {items} on {destination}.",
+  "Place all three cubes onto {destination}.",
+  "Move {items} onto {destination}.",
+  "Gather every cube on {destination}."
+ ],
+ "notes": "div3 variant (tools/make_variants.py)."
+}

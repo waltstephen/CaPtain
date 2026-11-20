@@ -1,0 +1,46 @@
+{
+ "id": "put_in_container",
+ "tid": 9,
+ "version": 1,
+ "domain": "legacy",
+ "split": "train",
+ "provenance": "hand",
+ "difficulty": 1,
+ "builder": "legacy:put_in_container",
+ "objects": [
+  {
+   "role": "destination",
+   "kind": "bowl",
+   "count": 1
+  },
+  {
+   "role": "target",
+   "kind": "cube",
+   "count": 1
+  },
+  {
+   "role": "distractors",
+   "kind": "cube",
+   "count": [
+    1,
+    3
+   ]
+  }
+ ],
+ "layout": [],
+ "goal": [
+  {
+   "pred": "inside",
+   "args": [
+    "@target",
+    "@destination"
+   ]
+  }
+ ],
+ "instructions": [
+  "Put {target} in {destination}.",
+  "Place {target} into {destination}.",
+  "Drop {target} into {destination}."
+ ],
+ "notes": "Legacy family (pre-pivot). Sampled by families.py (builder legacy:*), bit-identical to the pre-spec sampler; objects/goal/instructions here describe it (object kinds vary per seed in the generator) and are not interpreted."
+}

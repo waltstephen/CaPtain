@@ -1,0 +1,120 @@
+{
+ "id": "gen_collect_mat_residents_colour_into_tray",
+ "tid": 1226,
+ "version": 1,
+ "domain": "cube",
+ "split": "train",
+ "provenance": "llm",
+ "difficulty": 2,
+ "builder": "declarative",
+ "objects": [
+  {
+   "role": "tray",
+   "kind": "tray",
+   "count": 1,
+   "where": {
+    "size_class": 14.0
+   }
+  },
+  {
+   "role": "mat",
+   "kind": "big_mat",
+   "count": 1,
+   "where": {
+    "size_class": 12.0
+   }
+  },
+  {
+   "role": "resident",
+   "kind": "cube",
+   "count": 1,
+   "where": {
+    "size_class": 3.0
+   }
+  },
+  {
+   "role": "match",
+   "kind": "cube",
+   "count": 1,
+   "where": {
+    "size_class": 3.0,
+    "color": {
+     "same_role": "resident"
+    }
+   }
+  },
+  {
+   "role": "distractor",
+   "kind": "cube",
+   "count": 1,
+   "where": {
+    "size_class": 3.0,
+    "color": {
+     "not_role": "resident"
+    }
+   }
+  }
+ ],
+ "layout": [
+  {
+   "type": "on",
+   "role": "resident",
+   "support": "@mat"
+  },
+  {
+   "type": "region",
+   "role": "tray",
+   "r": [
+    0.17,
+    0.24
+   ],
+   "angle_deg": [
+    -50,
+    50
+   ]
+  }
+ ],
+ "goal": [
+  {
+   "pred": "inside",
+   "args": [
+    "@resident",
+    "@tray"
+   ]
+  },
+  {
+   "pred": "inside",
+   "args": [
+    "@match",
+    "@tray"
+   ]
+  }
+ ],
+ "instructions": [
+  "Use the cube initially on {mat} as the colour key. Put that cube and its loose colour match into {tray}.",
+  "Find the loose cube whose colour matches the cube on {mat}. Move both matching cubes into {tray}; ignore the differently coloured cube.",
+  "Collect the mat resident and the loose cube of the same colour in {tray}. The differently coloured loose cube is not part of this transfer.",
+  "First identify the colour of the cube on {mat}. Then put that cube and the loose cube of that colour into {tray}.",
+  "The goal is for {tray} to contain the cube originally on {mat} together with its matching-colour loose partner.",
+  "Move the cube from {mat} into {tray}, and also put its same-coloured loose companion in the tray. Ignore the other loose cube.",
+  "Use the colour of the cube on {mat} to select its loose partner, then place both cubes into {tray}. Leave the differently coloured cube alone.",
+  "Please transfer the cube initially on {mat} and the loose cube matching its colour into {tray}.",
+  "Identify the block on {mat}, find the loose block of the same colour, and put those two blocks into {tray}.",
+  "Place two cubes into {tray}: the one initially on {mat} and the loose one that shares its colour. Ignore the differently coloured cube.",
+  "Check which colour the cube on {mat} is. Put that cube and the loose cube of that colour into {tray}.",
+  "Could you put the cube on {mat} into {tray} along with the loose cube of the same colour?",
+  "Make {tray} contain both the cube initially resting on {mat} and its loose colour match.",
+  "Find the loose colour match for the cube on {mat}; both that match and the original cube belong inside {tray}. Put them there.",
+  "Transfer the matching pair into {tray}, using the cube initially on {mat} to determine which loose cube belongs in the pair.",
+  "Your task is to place the cube originally on {mat} and the loose cube matching it in colour inside {tray}.",
+  "Put the cube from {mat} inside {tray} and bring its loose colour twin into the tray as well.",
+  "First establish the colour of the cube on {mat}; next, place that cube and the loose cube with the same colour into {tray}.",
+  "The two cubes to move into {tray} are the cube on {mat} and its loose colour match. Transfer both.",
+  "Match a loose cube to the colour of the cube on {mat}, and place the matching loose cube and the mat's original cube into {tray}.",
+  "Move the cube off {mat} and into {tray}. Also put the loose cube matching its colour in the tray, leaving the differently coloured loose cube alone.",
+  "Arrange for {tray} to hold the block originally on {mat} together with the loose block of the same colour.",
+  "Look at the cube on {mat} to choose the same-coloured loose cube. Transfer those two cubes into {tray} and ignore the remaining loose cube.",
+  "Into {tray}, place the cube initially on {mat} plus its matching-colour loose partner; the differently coloured loose cube must stay out of this transfer."
+ ],
+ "notes": "Introduces collection of a support-grounded colour pair, including the reference cube itself, rather than routing a predefined colour group."
+}

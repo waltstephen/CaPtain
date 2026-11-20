@@ -1,0 +1,130 @@
+{
+ "id": "gen_replace_mat_occupant_with_tower",
+ "tid": 1144,
+ "version": 1,
+ "domain": "cube",
+ "split": "train",
+ "provenance": "llm",
+ "difficulty": 3,
+ "builder": "declarative",
+ "objects": [
+  {
+   "role": "mat",
+   "kind": "pad",
+   "count": 1,
+   "where": {
+    "size_class": 10.0
+   }
+  },
+  {
+   "role": "occupant",
+   "kind": "cube",
+   "count": 1,
+   "where": {
+    "size_class": 3.5,
+    "color": "yellow"
+   }
+  },
+  {
+   "role": "base",
+   "kind": "cube",
+   "count": 1,
+   "where": {
+    "size_class": 4.0,
+    "color": [
+     "blue",
+     "green",
+     "cyan"
+    ]
+   }
+  },
+  {
+   "role": "cap",
+   "kind": "cube",
+   "count": 1,
+   "where": {
+    "size_class": 3.0,
+    "color": [
+     "red",
+     "purple",
+     "pink"
+    ]
+   }
+  }
+ ],
+ "layout": [
+  {
+   "type": "on",
+   "role": "occupant",
+   "support": "@mat"
+  },
+  {
+   "type": "region",
+   "role": "mat",
+   "r": [
+    0.18,
+    0.24
+   ],
+   "angle_deg": [
+    -40,
+    40
+   ]
+  }
+ ],
+ "goal": [
+  {
+   "pred": "off_region",
+   "args": [
+    "@occupant",
+    "@mat"
+   ]
+  },
+  {
+   "pred": "in_region",
+   "args": [
+    "@base",
+    "@mat"
+   ]
+  },
+  {
+   "pred": "on_top",
+   "args": [
+    "@cap",
+    "@base"
+   ]
+  }
+ ],
+ "instructions": [
+  "Move the cube currently on {mat} onto the bare table, completely clear of the mat. Then put {base} directly on the mat and stack {cap} on it.",
+  "Replace the mat's current occupant with a two-cube tower: {base} at the bottom directly on {mat}, and {cap} on top. Leave the original occupant on the table completely outside the mat.",
+  "First clear {occupant} off {mat} onto the table without overlapping the mat. Next place {base} on the mat, then place {cap} on top of {base}.",
+  "The final arrangement should have {occupant} resting on the bare table fully clear of {mat}, with {base} directly on the mat and {cap} stacked above it.",
+  "Park the cube that starts on {mat} completely outside it on the table. Use the freed mat for a tower with {base} underneath {cap}.",
+  "Clear space on {mat} by setting its original cube fully off the mat on the table, then build a tower there: {base} directly on the mat, followed by {cap} on top.",
+  "Take the cube currently on {mat} off and set it on the bare table, entirely clear of the mat. Put {base} directly on the cleared mat, then stack {cap} on {base}.",
+  "Please move {occupant} from {mat} to the bare table with no part overlapping the mat. Afterward, place {base} directly on the mat and set {cap} on top of {base}.",
+  "Make room on {mat}: move its current cube onto the bare table completely outside the mat, place {base} directly on the mat, and finish by stacking {cap} on it.",
+  "The finished setup should leave {occupant} on the bare table wholly outside {mat}, and a two-cube tower on the mat with {base} directly on the mat beneath {cap}.",
+  "First, transfer {occupant} to the bare tabletop fully clear of {mat}. Second, put {base} directly on the mat. Third, stack {cap} on top of {base}.",
+  "Exchange the cube now occupying {mat} for a two-block stack. Leave that original cube on the bare table entirely outside the mat, then put {base} directly on the mat and {cap} on top.",
+  "Clear {occupant} from {mat}, leaving it on the bare table without any overlap with the mat. Build a tower in the freed space by placing {base} directly on the mat and then {cap} on {base}.",
+  "Please free up {mat} by moving the cube on it completely off the mat onto the bare table. Then use {base} as the bottom block directly on the mat and stack {cap} above it.",
+  "Aim for this final arrangement: {base} directly on {mat}, {cap} resting on top of {base}, and {occupant} on the bare table completely outside the mat.",
+  "Remove the current cube from {mat} and park it entirely beyond the mat on the bare tabletop. Next, set {base} directly on the mat and top it with {cap}.",
+  "Begin by moving {occupant} off {mat} onto bare tabletop, ensuring it does not overlap the mat at all. Follow with {base} directly on the mat, then {cap} directly atop {base}.",
+  "Leave the cube that is currently on {mat} on the bare table, fully clear of the mat. Once it is out of the way, form a two-cube tower there with {base} directly on the mat and {cap} on top.",
+  "Relocate {occupant} to the bare table completely outside {mat}; then place {base} directly on the mat and stack {cap} on it.",
+  "Could you first set the cube currently on {mat} onto the bare table with no overlap with the mat, then put {base} directly on the mat and finish with {cap} on top of {base}?",
+  "When you are done, {occupant} should rest on the bare tabletop entirely clear of {mat}. The mat should hold a two-cube tower consisting of {base} directly on the mat and {cap} stacked on {base}.",
+  "Empty {mat} by placing its current cube on the bare table wholly outside the mat. In its place, build a tower: put down {base} directly on the mat, then add {cap} on top.",
+  "Move {occupant} onto the bare table, completely clear of {mat}, before setting {base} directly on the mat. Once {base} is in place, put {cap} on top of it.",
+  "Use {mat} for a two-block tower rather than its current cube. First move that cube to the bare table entirely outside the mat; next place {base} directly on the mat and stack {cap} on it.",
+  "Set up {base} directly on {mat} with {cap} stacked on top, but first move {occupant} onto the bare table completely beyond the mat, with no overlap.",
+  "Please replace the single cube currently on {mat} with a tower of two cubes. Move the original cube onto bare tabletop fully clear of the mat, then place {base} directly on the mat followed by {cap} on top of {base}.",
+  "Clear first, stack second: place {occupant} on the bare table entirely outside {mat}, then set {base} directly on the mat and {cap} on top of {base}.",
+  "The cube now on {mat} should end up on the bare table without overlapping the mat at all. In its former place, {base} should sit directly on the mat with {cap} stacked on it.",
+  "Start with {occupant}: lift it off {mat} and set it down on the bare table fully outside the mat. Then put {base} directly on the mat and complete the tower by placing {cap} on {base}.",
+  "Give {mat} a two-cube tower in place of its original occupant. Put the original cube on the bare tabletop completely clear of the mat before placing {base} directly on the mat and stacking {cap} on top."
+ ],
+ "notes": "Requires freeing an occupied support and replacing its single cube with a tower while retaining an explicit off-mat parking goal."
+}

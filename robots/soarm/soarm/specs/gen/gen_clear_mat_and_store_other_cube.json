@@ -1,0 +1,120 @@
+{
+ "id": "gen_clear_mat_and_store_other_cube",
+ "tid": 1125,
+ "version": 1,
+ "domain": "cube",
+ "split": "train",
+ "provenance": "llm",
+ "difficulty": 2,
+ "builder": "declarative",
+ "objects": [
+  {
+   "role": "mat",
+   "kind": "pad",
+   "count": 1,
+   "where": {
+    "size_class": 9.0
+   }
+  },
+  {
+   "role": "container",
+   "kind": "bowl",
+   "count": 1,
+   "where": {
+    "size_class": 11.0
+   }
+  },
+  {
+   "role": "occupant",
+   "kind": "cube",
+   "count": 1,
+   "where": {
+    "size_class": 3.5,
+    "color": [
+     "blue",
+     "green",
+     "cyan"
+    ]
+   }
+  },
+  {
+   "role": "payload",
+   "kind": "cube",
+   "count": 1,
+   "where": {
+    "size_class": 3.5,
+    "color": {
+     "not_role": "occupant"
+    }
+   }
+  }
+ ],
+ "layout": [
+  {
+   "type": "on",
+   "role": "occupant",
+   "support": "@mat"
+  },
+  {
+   "type": "region",
+   "role": "container",
+   "r": [
+    0.17,
+    0.24
+   ],
+   "angle_deg": [
+    -50,
+    50
+   ]
+  }
+ ],
+ "goal": [
+  {
+   "pred": "off_region",
+   "args": [
+    "@occupant",
+    "@mat"
+   ]
+  },
+  {
+   "pred": "inside",
+   "args": [
+    "@payload",
+    "@container"
+   ]
+  }
+ ],
+ "instructions": [
+  "Move the cube on {mat} onto the bare table, completely clear of the mat, and put the other cube in {container}.",
+  "Clear {mat} by setting its cube on the table outside it; store the other cube in {container}.",
+  "The mat should end empty, its original cube should rest completely off it on the table, and the other cube should be inside {container}.",
+  "First take the cube off {mat} and set it on the bare table. Then place the other cube into {container}.",
+  "Send the two cubes to different kinds of destinations: the mat's occupant onto the table completely outside the mat, and the other cube into {container}.",
+  "Leave {mat} clear by moving its cube fully onto the surrounding table, and place the cube that did not start on the mat inside {container}.",
+  "Take the cube that starts on {mat} and set it on the bare table, entirely outside the mat; then put the other cube inside {container}.",
+  "Please empty {mat} by moving its cube fully off the mat onto the table, and place the other cube inside {container}.",
+  "The cube originally on {mat} should end up on the bare tabletop with no part over the mat, while the other cube should end up inside {container}.",
+  "First move the block from {mat} to the surrounding table, leaving it completely clear of the mat. Next, put the other block into {container}.",
+  "Clear {mat}: set its cube entirely on the bare table outside the mat, then deposit the other cube inside {container}.",
+  "Move the cube that began on {mat} onto bare tabletop, with none of it remaining on the mat, and stow the other cube in {container}.",
+  "Please give the two cubes these destinations: the one on {mat} goes fully onto the table outside the mat, and the other goes inside {container}.",
+  "Leave the original cube from {mat} resting on the bare table completely clear of the mat, and leave the other cube inside {container}.",
+  "For the cube currently on {mat}, use a spot on the bare table entirely outside the mat; for the other cube, use the inside of {container}.",
+  "Remove the block from {mat}, placing it wholly on the uncovered table rather than on the mat, and put the other block inside {container}.",
+  "Make {mat} empty by relocating its cube to the bare table completely beyond the mat's edge; put the other cube into {container}.",
+  "Set the cube that started on {mat} down entirely outside the mat on the tabletop. After that, place the other cube inside {container}.",
+  "Please transfer the cube on {mat} to the bare tabletop so that it no longer overlaps the mat at all, then transfer the other cube into {container}.",
+  "Arrange the cubes so that the original occupant of {mat} rests fully on the table outside the mat and the other cube rests inside {container}.",
+  "Take its cube off {mat} and leave it completely clear of the mat on the bare table; place the remaining cube inside {container}.",
+  "The final arrangement should leave {mat} empty, its original block entirely on the bare table outside it, and the other block inside {container}.",
+  "Move the block off {mat} onto an uncovered part of the table, keeping the whole block outside the mat, and store the other block inside {container}.",
+  "Please clear the cube from {mat} onto the surrounding tabletop without leaving any part on the mat, and put the other cube in {container}.",
+  "Start by setting the cube from {mat} fully onto the bare table, completely outside the mat. Finish by putting the other cube inside {container}.",
+  "Relocate the two cubes: move the one that began on {mat} entirely off the mat onto the table, and move the other one inside {container}.",
+  "Leave no cube on {mat}: its original cube must rest fully outside the mat on the bare table, and the other cube must be inside {container}.",
+  "Lift the cube from {mat} and set it on the bare table with no overlap with the mat; then lower the other cube into {container}.",
+  "Put the original occupant of {mat} on the bare tabletop, wholly clear of the mat, and put the cube that was not on the mat inside {container}.",
+  "Please leave the two blocks in separate destinations: the block from {mat} completely outside the mat on the bare table, and the other block inside {container}."
+ ],
+ "notes": "Combines clearing a singly occupied mat onto the table with storing the other cube, using initial support rather than colour to assign destinations."
+}

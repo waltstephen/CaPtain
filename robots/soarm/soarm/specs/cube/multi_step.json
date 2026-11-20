@@ -1,0 +1,61 @@
+{
+ "id": "cube_multi_step",
+ "tid": 118,
+ "version": 1,
+ "domain": "cube",
+ "split": "train",
+ "provenance": "hand",
+ "difficulty": 4,
+ "builder": "declarative",
+ "objects": [
+  {
+   "role": "container",
+   "kind": [
+    "bowl",
+    "box"
+   ],
+   "count": 1
+  },
+  {
+   "role": "first",
+   "kind": "cube",
+   "count": 1
+  },
+  {
+   "role": "base",
+   "kind": "cube",
+   "count": 1
+  },
+  {
+   "role": "top",
+   "kind": "cube",
+   "count": 1,
+   "where": {
+    "size_class": {
+     "max_role": "base"
+    }
+   }
+  }
+ ],
+ "layout": [],
+ "goal": [
+  {
+   "pred": "inside",
+   "args": [
+    "@first",
+    "@container"
+   ]
+  },
+  {
+   "pred": "on_top",
+   "args": [
+    "@top",
+    "@base"
+   ]
+  }
+ ],
+ "instructions": [
+  "First put {first} in {container}, then stack {top} on {base}.",
+  "Put {first} into {container}. After that, place {top} on top of {base}."
+ ]
+}

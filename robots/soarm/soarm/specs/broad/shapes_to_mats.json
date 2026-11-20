@@ -1,0 +1,92 @@
+{
+ "id": "obj_shapes_to_mats",
+ "tid": 10014,
+ "version": 1,
+ "domain": "broad",
+ "split": "train",
+ "provenance": "hand",
+ "difficulty": 3,
+ "builder": "declarative",
+ "objects": [
+  {
+   "role": "cyl_mat",
+   "kind": "pad",
+   "count": 1
+  },
+  {
+   "role": "block_mat",
+   "kind": "pad",
+   "count": 1,
+   "where": {
+    "color": {
+     "not_role": "cyl_mat"
+    }
+   }
+  },
+  {
+   "role": "cyl",
+   "kind": "cylinder",
+   "count": 1
+  },
+  {
+   "role": "blk",
+   "kind": "block",
+   "count": 1
+  }
+ ],
+ "layout": [
+  {
+   "type": "region",
+   "role": "cyl",
+   "r": [
+    0.15,
+    0.26
+   ],
+   "angle_deg": [
+    -60,
+    60
+   ]
+  },
+  {
+   "type": "region",
+   "role": "blk",
+   "r": [
+    0.15,
+    0.26
+   ],
+   "angle_deg": [
+    -60,
+    60
+   ]
+  }
+ ],
+ "goal": [
+  {
+   "pred": "in_region",
+   "args": [
+    "@cyl",
+    "@cyl_mat"
+   ]
+  },
+  {
+   "pred": "in_region",
+   "args": [
+    "@blk",
+    "@block_mat"
+   ]
+  }
+ ],
+ "instructions": [
+  "Put {cyl} on {cyl_mat} and {blk} on {block_mat}.",
+  "Place {cyl} onto {cyl_mat}, then {blk} onto {block_mat}.",
+  "Sort the two objects: {cyl} goes on {cyl_mat}, {blk} goes on {block_mat}."
+ ],
+ "workspace": {
+  "r": [
+   0.13,
+   0.29
+  ],
+  "angle_deg": 70
+ },
+ "notes": "div2 variant (tools/make_variants.py)."
+}

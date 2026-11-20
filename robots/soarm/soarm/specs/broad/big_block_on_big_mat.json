@@ -1,0 +1,50 @@
+{
+ "id": "obj_big_block_on_big_mat",
+ "tid": 10023,
+ "version": 1,
+ "domain": "broad",
+ "split": "train",
+ "provenance": "hand",
+ "difficulty": 1,
+ "builder": "declarative",
+ "objects": [
+  {
+   "role": "destination",
+   "kind": "big_mat",
+   "count": 1
+  },
+  {
+   "role": "target",
+   "kind": "big_block",
+   "count": 1
+  },
+  {
+   "role": "distractors",
+   "kind": [
+    "cube",
+    "cylinder"
+   ],
+   "count": [
+    0,
+    2
+   ]
+  }
+ ],
+ "layout": [],
+ "goal": [
+  {
+   "pred": "in_region",
+   "args": [
+    "@target",
+    "@destination"
+   ]
+  }
+ ],
+ "instructions": [
+  "Put {target} on {destination}.",
+  "Place {target} onto {destination}.",
+  "Move {target} onto {destination}.",
+  "Set {target} down on {destination}."
+ ],
+ "notes": "div3 variant (tools/make_variants.py)."
+}

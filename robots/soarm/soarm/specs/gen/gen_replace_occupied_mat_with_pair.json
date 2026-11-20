@@ -1,0 +1,120 @@
+{
+ "id": "gen_replace_occupied_mat_with_pair",
+ "tid": 1106,
+ "version": 1,
+ "domain": "cube",
+ "split": "train",
+ "provenance": "llm",
+ "difficulty": 3,
+ "builder": "declarative",
+ "objects": [
+  {
+   "role": "mat",
+   "kind": "pad",
+   "count": 1,
+   "where": {
+    "size_class": 10.0
+   }
+  },
+  {
+   "role": "container",
+   "kind": "bowl",
+   "count": 1,
+   "where": {
+    "size_class": [
+     10.0,
+     12.0
+    ]
+   }
+  },
+  {
+   "role": "incoming",
+   "kind": "cube",
+   "count": 2,
+   "where": {
+    "size_class": 3.0,
+    "color": "cyan"
+   }
+  },
+  {
+   "role": "resident",
+   "kind": "cube",
+   "count": 1,
+   "where": {
+    "size_class": 3.0,
+    "color": {
+     "not_role": "incoming"
+    }
+   }
+  }
+ ],
+ "layout": [
+  {
+   "type": "on",
+   "role": "resident",
+   "support": "@mat"
+  },
+  {
+   "type": "region",
+   "role": "container",
+   "r": [
+    0.17,
+    0.24
+   ],
+   "angle_deg": [
+    -50,
+    50
+   ]
+  }
+ ],
+ "goal": [
+  {
+   "pred": "inside",
+   "args": [
+    "@resident",
+    "@container"
+   ]
+  },
+  {
+   "pred": "in_region",
+   "for_each": "incoming",
+   "args": [
+    "$",
+    "@mat"
+   ]
+  }
+ ],
+ "instructions": [
+  "Replace the cube on {mat} with both {incoming.color} cubes: put the current occupant in {container}, then put both {incoming.color} cubes on the mat.",
+  "Put {resident}, the cube currently alone on {mat}, into {container}. Move every {incoming.color} cube onto the cleared mat.",
+  "The goal is for {container} to contain the original occupant of {mat}, and for both {incoming.color} cubes to rest on that mat.",
+  "First clear {mat} by placing its cube in {container}. Then place both {incoming.color} cubes on {mat}.",
+  "Make room on {mat} for all the {incoming.color} cubes by moving its current cube into {container}; then put the whole pair on the mat.",
+  "Transfer the lone cube from {mat} into {container}, and replace it on the mat with both members of {incoming}.",
+  "Move the cube currently on {mat} into {container} first, then replace it with both {incoming.color} cubes on the mat.",
+  "Please put the lone cube from {mat} inside {container}; once the mat is clear, place both {incoming.color} cubes on it.",
+  "Clear {mat} of its current cube by putting that cube into {container}, and then set the pair of {incoming.color} cubes on the mat.",
+  "Both {incoming.color} cubes should end up on {mat}, but first put the mat's original occupant into {container}.",
+  "Start by transferring the single cube on {mat} to the inside of {container}. Finish by putting both {incoming.color} cubes on the vacated mat.",
+  "Put the mat's current cube into {container} before placing both {incoming.color} cubes on {mat}.",
+  "Exchange the lone cube on {mat} for the pair of {incoming.color} cubes: move the lone cube into {container} first, then put the pair on the mat.",
+  "First, put {resident}, the cube alone on {mat}, inside {container}; next, move both {incoming.color} cubes onto that mat.",
+  "Please transfer {resident} from its solitary position on {mat} into {container}, then place the two {incoming.color} cubes on the cleared mat.",
+  "The mat should hold both {incoming.color} cubes after you move {resident}, its lone occupant, from {mat} into {container}.",
+  "Begin with {resident}, the only cube on {mat}: place it inside {container}. Afterward, put both {incoming.color} cubes on the mat.",
+  "To give both {incoming.color} cubes space on {mat}, first take {resident}, the cube currently alone there, and put it into {container}; then move the pair onto the mat.",
+  "Make {container} the new location of {resident}, the sole cube on {mat}, before moving both {incoming.color} cubes onto the emptied mat.",
+  "Step one: move the cube off {mat} and into {container}. Step two: put both {incoming.color} cubes on that mat.",
+  "Empty {mat} by transferring its lone cube into {container}; afterward, fill the cleared spot with both {incoming.color} cubes.",
+  "Please relocate the original occupant of {mat} to the inside of {container}, then arrange both {incoming.color} cubes on the mat.",
+  "Once you have placed the lone cube from {mat} into {container}, move the two {incoming.color} cubes onto the vacated mat.",
+  "Have both {incoming.color} cubes resting on {mat} at the end: first put its current cube into {container}, then place the pair on the mat.",
+  "Take the single cube from {mat}, deposit it inside {container}, and only then put both {incoming.color} cubes on the mat.",
+  "Remove the lone cube from {mat} and put it into {container}; next, place both members of {incoming} on the cleared mat.",
+  "Please put the cube currently alone on {mat} inside {container}, then use both members of {incoming} to replace it on the mat.",
+  "First send the lone cube on {mat} into {container}; afterward, move the entire pair of {incoming} onto that mat.",
+  "The original cube on {mat} should go inside {container} first, with both members of {incoming} then taking its place on the mat.",
+  "Clear the lone cube from {mat} into {container} before setting both members of {incoming} on the mat."
+ ],
+ "notes": "This family requires clearing an occupied destination before replacing its single occupant with an entire two-cube colour group."
+}

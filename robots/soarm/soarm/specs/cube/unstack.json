@@ -1,0 +1,65 @@
+{
+ "id": "cube_unstack",
+ "tid": 104,
+ "version": 1,
+ "domain": "cube",
+ "split": "heldout",
+ "provenance": "hand",
+ "difficulty": 2,
+ "builder": "declarative",
+ "objects": [
+  {
+   "role": "bottom",
+   "kind": "cube",
+   "count": 1,
+   "where": {
+    "size_class": {
+     "min": 4.0
+    }
+   }
+  },
+  {
+   "role": "upper",
+   "kind": "cube",
+   "count": [
+    1,
+    2
+   ],
+   "where": {
+    "size_class": {
+     "max_role": "bottom"
+    }
+   }
+  },
+  {
+   "role": "distractors",
+   "kind": "cube",
+   "count": [
+    0,
+    1
+   ]
+  }
+ ],
+ "layout": [
+  {
+   "type": "stack",
+   "roles": [
+    "@bottom",
+    "@upper"
+   ]
+  }
+ ],
+ "goal": [
+  {
+   "pred": "resting_on_table",
+   "for_each": "upper",
+   "args": [
+    "$"
+   ]
+  }
+ ],
+ "instructions": [
+  "Take the tower apart: put every cube on the table.",
+  "Unstack the cubes so that each one stands on the table."
+ ]
+}

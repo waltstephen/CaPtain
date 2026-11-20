@@ -1,0 +1,46 @@
+{
+ "id": "relational_place",
+ "tid": 10,
+ "version": 1,
+ "domain": "legacy",
+ "split": "train",
+ "provenance": "hand",
+ "difficulty": 2,
+ "builder": "legacy:relational_place",
+ "objects": [
+  {
+   "role": "reference",
+   "kind": "bowl",
+   "count": 1
+  },
+  {
+   "role": "target",
+   "kind": "cube",
+   "count": 1
+  },
+  {
+   "role": "distractors",
+   "kind": "cube",
+   "count": [
+    1,
+    2
+   ]
+  }
+ ],
+ "layout": [],
+ "goal": [
+  {
+   "pred": "relation",
+   "args": [
+    "@target",
+    "@reference",
+    "left"
+   ]
+  }
+ ],
+ "instructions": [
+  "Place {target} to the left of {reference}.",
+  "Put {target} on the table to the left of {reference}."
+ ],
+ "notes": "Legacy family (pre-pivot). Sampled by families.py (builder legacy:*), bit-identical to the pre-spec sampler; objects/goal/instructions here describe it (object kinds vary per seed in the generator) and are not interpreted."
+}

@@ -1,0 +1,113 @@
+{
+ "id": "cube_v_sort_mat_and_tray",
+ "tid": 264,
+ "version": 1,
+ "domain": "cube",
+ "split": "train",
+ "provenance": "hand",
+ "difficulty": 2,
+ "builder": "declarative",
+ "objects": [
+  {
+   "role": "destination",
+   "kind": "tray",
+   "count": 1
+  },
+  {
+   "role": "mat",
+   "kind": "pad",
+   "count": 1
+  },
+  {
+   "role": "first",
+   "kind": "cube",
+   "count": 1
+  },
+  {
+   "role": "second",
+   "kind": "cube",
+   "count": 1,
+   "where": {
+    "color": {
+     "not_role": "first"
+    }
+   }
+  },
+  {
+   "role": "distractors",
+   "kind": "cube",
+   "count": [
+    0,
+    1
+   ]
+  }
+ ],
+ "layout": [
+  {
+   "type": "region",
+   "role": "first",
+   "r": [
+    0.15,
+    0.26
+   ],
+   "angle_deg": [
+    -60,
+    60
+   ]
+  },
+  {
+   "type": "region",
+   "role": "second",
+   "r": [
+    0.15,
+    0.26
+   ],
+   "angle_deg": [
+    -60,
+    60
+   ]
+  },
+  {
+   "type": "region",
+   "role": "distractors",
+   "r": [
+    0.15,
+    0.26
+   ],
+   "angle_deg": [
+    -60,
+    60
+   ]
+  }
+ ],
+ "goal": [
+  {
+   "pred": "inside",
+   "args": [
+    "@first",
+    "@destination"
+   ]
+  },
+  {
+   "pred": "in_region",
+   "args": [
+    "@second",
+    "@mat"
+   ]
+  }
+ ],
+ "instructions": [
+  "Put {first} in {destination} and {second} on {mat}.",
+  "Place {first} into {destination}, then {second} onto {mat}.",
+  "Sort the two cubes: {first} goes in {destination}, {second} goes on {mat}.",
+  "Drop {first} into {destination}; set {second} down on {mat}."
+ ],
+ "workspace": {
+  "r": [
+   0.13,
+   0.29
+  ],
+  "angle_deg": 70
+ },
+ "notes": "div3 variant (tools/make_variants.py)."
+}

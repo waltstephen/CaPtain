@@ -1,0 +1,136 @@
+{
+ "id": "gen_extract_tray_cubes_above_reference_size",
+ "tid": 1221,
+ "version": 1,
+ "domain": "cube",
+ "split": "train",
+ "provenance": "llm",
+ "difficulty": 2,
+ "builder": "declarative",
+ "objects": [
+  {
+   "role": "tray",
+   "kind": "tray",
+   "count": 1,
+   "where": {
+    "size_class": 18.0,
+    "color": "gray"
+   }
+  },
+  {
+   "role": "mat",
+   "kind": "big_mat",
+   "count": 1,
+   "where": {
+    "size_class": 14.0,
+    "color": "white"
+   }
+  },
+  {
+   "role": "reference",
+   "kind": "cube",
+   "count": 1,
+   "where": {
+    "size_class": 3.0,
+    "color": [
+     "red",
+     "orange"
+    ]
+   }
+  },
+  {
+   "role": "target",
+   "kind": "cube",
+   "count": 1,
+   "where": {
+    "size_class": 3.5,
+    "color": [
+     "blue",
+     "cyan"
+    ]
+   }
+  },
+  {
+   "role": "extra_target",
+   "kind": "cube",
+   "count": [
+    0,
+    1
+   ],
+   "where": {
+    "size_class": 3.5,
+    "color": [
+     "green",
+     "yellow"
+    ]
+   }
+  },
+  {
+   "role": "retained",
+   "kind": "cube",
+   "count": 1,
+   "where": {
+    "size_class": 3.0,
+    "color": [
+     "purple",
+     "pink"
+    ]
+   }
+  }
+ ],
+ "layout": [
+  {
+   "type": "region",
+   "role": "tray",
+   "r": [
+    0.17,
+    0.24
+   ],
+   "angle_deg": [
+    -50,
+    50
+   ]
+  },
+  {
+   "type": "on",
+   "role": "target",
+   "support": "@tray"
+  },
+  {
+   "type": "on",
+   "role": "extra_target",
+   "support": "@tray"
+  },
+  {
+   "type": "on",
+   "role": "retained",
+   "support": "@tray"
+  }
+ ],
+ "goal": [
+  {
+   "pred": "in_region",
+   "args": [
+    "@target",
+    "@mat"
+   ]
+  },
+  {
+   "pred": "in_region",
+   "for_each": "extra_target",
+   "args": [
+    "$",
+    "@mat"
+   ]
+  }
+ ],
+ "instructions": [
+  "Use the loose table cube as the size reference. Move every cube in {tray} that is larger than that reference directly onto {mat}.",
+  "Compare the tray contents with the cube outside the tray. Put all tray cubes larger than that loose cube directly on {mat}; the equal-sized tray cube is not selected.",
+  "Transfer only the cubes in {tray} that exceed the loose table cube in size to {mat}. Place them directly on the mat, not on one another.",
+  "The large mat should receive every tray cube bigger than the loose reference cube. If two tray cubes qualify, move both.",
+  "First inspect the size of the loose cube. Then take each larger cube out of {tray} and put it directly on {mat}, excluding the tray cube of the reference size.",
+  "Select from {tray} by comparison with the loose table cube: all larger cubes go directly onto {mat}, and no equal-sized cube is part of the transfer."
+ ],
+ "notes": "Selectively unloads one or two tray occupants using an external size threshold while excluding an equal-sized occupant."
+}

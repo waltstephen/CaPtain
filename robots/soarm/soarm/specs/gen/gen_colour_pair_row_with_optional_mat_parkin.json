@@ -1,0 +1,101 @@
+{
+ "id": "gen_colour_pair_row_with_optional_mat_parkin",
+ "tid": 1133,
+ "version": 1,
+ "domain": "cube",
+ "split": "train",
+ "provenance": "llm",
+ "difficulty": 3,
+ "builder": "declarative",
+ "objects": [
+  {
+   "role": "row",
+   "kind": "cube",
+   "count": 2,
+   "where": {
+    "size_class": 3.5,
+    "color": [
+     "blue",
+     "cyan"
+    ]
+   }
+  },
+  {
+   "role": "extra",
+   "kind": "cube",
+   "count": [
+    0,
+    1
+   ],
+   "where": {
+    "size_class": 3.0,
+    "color": [
+     "red",
+     "orange"
+    ]
+   }
+  },
+  {
+   "role": "mat",
+   "kind": "pad",
+   "count": 1,
+   "where": {
+    "size_class": 10.0,
+    "color": "gray"
+   }
+  }
+ ],
+ "layout": [
+  {
+   "type": "region",
+   "role": "mat",
+   "r": [
+    0.17,
+    0.24
+   ],
+   "angle_deg": [
+    -50,
+    50
+   ]
+  },
+  {
+   "type": "distance",
+   "a": "@row[0]",
+   "b": "@row[1]",
+   "min": 0.15,
+   "max": 0.19
+  }
+ ],
+ "goal": [
+  {
+   "pred": "in_line",
+   "args": [
+    "@row*"
+   ],
+   "params": {
+    "max_residual": 0.015,
+    "min_gap": 0.01,
+    "max_gap": 0.04
+   }
+  },
+  {
+   "pred": "in_region",
+   "for_each": "extra",
+   "args": [
+    "$",
+    "@mat"
+   ]
+  }
+ ],
+ "instructions": [
+  "Arrange both {row.color} cubes in a straight row on the bare table with a gap of one to four centimetres. If a red or orange cube is present, put it directly on {mat}.",
+  "Make a closely spaced row from all the {row.color} cubes, leaving one to four centimetres between them. The red or orange cube, if present, goes on {mat} instead of in the row.",
+  "The two {row.color} cubes should rest on the table in a straight row, one to four centimetres apart. Any red or orange cube should rest directly on {mat}.",
+  "First bring both {row.color} cubes into a straight row on the table with a one-to-four-centimetre gap. Then place the red or orange cube on {mat} if there is one.",
+  "Use every {row.color} cube for a table-level row with one to four centimetres between neighbouring footprints; if an extra red or orange cube exists, park it on {mat}.",
+  "Leave {mat} for the red or orange cube if one is present, and place that cube there. Arrange both {row.color} cubes separately on the bare table in a straight row with a gap of one to four centimetres.",
+  "Place both {row.color} cubes on the bare table in a straight row, leaving a gap of one to four centimetres between them. If a red or orange cube is present, set it directly on {mat}.",
+  "Please line up the two {row.color} blocks on the bare tabletop with one to four centimetres of clear space between them. Put the red or orange cube directly on {mat} if there is one."
+ ],
+ "notes": "Separates a complete colour group into a closely spaced table row while routing an optional differently coloured cube to a mat."
+}

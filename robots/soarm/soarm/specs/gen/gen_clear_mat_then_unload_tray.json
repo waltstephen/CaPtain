@@ -1,0 +1,128 @@
+{
+ "id": "gen_clear_mat_then_unload_tray",
+ "tid": 1217,
+ "version": 1,
+ "domain": "cube",
+ "split": "train",
+ "provenance": "llm",
+ "difficulty": 2,
+ "builder": "declarative",
+ "objects": [
+  {
+   "role": "mat",
+   "kind": "big_mat",
+   "count": 1,
+   "where": {
+    "size_class": 12.0,
+    "color": [
+     "blue",
+     "cyan"
+    ]
+   }
+  },
+  {
+   "role": "tray",
+   "kind": "tray",
+   "count": 1,
+   "where": {
+    "size_class": 14.0
+   }
+  },
+  {
+   "role": "outgoing",
+   "kind": "cube",
+   "count": 1,
+   "where": {
+    "size_class": 3.5,
+    "color": [
+     "red",
+     "orange"
+    ]
+   }
+  },
+  {
+   "role": "incoming",
+   "kind": "cube",
+   "count": 1,
+   "where": {
+    "size_class": 3.5,
+    "color": {
+     "not_role": "outgoing"
+    }
+   }
+  }
+ ],
+ "layout": [
+  {
+   "type": "on",
+   "role": "outgoing",
+   "support": "@mat"
+  },
+  {
+   "type": "on",
+   "role": "incoming",
+   "support": "@tray"
+  },
+  {
+   "type": "region",
+   "role": "tray",
+   "r": [
+    0.17,
+    0.24
+   ],
+   "angle_deg": [
+    -50,
+    50
+   ]
+  }
+ ],
+ "goal": [
+  {
+   "pred": "off_region",
+   "args": [
+    "@outgoing",
+    "@mat"
+   ]
+  },
+  {
+   "pred": "in_region",
+   "args": [
+    "@incoming",
+    "@mat"
+   ]
+  }
+ ],
+ "instructions": [
+  "Move the cube on {mat} onto the bare table completely clear of the mat, then move the cube from {tray} directly onto the mat.",
+  "Replace the mat's occupant with the tray's cube. Park the old occupant on the table fully outside the mat.",
+  "First clear {mat} by setting its cube on the bare table. Then unload {tray} onto the freed mat.",
+  "The tray cube should end up directly on {mat}, while the original mat cube rests on the table with no overlap over the mat.",
+  "Take {outgoing} off {mat} and set it completely outside the mat on the table. Put {incoming} from {tray} onto {mat}.",
+  "Free the mat without putting its cube in the tray: set that cube fully clear on the table, then transfer the tray's cube onto the mat.",
+  "Lift the cube off {mat} and place it on bare tabletop with no part overlapping the mat. After that, move the cube from {tray} directly onto the mat.",
+  "Please set the cube currently on {mat} completely clear of the mat on the table, then take the cube from {tray} and place it directly on the mat.",
+  "Clear {mat} first: put its cube on the bare table entirely outside the mat. Next, transfer the cube from {tray} directly to the mat.",
+  "Swap the mat's occupant for the cube in {tray}, first parking the original occupant on bare tabletop fully clear of {mat}, then placing the tray's cube directly on the mat.",
+  "Start by removing the cube from {mat} and leaving it on the table with no overlap onto the mat. Only then place the cube from {tray} directly onto the mat.",
+  "The original cube should end up on bare tabletop completely outside {mat}; once it is there, the cube from {tray} should be moved directly onto the mat.",
+  "Take {outgoing} off {mat}, leaving it on the bare table entirely clear of the mat. Then bring {incoming} from {tray} directly onto the mat.",
+  "Please relocate {outgoing} from {mat} to bare tabletop without any overlap with the mat, and afterward transfer {incoming} from {tray} directly onto the mat.",
+  "First place {outgoing} on the bare table fully outside {mat}. Once the mat is clear, move {incoming} from {tray} directly onto it.",
+  "Remove {outgoing} from {mat} before moving {incoming}: set the former on bare tabletop completely beyond the mat, then take the latter from {tray} directly onto the mat.",
+  "Set {outgoing} down on the table with no part over {mat}; after completing that move, take {incoming} out of {tray} and place it directly on the mat.",
+  "Begin with {outgoing}: move it off {mat} onto bare tabletop, entirely clear of the mat. Follow by moving {incoming} from {tray} directly onto the vacated mat.",
+  "Empty {mat} onto the bare table, making sure its cube is wholly outside the mat. Then move the cube in {tray} directly onto the now-empty mat.",
+  "Put the block on {mat} down on bare tabletop completely clear of the mat; next, lift the block from {tray} and set it directly on the mat.",
+  "Make room on {mat} by moving its cube to the table with zero overlap with the mat. Once that is done, bring the cube from {tray} directly onto the mat.",
+  "In two steps, move the cube on {mat} onto bare tabletop entirely outside the mat, and then move the cube from {tray} directly onto the cleared mat.",
+  "Do not use the tray to hold the mat's cube: first place that cube on bare tabletop fully clear of {mat}, then transfer the cube from {tray} directly onto the mat.",
+  "The cube from {tray} is to occupy {mat}, but first move the mat's current cube onto the bare table completely outside the mat. Then place the tray's cube directly on the mat.",
+  "Remove the current occupant of {mat} to a bare spot on the table where it does not overlap the mat at all. Afterward, put the cube from {tray} directly onto the mat.",
+  "First, the cube on {mat} goes onto bare tabletop, fully beyond the mat's boundary. Second, the cube from {tray} goes directly onto the mat.",
+  "Could you clear {mat} by setting its cube on the bare table with no overlap, then take the cube from {tray} and set it directly on the mat?",
+  "Park the mat's current block completely outside {mat} on bare tabletop. With that done, move the block from {tray} directly onto the mat.",
+  "Before transferring the cube from {tray}, move the cube on {mat} to bare tabletop entirely clear of the mat. Then complete the transfer by placing the tray's cube directly on the mat.",
+  "Leave the original mat cube resting on bare tabletop with no part overlapping {mat}, and only afterward move the cube from {tray} directly onto the mat."
+ ],
+ "notes": "Combines complete mat clearance with container unloading while parking the displaced occupant on the bare table rather than exchanging the two contents."
+}

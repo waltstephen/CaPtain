@@ -1,0 +1,65 @@
+{
+ "id": "cube_v_empty_container",
+ "tid": 237,
+ "version": 1,
+ "domain": "cube",
+ "split": "train",
+ "provenance": "hand",
+ "difficulty": 2,
+ "builder": "declarative",
+ "objects": [
+  {
+   "role": "container",
+   "kind": [
+    "bowl",
+    "box"
+   ],
+   "count": 1
+  },
+  {
+   "role": "items",
+   "kind": "cube",
+   "count": [
+    1,
+    2
+   ],
+   "where": {
+    "size_class": {
+     "max": 3.5
+    }
+   }
+  },
+  {
+   "role": "distractors",
+   "kind": "cube",
+   "count": [
+    0,
+    1
+   ]
+  }
+ ],
+ "layout": [
+  {
+   "type": "on",
+   "role": "items",
+   "support": "@container"
+  }
+ ],
+ "goal": [
+  {
+   "pred": "off_region",
+   "for_each": "items",
+   "args": [
+    "$",
+    "@container"
+   ]
+  }
+ ],
+ "instructions": [
+  "Take everything out of {container} and put it on the table.",
+  "Empty {container} onto the table.",
+  "Remove the cubes from {container} and set them down on the table.",
+  "Unload {container}: every cube goes on the table."
+ ],
+ "notes": "div2 variant (tools/make_variants.py)."
+}

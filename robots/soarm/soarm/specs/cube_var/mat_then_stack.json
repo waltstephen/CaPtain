@@ -1,0 +1,63 @@
+{
+ "id": "cube_v_mat_then_stack",
+ "tid": 244,
+ "version": 1,
+ "domain": "cube",
+ "split": "train",
+ "provenance": "hand",
+ "difficulty": 3,
+ "builder": "declarative",
+ "objects": [
+  {
+   "role": "mat",
+   "kind": "pad",
+   "count": 1
+  },
+  {
+   "role": "base",
+   "kind": "cube",
+   "count": 1
+  },
+  {
+   "role": "top",
+   "kind": "cube",
+   "count": 1,
+   "where": {
+    "size_class": {
+     "max_role": "base"
+    }
+   }
+  },
+  {
+   "role": "distractors",
+   "kind": "cube",
+   "count": [
+    0,
+    1
+   ]
+  }
+ ],
+ "layout": [],
+ "goal": [
+  {
+   "pred": "in_region",
+   "args": [
+    "@base",
+    "@mat"
+   ]
+  },
+  {
+   "pred": "on_top",
+   "args": [
+    "@top",
+    "@base"
+   ]
+  }
+ ],
+ "instructions": [
+  "Put {base} on {mat}, then stack {top} on top of it.",
+  "Move {base} onto {mat} and place {top} on {base}.",
+  "First set {base} down on {mat}; then put {top} on top of {base}."
+ ],
+ "notes": "div2 variant (tools/make_variants.py)."
+}

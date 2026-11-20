@@ -1,0 +1,158 @@
+{
+ "id": "gen_ordered_pair_with_optional_front_apex",
+ "tid": 1135,
+ "version": 1,
+ "domain": "cube",
+ "split": "train",
+ "provenance": "llm",
+ "difficulty": 3,
+ "builder": "declarative",
+ "objects": [
+  {
+   "role": "left_cube",
+   "kind": "cube",
+   "count": 1,
+   "where": {
+    "size_class": 3.0,
+    "color": [
+     "blue",
+     "cyan"
+    ]
+   }
+  },
+  {
+   "role": "right_cube",
+   "kind": "cube",
+   "count": 1,
+   "where": {
+    "size_class": 3.0,
+    "color": [
+     "red",
+     "orange"
+    ]
+   }
+  },
+  {
+   "role": "apex",
+   "kind": "cube",
+   "count": [
+    0,
+    1
+   ],
+   "where": {
+    "size_class": 3.0,
+    "color": [
+     "green",
+     "purple"
+    ]
+   }
+  }
+ ],
+ "layout": [
+  {
+   "type": "region",
+   "role": "left_cube",
+   "r": [
+    0.18,
+    0.23
+   ],
+   "angle_deg": [
+    -40,
+    40
+   ]
+  },
+  {
+   "type": "region",
+   "role": "right_cube",
+   "r": [
+    0.18,
+    0.23
+   ],
+   "angle_deg": [
+    -40,
+    40
+   ]
+  },
+  {
+   "type": "distance",
+   "a": "@left_cube",
+   "b": "@right_cube",
+   "min": 0.13,
+   "max": 0.17
+  }
+ ],
+ "goal": [
+  {
+   "pred": "in_line",
+   "args": [
+    "@left_cube",
+    "@right_cube"
+   ],
+   "params": {
+    "order": "left_to_right",
+    "max_residual": 0.01,
+    "min_gap": 0.01,
+    "max_gap": 0.03
+   }
+  },
+  {
+   "pred": "relation",
+   "for_each": "apex",
+   "args": [
+    "$",
+    "@left_cube",
+    "front"
+   ],
+   "params": {
+    "far": 0.08,
+    "lateral": 0.06
+   }
+  },
+  {
+   "pred": "relation",
+   "for_each": "apex",
+   "args": [
+    "$",
+    "@right_cube",
+    "front"
+   ],
+   "params": {
+    "far": 0.08,
+    "lateral": 0.06
+   }
+  }
+ ],
+ "instructions": [
+  "Arrange {left_cube} and {right_cube} in that left-to-right order on the table, with a gap of one to three centimetres. If a green or purple cube is present, place it on the table just in front of both cubes. Use the view from in front of the robot; front means farther from the robot.",
+  "Make a close left-to-right row of {left_cube}, then {right_cube}, leaving one to three centimetres between them. Any green or purple cube goes just in front of both row cubes on the table. Judge left and right from in front of the robot, and front as farther from the robot.",
+  "The two-cube row should read {left_cube}, {right_cube} from left to right, with a one-to-three-centimetre gap. If there is a green or purple cube, it must rest just in front of both, not at either end of the row. Left and right use the view from in front of the robot; front is farther from the robot.",
+  "First place {left_cube} to the left of {right_cube} in a straight table-level row with a gap of one to three centimetres. If a green or purple cube exists, set it just in front of both. Use camera-view left and right from in front of the robot, with front farther from the robot.",
+  "Create a closely spaced row on the bare table: {left_cube} on the left and {right_cube} on the right, one to three centimetres apart. Add the green or purple cube just in front of both if present. Directions are viewed from in front of the robot, with front meaning farther from it.",
+  "If no green or purple cube is present, make only the table row {left_cube}, {right_cube} from left to right, with a one-to-three-centimetre gap. Otherwise make that same row and place the green or purple cube just in front of both row members. Judge left and right from in front of the robot; front is farther from the robot.",
+  "Place {left_cube} and {right_cube} on the table in a straight row, in that order from left to right, leaving a gap of one to three centimetres. If a green or purple cube is present, put it on the table just in front of both row members. Take left and right from the view in front of the robot, and interpret front as farther from the robot.",
+  "Please form a straight, table-level row with {left_cube} on the left and {right_cube} on the right, separated by a one-to-three-centimetre gap. A green or purple cube, if present, should sit on the table just in front of both. Use the viewpoint from in front of the robot for left and right; front means away from the robot.",
+  "The finished arrangement should have {left_cube} followed by {right_cube} from left to right in a straight row on the table, with one to three centimetres of space between them. If there is a green or purple cube, it should rest on the table just in front of both. Judge left and right from in front of the robot; front is the direction farther from it.",
+  "First establish left and right as seen from in front of the robot, with front meaning farther from the robot. Next, set {left_cube} to the left of {right_cube} in a straight row on the table, leaving a gap of one to three centimetres. Finally, if a green or purple cube is present, place it on the table just in front of both.",
+  "Make a straight row on the table: {left_cube}, then {right_cube}, reading left to right, with a gap of one to three centimetres. Put the green or purple cube just in front of both on the table if one is present. Left and right are those seen from in front of the robot; front points farther away from the robot.",
+  "If a green or purple cube is available, its place is on the table just in front of both {left_cube} and {right_cube}. Arrange those two in a straight table row, {left_cube} to the left of {right_cube}, with a one-to-three-centimetre gap. If no green or purple cube is present, make just the row. Use left and right as viewed from in front of the robot, and front as farther from the robot.",
+  "Would you arrange {left_cube} on the left and {right_cube} on the right in a straight row on the table, keeping their gap between one and three centimetres? If a green or purple cube is present, please set it on the table just in front of both. Read left and right from the viewpoint in front of the robot, with front meaning farther from it.",
+  "Leave {left_cube} and {right_cube} aligned in a straight left-to-right row on the table, in the order named, one to three centimetres apart. Any green or purple cube that is present must also rest on the table, just in front of both row cubes rather than at an end. Use the view from in front of the robot for left and right; front means farther from the robot.",
+  "On the bare table, create a straight row whose left member is {left_cube} and whose right member is {right_cube}; leave a gap of one to three centimetres. If a green or purple block is present, set it just in front of both members, also on the table. Directions are judged from in front of the robot, and front is farther from the robot.",
+  "Using the view from in front of the robot for left and right, arrange {left_cube} to the left of {right_cube} in a straight table-level row with a one-to-three-centimetre gap. Front means farther from the robot: place the green or purple cube just in front of both, on the table, if it is present.",
+  "Set up the two-cube row on the table before adding anything in front: {left_cube} must be left of {right_cube}, with both in a straight line and a gap of one to three centimetres. If a green or purple cube exists, put it on the table just in front of both row cubes. Take left and right from in front of the robot and front to mean farther from it.",
+  "Keep the arrangement to a straight table row of {left_cube} followed by {right_cube} from left to right, with a gap of one to three centimetres, unless a green or purple cube is present. In that case, keep the same row and set that cube on the table just in front of both. Left and right follow the view from in front of the robot; front is farther from the robot.",
+  "Your target is a straight row on the table with {left_cube} at the left and {right_cube} at the right, leaving one to three centimetres between them. The green or purple cube, if present, belongs on the table just in front of both, not at either end of the row. View left and right from in front of the robot, and take front to mean farther from the robot.",
+  "Align {left_cube} with {right_cube} across the table in a straight left-to-right row, placing {left_cube} first and leaving a gap of one to three centimetres. Should a green or purple cube be present, place it on the table just in front of both. Use the viewpoint in front of the robot to determine left and right; front is the direction away from the robot.",
+  "Please leave a one-to-three-centimetre gap in a straight table row between {left_cube} on the left and {right_cube} on the right. If there is a green or purple cube, let it rest on the table just in front of both row members. Determine left and right from in front of the robot, and interpret front as farther from the robot.",
+  "Arrange the objects as follows: a straight row on the table, {left_cube} then {right_cube} from left to right, with a gap of one to three centimetres; and, only if present, the green or purple cube on the table just in front of both. Left and right use the view from in front of the robot, while front means farther from the robot.",
+  "Start with {right_cube} on the table, then position {left_cube} to its left so that the two form a straight row with a one-to-three-centimetre gap. If a green or purple cube is present, put it on the table just in front of both. Use left and right as seen from in front of the robot; front means farther from the robot.",
+  "With front defined as farther from the robot, place any green or purple cube that is present on the table just in front of both row cubes. The row itself must be straight and table-level, with {left_cube} to the left of {right_cube} and a gap of one to three centimetres. Judge left and right from the view in front of the robot.",
+  "Form a compact, straight row on the table with a gap of one to three centimetres: {left_cube} on the left, {right_cube} on the right. If a green or purple block exists, give it the position just in front of both row members on the table. Use the view from in front of the robot for left and right, and front to mean farther from the robot.",
+  "Make sure {left_cube} ends up to the left of {right_cube}, both resting on the table in a straight row with a one-to-three-centimetre gap. A green or purple cube, when present, must end up resting on the table just in front of both of them. Left and right are judged from in front of the robot, and front means farther from it.",
+  "For a scene without a green or purple cube, arrange only {left_cube} and {right_cube} in a straight row on the table, in that left-to-right order, with a gap of one to three centimetres. If a green or purple cube is present, make the identical row and place that cube on the table just in front of both row members. Use the view from in front of the robot for left and right; front is farther from the robot.",
+  "Position {left_cube} and {right_cube} in a straight line across the table, with {left_cube} on the left and one to three centimetres of clearance between them. Place the green or purple cube on the table just in front of both if one is present. Interpret left and right from in front of the robot, and front as farther from the robot.",
+  "The required table layout is a straight left-to-right row reading {left_cube}, {right_cube}, separated by a gap of one to three centimetres. If a green or purple cube is present, add it on the table just in front of both row members rather than beside an end. Use left and right from the view in front of the robot; front means farther from the robot.",
+  "Place the row cubes directly on the table in a straight row: {left_cube} to the left of {right_cube}, with a one-to-three-centimetre gap. Check whether a green or purple cube is present; if so, set it directly on the table just in front of both row cubes. Throughout, judge left and right from in front of the robot, with front meaning farther from the robot."
+ ],
+ "notes": "Adds an optional off-row apex constrained relative to both members of an ordered pair, rather than extending the row or placing one cube between landmarks."
+}

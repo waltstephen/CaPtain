@@ -1,0 +1,133 @@
+{
+ "id": "gen_lift_second_from_left",
+ "tid": 1119,
+ "version": 1,
+ "domain": "cube",
+ "split": "train",
+ "provenance": "llm",
+ "difficulty": 1,
+ "builder": "declarative",
+ "objects": [
+  {
+   "role": "middle",
+   "kind": "cube",
+   "count": 1,
+   "where": {
+    "size_class": [
+     3.0,
+     3.5
+    ]
+   }
+  },
+  {
+   "role": "left_flank",
+   "kind": "cube",
+   "count": 1,
+   "where": {
+    "size_class": [
+     3.0,
+     3.5
+    ],
+    "color": {
+     "not_role": "middle"
+    }
+   }
+  },
+  {
+   "role": "right_flank",
+   "kind": "cube",
+   "count": 1,
+   "where": {
+    "size_class": [
+     3.0,
+     3.5
+    ],
+    "color": {
+     "not_role": "middle"
+    }
+   }
+  }
+ ],
+ "layout": [
+  {
+   "type": "region",
+   "role": "left_flank",
+   "r": [
+    0.2,
+    0.22
+   ],
+   "angle_deg": [
+    -42,
+    -37
+   ]
+  },
+  {
+   "type": "region",
+   "role": "middle",
+   "r": [
+    0.2,
+    0.22
+   ],
+   "angle_deg": [
+    -3,
+    3
+   ]
+  },
+  {
+   "type": "region",
+   "role": "right_flank",
+   "r": [
+    0.2,
+    0.22
+   ],
+   "angle_deg": [
+    37,
+    42
+   ]
+  }
+ ],
+ "goal": [
+  {
+   "pred": "lifted",
+   "args": [
+    "@middle"
+   ],
+   "params": {
+    "height": 0.04
+   }
+  }
+ ],
+ "instructions": [
+  "Pick up the cube that starts second from the left and hold it above the table. Judge left and right from in front of the robot, facing it.",
+  "Looking from in front of the robot toward it, lift the middle of the three cubes and keep it held in the air.",
+  "Count the cubes from left to right as seen from in front of the robot, facing it. Pick up number two and hold it above the table.",
+  "The cube to hold aloft is the one initially between the other two in left-to-right order, viewed from in front of the robot facing it.",
+  "From the viewpoint in front of the robot facing it, find the second cube from the left, grasp it, and keep it raised above the table.",
+  "Lift and hold the cube with exactly one cube initially to its left and one to its right, using the view from in front of the robot facing it.",
+  "Stand in front of the robot and face it. Pick up the cube that is initially in the middle of the three from left to right, and keep holding it above the table.",
+  "Please lift the second cube from the left in the starting arrangement and keep it suspended in your grasp, judging left from in front of the robot while facing it.",
+  "The initially central cube in the row of three should end up held above the tabletop; determine the order from in front of the robot, looking toward it.",
+  "Use the view from in front of the robot facing it: count the three cubes from left to right, grasp the second, and hold it in the air.",
+  "Raise and retain your grip on the block that initially has one block on either side in left-to-right order, as viewed from in front of the robot facing it.",
+  "Facing the robot from its front, identify the cube that starts between the other two horizontally. Lift that cube off the table and keep it held up.",
+  "Please keep the initially second-from-left cube held clear of the table, using the left-to-right order seen from in front of the robot facing it.",
+  "First view the three cubes from in front of the robot, facing it. Then select the middle cube in their initial left-to-right order, pick it up, and do not set it down.",
+  "Hold aloft the initially middle block of the three, with left and right determined by looking toward the robot from in front of it.",
+  "Your goal is to have the cube that starts second from the left held in the air above the table, taking the viewpoint in front of and facing the robot.",
+  "Looking at the robot from its front, choose the cube with exactly one cube initially to its left and exactly one initially to its right. Grasp it and keep it raised above the tabletop.",
+  "Pick up cube number two in the initial left-to-right sequence of three and maintain your hold above the table; read that sequence from in front of the robot while facing it.",
+  "From a position in front of the robot, facing toward it, lift the block initially between the other two in left-to-right order and continue holding it off the table.",
+  "Keep the middle cube of the starting three suspended above the tabletop in your grasp. Use the left-to-right arrangement visible from in front of the robot facing it.",
+  "Please take the front-facing view of the robot, locate the second cube from the left before anything is moved, and lift and hold that cube above the table.",
+  "In the original arrangement, find the cube with one cube on its left and one on its right when looking toward the robot from in front. Pick it up and keep it in the air.",
+  "Face the robot from in front of it; lift the initially central block of the three and leave it held above, not resting on, the table.",
+  "The block to pick up and keep raised is the one occupying the second position from the left at the start, viewed from in front of the robot facing it.",
+  "Count one, two from the left of the initial three-cube arrangement as seen from in front of the robot, facing it. Grasp cube two and keep holding it above the table.",
+  "Using the viewpoint directly in front of and facing the robot, pick the cube that initially lies between the other two from left to right, then hold it aloft.",
+  "Please bring the initially middle cube of the three off the tabletop and keep it in your grasp above the table, judging the ordering from in front of the robot facing it.",
+  "Select by starting position, not by any later movement: from in front of the robot facing it, choose the second cube from the left, lift it, and keep it held up.",
+  "Have the cube initially flanked by exactly one cube to the left and one to the right end up held above the table. Interpret left and right from in front of the robot, looking toward it.",
+  "Lift the middle of the three blocks and maintain it in the air in your grasp; identify the middle using their initial left-to-right order from in front of the robot facing it."
+ ],
+ "notes": "Unlike colour- or size-selected lifting, the target is selected by its initial ordinal position among three cubes."
+}

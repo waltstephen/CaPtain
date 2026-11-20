@@ -1,0 +1,128 @@
+{
+ "id": "gen_order_loose_pair_then_hold_mat_cube",
+ "tid": 1141,
+ "version": 1,
+ "domain": "cube",
+ "split": "train",
+ "provenance": "llm",
+ "difficulty": 4,
+ "builder": "declarative",
+ "objects": [
+  {
+   "role": "left_cube",
+   "kind": "cube",
+   "count": 1,
+   "where": {
+    "size_class": [
+     3.0,
+     3.5
+    ],
+    "color": [
+     "red",
+     "orange"
+    ]
+   }
+  },
+  {
+   "role": "right_cube",
+   "kind": "cube",
+   "count": 1,
+   "where": {
+    "size_class": [
+     3.0,
+     3.5
+    ],
+    "color": [
+     "blue",
+     "cyan"
+    ]
+   }
+  },
+  {
+   "role": "held",
+   "kind": "cube",
+   "count": 1,
+   "where": {
+    "size_class": [
+     3.0,
+     3.5
+    ],
+    "color": [
+     "green",
+     "purple"
+    ]
+   }
+  },
+  {
+   "role": "mat",
+   "kind": "pad",
+   "count": 1,
+   "where": {
+    "size_class": 9.0,
+    "color": {
+     "not_role": "held"
+    }
+   }
+  }
+ ],
+ "layout": [
+  {
+   "type": "region",
+   "role": "mat",
+   "r": [
+    0.17,
+    0.23
+   ],
+   "angle_deg": [
+    -35,
+    35
+   ]
+  },
+  {
+   "type": "on",
+   "role": "held",
+   "support": "@mat"
+  }
+ ],
+ "goal": [
+  {
+   "pred": "in_line",
+   "args": [
+    "@left_cube",
+    "@right_cube"
+   ],
+   "params": {
+    "order": "left_to_right",
+    "max_residual": 0.015,
+    "min_gap": 0.01,
+    "max_gap": 0.05
+   }
+  },
+  {
+   "pred": "lifted",
+   "args": [
+    "@held"
+   ],
+   "params": {
+    "height": 0.04
+   }
+  }
+ ],
+ "instructions": [
+  "Arrange {left_cube} and {right_cube} in a left-to-right row on the bare table, with a gap of one to five centimetres, then pick up the cube from {mat} and hold it at least four centimetres above the table. Judge left and right from in front of the robot.",
+  "First make a close table row with {left_cube} on the left and {right_cube} on the right, leaving one to five centimetres between them. Finish by holding the cube that began alone on {mat} at least four centimetres above the table. Use the view from in front of the robot.",
+  "The final arrangement should have {left_cube} followed by {right_cube} from left to right on the bare table, separated by one to five centimetres, while you hold the original occupant of {mat} at least four centimetres above the table. Left and right are as seen from in front of the robot.",
+  "Line up the two loose cubes on the table in the order {left_cube}, then {right_cube}, from left to right, with a one-to-five-centimetre gap. Afterward, lift the cube on {mat} and keep it at least four centimetres above the table. Judge the row from in front of the robot.",
+  "Put {left_cube} immediately to the left of {right_cube} in a table row with one to five centimetres of space between them. Then take the cube from {mat} and finish holding it at least four centimetres above the table. Use the front-facing view for left and right.",
+  "Make a left-to-right row of {left_cube} and {right_cube} on the bare table, leaving a gap between one and five centimetres. Once the row is ready, pick up the cube that started on {mat} and hold it at least four centimetres above the table. Left and right use the view from in front of the robot.",
+  "Place {left_cube} to the left of {right_cube} in a row on the bare table, keeping one to five centimetres between them. Then lift the cube that started on {mat} and keep holding it at least four centimetres above the table. Interpret left and right from in front of the robot.",
+  "Please arrange {left_cube} and {right_cube} in a left-to-right row on the bare tabletop with a one-to-five-centimetre gap. After that, pick up the cube originally on {mat} and finish holding it at least four centimetres above the table. Use the viewpoint of someone standing in front of the robot.",
+  "The two loose cubes should end up in a row on the bare table, {left_cube} to the left of {right_cube}, separated by one to five centimetres. Arrange them before lifting the cube originally alone on {mat}; finish holding that cube at least four centimetres above the table. Interpret the row from in front of the robot.",
+  "Put {left_cube} and {right_cube} in line on the bare tabletop, with {left_cube} first from the left and {right_cube} next, leaving a gap of one to five centimetres. Then pick up the cube that began on {mat} and hold it no less than four centimetres above the table. Use the front-of-robot viewpoint for left and right.",
+  "Begin with the row: on the bare table, position {left_cube} left of {right_cube}, one to five centimetres apart. Follow this by picking up the cube originally on {mat} and holding it at least four centimetres above the table. The left-to-right order must be judged from in front of the robot.",
+  "Please leave a one-to-five-centimetre gap in a bare-table row between {left_cube} on the left and {right_cube} on the right. After forming the row, lift the cube from {mat} and finish with it held at least four centimetres above the table. Take left and right from the view of a person in front of the robot.",
+  "Arrange the row before handling the cube on {mat}: place {left_cube} to the left of {right_cube} on the bare table, aligned in a row with one to five centimetres between them. Then pick up that original mat occupant and hold it at least four centimetres above the table. Use left and right as seen from in front of the robot.",
+  "First achieve a left-to-right row of {left_cube} followed by {right_cube} on the bare table, with the gap measuring one to five centimetres. Then pick up the cube initially resting on {mat}, and end with it still held at least four centimetres above the table. Judge left and right using the view from in front of the robot."
+ ],
+ "notes": "Combines an ordered table row with a final held-object goal selected by initial mat occupancy."
+}

@@ -1,0 +1,34 @@
+{
+ "description": "fast_v5 + image_cap_sticky (an image once omitted by the 12-image cap stays omitted after a context compaction; r13 pass a bodies: compaction-restored then re-omitted images were 3.3 % of all prompt tokens re-prefilled, the cap's own drops 5.4 %). Success A/B: r13 pass b (same seeds as pass a, fast_v5).",
+ "driver": {
+  "temperature": 1.0,
+  "thinking_token_budget": 1024,
+  "max_output_tokens": 4096,
+  "max_images": 12,
+  "image_drop_chunk": 6,
+  "server_poll_s": 0.02,
+  "server_grace_s": 0,
+  "keep_recent_tokens": 16000,
+  "image_cap_sticky": true
+ },
+ "tool_backend_options": {
+  "motion_speed_scale": 3,
+  "default_max_speed_m_s": 0.1,
+  "default_max_angular_speed_rad_s": 1.0,
+  "concurrent_label_check": true
+ },
+ "backend_options": {
+  "gripper_settle_min_steps": 6,
+  "step_profile": {
+   "speed_scale": 3,
+   "slow_zone_m": 0.03,
+   "settle_samples_needed": 1,
+   "gripper_still_needed": 2
+  }
+ },
+ "services": {
+  "sam3_cache_images": 8,
+  "molmo_stop_after_coords": true,
+  "depth_resolution_level": 0
+ }
+}

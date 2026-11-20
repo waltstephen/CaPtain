@@ -1,0 +1,58 @@
+{
+ "id": "obj_mixed_all_in_box",
+ "tid": 10011,
+ "version": 1,
+ "domain": "broad",
+ "split": "train",
+ "provenance": "hand",
+ "difficulty": 2,
+ "builder": "declarative",
+ "objects": [
+  {
+   "role": "destination",
+   "kind": "box",
+   "count": 1
+  },
+  {
+   "role": "a",
+   "kind": "cylinder",
+   "count": 1
+  },
+  {
+   "role": "b",
+   "kind": "block",
+   "count": 1
+  },
+  {
+   "role": "distractors",
+   "kind": "cube",
+   "count": [
+    0,
+    1
+   ]
+  }
+ ],
+ "layout": [],
+ "goal": [
+  {
+   "pred": "inside",
+   "args": [
+    "@a",
+    "@destination"
+   ]
+  },
+  {
+   "pred": "inside",
+   "args": [
+    "@b",
+    "@destination"
+   ]
+  }
+ ],
+ "instructions": [
+  "Put {a} and {b} in {destination}.",
+  "Place both {a} and {b} into {destination}.",
+  "Pack {a} and {b} into {destination}."
+ ],
+ "notes": "div2 variant (tools/make_variants.py)."
+}

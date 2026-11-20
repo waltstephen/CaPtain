@@ -1,0 +1,7 @@
+{
+ "id": "div2_heldout_views",
+ "description": "Every task of the div2 training mix on one eval seed, div2 scenes seen from the held-out camera views only (rear / over-the-shoulder and overhead; never in training).",
+ "mix": "div2",
+ "seeds": "9000",
+ "config": {"mix": "div2", "camera": "heldout"}
+}

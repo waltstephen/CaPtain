@@ -1,0 +1,106 @@
+{
+ "id": "gen_place_larger_colour_mate_and_hold_smalle",
+ "tid": 1147,
+ "version": 1,
+ "domain": "cube",
+ "split": "train",
+ "provenance": "llm",
+ "difficulty": 2,
+ "builder": "declarative",
+ "objects": [
+  {
+   "role": "smaller",
+   "kind": "cube",
+   "count": 1,
+   "where": {
+    "size_class": 3.0
+   }
+  },
+  {
+   "role": "larger",
+   "kind": "cube",
+   "count": 1,
+   "where": {
+    "size_class": 4.0,
+    "color": {
+     "same_role": "smaller"
+    }
+   }
+  },
+  {
+   "role": "reference",
+   "kind": "cube",
+   "count": 1,
+   "where": {
+    "size_class": 3.5,
+    "color": {
+     "not_role": "smaller"
+    }
+   }
+  }
+ ],
+ "layout": [],
+ "goal": [
+  {
+   "pred": "relation",
+   "args": [
+    "@larger",
+    "@reference",
+    "%dir"
+   ],
+   "params": {
+    "near": 0.03,
+    "far": 0.12,
+    "lateral": 0.06
+   }
+  },
+  {
+   "pred": "lifted",
+   "args": [
+    "@smaller"
+   ],
+   "params": {
+    "height": 0.04
+   }
+  }
+ ],
+ "vars": {
+  "dir": {
+   "left": "to the left of",
+   "right": "to the right of"
+  }
+ },
+ "instructions": [
+  "Of the two {smaller.color} cubes, place the larger on the table just {%dir} {reference}, then hold the smaller at least four centimetres above the table. Judge left and right from in front of the robot.",
+  "Find the matching-colour pair: the two {smaller.color} cubes. Put the larger one on the table just {%dir} {reference}, and finish holding the smaller one at least four centimetres above the table. Use the view from in front of the robot.",
+  "The larger {smaller.color} cube should rest on the table just {%dir} {reference}; the smaller {smaller.color} cube should be held at least four centimetres above the table. Left and right are as seen from in front of the robot.",
+  "First compare the two {smaller.color} cubes by size. Set the larger just {%dir} {reference} on the table, then pick up the smaller and keep it at least four centimetres above the table. Judge directions while facing the robot from the front.",
+  "Give the two {smaller.color} cubes different jobs: park the larger on the table just {%dir} {reference}, and hold the smaller at least four centimetres above the table. Use left and right from the viewpoint in front of the robot.",
+  "Leave the larger member of the {smaller.color} pair on the table just {%dir} {reference}. Finish with the smaller member held at least four centimetres above the table, interpreting left and right from in front of the robot.",
+  "Take the two {smaller.color} cubes as a pair. Place the bigger cube on the table just {%dir} {reference}, then lift the smaller cube and hold it at least four centimetres above the table. Read left and right from a position in front of the robot.",
+  "Please put the larger of the two {smaller.color} cubes on the table just {%dir} {reference}. After that, pick up the smaller cube and keep it at least four centimetres above the table. Use the left and right of someone facing the robot from the front.",
+  "Your final arrangement should have the larger of the two {smaller.color} cubes resting on the table just {%dir} {reference}, with the smaller cube held at least four centimetres above the table. Position the larger cube first, and interpret left and right from in front of the robot.",
+  "Working with the two {smaller.color} blocks, first set the larger block on the table just {%dir} {reference}. Next, raise the smaller block and keep holding it at least four centimetres above the table. Take directions from the viewpoint in front of the robot.",
+  "Face the robot from the front to determine left and right. Of the two {smaller.color} cubes, put the larger on the table just {%dir} {reference}; then finish by holding the smaller at least four centimetres above the table.",
+  "Find the pair of {smaller.color} cubes and compare their sizes. The bigger one goes on the table just {%dir} {reference}; once it is there, hold the smaller one at least four centimetres above the table. Left and right refer to the view from in front of the robot.",
+  "Larger cube down, smaller cube up: use the two {smaller.color} cubes. Set the larger on the table just {%dir} {reference}, then hold the smaller at least four centimetres above the table. Judge left and right while facing the robot from the front.",
+  "Could you first leave the larger of the two {smaller.color} cubes resting on the table just {%dir} {reference}, and then keep the smaller cube held at least four centimetres above the table? Interpret left and right as viewed from in front of the robot.",
+  "Arrange the two matching {smaller.color} blocks as follows: place the larger block on the table just {%dir} {reference}, then lift and hold the smaller block at least four centimetres above the table. Use a front-facing view of the robot for left and right.",
+  "Start with the larger member of the two-cube {smaller.color} pair: put it on the table just {%dir} {reference}. Follow by picking up the smaller member and holding it at least four centimetres above the table. Determine left and right from in front of the robot.",
+  "The two {smaller.color} cubes have separate destinations: the larger should rest on the table just {%dir} {reference}, and the smaller should remain in your hold at least four centimetres above the table. Set down the larger before lifting the smaller, using left and right as seen from in front of the robot.",
+  "Use the viewpoint of a person standing in front of and facing the robot. Put the bigger of the two {smaller.color} cubes on the table just {%dir} {reference}, then pick up the smaller and continue holding it at least four centimetres above the table.",
+  "For the pair of {smaller.color} cubes, complete these steps in order: set the larger cube on the table just {%dir} {reference}; lift the smaller cube; keep the smaller cube held at least four centimetres above the table. Left and right are judged from in front of the robot.",
+  "Please give the larger of the two {smaller.color} blocks a resting place on the table just {%dir} {reference}. Then take hold of the smaller block and keep it at least four centimetres above the table. Work out left and right from the front of the robot, facing it.",
+  "End with the smaller of the two {smaller.color} cubes held at least four centimetres above the table, but first place the larger cube on the table just {%dir} {reference}. Throughout, use left and right from the viewpoint in front of the robot.",
+  "Identify the two cubes that are {smaller.color}. Put the larger one down on the table just {%dir} {reference}; afterward, raise the smaller one and hold it at least four centimetres above the table. Interpret the direction from in front of the robot.",
+  "With the two {smaller.color} cubes, do the tabletop placement first: leave the larger cube resting just {%dir} {reference} on the table. Then finish with the smaller cube held at least four centimetres above the table. Use the view facing the robot from the front to judge left and right.",
+  "Make the larger of the two {smaller.color} blocks rest on the table just {%dir} {reference}. Once that is done, pick up the smaller block and maintain a hold at least four centimetres above the table. Left and right should be read from in front of the robot.",
+  "Treat the two {smaller.color} cubes according to size: first put the bigger one on the table just {%dir} {reference}, and then hold the smaller one at least four centimetres above the table. Judge directions as someone facing the robot from the front would.",
+  "From the matching pair of {smaller.color} cubes, select the larger for placement on the table just {%dir} {reference}. After placing it, lift the smaller cube and keep it held at least four centimetres above the table. Use left and right as seen from in front of the robot.",
+  "First, the larger of the two {smaller.color} cubes should be resting on the table just {%dir} {reference}. Next, the smaller should be lifted and held at least four centimetres above the table. Interpret left and right from a viewpoint in front of the robot.",
+  "Put the two {smaller.color} blocks to work in size order: set the larger down on the table just {%dir} {reference}, then pick up the smaller and keep holding it at least four centimetres above the table. Directions are from the perspective of someone in front of and facing the robot.",
+  "Please arrange the larger of the two {smaller.color} cubes on the table just {%dir} {reference} before lifting the smaller cube. Finish holding that smaller cube at least four centimetres above the table. Determine left and right by looking at the robot from the front.",
+  "Compare the sizes of the two {smaller.color} cubes, place the larger on the table just {%dir} {reference}, and only then raise the smaller and hold it at least four centimetres above the table. For left and right, take the viewpoint in front of the robot."
+ ],
+ "notes": "Requires size comparison within a colour-selected pair to assign one cube a relative table position and the other a final held state."
+}

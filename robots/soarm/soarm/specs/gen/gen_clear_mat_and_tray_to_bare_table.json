@@ -1,0 +1,131 @@
+{
+ "id": "gen_clear_mat_and_tray_to_bare_table",
+ "tid": 1223,
+ "version": 1,
+ "domain": "cube",
+ "split": "train",
+ "provenance": "llm",
+ "difficulty": 3,
+ "builder": "declarative",
+ "objects": [
+  {
+   "role": "mat",
+   "kind": "pad",
+   "count": 1,
+   "where": {
+    "size_class": 9.0,
+    "color": "gray"
+   }
+  },
+  {
+   "role": "tray",
+   "kind": "tray",
+   "count": 1,
+   "where": {
+    "size_class": 18.0,
+    "color": "white"
+   }
+  },
+  {
+   "role": "mat_cube",
+   "kind": "cube",
+   "count": 1,
+   "where": {
+    "size_class": 3.5,
+    "color": [
+     "red",
+     "orange"
+    ]
+   }
+  },
+  {
+   "role": "tray_cube",
+   "kind": "cube",
+   "count": 1,
+   "where": {
+    "size_class": 3.5,
+    "color": [
+     "blue",
+     "cyan"
+    ]
+   }
+  },
+  {
+   "role": "extra_tray_cube",
+   "kind": "cube",
+   "count": [
+    0,
+    1
+   ],
+   "where": {
+    "size_class": 3.5,
+    "color": [
+     "green",
+     "yellow"
+    ]
+   }
+  }
+ ],
+ "layout": [
+  {
+   "type": "region",
+   "role": "tray",
+   "r": [
+    0.17,
+    0.24
+   ],
+   "angle_deg": [
+    -50,
+    50
+   ]
+  },
+  {
+   "type": "on",
+   "role": "mat_cube",
+   "support": "@mat"
+  },
+  {
+   "type": "on",
+   "role": "tray_cube",
+   "support": "@tray"
+  },
+  {
+   "type": "on",
+   "role": "extra_tray_cube",
+   "support": "@tray"
+  }
+ ],
+ "goal": [
+  {
+   "pred": "off_region",
+   "args": [
+    "@mat_cube",
+    "@mat"
+   ]
+  },
+  {
+   "pred": "off_region",
+   "args": [
+    "@tray_cube",
+    "@tray"
+   ]
+  },
+  {
+   "pred": "off_region",
+   "for_each": "extra_tray_cube",
+   "args": [
+    "$",
+    "@tray"
+   ]
+  }
+ ],
+ "instructions": [
+  "Clear both {mat} and {tray}. Put every cube from either place directly on the bare table, completely outside both.",
+  "Empty the tray and clear the mat onto the bare tabletop. If the tray contains a second cube, remove that cube too.",
+  "Both {mat} and {tray} should end up empty. Move their cubes onto uncovered table space, not onto each other or onto either destination.",
+  "Take the cube off {mat}, then take every cube out of {tray}. Set each one directly on the table with no footprint overlapping the mat or tray.",
+  "Move all cubes supported by {mat} or contained in {tray} to bare tabletop positions completely clear of both. Include an extra tray cube if present.",
+  "Make the mat and tray cube-free: remove the mat occupant and every tray occupant, placing all of them directly on the uncovered table."
+ ],
+ "notes": "Requires simultaneous clearance of a flat support and a container, with an optional second container occupant and no transfer between the two supports."
+}

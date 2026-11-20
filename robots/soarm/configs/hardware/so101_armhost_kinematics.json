@@ -1,0 +1,519 @@
+{
+ "schema_version": "captain-so101-kinematics/v1",
+ "mjcf": "robotstudio_so101/so101.xml (Menagerie)",
+ "model": "final",
+ "bodies": {
+  "shoulder": {
+   "pos": [
+    0.0388353,
+    0.0,
+    0.06411390893679694
+   ],
+   "quat": [
+    0.004657144798593376,
+    0.0,
+    0.9999856330682898,
+    0.0026541777138480464
+   ]
+  },
+  "upper_arm": {
+   "pos": [
+    -0.03832440278830179,
+    -0.015796069040521377,
+    -0.0542
+   ],
+   "quat": [
+    0.5020415073832626,
+    -0.49795012286808554,
+    -0.49795012286808554,
+    -0.5020415073832626
+   ]
+  },
+  "lower_arm": {
+   "pos": [
+    -0.11316504605136261,
+    -0.028,
+    0.0
+   ],
+   "quat": [
+    0.7070778762359128,
+    0.006763433808941264,
+    -0.006000819821861096,
+    0.7070778762359127
+   ]
+  },
+  "wrist": {
+   "pos": [
+    -0.13307336351363028,
+    0.0052,
+    0.0
+   ],
+   "quat": [
+    0.7070935694626219,
+    0.005163119673981987,
+    -0.0032726509817642786,
+    -0.7070935694626219
+   ]
+  },
+  "gripper": {
+   "pos": [
+    0.0027450496861225614,
+    -0.0611,
+    0.01823373333941049
+   ],
+   "quat": [
+    0.017051609895047806,
+    -0.017365178149679944,
+    0.7004277899471564,
+    0.7133082112646393
+   ]
+  }
+ },
+ "joint_zero_offset_rad": {
+  "shoulder_lift": -0.12368078256911579,
+  "elbow_flex": 0.09982409447470482,
+  "wrist_flex": 0.02311768425659657
+ },
+ "compliance_rad_per_Nm": {
+  "shoulder_lift": -0.0387592600366376,
+  "elbow_flex": -0.028060905756551763,
+  "wrist_flex": 0.050141789691523324
+ },
+ "params": {
+  "shoulder.rx": {
+   "value": -0.005308380849435493,
+   "sd": 0.006294010705118266,
+   "prior_sd": 0.03490658503988659,
+   "unit": "rad"
+  },
+  "shoulder.ry": {
+   "value": -0.009314334203363951,
+   "sd": 0.006580874275631938,
+   "prior_sd": 0.03490658503988659,
+   "unit": "rad"
+  },
+  "shoulder.tz": {
+   "value": -0.0017139089367969509,
+   "sd": 0.0024047812611636037,
+   "prior_sd": 0.005,
+   "unit": "m"
+  },
+  "upper_arm.ty": {
+   "value": -0.007925202788301793,
+   "sd": 0.0009807168151337595,
+   "prior_sd": 0.005,
+   "unit": "m"
+  },
+  "upper_arm.tz": {
+   "value": 0.0024817309594786217,
+   "sd": 0.0007722731543772801,
+   "prior_sd": 0.005,
+   "unit": "m"
+  },
+  "upper_arm.ry": {
+   "value": 0.008182791859670495,
+   "sd": 0.0015050940541164236,
+   "prior_sd": 0.03490658503988659,
+   "unit": "rad"
+  },
+  "lower_arm.ty": {
+   "value": 0.0005950460513626065,
+   "sd": 0.0001706247987293997,
+   "prior_sd": 0.005,
+   "unit": "m"
+  },
+  "lower_arm.rx": {
+   "value": 0.0010785137391709195,
+   "sd": 0.0005203289245256426,
+   "prior_sd": 0.03490658503988659,
+   "unit": "rad"
+  },
+  "lower_arm.ry": {
+   "value": -0.01805162656902001,
+   "sd": 0.0003670244267513425,
+   "prior_sd": 0.03490658503988659,
+   "unit": "rad"
+  },
+  "wrist.ty": {
+   "value": 0.00182663648636972,
+   "sd": 0.00020281266716239995,
+   "prior_sd": 0.005,
+   "unit": "m"
+  },
+  "wrist.rx": {
+   "value": 0.01193005557169599,
+   "sd": 0.0006061488739887897,
+   "prior_sd": 0.03490658503988659,
+   "unit": "rad"
+  },
+  "wrist.ry": {
+   "value": 0.002673543114800758,
+   "sd": 0.00047314659059933325,
+   "prior_sd": 0.03490658503988659,
+   "unit": "rad"
+  },
+  "gripper.tx": {
+   "value": -0.0027483053661031096,
+   "sd": 0.0006088860962165528,
+   "prior_sd": 0.005,
+   "unit": "m"
+  },
+  "gripper.rx": {
+   "value": -0.018221315618482448,
+   "sd": 0.0018857515235715938,
+   "prior_sd": 0.03490658503988659,
+   "unit": "rad"
+  },
+  "zero.shoulder_lift": {
+   "value": -0.12368078256911579,
+   "sd": 0.004536656990964662,
+   "prior_sd": 0.08726646259971647,
+   "unit": "rad"
+  },
+  "zero.elbow_flex": {
+   "value": 0.09982409447470482,
+   "sd": 0.0033967255890859065,
+   "prior_sd": 0.08726646259971647,
+   "unit": "rad"
+  },
+  "zero.wrist_flex": {
+   "value": 0.02311768425659657,
+   "sd": 0.002717388222436142,
+   "prior_sd": 0.08726646259971647,
+   "unit": "rad"
+  },
+  "comp.shoulder_lift": {
+   "value": -0.0387592600366376,
+   "sd": 0.0017130179388340895,
+   "prior_sd": 0.03,
+   "unit": "rad/Nm"
+  },
+  "comp.elbow_flex": {
+   "value": -0.028060905756551763,
+   "sd": 0.0029100471765977857,
+   "prior_sd": 0.03,
+   "unit": "rad/Nm"
+  },
+  "comp.wrist_flex": {
+   "value": 0.050141789691523324,
+   "sd": 0.020927802669211883,
+   "prior_sd": 0.03,
+   "unit": "rad/Nm"
+  }
+ },
+ "correlated_pairs": [],
+ "T_gripperframe_cam": [
+  [
+   0.4358642047155303,
+   -0.0041146700528171265,
+   0.9000030358493547,
+   -0.09936626687885877
+  ],
+  [
+   0.8835487272378928,
+   -0.18843847494472837,
+   -0.4287570264809718,
+   0.06863039395923487
+  ],
+  [
+   0.17135939321787436,
+   0.9820763771982611,
+   -0.07849807453142099,
+   0.003346703335649265
+  ],
+  [
+   0.0,
+   0.0,
+   0.0,
+   1.0
+  ]
+ ],
+ "T_base_tag": [
+  [
+   -0.019714287686417205,
+   -0.9998052671834194,
+   -0.0008800984651678306,
+   0.4570153194068768
+  ],
+  [
+   0.9998052468124161,
+   -0.01971506699700756,
+   0.0008857650179844111,
+   -0.017275202861550598
+  ],
+  [
+   -0.0009029437306723779,
+   -0.0008624648367992423,
+   0.9999992204232085,
+   -1.705320903236553e-05
+  ],
+  [
+   0.0,
+   0.0,
+   0.0,
+   1.0
+  ]
+ ],
+ "T_base_board": [
+  [
+   0.05734975026058797,
+   -0.998354093804912,
+   0.0003309501798193018,
+   0.5486154700176611
+  ],
+  [
+   -0.9983445850154331,
+   -0.057347746753084516,
+   0.004396079242573056,
+   0.12542405508517313
+  ],
+  [
+   -0.0043698644614134415,
+   -0.0005825163666198026,
+   -0.9999902824324202,
+   0.005132126968176228
+  ],
+  [
+   0.0,
+   0.0,
+   0.0,
+   1.0
+  ]
+ ],
+ "heights_mm": {
+  "tag": [
+   -0.1,
+   0.1
+  ],
+  "board": [
+   3.7,
+   5.1
+  ]
+ },
+ "fit_all": {
+  "tag": {
+   "n_views": 73,
+   "rms_px": 3.454746423576519,
+   "plane_err_mm_mean": 2.0443591430358588,
+   "plane_err_mm_p90": 4.378193836198025,
+   "plane_err_mm_max": 10.927238684495027
+  },
+  "board": {
+   "n_views": 38,
+   "rms_px": 1.3099683702511413,
+   "plane_err_mm_mean": 0.8932075645816165,
+   "plane_err_mm_p90": 1.6713649459821107,
+   "plane_err_mm_max": 13.823900135806896
+  }
+ },
+ "data": {
+  "tag_logs": [
+   "tag.log",
+   "kc/k1.log",
+   "kc/k2.log",
+   "kc/k3.log"
+  ],
+  "board_logs": [
+   "cal.log",
+   "cal2.log",
+   "cal3.log"
+  ],
+  "n_views": 111,
+  "note": "tag.log: 40 AprilTag views from before (34 usable); kc/k1-k3.log: 67 new views planned by tools/calib_views.py (tag corner 1, 5 mm from a block, dropped in those); cal*.log: 38 checkerboard views (board on ~5 mm glass, own pose). Tag corners within 535 px of the left (gripper) edge or 45 px of the border are dropped. Logs and snaps: armhost ${SOARM_ROOT}/armcal"
+ },
+ "validation": {
+  "holdout_expr": "r[\"2\"]>=2450",
+  "full": {
+   "train": {
+    "n_views": 56,
+    "rms_px": 3.659666077716069,
+    "plane_err_mm_mean": 2.2929740746120624,
+    "plane_err_mm_p90": 5.098551042233251,
+    "plane_err_mm_max": 10.84264510407027
+   },
+   "train_board": {
+    "n_views": 38,
+    "rms_px": 1.3112341722825809,
+    "plane_err_mm_mean": 0.8913812468155656,
+    "plane_err_mm_p90": 1.6613395126633885,
+    "plane_err_mm_max": 13.752883937355705
+   },
+   "heldout": {
+    "n_views": 17,
+    "rms_px": 2.728305110349832,
+    "plane_err_mm_mean": 1.1699910552666657,
+    "plane_err_mm_p90": 1.8431282676410408,
+    "plane_err_mm_max": 3.7449494224772373
+   },
+   "heights_mm": {
+    "tag": [
+     -0.1,
+     0.1
+    ],
+    "board": [
+     3.7,
+     5.0
+    ]
+   },
+   "heldout_views": {
+    "a27": 3.74,
+    "k1_12": 1.11,
+    "k1_14": 0.93,
+    "k1_15": 1.65,
+    "k1_16": 2.13,
+    "k1_18": 0.95,
+    "k2_06": 1.77,
+    "k2_08": 1.22,
+    "k2_09": 1.13,
+    "k2_10": 1.17,
+    "k2_11": 1.46,
+    "k2_12": 1.24,
+    "k2_15": 1.44,
+    "k3_12": 0.96,
+    "k3_14": 2.45,
+    "k3_15": 0.7,
+    "k3_16": 1.2
+   },
+   "worst_train_views_mm": {
+    "g20": 13.75,
+    "g07": 13.39,
+    "g13": 11.57,
+    "k3_09": 10.84,
+    "k1_10": 10.04,
+    "g09": 8.74
+   }
+  },
+  "final": {
+   "train": {
+    "n_views": 56,
+    "rms_px": 3.6600236011412566,
+    "plane_err_mm_mean": 2.292880131245892,
+    "plane_err_mm_p90": 5.097401570522958,
+    "plane_err_mm_max": 10.845068703666682
+   },
+   "train_board": {
+    "n_views": 38,
+    "rms_px": 1.3111830003142546,
+    "plane_err_mm_mean": 0.8914194259510004,
+    "plane_err_mm_p90": 1.6614962423007422,
+    "plane_err_mm_max": 13.749876380915362
+   },
+   "heldout": {
+    "n_views": 17,
+    "rms_px": 2.7244462611673987,
+    "plane_err_mm_mean": 1.1683549175771797,
+    "plane_err_mm_p90": 1.8411298947188721,
+    "plane_err_mm_max": 3.74808066550858
+   },
+   "heights_mm": {
+    "tag": [
+     -0.2,
+     0.1
+    ],
+    "board": [
+     3.7,
+     5.0
+    ]
+   },
+   "heldout_views": {
+    "a27": 3.75,
+    "k1_12": 1.1,
+    "k1_14": 0.93,
+    "k1_15": 1.65,
+    "k1_16": 2.13,
+    "k1_18": 0.95,
+    "k2_06": 1.77,
+    "k2_08": 1.22,
+    "k2_09": 1.13,
+    "k2_10": 1.17,
+    "k2_11": 1.46,
+    "k2_12": 1.24,
+    "k2_15": 1.43,
+    "k3_12": 0.95,
+    "k3_14": 2.45,
+    "k3_15": 0.69,
+    "k3_16": 1.2
+   },
+   "worst_train_views_mm": {
+    "g20": 13.75,
+    "g07": 13.39,
+    "g13": 11.57,
+    "k3_09": 10.85,
+    "k1_10": 10.05,
+    "g09": 8.73
+   }
+  }
+ },
+ "method": "tools/calib_kinematics.py: calib_kinematics.py eval <kin.json> <cameras.json> --tag LOG..     (prediction error of a saved fit)",
+ "date": "2026-11-12",
+ "touch_tests": {
+  "method": "tools/calib_touch.py measure (render the predicted tag, ECC-register to the wrist image); reliable only when the tag is seen at moderate distance (ECC correlation > 0.9)",
+  "touch_corner (2026-11-12 earlier run, raw 1929 2894 1101 2825 3960, corner 3-5 mm above)": {
+   "rigid_mm": 14.7,
+   "zeros_only_mm": 5.2,
+   "final_mm": 3.4,
+   "ecc_corr": 0.98
+  },
+  "new touches t1/t2 (raw lift 2650-2960, camera 7-13 cm from the paper)": "not measurable reliably (ECC correlation 0.05-0.73); overlays (snaps/kc_overlay_*.jpg) show the prediction off by roughly 1-3 cm at lift >= 2880 / elbow ~1000 (beyond the calibration views, lift <= 2713) and at wrist_flex < 2100"
+ },
+ "limits": "validated inside the calibrated range: shoulder_lift raw <= ~2710, wrist_flex raw >= ~2050. Outside it (far/low reach with lift > 2750, steeply flexed wrist) errors of 1-3 cm were seen; do not rely on FK there.",
+ "validation_clusters": {
+  "note": "each row: fit without the cluster, error on it (tag-plane mm mean/max); final vs rigid",
+  "far_lift>=2450 (17 views)": {
+   "final": [
+    1.17,
+    3.75
+   ],
+   "zeros": [
+    2.94,
+    6.89
+   ],
+   "rigid": [
+    11.56,
+    20.7
+   ]
+  },
+  "pan_sides pan<1990|>2130 (42)": {
+   "final": [
+    1.13,
+    13.46
+   ],
+   "zeros": [
+    1.76,
+    15.9
+   ],
+   "rigid": [
+    2.4,
+    21.41
+   ]
+  },
+  "wrist_flex<=2500 (15)": {
+   "final": [
+    4.87,
+    12.67
+   ],
+   "zeros": [
+    5.91,
+    15.7
+   ],
+   "rigid": [
+    7.17,
+    22.5
+   ]
+  },
+  "low_lift<1700 (53)": {
+   "final": [
+    3.34,
+    19.98
+   ],
+   "zeros": [
+    2.06,
+    16.82
+   ],
+   "rigid": [
+    2.8,
+    23.93
+   ]
+  }
+ }
+}

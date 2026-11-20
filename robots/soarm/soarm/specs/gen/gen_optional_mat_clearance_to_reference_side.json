@@ -1,0 +1,169 @@
+{
+ "id": "gen_optional_mat_clearance_to_reference_side",
+ "tid": 1132,
+ "version": 1,
+ "domain": "cube",
+ "split": "train",
+ "provenance": "llm",
+ "difficulty": 1,
+ "builder": "declarative",
+ "objects": [
+  {
+   "role": "mat",
+   "kind": "pad",
+   "count": 1,
+   "where": {
+    "size_class": 8.5,
+    "color": "gray"
+   }
+  },
+  {
+   "role": "container",
+   "kind": "bowl",
+   "count": 1,
+   "where": {
+    "size_class": 12.0,
+    "color": "white"
+   }
+  },
+  {
+   "role": "parcel",
+   "kind": "cube",
+   "count": 1,
+   "where": {
+    "size_class": 3.0,
+    "color": [
+     "red",
+     "orange"
+    ]
+   }
+  },
+  {
+   "role": "reference",
+   "kind": "cube",
+   "count": 1,
+   "where": {
+    "size_class": 3.5,
+    "color": [
+     "blue",
+     "cyan"
+    ]
+   }
+  },
+  {
+   "role": "occupant",
+   "kind": "cube",
+   "count": [
+    0,
+    1
+   ],
+   "where": {
+    "size_class": 3.0,
+    "color": [
+     "green",
+     "purple"
+    ]
+   }
+  }
+ ],
+ "layout": [
+  {
+   "type": "on",
+   "role": "occupant",
+   "support": "@mat"
+  },
+  {
+   "type": "region",
+   "role": "container",
+   "r": [
+    0.17,
+    0.24
+   ],
+   "angle_deg": [
+    -50,
+    50
+   ]
+  },
+  {
+   "type": "region",
+   "role": "reference",
+   "r": [
+    0.18,
+    0.22
+   ],
+   "angle_deg": [
+    -15,
+    15
+   ]
+  }
+ ],
+ "goal": [
+  {
+   "pred": "inside",
+   "args": [
+    "@parcel",
+    "@container"
+   ]
+  },
+  {
+   "pred": "off_region",
+   "for_each": "occupant",
+   "args": [
+    "$",
+    "@mat"
+   ]
+  },
+  {
+   "pred": "relation",
+   "for_each": "occupant",
+   "args": [
+    "$",
+    "@reference",
+    "%dir"
+   ],
+   "params": {
+    "far": 0.08,
+    "lateral": 0.05
+   }
+  }
+ ],
+ "vars": {
+  "dir": {
+   "left": "to the left of",
+   "right": "to the right of"
+  }
+ },
+ "instructions": [
+  "Put {parcel} in {container}. If {mat} holds a cube, move that cube completely off the mat onto the table {%dir} {reference}. Judge left and right from in front of the robot, facing it.",
+  "Store {parcel} inside {container}; if there is a cube on {mat}, park it on the bare table {%dir} {reference}, with no part overlapping the mat. Use the view from in front of the robot.",
+  "The parcel {parcel} belongs in {container}. Any cube initially on {mat} must finish entirely clear of the mat, resting on the table {%dir} {reference}, as seen from in front of the robot.",
+  "First put {parcel} into {container}. If the mat is occupied, take its cube off and set it on the table {%dir} {reference}, completely outside {mat}. Left and right use the view from in front of the robot.",
+  "Place {parcel} inside {container} and, only if {mat} has a cube, relocate that cube to the bare table {%dir} {reference}. Keep its whole footprint off the mat and judge sides from in front of the robot.",
+  "If {mat} is empty, just put {parcel} in {container}. Otherwise also move the mat's cube completely clear of it onto the table {%dir} {reference}; left and right are seen from in front of the robot.",
+  "Put {parcel} inside {container} first. Then, if a cube is on {mat}, move it onto the table {%dir} {reference}, leaving its entire footprint clear of the mat. Determine left and right while standing in front of the robot and facing it.",
+  "Please place {parcel} in {container}. If {mat} is occupied by a cube, please transfer that cube to the bare table {%dir} {reference}, with no part of it overlapping the mat. Use the perspective of someone in front of the robot, facing it.",
+  "{parcel} should end up inside {container}. Any cube initially resting on {mat} should then end up on the table {%dir} {reference}, entirely outside the mat's boundary. Interpret the side from in front of the robot, looking toward it.",
+  "Begin by placing {parcel} into {container}; afterward, check {mat}. If a cube is there, set it on the bare table {%dir} {reference}, completely clear of the mat. Judge the direction from a position in front of the robot, facing it.",
+  "Stow {parcel} in {container}. When {mat} has a cube on it, relocate that cube to the tabletop {%dir} {reference} so that none of its footprint remains over the mat. Left and right are those of a person facing the robot from the front.",
+  "First, {parcel} goes inside {container}. Next, only if a cube occupies {mat}, that cube goes onto the bare table {%dir} {reference}, wholly off the mat. Take the viewpoint directly in front of the robot, facing it.",
+  "Place {parcel} into {container}, then clear {mat} if it holds a cube: move that cube to the table {%dir} {reference}, without leaving any part overlapping the mat. Read left and right from in front of the robot while facing it.",
+  "Please put {parcel} inside {container} before dealing with {mat}. If a block is on the mat, place that block on the bare tabletop {%dir} {reference}, with its whole footprint outside the mat. Use the view of someone facing the robot from in front.",
+  "If {mat} is unoccupied, putting {parcel} into {container} is all that is needed. If a cube is on the mat, put the parcel in first and then move that cube onto the table {%dir} {reference}, entirely clear of the mat. Judge sides from in front of the robot, facing it.",
+  "Deposit {parcel} inside {container}. After that, move the cube on {mat}, if there is one, to a spot on the bare table {%dir} {reference} where it does not overlap the mat at all. Use left and right as viewed from in front of the robot, facing it.",
+  "The required result is {parcel} inside {container} and, if {mat} initially carries a cube, that cube on the table {%dir} {reference} with its entire footprint off the mat. Complete the parcel placement first. Determine the side by facing the robot from in front of it.",
+  "Put {parcel} in {container}; then, should {mat} hold a block, lift that block off and set it down on the bare table {%dir} {reference}. It must be completely outside the mat, and the direction is judged from in front of the robot, facing it.",
+  "Start with {parcel}: place it inside {container}. Turn to {mat} next; if a cube rests there, move it onto the tabletop {%dir} {reference}, leaving no overlap with the mat. Left and right follow the view from in front of the robot, looking at it.",
+  "Please finish with {parcel} contained in {container}. Once that is done, any cube initially on {mat} must be resting on the bare table {%dir} {reference}, completely clear of the mat. Take left and right from the perspective of a person in front of the robot and facing it.",
+  "Place {parcel} within {container} first, and then handle the cube on {mat} only if one is present. Set that cube on the table {%dir} {reference}, with no portion of its footprint on the mat. Assess the direction while facing the robot from the front.",
+  "Stow {parcel} inside {container}; leave the mat-related step out if {mat} is empty. Otherwise, afterward transfer its cube onto the bare table {%dir} {reference}, wholly outside the mat's area. The side is defined by the view from in front of the robot, facing it.",
+  "Your first step is to put {parcel} into {container}. Your next step, if {mat} supports a cube, is to move that cube onto the tabletop {%dir} {reference}, entirely off the mat. Use the left and right of an observer standing in front of and facing the robot.",
+  "Get {parcel} inside {container}. Then, if there is a block on {mat}, park it on the bare table {%dir} {reference}; none of the block may overlap the mat. Judge sides while looking at the robot from in front of it.",
+  "After placing {parcel} in {container}, check whether {mat} has a cube. If so, relocate it to the table {%dir} {reference}, ensuring its whole footprint is clear of the mat; if not, there is nothing further to do. Interpret left and right from in front of the robot, facing it.",
+  "Put {parcel} inside {container} before moving any cube from {mat}. If such a cube is present, its destination is the bare table {%dir} {reference}, completely outside the mat with no overlap. Use the viewpoint of someone facing the robot from in front.",
+  "First complete the placement of {parcel} inside {container}. Then make sure any cube initially occupying {mat} is on the table {%dir} {reference}, with its entire footprint beyond the mat's boundary. Left and right are judged from in front of the robot, facing it.",
+  "Please begin by storing {parcel} in {container}. If you find a cube on {mat}, move it next to a bare-table position {%dir} {reference}, leaving the cube completely off the mat. Determine the side from the front of the robot while facing it.",
+  "Place {parcel} inside {container}, followed by this conditional step: if {mat} holds a cube, transfer that cube onto the table {%dir} {reference} with no part of its footprint overlapping the mat. Judge left and right as a person in front of the robot, facing it.",
+  "With left and right taken from in front of the robot, facing it, put {parcel} into {container} first. If a cube is initially on {mat}, then set that cube on the bare table {%dir} {reference}, completely clear of the mat; otherwise, stop after placing the parcel."
+ ],
+ "notes": "Makes optional mat clearance satisfy both complete footprint exclusion and a directional parking constraint while a separate cube is stored."
+}

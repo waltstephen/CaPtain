@@ -1,0 +1,79 @@
+{
+ "id": "cube_stack_three",
+ "tid": 102,
+ "version": 2,
+ "domain": "cube",
+ "split": "train",
+ "provenance": "hand",
+ "difficulty": 3,
+ "builder": "declarative",
+ "objects": [
+  {
+   "role": "l0",
+   "kind": "cube",
+   "count": 1,
+   "where": {
+    "size_class": {
+     "max": 3.5
+    }
+   }
+  },
+  {
+   "role": "l1",
+   "kind": "cube",
+   "count": 1,
+   "where": {
+    "size_class": {
+     "max_role": "l0"
+    }
+   }
+  },
+  {
+   "role": "l2",
+   "kind": "cube",
+   "count": 1,
+   "where": {
+    "size_class": {
+     "max_role": "l1"
+    }
+   }
+  },
+  {
+   "role": "distractors",
+   "kind": "cube",
+   "count": [
+    0,
+    1
+   ]
+  }
+ ],
+ "layout": [
+  {
+   "type": "region",
+   "role": "l0",
+   "r": [
+    0.18,
+    0.24
+   ],
+   "angle_deg": [
+    -50,
+    50
+   ]
+  }
+ ],
+ "goal": [
+  {
+   "pred": "stacked",
+   "args": [
+    "@l0",
+    "@l1",
+    "@l2"
+   ]
+  }
+ ],
+ "instructions": [
+  "Put {l1} on {l0}, then put {l2} on top of {l1}.",
+  "Stack {l1} onto {l0} and finish the tower with {l2} on top."
+ ],
+ "notes": "Reach fix (soarm-taskgen measurement 11-10): as first written 0-4/100 layouts were reachable; this version solved 8-10/10 by script. Equal sizes are allowed, so the order is named step by step (ordinal_stack names it bottom-up)."
+}

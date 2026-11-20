@@ -1,0 +1,120 @@
+{
+ "id": "gen_relocate_landmark_then_park_beside",
+ "tid": 1139,
+ "version": 1,
+ "domain": "cube",
+ "split": "train",
+ "provenance": "llm",
+ "difficulty": 2,
+ "builder": "declarative",
+ "objects": [
+  {
+   "role": "mat",
+   "kind": "pad",
+   "count": 1,
+   "where": {
+    "size_class": 9.5,
+    "color": [
+     "yellow",
+     "orange"
+    ]
+   }
+  },
+  {
+   "role": "anchor",
+   "kind": "cube",
+   "count": 1,
+   "where": {
+    "size_class": [
+     4.5,
+     5.0
+    ],
+    "color": [
+     "blue",
+     "cyan"
+    ]
+   }
+  },
+  {
+   "role": "target",
+   "kind": "cube",
+   "count": 1,
+   "where": {
+    "size_class": 3.0,
+    "color": [
+     "red",
+     "purple"
+    ]
+   }
+  }
+ ],
+ "layout": [
+  {
+   "type": "region",
+   "role": "mat",
+   "r": [
+    0.17,
+    0.2
+   ],
+   "angle_deg": [
+    -10,
+    10
+   ]
+  }
+ ],
+ "goal": [
+  {
+   "pred": "in_region",
+   "args": [
+    "@anchor",
+    "@mat"
+   ]
+  },
+  {
+   "pred": "relation",
+   "args": [
+    "@target",
+    "@anchor",
+    "right"
+   ],
+   "params": {
+    "near": 0.035,
+    "far": 0.06,
+    "lateral": 0.035
+   }
+  }
+ ],
+ "instructions": [
+  "Put {anchor} directly on {mat}, then place {target} on the table just to the right of that cube in its new position. Judge right from in front of the robot.",
+  "First move {anchor} onto {mat}. Use the relocated cube as the landmark and set {target} beside its right side on the table, as seen from in front of the robot.",
+  "The final scene should have {anchor} resting on {mat} and {target} resting on the table immediately to the right of {anchor}. Right is defined from in front of the robot.",
+  "Make {anchor} the cube on {mat}, then park {target} to the right of it on the table. Judge the side while facing the robot from the front.",
+  "Move {anchor} to {mat} before positioning {target}. Place {target} on the table next to the relocated cube's right side, using the view from in front of the robot.",
+  "Set {anchor} down on {mat} and arrange {target} just to its right on the table, relative to its new location rather than its starting location. Use the view from in front of the robot.",
+  "Place {anchor} on {mat} first. Then set {target} on the table immediately to the right of the relocated cube, judging right while facing the robot from the front.",
+  "Please move {anchor} onto {mat}, and only afterward put {target} on the table just to the cube's right in its new location. Use the viewpoint of someone standing in front of the robot.",
+  "Begin by settling {anchor} on {mat}; finish by placing {target} on the table right beside its right side. Determine that side while facing the robot from the front.",
+  "The result should be {anchor} on {mat}, with {target} on the table immediately to its right. Establish the cube's position on the mat before placing the other object, and judge right from in front of the robot.",
+  "First, put {anchor} down on {mat}. Second, put {target} on the table just to the right of that block's new position, as viewed from in front of the robot.",
+  "Move {anchor} onto {mat}; then use its destination as the reference for placing {target} immediately to its right on the table. Take right from the perspective of someone facing the robot.",
+  "With right judged from in front of the robot, first place {anchor} on {mat}, then place {target} on the table just beside the relocated cube's right side.",
+  "Could you first set {anchor} on {mat} and then position {target} on the table immediately to the right of the cube where it now rests? Interpret right while facing the robot from the front.",
+  "Put {anchor} on {mat}. Once that is done, set {target} on the table just to its right\u2014not relative to where the cube started. Judge right from in front of the robot.",
+  "Have {anchor} end up resting on {mat} before arranging {target} on the table immediately to the right of that relocated block. Use the view from in front of the robot to identify right.",
+  "Start with {anchor}: move it onto {mat}. Next, arrange {target} on the table directly beside the cube's right side at its new location, viewing the scene while facing the robot from the front.",
+  "On {mat}, place {anchor} first. On the table, place {target} immediately to the right of the cube's resulting position. Right is as seen from in front of the robot.",
+  "Relocate {anchor} to rest on {mat}, then set {target} on the table just to the right of that new location. Identify the right-hand side from in front of the robot.",
+  "Please establish {anchor} on {mat} before setting {target} beside its right side on the table. Keep the second placement immediately next to the relocated cube, with right judged while facing the robot from the front.",
+  "The cube to position first is {anchor}: put it on {mat}. Afterward, put {target} on the table immediately to that cube's right in its new position, using the view from in front of the robot.",
+  "Facing the robot from the front to determine right, move {anchor} onto {mat}. Follow that by placing {target} on the table just to the relocated block's right.",
+  "Complete these placements in order: {anchor} onto {mat}, then {target} onto the table immediately to the right of the cube's new position. Use the perspective from in front of the robot.",
+  "Let {anchor} rest on {mat} first; only then set {target} on the table right next to the block on its right-hand side. Judge that side from in front of the robot.",
+  "Arrange the scene so that {anchor} rests on {mat} and {target} rests on the table just to its right. Move the first cube onto the mat before positioning the second, and interpret right while facing the robot from the front.",
+  "Set {anchor} onto {mat} before doing the second placement. Then put {target} on the table immediately to the right of the relocated cube, as seen by someone in front of the robot.",
+  "Use the front-facing view of the robot to judge right. First move {anchor} onto {mat}; afterward, position {target} on the table just beside the right side of the cube at its new location.",
+  "After placing {anchor} on {mat}, place {target} on the table immediately to the right of where that block now sits. Take the right-hand direction from the viewpoint of someone facing the robot from the front.",
+  "First give {anchor} its final position on {mat}. Then give {target} its final position on the table just to the right of that cube, judging right from in front of the robot.",
+  "Please put {anchor} on {mat} as the first step. For the second step, set {target} on the table immediately beside the relocated cube's right side, with right defined from in front of the robot."
+ ],
+ "notes": "Combines mat placement with a relational goal whose reference is the relocated cube rather than a fixed landmark."
+}

@@ -1,0 +1,64 @@
+{
+ "id": "cube_v_all_color_in_container",
+ "tid": 218,
+ "version": 1,
+ "domain": "cube",
+ "split": "train",
+ "provenance": "hand",
+ "difficulty": 2,
+ "builder": "declarative",
+ "objects": [
+  {
+   "role": "destination",
+   "kind": [
+    "bowl",
+    "box"
+   ],
+   "count": 1
+  },
+  {
+   "role": "items",
+   "kind": "cube",
+   "count": 2,
+   "where": {
+    "color": {
+     "same_role": "items[0]"
+    },
+    "size_class": {
+     "max": 3.5
+    }
+   }
+  },
+  {
+   "role": "distractors",
+   "kind": "cube",
+   "count": [
+    1,
+    2
+   ],
+   "where": {
+    "color": {
+     "not_role": "items"
+    }
+   }
+  }
+ ],
+ "layout": [],
+ "goal": [
+  {
+   "pred": "inside",
+   "for_each": "items",
+   "args": [
+    "$",
+    "@destination"
+   ]
+  }
+ ],
+ "instructions": [
+  "Put all the {items.color} cubes in {destination}.",
+  "Place every {items.color} cube into {destination}.",
+  "Move both {items.color} cubes into {destination}.",
+  "Collect the {items.color} cubes in {destination}."
+ ],
+ "notes": "div2 variant (tools/make_variants.py)."
+}

@@ -1,0 +1,133 @@
+{
+ "id": "gen_free_destination_mat_and_park_beside_sou",
+ "tid": 1127,
+ "version": 1,
+ "domain": "cube",
+ "split": "train",
+ "provenance": "llm",
+ "difficulty": 2,
+ "builder": "declarative",
+ "objects": [
+  {
+   "role": "source_mat",
+   "kind": "pad",
+   "count": 1,
+   "where": {
+    "size_class": 8.5,
+    "color": [
+     "blue",
+     "green"
+    ]
+   }
+  },
+  {
+   "role": "destination_mat",
+   "kind": "pad",
+   "count": 1,
+   "where": {
+    "size_class": 8.5,
+    "color": [
+     "red",
+     "orange"
+    ]
+   }
+  },
+  {
+   "role": "transfer",
+   "kind": "cube",
+   "count": 1,
+   "where": {
+    "size_class": 3.0,
+    "color": [
+     "yellow",
+     "white"
+    ]
+   }
+  },
+  {
+   "role": "parked",
+   "kind": "cube",
+   "count": 1,
+   "where": {
+    "size_class": 3.0,
+    "color": [
+     "purple",
+     "cyan"
+    ]
+   }
+  }
+ ],
+ "layout": [
+  {
+   "type": "on",
+   "role": "transfer",
+   "support": "@source_mat"
+  },
+  {
+   "type": "on",
+   "role": "parked",
+   "support": "@destination_mat"
+  }
+ ],
+ "goal": [
+  {
+   "pred": "in_region",
+   "args": [
+    "@transfer",
+    "@destination_mat"
+   ]
+  },
+  {
+   "pred": "relation",
+   "args": [
+    "@parked",
+    "@source_mat",
+    "%dir"
+   ],
+   "params": {
+    "near": 0.03,
+    "far": 0.1,
+    "lateral": 0.06
+   }
+  }
+ ],
+ "vars": {
+  "dir": {
+   "left": "to the left of",
+   "right": "to the right of"
+  }
+ },
+ "instructions": [
+  "Move the cube from {destination_mat} onto the table {%dir} {source_mat}, then transfer the cube from {source_mat} onto {destination_mat}. Judge left and right from in front of the robot, facing it.",
+  "Free {destination_mat} by placing its occupant on the table {%dir} {source_mat}; put the original occupant of {source_mat} on the freed mat. Use the camera's left and right.",
+  "The cube initially on {source_mat} belongs on {destination_mat}; the cube initially on {destination_mat} belongs on the table {%dir} {source_mat}. Left and right are as seen from in front of the robot.",
+  "First park the occupant of {destination_mat} {%dir} {source_mat} on the bare table. Then move the occupant of {source_mat} onto {destination_mat}. Interpret directions from in front of the robot, facing it.",
+  "Transfer the cube on {source_mat} to {destination_mat}, making room by moving the latter mat's original cube onto the table {%dir} {source_mat}. Use camera-view left and right.",
+  "Leave {destination_mat} holding the cube that began on {source_mat}, and leave its former occupant on the table {%dir} {source_mat}. Directions are viewed from in front of the robot, facing it.",
+  "Clear {destination_mat} first: move the cube resting there onto the bare table {%dir} {source_mat}. Next, carry the cube originally on {source_mat} onto {destination_mat}. Read left and right from in front of the robot, facing it.",
+  "Please place the original occupant of {destination_mat} on the table {%dir} {source_mat}, then move the original occupant of {source_mat} onto the now-empty {destination_mat}. Use camera-view left and right.",
+  "The cube that starts on {source_mat} should end up on {destination_mat}. Before moving it, set the cube that starts on {destination_mat} on the bare table {%dir} {source_mat}. Judge directions while facing the robot from in front.",
+  "First, take the block off {destination_mat} and park it on the table {%dir} {source_mat}. Second, relocate the block from {source_mat} onto {destination_mat}. Interpret left and right in the camera view.",
+  "Make space on {destination_mat} by setting its cube down on the bare table {%dir} {source_mat}; afterward, fill that space with the cube from {source_mat}. Left and right are those of a viewer standing in front of the robot and facing it.",
+  "Empty {destination_mat} onto the table {%dir} {source_mat}, moving only its cube. Then put the cube from {source_mat} onto {destination_mat}. Use the camera's left and right.",
+  "Please begin with the cube on {destination_mat}: leave it on the bare table {%dir} {source_mat}. Follow by placing the cube on {source_mat} onto {destination_mat}. Directions are as seen from in front of the robot, facing it.",
+  "Park the destination's occupant before transferring the source's occupant: take the cube from {destination_mat} to the table {%dir} {source_mat}, then take the cube from {source_mat} to {destination_mat}. Use camera-view directions.",
+  "Leave the original cube from {destination_mat} on the bare table {%dir} {source_mat}, and then leave the original cube from {source_mat} on {destination_mat}. Determine left and right from in front of the robot, looking toward it.",
+  "Your first move is to place the cube occupying {destination_mat} on the table {%dir} {source_mat}. Your next move is to place the cube occupying {source_mat} onto {destination_mat}. Left and right follow the camera view.",
+  "Relocate the block on {destination_mat} to a bare-table position {%dir} {source_mat}. Once that mat is clear, move the block on {source_mat} onto {destination_mat}. View directions from in front of the robot, facing it.",
+  "To give the cube from {source_mat} a place on {destination_mat}, first remove the latter's cube to the table {%dir} {source_mat}. Then complete the transfer onto {destination_mat}. Use the camera's left and right.",
+  "Carry out these moves in order: place the occupant of {destination_mat} on the bare table {%dir} {source_mat}; transfer the occupant of {source_mat} onto {destination_mat}. Interpret left and right as a person facing the robot from in front would.",
+  "The final arrangement should have the former occupant of {source_mat} on {destination_mat} and the former occupant of {destination_mat} on the table {%dir} {source_mat}. Establish the table placement first, then transfer the source cube. Use camera-view left and right.",
+  "Start by lifting the cube from {destination_mat} and setting it on the bare table {%dir} {source_mat}. After that, lift the cube from {source_mat} and set it onto {destination_mat}. Judge directions from in front of the robot, facing it.",
+  "Could you first clear {destination_mat} by moving its block onto the table {%dir} {source_mat}, and then move the block from {source_mat} onto {destination_mat}? Use left and right as shown in the camera view.",
+  "Put the cube from {destination_mat} on the bare table {%dir} {source_mat}; only after that, put the cube from {source_mat} onto {destination_mat}. Left and right are viewed from in front of the robot, facing it.",
+  "Prepare {destination_mat} to receive the cube from {source_mat}: move its current occupant onto the table {%dir} {source_mat}, then place the source cube on {destination_mat}. Use camera-view left and right.",
+  "Begin with the destination mat's cube, not the source mat's: move the occupant of {destination_mat} onto the bare table {%dir} {source_mat}. Then transfer the occupant of {source_mat} onto {destination_mat}. Interpret directions while standing in front of and facing the robot.",
+  "Once you have parked the cube from {destination_mat} on the table {%dir} {source_mat}, place the cube from {source_mat} onto {destination_mat}. Perform the parking move first. Use the camera's left and right.",
+  "Move the block off {destination_mat} to the bare table {%dir} {source_mat}, freeing the mat for the block currently on {source_mat}. Then move that source block onto {destination_mat}. Read directions from in front of the robot, facing it.",
+  "Please leave {destination_mat} occupied by the cube that began on {source_mat}. To do so, first park its original cube on the table {%dir} {source_mat}, then transfer the source cube onto the cleared mat. Use camera-view directions.",
+  "Step one: set the cube from {destination_mat} down on the bare table {%dir} {source_mat}. Step two: set the cube from {source_mat} down on {destination_mat}. Left and right are as seen by someone in front of the robot, facing it.",
+  "Vacate {destination_mat} by placing its occupant on the table {%dir} {source_mat}. With that done, move the original occupant of {source_mat} onto {destination_mat}. Take left and right from the camera view."
+ ],
+ "notes": "Combines freeing an occupied destination with a mat-to-mat transfer and relational parking of the displaced occupant beside the source mat."
+}

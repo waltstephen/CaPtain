@@ -1,0 +1,25 @@
+{
+ "description": "Real-arm variant of speed_fast_v5: every model-side and service speed-up of fast_v5, release motion speeds (no motion speed-ups until a human safety review signs them off).",
+ "driver": {
+  "temperature": 1.0,
+  "thinking_token_budget": 1024,
+  "max_output_tokens": 4096,
+  "max_images": 12,
+  "image_drop_chunk": 6,
+  "server_poll_s": 0.02,
+  "server_grace_s": 0,
+  "keep_recent_tokens": 16000
+ },
+ "tool_backend_options": {
+  "motion_speed_scale": 1,
+  "default_max_speed_m_s": 0.05,
+  "default_max_angular_speed_rad_s": 0.5,
+  "concurrent_label_check": true
+ },
+ "backend_options": {},
+ "services": {
+  "sam3_cache_images": 8,
+  "molmo_stop_after_coords": true,
+  "depth_resolution_level": 0
+ }
+}

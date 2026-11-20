@@ -1,0 +1,123 @@
+{
+ "id": "gen_horizontal_rank_to_vertical_order",
+ "tid": 1122,
+ "version": 1,
+ "domain": "cube",
+ "split": "train",
+ "provenance": "llm",
+ "difficulty": 2,
+ "builder": "declarative",
+ "objects": [
+  {
+   "role": "row_left",
+   "kind": "cube",
+   "count": 1,
+   "where": {
+    "size_class": 3.0
+   }
+  },
+  {
+   "role": "row_middle",
+   "kind": "cube",
+   "count": 1,
+   "where": {
+    "size_class": 3.0,
+    "color": {
+     "same_role": "row_left"
+    }
+   }
+  },
+  {
+   "role": "row_right",
+   "kind": "cube",
+   "count": 1,
+   "where": {
+    "size_class": 3.0,
+    "color": {
+     "same_role": "row_left"
+    }
+   }
+  }
+ ],
+ "layout": [
+  {
+   "type": "region",
+   "role": "row_left",
+   "r": [
+    0.2,
+    0.22
+   ],
+   "angle_deg": [
+    -42,
+    -37
+   ]
+  },
+  {
+   "type": "region",
+   "role": "row_middle",
+   "r": [
+    0.2,
+    0.22
+   ],
+   "angle_deg": [
+    -3,
+    3
+   ]
+  },
+  {
+   "type": "region",
+   "role": "row_right",
+   "r": [
+    0.2,
+    0.22
+   ],
+   "angle_deg": [
+    37,
+    42
+   ]
+  }
+ ],
+ "goal": [
+  {
+   "pred": "stacked",
+   "args": [
+    "@row_left",
+    "@row_middle",
+    "@row_right"
+   ]
+  }
+ ],
+ "instructions": [
+  "Build a tower whose bottom-to-top order follows the cubes' initial left-to-right order: leftmost at the bottom, middle above it, rightmost on top. Judge left and right from in front of the robot, facing it.",
+  "Viewed from in front of the robot facing it, use the initially leftmost cube as the tower base, stack the middle cube on it, and finish with the initially rightmost cube.",
+  "Convert the starting horizontal order into vertical order: first from the left becomes the bottom, second becomes the middle, and third becomes the top. Use the view from in front of the robot facing it.",
+  "Make one three-cube tower, reading the initial arrangement from left to right as its bottom-to-top recipe. Left and right are as seen from in front of the robot, facing it.",
+  "From the viewpoint in front of the robot facing it, identify the left, middle, and right cubes before moving them; stack them with left below middle and middle below right.",
+  "The finished tower should contain the original leftmost cube underneath the original middle cube, with the original rightmost cube above both. Determine that initial order from in front of the robot, facing it.",
+  "Please build a single tower of three cubes: the initially leftmost cube goes on the bottom, the initially middle cube goes above it, and the initially rightmost cube goes on top. Determine left and right while in front of the robot, facing it.",
+  "From in front of the robot, facing it, note the cubes' starting left-to-right order. Stack all three into one tower in that same order from bottom to top.",
+  "Turn the three cubes' original row into a tower, placing the left cube beneath the middle cube and the middle cube beneath the right cube. Read their original positions from in front of the robot while facing it.",
+  "The three cubes should end up in one tower with the original leftmost at its base, the original middle in its center, and the original rightmost at its peak. Use the viewpoint in front of the robot, facing it, to establish their starting positions.",
+  "First view the three cubes from in front of the robot, facing it. Then build one tower by putting the starting middle cube on the starting leftmost cube and the starting rightmost cube on the middle cube.",
+  "Make a three-block tower: original left at the bottom, original middle directly above, original right at the top. Identify those original positions as seen from in front of the robot, facing it.",
+  "Using the view from in front of the robot and facing it, take the three cubes in their initial left-to-right sequence and turn that sequence into the bottom-to-top order of one tower.",
+  "Could you stack the three cubes into a single tower, using their initial left-to-right order as the order from base to top? Judge their starting positions from in front of the robot, facing it.",
+  "Leave the original leftmost cube below the original middle cube, and the original middle cube below the original rightmost cube, all in one three-cube tower. Establish left, middle, and right from in front of the robot while facing it.",
+  "Before moving any blocks, identify their left-to-right order from in front of the robot, facing it. Build a single three-block tower with the first block at the base, the second on the first, and the third on the second.",
+  "Build upward from the cube that starts farthest left: place the initially middle cube on it, then cap the tower with the cube that starts farthest right. Use the view from in front of the robot, facing it, and include all three cubes in that one tower.",
+  "Arrange the three cubes vertically in a single stack so their starting left-to-right sequence becomes their final bottom-to-top sequence. Take the starting sequence from the viewpoint in front of the robot, facing it.",
+  "Please use the initially rightmost cube as the top of a three-cube tower, supported by the initially middle cube, which in turn rests on the initially leftmost cube. Determine those positions from in front of the robot, facing it.",
+  "One tower, three cubes: bottom is the starting leftmost, middle is the starting middle, and top is the starting rightmost. Read the starting arrangement from in front of the robot while facing it.",
+  "Look at the starting row from in front of the robot, facing it, and preserve its order when stacking upward: leftmost first at the bottom, middle next, rightmost last at the top. Make one tower containing the three cubes.",
+  "The finished stack should be a single three-block tower whose base-to-top order matches the blocks' original left-to-right order, as viewed from in front of the robot, facing it.",
+  "Stack the original middle cube directly on the original leftmost cube, then place the original rightmost cube directly on the middle cube to complete one three-cube tower. Identify their original positions from in front of the robot, facing it.",
+  "Use the three cubes to make one tower, translating starting position into height: leftmost becomes lowest, middle stays between the other two, and rightmost becomes highest. Assess the starting positions from in front of the robot, facing it.",
+  "With left and right defined by the view from in front of the robot, facing it, build one tower of the three cubes. Its bottom, middle, and top must be the cubes that were initially leftmost, middle, and rightmost, respectively.",
+  "Please convert the initial row of three blocks into one vertical tower without changing their sequence: read left to right at the start and bottom to top at the finish. Use the initial view from in front of the robot, facing it.",
+  "Identify the initial leftmost, middle, and rightmost cubes from in front of the robot while facing it. Use the leftmost as the foundation of one three-cube tower, put the middle on that foundation, and put the rightmost on the middle.",
+  "Make the initially leftmost cube the lowest member of a single three-cube stack and the initially rightmost cube the highest, with the initially middle cube stacked between them. Judge the initial order from in front of the robot, facing it.",
+  "From the viewpoint in front of the robot, facing it, assign the three cubes their starting positions before moving them. Assemble one tower in this order going upward: starting left cube, starting middle cube, starting right cube.",
+  "Finish with all three cubes in one tower: the cube originally on the right rests on the cube originally in the middle, and that middle cube rests on the cube originally on the left. Read the original left-to-right arrangement from in front of the robot, facing it."
+ ],
+ "notes": "Unlike a tower specified by named colours, this requires translating remembered horizontal ordinal positions into vertical stack positions among identical-looking cubes."
+}

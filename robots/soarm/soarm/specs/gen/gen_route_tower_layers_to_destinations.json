@@ -1,0 +1,138 @@
+{
+ "id": "gen_route_tower_layers_to_destinations",
+ "tid": 1108,
+ "version": 1,
+ "domain": "cube",
+ "split": "train",
+ "provenance": "llm",
+ "difficulty": 4,
+ "builder": "declarative",
+ "objects": [
+  {
+   "role": "upper",
+   "kind": "cube",
+   "count": 2,
+   "where": {
+    "size_class": 3.0,
+    "color": "yellow"
+   }
+  },
+  {
+   "role": "base",
+   "kind": "cube",
+   "count": 1,
+   "where": {
+    "size_class": 3.0,
+    "color": {
+     "not_role": "upper"
+    }
+   }
+  },
+  {
+   "role": "container",
+   "kind": "bowl",
+   "count": 1,
+   "where": {
+    "size_class": [
+     10.0,
+     12.0
+    ]
+   }
+  },
+  {
+   "role": "mat",
+   "kind": "pad",
+   "count": 1,
+   "where": {
+    "size_class": [
+     8.5,
+     10.0
+    ]
+   }
+  }
+ ],
+ "layout": [
+  {
+   "type": "stack",
+   "roles": [
+    "@base",
+    "@upper[1]",
+    "@upper[0]"
+   ]
+  },
+  {
+   "type": "region",
+   "role": "base",
+   "r": [
+    0.18,
+    0.24
+   ],
+   "angle_deg": [
+    -35,
+    35
+   ]
+  },
+  {
+   "type": "region",
+   "role": "container",
+   "r": [
+    0.17,
+    0.24
+   ],
+   "angle_deg": [
+    -50,
+    50
+   ]
+  }
+ ],
+ "goal": [
+  {
+   "pred": "inside",
+   "for_each": "upper",
+   "args": [
+    "$",
+    "@container"
+   ]
+  },
+  {
+   "pred": "in_region",
+   "args": [
+    "@base",
+    "@mat"
+   ]
+  }
+ ],
+ "instructions": [
+  "Take both cubes above the tower's base and put them in {container}; then put the base cube on {mat}.",
+  "Dismantle the tower from the top: put both {upper.color} cubes into {container}, then move its bottom cube onto {mat}.",
+  "The two upper layers of the tower belong in {container}, and the original bottom layer belongs on {mat}.",
+  "Put the top cube in {container}, put the next cube in the same container, and place the remaining base cube on {mat}.",
+  "Separate the tower by function: send every cube resting above its base to {container}, and send the base itself to {mat}.",
+  "Move all the {upper.color} cubes from the tower into {container}. Once they are removed, place the tower's original base on {mat}.",
+  "Remove the tower's top cube and place it in {container}, do the same with the cube beneath it, and then move the original base cube onto {mat}.",
+  "Please take the two {upper.color} cubes off the tower, starting with the top one, and put them in {container}; afterward, place the bottom cube on {mat}.",
+  "The tower's two upper cubes should end up in {container}, moved there from the top down, before its original base is placed on {mat}.",
+  "First put the top block in {container}. Next put the middle block there too. Finally, put the bottom block on {mat}.",
+  "Clear both cubes from above the tower's base into {container}, working downward, then transfer the base cube to {mat}.",
+  "Would you dismantle the tower from the top, placing both {upper.color} blocks in {container}, and only then move its base onto {mat}?",
+  "Top cube into {container}; middle cube into the same container; original base cube onto {mat}, in that order.",
+  "Leave the original bottom cube for last: put the two cubes above it in {container}, top one first, then place that bottom cube on {mat}.",
+  "Take down the tower one cube at a time, sending the top two to {container} and, after both are there, the base to {mat}.",
+  "Please place the uppermost {upper.color} cube in {container}, follow it with the other {upper.color} cube, and finish by putting the original base on {mat}.",
+  "Your task is to put both upper blocks in {container}, removing the top block first, and then set the tower's original bottom block on {mat}.",
+  "Begin at the top of the tower and move its first two cubes into {container}; once those are inside, move the remaining base cube onto {mat}.",
+  "Keep the base in place while you transfer both {upper.color} cubes to {container} from the top down, then relocate the base to {mat}.",
+  "Dismantle the three-cube tower in descending order: the first two cubes go into {container}, and the last cube goes on {mat}.",
+  "Put the tower's uppermost block inside {container}, add the block immediately below it to that same container, and then set the original base block on {mat}.",
+  "Once both upper cubes have been placed in {container}, starting with the top cube, finish the task by placing the original bottom cube on {mat}.",
+  "Please empty the two levels above the tower's base into {container}, top level first; afterward, move the base itself onto {mat}.",
+  "Send the top {upper.color} cube to {container}, then send the second {upper.color} cube there, and finally place the tower's base on {mat}.",
+  "The required result is both upper cubes inside {container} and the original base on {mat}: move the cubes from the top down, leaving the base move until last.",
+  "Start by removing the top cube to {container}; repeat with the next cube down, then place the cube that formed the base on {mat}.",
+  "Move neither the base nor any other cube before the top cube: put that top cube in {container}, put the middle cube there next, and put the base on {mat} last.",
+  "Could you transfer the tower's two {upper.color} blocks into {container}, uppermost first, and then set its original bottom block on {mat}?",
+  "Working from the tower's top toward its base, place both upper cubes in {container}; after completing those two moves, place the base cube on {mat}.",
+  "Finish with the tower's original base on {mat}, but first move the top cube into {container} and then move the cube directly beneath it into the same container."
+ ],
+ "notes": "This family routes every upper tower layer to a container while relocating the exposed base to a mat instead of merely unstacking onto the table."
+}

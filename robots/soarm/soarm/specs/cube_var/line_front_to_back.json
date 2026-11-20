@@ -1,0 +1,51 @@
+{
+ "id": "cube_v_line_front_to_back",
+ "tid": 234,
+ "version": 1,
+ "domain": "cube",
+ "split": "train",
+ "provenance": "hand",
+ "difficulty": 3,
+ "builder": "declarative",
+ "objects": [
+  {
+   "role": "items",
+   "kind": "cube",
+   "count": 3,
+   "where": {
+    "color": {
+     "distinct": true
+    },
+    "size_class": {
+     "max": 4.0
+    }
+   }
+  },
+  {
+   "role": "distractors",
+   "kind": "cube",
+   "count": [
+    0,
+    1
+   ]
+  }
+ ],
+ "layout": [],
+ "goal": [
+  {
+   "pred": "in_line",
+   "args": [
+    "@items*"
+   ],
+   "params": {
+    "order": "front_to_back"
+   }
+  }
+ ],
+ "instructions": [
+  "Arrange {items} in a straight row from front to back, in that order (front = farthest from the robot).",
+  "Line up {items} in this order, starting farthest from the robot and ending closest to it.",
+  "Make a straight row pointing away from the robot: {items}, from the far end to the near end."
+ ],
+ "notes": "div2 variant (tools/make_variants.py)."
+}

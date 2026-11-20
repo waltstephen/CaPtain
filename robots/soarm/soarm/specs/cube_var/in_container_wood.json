@@ -1,0 +1,56 @@
+{
+ "id": "cube_v_in_container_wood",
+ "tid": 210,
+ "version": 1,
+ "domain": "cube",
+ "split": "train",
+ "provenance": "hand",
+ "difficulty": 1,
+ "builder": "declarative",
+ "objects": [
+  {
+   "role": "destination",
+   "kind": [
+    "bowl",
+    "box"
+   ],
+   "count": 1
+  },
+  {
+   "role": "target",
+   "kind": "cube",
+   "count": 1,
+   "where": {
+    "texture": "wood"
+   }
+  },
+  {
+   "role": "distractors",
+   "kind": "cube",
+   "count": [
+    1,
+    2
+   ],
+   "where": {
+    "texture": "plain"
+   }
+  }
+ ],
+ "layout": [],
+ "goal": [
+  {
+   "pred": "inside",
+   "args": [
+    "@target",
+    "@destination"
+   ]
+  }
+ ],
+ "instructions": [
+  "Put the wooden cube in {destination}.",
+  "Place the wooden cube into {destination}.",
+  "Drop the cube made of wood into {destination}.",
+  "Move the wooden cube into {destination}."
+ ],
+ "notes": "div2 variant (tools/make_variants.py)."
+}

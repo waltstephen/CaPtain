@@ -1,0 +1,37 @@
+{
+ "id": "sort_by_shape",
+ "tid": 12,
+ "version": 1,
+ "domain": "legacy",
+ "split": "train",
+ "provenance": "hand",
+ "difficulty": 3,
+ "builder": "legacy:sort_by_shape",
+ "objects": [
+  {
+   "role": "mats",
+   "kind": "pad",
+   "count": 2
+  },
+  {
+   "role": "items",
+   "kind": "cube",
+   "count": 3
+  }
+ ],
+ "layout": [],
+ "goal": [
+  {
+   "pred": "in_region",
+   "for_each": "items",
+   "args": [
+    "$",
+    "@mats[0]"
+   ]
+  }
+ ],
+ "instructions": [
+  "Sort by shape: cubes go on {mats}."
+ ],
+ "notes": "Legacy family (pre-pivot). Sampled by families.py (builder legacy:*), bit-identical to the pre-spec sampler; objects/goal/instructions here describe it (object kinds vary per seed in the generator) and are not interpreted."
+}

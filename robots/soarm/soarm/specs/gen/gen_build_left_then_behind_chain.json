@@ -1,0 +1,106 @@
+{
+ "id": "gen_build_left_then_behind_chain",
+ "tid": 1140,
+ "version": 1,
+ "domain": "cube",
+ "split": "train",
+ "provenance": "llm",
+ "difficulty": 2,
+ "builder": "declarative",
+ "objects": [
+  {
+   "role": "reference",
+   "kind": "cube",
+   "count": 1,
+   "where": {
+    "size_class": 4.0,
+    "color": [
+     "yellow",
+     "orange"
+    ]
+   }
+  },
+  {
+   "role": "corner",
+   "kind": "cube",
+   "count": 1,
+   "where": {
+    "size_class": 3.5,
+    "color": [
+     "red",
+     "pink"
+    ]
+   }
+  },
+  {
+   "role": "end",
+   "kind": "cube",
+   "count": 1,
+   "where": {
+    "size_class": [
+     3.0,
+     3.5
+    ],
+    "color": [
+     "blue",
+     "cyan"
+    ]
+   }
+  }
+ ],
+ "layout": [
+  {
+   "type": "region",
+   "role": "reference",
+   "r": [
+    0.21,
+    0.24
+   ],
+   "angle_deg": [
+    -5,
+    5
+   ]
+  }
+ ],
+ "goal": [
+  {
+   "pred": "relation",
+   "args": [
+    "@corner",
+    "@reference",
+    "left"
+   ],
+   "params": {
+    "near": 0.015,
+    "far": 0.06,
+    "lateral": 0.03
+   }
+  },
+  {
+   "pred": "relation",
+   "args": [
+    "@end",
+    "@corner",
+    "behind"
+   ],
+   "params": {
+    "near": 0.015,
+    "far": 0.06,
+    "lateral": 0.03
+   }
+  }
+ ],
+ "instructions": [
+  "Build a bent chain on the table: {corner} immediately to the left of {reference}, and {end} immediately behind {corner}. Use the front-facing view for left, and interpret behind as toward the robot.",
+  "The goal is for {corner} to sit beside the left side of {reference}, with {end} behind {corner} on the table. Judge left from in front of the robot; behind is the side nearer the robot.",
+  "First position {corner} on the table left of {reference}. Next put {end} behind the newly positioned {corner}. Left uses the view from in front of the robot, and behind means closer to the robot.",
+  "Use {reference} to locate {corner} on its left, then use {corner} to locate {end} behind it. Keep the placements close together on the table; left is from in front of the robot and behind means nearer the robot.",
+  "Set {corner} just to the left of {reference} on the table, then set {end} just behind {corner}, also on the table. Take left from the view in front of the robot and behind as toward the robot.",
+  "Please place {corner} on the table immediately left of {reference}; afterward, place {end} on the table immediately behind {corner}. Left is judged from in front of the robot, and behind means nearer the robot.",
+  "On the table, place {corner} immediately left of {reference}; next, place {end} immediately behind {corner}. Read left from the front-facing view and behind as the direction toward the robot.",
+  "Use {reference} as the starting point for a close tabletop arrangement. First set {corner} just to its left, then set {end} just behind {corner}; left follows the view from in front of the robot, and behind means closer to the robot.",
+  "Please build a small bend on the tabletop by first positioning {corner} close to the left of {reference}, then positioning {end} close behind {corner}. Left uses the view from in front of the robot, and behind is toward the robot.",
+  "Start by placing {corner} on the table immediately beside the left side of {reference}. Once that is done, place {end} on the table immediately behind {corner}. Judge left from in front of the robot and interpret behind as toward the robot."
+ ],
+ "notes": "Introduces an orthogonal relational chain in which a newly positioned cube becomes the reference for the next placement."
+}

@@ -1,0 +1,47 @@
+{
+ "id": "cube_v_lift_largest",
+ "tid": 201,
+ "version": 1,
+ "domain": "cube",
+ "split": "train",
+ "provenance": "hand",
+ "difficulty": 1,
+ "builder": "declarative",
+ "objects": [
+  {
+   "role": "distractors",
+   "kind": "cube",
+   "count": [
+    1,
+    3
+   ]
+  },
+  {
+   "role": "target",
+   "kind": "cube",
+   "count": 1,
+   "where": {
+    "size_class": {
+     "min_role": "distractors",
+     "not_role": "distractors"
+    }
+   }
+  }
+ ],
+ "layout": [],
+ "goal": [
+  {
+   "pred": "lifted",
+   "args": [
+    "@target"
+   ]
+  }
+ ],
+ "instructions": [
+  "Pick up the largest cube and hold it in the air.",
+  "Lift the biggest cube off the table.",
+  "Find the largest cube and lift it up.",
+  "Grasp the biggest of the cubes and raise it."
+ ],
+ "notes": "div2 variant (tools/make_variants.py)."
+}

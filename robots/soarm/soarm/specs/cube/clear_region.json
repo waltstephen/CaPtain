@@ -1,0 +1,60 @@
+{
+ "id": "cube_clear_region",
+ "tid": 115,
+ "version": 1,
+ "domain": "cube",
+ "split": "train",
+ "provenance": "hand",
+ "difficulty": 2,
+ "builder": "declarative",
+ "objects": [
+  {
+   "role": "mat",
+   "kind": "pad",
+   "count": 1
+  },
+  {
+   "role": "on",
+   "kind": "cube",
+   "count": [
+    1,
+    2
+   ],
+   "where": {
+    "size_class": {
+     "max": 4.0
+    }
+   }
+  },
+  {
+   "role": "distractors",
+   "kind": "cube",
+   "count": [
+    0,
+    1
+   ]
+  }
+ ],
+ "layout": [
+  {
+   "type": "on",
+   "role": "on",
+   "support": "@mat"
+  }
+ ],
+ "goal": [
+  {
+   "pred": "off_region",
+   "for_each": "on",
+   "args": [
+    "$",
+    "@mat"
+   ]
+  }
+ ],
+ "instructions": [
+  "Clear {mat}: move every cube off it onto the table.",
+  "Remove all cubes from {mat}.",
+  "Take every cube off {mat} and leave them on the table."
+ ]
+}

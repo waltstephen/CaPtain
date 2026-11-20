@@ -1,0 +1,46 @@
+{
+ "id": "cube_v_lift_large",
+ "tid": 205,
+ "version": 1,
+ "domain": "cube",
+ "split": "train",
+ "provenance": "hand",
+ "difficulty": 1,
+ "builder": "declarative",
+ "objects": [
+  {
+   "role": "target",
+   "kind": "cube",
+   "count": 1,
+   "where": {
+    "size_class": {
+     "min": 4.5
+    }
+   }
+  },
+  {
+   "role": "distractors",
+   "kind": "cube",
+   "count": [
+    0,
+    2
+   ]
+  }
+ ],
+ "layout": [],
+ "goal": [
+  {
+   "pred": "lifted",
+   "args": [
+    "@target"
+   ]
+  }
+ ],
+ "instructions": [
+  "Pick up {target} and hold it above the table.",
+  "Lift {target} up off the table.",
+  "Grab {target} and raise it a few centimetres.",
+  "Take {target} in the gripper and hold it up."
+ ],
+ "notes": "div2 variant (tools/make_variants.py). 4.5-5.0 cm target (off-centre grasp)"
+}

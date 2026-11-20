@@ -1,0 +1,86 @@
+{
+ "id": "gen_move_mat_base_to_table_and_cap",
+ "tid": 1126,
+ "version": 1,
+ "domain": "cube",
+ "split": "train",
+ "provenance": "llm",
+ "difficulty": 2,
+ "builder": "declarative",
+ "objects": [
+  {
+   "role": "mat",
+   "kind": "pad",
+   "count": 1,
+   "where": {
+    "size_class": 9.0
+   }
+  },
+  {
+   "role": "base",
+   "kind": "cube",
+   "count": 1,
+   "where": {
+    "size_class": 4.0,
+    "color": [
+     "blue",
+     "green",
+     "purple"
+    ]
+   }
+  },
+  {
+   "role": "cap",
+   "kind": "cube",
+   "count": 1,
+   "where": {
+    "size_class": 3.0,
+    "color": {
+     "not_role": "base"
+    }
+   }
+  }
+ ],
+ "layout": [
+  {
+   "type": "on",
+   "role": "base",
+   "support": "@mat"
+  }
+ ],
+ "goal": [
+  {
+   "pred": "off_region",
+   "args": [
+    "@base",
+    "@mat"
+   ]
+  },
+  {
+   "pred": "on_top",
+   "args": [
+    "@cap",
+    "@base"
+   ]
+  }
+ ],
+ "instructions": [
+  "Move the cube on {mat} onto the bare table completely outside the mat, then stack the other cube on it.",
+  "Build a two-cube tower off {mat}, using the mat's original occupant as the bottom cube and the other cube as the top.",
+  "Clear {mat} by moving its cube fully onto the table, and place the remaining cube on top of that relocated cube.",
+  "The cube that starts on {mat} should become a tower base on the bare table outside the mat, with the other cube on top.",
+  "First set the mat's cube down completely clear of {mat}. Next cap it with the other cube.",
+  "Take the lone cube off {mat}, place it on the table without overlapping the mat, and stack the other cube directly on it.",
+  "Move the cube initially resting on {mat} onto the table with no overlap with the mat, then put the other cube on top of it.",
+  "Please take the cube from {mat}, set it fully outside the mat on the bare table, and stack the second cube on that base.",
+  "Make a two-block tower entirely off {mat}: first relocate its original block to the bare table, then place the other block on top.",
+  "The original occupant of {mat} should end up on the bare table completely clear of the mat; after moving it there, add the other cube on top.",
+  "Lift the cube off {mat} and set it on the table wholly beyond the mat's edge. Then stack the remaining cube directly on it.",
+  "First move the block that starts on {mat} to a bare tabletop spot with no part overlapping the mat. Finish by placing the other block on top of it.",
+  "Clear {mat}, keeping its original cube as the tower's bottom: move that cube fully onto the bare table before stacking the other cube above it.",
+  "Please build the tower away from {mat}, first placing the cube that began there entirely on the bare table and then topping it with the other cube.",
+  "Relocate the cube from {mat} to the table, leaving it completely outside the mat, and only then put the other cube on it.",
+  "Use the cube initially on {mat} as the lower block of a two-cube stack: set it on the bare table without overlapping the mat, then add the other cube above."
+ ],
+ "notes": "Requires relocating a mat occupant to a bare-table base before capping it, combining mat clearance with tower construction rather than building on a mat."
+}

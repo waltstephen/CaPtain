@@ -1,0 +1,105 @@
+{
+ "id": "gen_flank_cube_with_named_pair",
+ "tid": 1138,
+ "version": 1,
+ "domain": "cube",
+ "split": "train",
+ "provenance": "llm",
+ "difficulty": 2,
+ "builder": "declarative",
+ "objects": [
+  {
+   "role": "reference",
+   "kind": "cube",
+   "count": 1,
+   "where": {
+    "size_class": 4.0,
+    "color": [
+     "yellow",
+     "orange"
+    ]
+   }
+  },
+  {
+   "role": "left_cube",
+   "kind": "cube",
+   "count": 1,
+   "where": {
+    "size_class": [
+     3.0,
+     3.5
+    ],
+    "color": [
+     "red",
+     "pink"
+    ]
+   }
+  },
+  {
+   "role": "right_cube",
+   "kind": "cube",
+   "count": 1,
+   "where": {
+    "size_class": [
+     3.0,
+     3.5
+    ],
+    "color": [
+     "blue",
+     "cyan"
+    ]
+   }
+  }
+ ],
+ "layout": [
+  {
+   "type": "region",
+   "role": "reference",
+   "r": [
+    0.18,
+    0.22
+   ],
+   "angle_deg": [
+    -10,
+    10
+   ]
+  }
+ ],
+ "goal": [
+  {
+   "pred": "relation",
+   "args": [
+    "@left_cube",
+    "@reference",
+    "left"
+   ],
+   "params": {
+    "near": 0.015,
+    "far": 0.06,
+    "lateral": 0.035
+   }
+  },
+  {
+   "pred": "relation",
+   "args": [
+    "@right_cube",
+    "@reference",
+    "right"
+   ],
+   "params": {
+    "near": 0.015,
+    "far": 0.06,
+    "lateral": 0.035
+   }
+  }
+ ],
+ "instructions": [
+  "Place {left_cube} just to the left of {reference} and {right_cube} just to its right, both on the table. Judge left and right from in front of the robot.",
+  "Flank {reference} with the other two cubes: {left_cube} on its left and {right_cube} on its right. All three should rest on the table; use the view from in front of the robot.",
+  "Put {left_cube} beside the left side of {reference}, then put {right_cube} beside its right side. Left and right are as seen from in front of the robot.",
+  "The desired arrangement has {reference} between {left_cube} on the left and {right_cube} on the right, with both neighbours close by on the table. Use the view from in front of the robot.",
+  "Give {reference} a close neighbour on each side: {left_cube} to the left and {right_cube} to the right, resting on the table. Judge sides while facing the robot from the front.",
+  "Arrange the cubes on the table so that {left_cube} sits immediately left of {reference} and {right_cube} sits immediately right of it. Left and right use the view from in front of the robot."
+ ],
+ "notes": "Introduces two independently assigned movable neighbours on opposite sides of one reference instead of positioning one object between two landmarks."
+}

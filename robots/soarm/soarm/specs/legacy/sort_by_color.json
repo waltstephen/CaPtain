@@ -1,0 +1,48 @@
+{
+ "id": "sort_by_color",
+ "tid": 11,
+ "version": 1,
+ "domain": "legacy",
+ "split": "train",
+ "provenance": "hand",
+ "difficulty": 3,
+ "builder": "legacy:sort_by_color",
+ "objects": [
+  {
+   "role": "bins",
+   "kind": "pad",
+   "count": 2
+  },
+  {
+   "role": "items",
+   "kind": "cube",
+   "count": [
+    2,
+    3
+   ]
+  },
+  {
+   "role": "distractors",
+   "kind": "cube",
+   "count": [
+    0,
+    1
+   ]
+  }
+ ],
+ "layout": [],
+ "goal": [
+  {
+   "pred": "placed_at",
+   "for_each": "items",
+   "args": [
+    "$",
+    "@bins[0]"
+   ]
+  }
+ ],
+ "instructions": [
+  "Sort the objects: put each one on the mat of the same colour."
+ ],
+ "notes": "Legacy family (pre-pivot). Sampled by families.py (builder legacy:*), bit-identical to the pre-spec sampler; objects/goal/instructions here describe it (object kinds vary per seed in the generator) and are not interpreted."
+}

@@ -1,0 +1,101 @@
+{
+ "id": "gen_extract_tray_cube_not_matching_mat",
+ "tid": 1214,
+ "version": 1,
+ "domain": "cube",
+ "split": "train",
+ "provenance": "llm",
+ "difficulty": 1,
+ "builder": "declarative",
+ "objects": [
+  {
+   "role": "mat",
+   "kind": "big_mat",
+   "count": 1,
+   "where": {
+    "size_class": 12.0,
+    "color": [
+     "red",
+     "blue",
+     "yellow"
+    ]
+   }
+  },
+  {
+   "role": "tray",
+   "kind": "tray",
+   "count": 1,
+   "where": {
+    "size_class": 16.0
+   }
+  },
+  {
+   "role": "matching",
+   "kind": "cube",
+   "count": 1,
+   "where": {
+    "size_class": 3.0,
+    "color": {
+     "same_role": "mat"
+    }
+   }
+  },
+  {
+   "role": "different",
+   "kind": "cube",
+   "count": 1,
+   "where": {
+    "size_class": 3.0,
+    "color": {
+     "not_role": "mat"
+    }
+   }
+  }
+ ],
+ "layout": [
+  {
+   "type": "on",
+   "role": "matching",
+   "support": "@tray"
+  },
+  {
+   "type": "on",
+   "role": "different",
+   "support": "@tray"
+  },
+  {
+   "type": "region",
+   "role": "tray",
+   "r": [
+    0.17,
+    0.24
+   ],
+   "angle_deg": [
+    -50,
+    50
+   ]
+  }
+ ],
+ "goal": [
+  {
+   "pred": "in_region",
+   "args": [
+    "@different",
+    "@mat"
+   ]
+  }
+ ],
+ "instructions": [
+  "Take the cube whose colour does not match {mat} out of {tray} and put it directly on the mat.",
+  "Compare the tray cubes with the mat's colour. Put the nonmatching cube on the mat.",
+  "The mat should receive the tray cube with a different colour from its own, not the matching cube.",
+  "Find the cube in {tray} that is not {mat.color}, then place that cube directly on {mat}.",
+  "Remove the cube that differs in colour from {mat} from {tray} and set it directly on the mat.",
+  "Of the two blocks in {tray}, put the one that does not match {mat} in colour directly on the mat.",
+  "Identify which cube in {tray} has a colour unlike {mat}, then take that cube out and set it directly on the mat.",
+  "From {tray}, select the cube that is a different colour from {mat} and place it directly on the mat.",
+  "Find the cube in {tray} whose colour is not {mat.color}; remove it and put it directly on {mat}.",
+  "Please take the cube that is not {mat.color} out of {tray} and set it directly onto {mat}."
+ ],
+ "notes": "Uses a negative colour comparison to select one container occupant for extraction rather than performing colour-matching sorting."
+}

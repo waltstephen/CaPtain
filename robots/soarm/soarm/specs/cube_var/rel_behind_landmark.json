@@ -1,0 +1,70 @@
+{
+ "id": "cube_v_rel_behind_landmark",
+ "tid": 232,
+ "version": 1,
+ "domain": "cube",
+ "split": "train",
+ "provenance": "hand",
+ "difficulty": 2,
+ "builder": "declarative",
+ "objects": [
+  {
+   "role": "reference",
+   "kind": [
+    "bowl",
+    "box",
+    "pad"
+   ],
+   "count": 1
+  },
+  {
+   "role": "target",
+   "kind": "cube",
+   "count": 1
+  },
+  {
+   "role": "distractors",
+   "kind": "cube",
+   "count": [
+    0,
+    2
+   ]
+  }
+ ],
+ "layout": [
+  {
+   "type": "region",
+   "role": "reference",
+   "r": [
+    0.22,
+    0.26
+   ],
+   "angle_deg": [
+    -45,
+    45
+   ]
+  }
+ ],
+ "goal": [
+  {
+   "pred": "relation",
+   "args": [
+    "@target",
+    "@reference",
+    "%dir"
+   ]
+  }
+ ],
+ "instructions": [
+  "Place {target} {%dir} {reference}.",
+  "Put {target} on the table {%dir} {reference}.",
+  "Move {target} so that it ends up {%dir} {reference}.",
+  "Set {target} down {%dir} {reference}, close to it."
+ ],
+ "vars": {
+  "dir": {
+   "behind": "behind"
+  }
+ },
+ "notes": "div2 variant (tools/make_variants.py)."
+}

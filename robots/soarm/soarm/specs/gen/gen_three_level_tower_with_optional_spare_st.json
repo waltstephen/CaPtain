@@ -1,0 +1,148 @@
+{
+ "id": "gen_three_level_tower_with_optional_spare_st",
+ "tid": 1134,
+ "version": 1,
+ "domain": "cube",
+ "split": "train",
+ "provenance": "llm",
+ "difficulty": 2,
+ "builder": "declarative",
+ "objects": [
+  {
+   "role": "bottom",
+   "kind": "cube",
+   "count": 1,
+   "where": {
+    "size_class": 3.0,
+    "color": [
+     "blue",
+     "cyan"
+    ]
+   }
+  },
+  {
+   "role": "middle",
+   "kind": "cube",
+   "count": 1,
+   "where": {
+    "size_class": 3.0,
+    "color": [
+     "red",
+     "orange"
+    ]
+   }
+  },
+  {
+   "role": "top",
+   "kind": "cube",
+   "count": 1,
+   "where": {
+    "size_class": 3.0,
+    "color": [
+     "green",
+     "yellow"
+    ]
+   }
+  },
+  {
+   "role": "spare",
+   "kind": "cube",
+   "count": [
+    0,
+    1
+   ],
+   "where": {
+    "size_class": 3.0,
+    "color": [
+     "purple",
+     "pink"
+    ]
+   }
+  },
+  {
+   "role": "container",
+   "kind": "bowl",
+   "count": 1,
+   "where": {
+    "size_class": 12.0,
+    "color": "gray"
+   }
+  }
+ ],
+ "layout": [
+  {
+   "type": "region",
+   "role": "bottom",
+   "r": [
+    0.18,
+    0.24
+   ],
+   "angle_deg": [
+    -30,
+    30
+   ]
+  },
+  {
+   "type": "region",
+   "role": "container",
+   "r": [
+    0.17,
+    0.24
+   ],
+   "angle_deg": [
+    -50,
+    50
+   ]
+  }
+ ],
+ "goal": [
+  {
+   "pred": "stacked",
+   "args": [
+    "@bottom",
+    "@middle",
+    "@top"
+   ]
+  },
+  {
+   "pred": "inside",
+   "for_each": "spare",
+   "args": [
+    "$",
+    "@container"
+   ]
+  }
+ ],
+ "instructions": [
+  "Build a three-cube tower with {bottom} at the bottom, {middle} in the middle, and {top} at the top. If a purple or pink cube is present, put it in {container}, not in the tower.",
+  "Stack all three designated tower cubes in this bottom-to-top order: {bottom}, {middle}, {top}. Store any purple or pink cube separately inside {container}.",
+  "The finished tower must contain {bottom} below {middle} below {top}. A purple or pink cube, if one exists, belongs inside {container} rather than on the tower.",
+  "Keep {bottom} as the tower's base, place {middle} on it, and place {top} on {middle}. Also put the purple or pink cube in {container} if present.",
+  "Make exactly the requested three-level tower: {bottom} at its base, then {middle}, then {top}. If there is an extra purple or pink cube, store that extra cube in {container}.",
+  "Use {bottom}, {middle}, and {top} for one tower in that bottom-to-top order. When a purple or pink cube is present, put it inside {container}; when absent, only build the tower.",
+  "Build a tower of exactly three cubes, placing {middle} on {bottom} and {top} on {middle}. If a purple or pink cube is present, keep it out of the tower and put it inside {container}.",
+  "Please stack {bottom}, {middle}, and {top} in that order from base to summit. The tower should have exactly three cubes; place any purple or pink cube inside {container} instead.",
+  "The result should be a three-cube tower with {bottom} supporting {middle} and {middle} supporting {top}. If there is a purple or pink cube, it should end up inside {container}, not in the tower.",
+  "First set {bottom} as the base, then add {middle}, and finally add {top}. These three cubes alone form the tower; if a purple or pink cube is present, place it inside {container}.",
+  "Three-cube tower, bottom to top: {bottom}, {middle}, {top}. Put the purple or pink cube inside {container} if one is present, never in the tower.",
+  "If you find a purple or pink cube, put it inside {container} and leave it out of the tower. Build the tower using exactly {bottom}, {middle}, and {top}, in that order from bottom to top.",
+  "Could you make a tower of exactly three cubes with {bottom} at the base, {middle} directly above it, and {top} directly above {middle}? Please put the purple or pink cube inside {container} if it is present.",
+  "Use only {bottom}, {middle}, and {top} in the tower: set {middle} on {bottom}, then set {top} on {middle}. Store a purple or pink cube inside {container} if one exists.",
+  "Arrange the three tower cubes so that {bottom} is lowest, {middle} rests on it, and {top} rests on {middle}. Any purple or pink cube must go inside {container}, separate from the tower.",
+  "Make a three-level stack starting with {bottom}, continuing with {middle}, and finishing with {top}. If an extra purple or pink cube is available, place it inside {container} rather than adding another level.",
+  "Leave {bottom}, {middle}, and {top} stacked as one tower in that bottom-to-top order, with no fourth cube. If a purple or pink cube is present, leave it inside {container}.",
+  "Put {middle} directly on {bottom} and cap the stack with {top}, forming a tower of exactly three cubes. Place the purple or pink cube inside {container} if there is one.",
+  "Please keep any purple or pink cube separate by placing it inside {container}. For the tower, use exactly three cubes: {bottom} beneath {middle}, with {top} resting on {middle}.",
+  "Your goal is a single three-cube tower, ordered {bottom}, {middle}, {top} from the bottom upward. A purple or pink cube, when present, belongs inside {container} and must not be part of that tower.",
+  "Start the tower with {bottom}. Stack {middle} on it, then stack {top} on {middle}, stopping at three cubes. If a purple or pink cube is present, put that cube inside {container}.",
+  "Construct the tower from exactly the three designated cubes: {bottom} forms the base, {middle} sits on the base, and {top} sits on {middle}. Put any purple or pink cube inside {container}, not on the tower.",
+  "Have {bottom} support {middle}, and have {middle} support {top}, making a three-cube tower. If there is a purple or pink cube, store it separately inside {container}.",
+  "Stack only the three tower cubes, from lowest to highest: {bottom}, {middle}, {top}. If you also have a purple or pink cube, put it inside {container}.",
+  "When a purple or pink cube is present, place it inside {container}; otherwise, skip that step. In either case, make exactly one three-cube tower with {middle} on {bottom} and {top} on {middle}.",
+  "Assemble {bottom}, {middle}, and {top} into a three-cube tower, keeping that order from the base upward. Set aside the purple or pink cube inside {container} if one is present.",
+  "Please make {bottom} the foundation of a three-cube tower, place {middle} directly on it, and finish with {top} directly on {middle}. Keep any purple or pink cube out of the tower by putting it inside {container}.",
+  "Create a stack containing exactly {bottom}, {middle}, and {top}, with {bottom} underneath {middle} and {middle} underneath {top}. If a purple or pink cube exists, place it inside {container} instead of stacking it.",
+  "Complete both parts as applicable: build a three-cube tower with {middle} resting on {bottom} and {top} resting on {middle}; put the purple or pink cube inside {container} if present, leaving it out of the tower."
+ ],
+ "notes": "Combines a complete three-level stacking goal with optional spare exclusion and storage, within three pick-and-place moves."
+}

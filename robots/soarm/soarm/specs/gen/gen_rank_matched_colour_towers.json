@@ -1,0 +1,89 @@
+{
+ "id": "gen_rank_matched_colour_towers",
+ "tid": 1104,
+ "version": 1,
+ "domain": "cube",
+ "split": "train",
+ "provenance": "llm",
+ "difficulty": 2,
+ "builder": "declarative",
+ "objects": [
+  {
+   "role": "small_base",
+   "kind": "cube",
+   "count": 1,
+   "where": {
+    "size_class": 4.0,
+    "color": [
+     "red",
+     "green",
+     "blue"
+    ]
+   }
+  },
+  {
+   "role": "large_base",
+   "kind": "cube",
+   "count": 1,
+   "where": {
+    "size_class": [
+     4.5,
+     5.0
+    ],
+    "color": {
+     "same_role": "small_base"
+    }
+   }
+  },
+  {
+   "role": "small_top",
+   "kind": "cube",
+   "count": 1,
+   "where": {
+    "size_class": 3.0,
+    "color": {
+     "not_role": "small_base"
+    }
+   }
+  },
+  {
+   "role": "large_top",
+   "kind": "cube",
+   "count": 1,
+   "where": {
+    "size_class": 3.5,
+    "color": {
+     "same_role": "small_top"
+    }
+   }
+  }
+ ],
+ "layout": [],
+ "goal": [
+  {
+   "pred": "on_top",
+   "args": [
+    "@small_top",
+    "@small_base"
+   ]
+  },
+  {
+   "pred": "on_top",
+   "args": [
+    "@large_top",
+    "@large_base"
+   ]
+  }
+ ],
+ "instructions": [
+  "Make two separate two-cube towers, each {small_base.color} below {small_top.color}. Pair the smaller cube of each colour together and the larger cube of each colour together.",
+  "Stack the smaller {small_top.color} cube on the smaller {small_base.color} cube, and the larger {small_top.color} cube on the larger {small_base.color} cube, making two towers.",
+  "Build one tower from the smaller cube of each colour and another from the larger cube of each colour. In both towers, {small_base.color} goes below {small_top.color}.",
+  "The goal is two size-rank-matched towers: smaller {small_base.color} under smaller {small_top.color}, and larger {small_base.color} under larger {small_top.color}.",
+  "Compare sizes within each colour. Put the smaller {small_top.color} cube on its smaller {small_base.color} partner, then put the larger {small_top.color} cube on its larger {small_base.color} partner.",
+  "Arrange the cubes into two separate stacks with bottom-to-top colour order {small_base.color}, then {small_top.color}; match smaller with smaller and larger with larger across the colours.",
+  "Make exactly two separate towers of two cubes each: place the smaller {small_top.color} cube on the smaller {small_base.color} cube and the larger {small_top.color} cube on the larger {small_base.color} cube.",
+  "Please pair the cubes by size within their colours, smaller with smaller and larger with larger, and build two separate two-block stacks with {small_base.color} underneath {small_top.color}."
+ ],
+ "notes": "Builds two simultaneous colour-ordered towers by matching relative size ranks within two colour groups."
+}

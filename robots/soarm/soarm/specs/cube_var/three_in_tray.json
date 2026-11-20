@@ -1,0 +1,48 @@
+{
+ "id": "cube_v_three_in_tray",
+ "tid": 252,
+ "version": 1,
+ "domain": "cube",
+ "split": "train",
+ "provenance": "hand",
+ "difficulty": 2,
+ "builder": "declarative",
+ "objects": [
+  {
+   "role": "destination",
+   "kind": "tray",
+   "count": 1
+  },
+  {
+   "role": "items",
+   "kind": "cube",
+   "count": 3,
+   "where": {
+    "color": {
+     "distinct": true
+    },
+    "size_class": {
+     "max": 4.0
+    }
+   }
+  }
+ ],
+ "layout": [],
+ "goal": [
+  {
+   "pred": "inside",
+   "for_each": "items",
+   "args": [
+    "$",
+    "@destination"
+   ]
+  }
+ ],
+ "instructions": [
+  "Put {items} in {destination}.",
+  "Place all three cubes into {destination}.",
+  "Move {items} into {destination}.",
+  "Collect every cube in {destination}."
+ ],
+ "notes": "div3 variant (tools/make_variants.py)."
+}

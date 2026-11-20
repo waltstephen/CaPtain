@@ -1,0 +1,33 @@
+{
+ "description": "soarm-speed fast profile for models trained on the rollout-1113 data (ck300-r1113c, intro v5 / compact_v1): the fast profile's motion, perception-service and harness options, but the driver keeps the training protocol where it shapes what the model sees or writes: T 1.0, 16 k kept after compaction (49,536 compaction point via CONTEXT_LIMIT 60000), output cap 4096. Only a thinking budget of 1024 tokens is added (teacher thinking is longer per turn; the cap bounds runaway turns). Deploy/eval only; motion options NEED A HUMAN SAFETY REVIEW before the real arm.",
+ "driver": {
+  "temperature": 1.0,
+  "thinking_token_budget": 1024,
+  "max_output_tokens": 4096,
+  "max_images": 12,
+  "image_drop_chunk": 6,
+  "server_poll_s": 0.02,
+  "server_grace_s": 0,
+  "keep_recent_tokens": 16000
+ },
+ "tool_backend_options": {
+  "motion_speed_scale": 3,
+  "default_max_speed_m_s": 0.1,
+  "default_max_angular_speed_rad_s": 1.0,
+  "concurrent_label_check": true
+ },
+ "backend_options": {
+  "gripper_settle_min_steps": 6,
+  "step_profile": {
+   "speed_scale": 3,
+   "slow_zone_m": 0.03,
+   "settle_samples_needed": 1,
+   "gripper_still_needed": 2
+  }
+ },
+ "services": {
+  "sam3_cache_images": 8,
+  "molmo_stop_after_coords": true,
+  "depth_resolution_level": 0
+ }
+}

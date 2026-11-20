@@ -1,0 +1,56 @@
+{
+ "id": "cube_v_two_in_big_bowl",
+ "tid": 255,
+ "version": 1,
+ "domain": "cube",
+ "split": "train",
+ "provenance": "hand",
+ "difficulty": 2,
+ "builder": "declarative",
+ "objects": [
+  {
+   "role": "destination",
+   "kind": "big_bowl",
+   "count": 1
+  },
+  {
+   "role": "items",
+   "kind": "cube",
+   "count": 2,
+   "where": {
+    "color": {
+     "distinct": true
+    },
+    "size_class": {
+     "max": 4.5
+    }
+   }
+  },
+  {
+   "role": "distractors",
+   "kind": "cube",
+   "count": [
+    0,
+    1
+   ]
+  }
+ ],
+ "layout": [],
+ "goal": [
+  {
+   "pred": "inside",
+   "for_each": "items",
+   "args": [
+    "$",
+    "@destination"
+   ]
+  }
+ ],
+ "instructions": [
+  "Put {items} in {destination}.",
+  "Place both {items} into {destination}.",
+  "Move {items} into {destination}.",
+  "Collect {items} in {destination}."
+ ],
+ "notes": "div3 variant (tools/make_variants.py)."
+}

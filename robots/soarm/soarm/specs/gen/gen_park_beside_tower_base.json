@@ -1,0 +1,128 @@
+{
+ "id": "gen_park_beside_tower_base",
+ "tid": 1136,
+ "version": 1,
+ "domain": "cube",
+ "split": "train",
+ "provenance": "llm",
+ "difficulty": 1,
+ "builder": "declarative",
+ "objects": [
+  {
+   "role": "target",
+   "kind": "cube",
+   "count": 1,
+   "where": {
+    "size_class": [
+     3.0,
+     3.5
+    ],
+    "color": [
+     "green",
+     "purple"
+    ]
+   }
+  },
+  {
+   "role": "base",
+   "kind": "cube",
+   "count": 1,
+   "where": {
+    "size_class": 4.0,
+    "color": [
+     "red",
+     "blue"
+    ]
+   }
+  },
+  {
+   "role": "cap",
+   "kind": "cube",
+   "count": 1,
+   "where": {
+    "size_class": 3.0,
+    "color": {
+     "not": [
+      "red",
+      "blue"
+     ],
+     "not_role": "target"
+    }
+   }
+  }
+ ],
+ "layout": [
+  {
+   "type": "region",
+   "role": "base",
+   "r": [
+    0.18,
+    0.23
+   ],
+   "angle_deg": [
+    -20,
+    20
+   ]
+  },
+  {
+   "type": "stack",
+   "roles": [
+    "@base",
+    "@cap"
+   ]
+  }
+ ],
+ "goal": [
+  {
+   "pred": "relation",
+   "args": [
+    "@target",
+    "@base",
+    "%dir"
+   ],
+   "params": {
+    "near": 0.015,
+    "far": 0.07,
+    "lateral": 0.04
+   }
+  }
+ ],
+ "vars": {
+  "dir": {
+   "left": "to the left of",
+   "right": "to the right of"
+  }
+ },
+ "instructions": [
+  "Place {target} on the table {%dir} the bottom cube of the tower. Judge left and right from in front of the robot, facing it.",
+  "Find the cube supporting the other cube, then set {target} beside it on the table, {%dir} it. Use the view from in front of the robot for left and right.",
+  "The goal is for {target} to rest on the table {%dir} the tower's base cube. Left and right are as seen from in front of the robot.",
+  "Move {target} next to the cube at the bottom of the tower, on the side {%dir} that cube. Judge the side from in front of the robot.",
+  "Use the bottom cube of the existing tower as the landmark: put {target} on the table {%dir} it. Left and right use the view from in front of the robot.",
+  "Identify the tower's supporting cube and park {target} immediately {%dir} it on the table. Judge left and right while facing the robot from the front.",
+  "Set {target} on the tabletop beside the bottom block of the existing tower, {%dir} that block. Take left and right from the perspective of someone standing in front of and facing the robot.",
+  "Please put {target} next to the tower's base cube on the table, {%dir} it. Interpret left and right while facing the robot from the front.",
+  "{target} should end up on the table immediately {%dir} the cube supporting the tower. Use the viewpoint from in front of the robot, looking toward it.",
+  "First locate the bottom cube in the tower. Then place {target} beside that cube on the tabletop, {%dir} it, with left and right judged from in front of and facing the robot.",
+  "On the tabletop, position {target} {%dir} the existing tower's bottom cube, close beside it. Judge the direction as someone facing the robot from the front would.",
+  "Facing the robot from the front to determine left and right, move {target} onto the table next to the tower's supporting cube, {%dir} that cube.",
+  "Leave {target} resting on the table beside the base of the tower, {%dir} the base cube. Left and right refer to the view from in front of the robot, facing it.",
+  "Could you place {target} on the tabletop immediately {%dir} the bottom cube of the tower? Use the perspective of someone standing in front of and facing the robot.",
+  "Find the block that holds up the other block in the tower. Put {target} on the table next to that supporting block, {%dir} it, using left and right as seen while facing the robot from the front.",
+  "The desired position for {target} is on the tabletop beside the tower's bottom cube, {%dir} that cube. Determine left and right from in front of the robot while looking at it.",
+  "Take the tower's bottom block as your reference and set {target} next to it on the table, {%dir} it. Read left and right from the front-facing view of the robot.",
+  "Move {target} to a tabletop position immediately {%dir} the cube beneath the other cube in the tower. Judge left and right while standing in front of and facing the robot.",
+  "Using the perspective of someone facing the robot from the front, put {target} on the table beside the tower's base block, {%dir} that block.",
+  "Please leave {target} on the table next to the cube at the foot of the tower, {%dir} it. Left and right are those of an observer in front of the robot, looking toward it.",
+  "Locate the tower's supporting block; place {target} immediately {%dir} that block on the tabletop. Determine the side from in front of and facing the robot.",
+  "The task is to have {target} resting on the table next to the bottom block of the tower, {%dir} that block. Use left and right as viewed from in front of the robot, facing it.",
+  "Put {target} on the tabletop alongside the cube supporting the other cube, {%dir} the supporting cube. Take the viewpoint of a person facing the robot from the front.",
+  "Stand in front of the robot and face it to judge the direction. Set {target} on the table beside the bottom cube of the existing tower, {%dir} that cube.",
+  "Bring {target} to rest on the tabletop immediately {%dir} the tower's base cube. Interpret the direction from the viewpoint in front of and facing the robot.",
+  "Use the cube underneath the other cube in the tower as the landmark. Position {target} beside it on the table, {%dir} it, judging left and right from in front of and facing the robot.",
+  "Beside the tower's bottom cube is where {target} should end up: on the table, {%dir} that cube. Use the left-right perspective of someone facing the robot from the front.",
+  "Place {target} on the table next to the block forming the bottom of the tower, specifically {%dir} that block. Judge left and right from the front of the robot while facing it.",
+  "Identify the base cube of the existing tower, then move {target} onto the tabletop immediately {%dir} it. For left and right, use the view of a person standing in front of and facing the robot."
+ ],
+ "notes": "Introduces a relational destination identified by the supporting role of a cube in an existing tower rather than by a standalone landmark."
+}

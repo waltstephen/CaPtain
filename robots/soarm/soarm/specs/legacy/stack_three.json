@@ -1,0 +1,39 @@
+{
+ "id": "stack_three",
+ "tid": 13,
+ "version": 1,
+ "domain": "legacy",
+ "split": "train",
+ "provenance": "hand",
+ "difficulty": 3,
+ "builder": "legacy:stack_three",
+ "objects": [
+  {
+   "role": "levels",
+   "kind": "cube",
+   "count": 3
+  },
+  {
+   "role": "distractors",
+   "kind": "cylinder",
+   "count": [
+    0,
+    1
+   ]
+  }
+ ],
+ "layout": [],
+ "goal": [
+  {
+   "pred": "stacked",
+   "args": [
+    "@levels*"
+   ]
+  }
+ ],
+ "instructions": [
+  "Build a tower: {levels}, bottom to top.",
+  "Stack the three cubes: {levels}, bottom to top."
+ ],
+ "notes": "Legacy family (pre-pivot). Sampled by families.py (builder legacy:*), bit-identical to the pre-spec sampler; objects/goal/instructions here describe it (object kinds vary per seed in the generator) and are not interpreted."
+}

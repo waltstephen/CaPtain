@@ -1,0 +1,140 @@
+{
+ "id": "gen_store_caps_and_stack_tower_bases",
+ "tid": 1111,
+ "version": 1,
+ "domain": "cube",
+ "split": "train",
+ "provenance": "llm",
+ "difficulty": 3,
+ "builder": "declarative",
+ "objects": [
+  {
+   "role": "caps",
+   "kind": "cube",
+   "count": 2,
+   "where": {
+    "size_class": 3.0,
+    "color": "pink"
+   }
+  },
+  {
+   "role": "moving_base",
+   "kind": "cube",
+   "count": 1,
+   "where": {
+    "size_class": 4.0,
+    "color": "blue"
+   }
+  },
+  {
+   "role": "receiving_base",
+   "kind": "cube",
+   "count": 1,
+   "where": {
+    "size_class": 4.0,
+    "color": "orange"
+   }
+  },
+  {
+   "role": "container",
+   "kind": "bowl",
+   "count": 1,
+   "where": {
+    "size_class": [
+     10.0,
+     12.0
+    ]
+   }
+  }
+ ],
+ "layout": [
+  {
+   "type": "stack",
+   "roles": [
+    "@moving_base",
+    "@caps[0]"
+   ]
+  },
+  {
+   "type": "stack",
+   "roles": [
+    "@receiving_base",
+    "@caps[1]"
+   ]
+  },
+  {
+   "type": "region",
+   "role": "receiving_base",
+   "r": [
+    0.18,
+    0.24
+   ],
+   "angle_deg": [
+    -35,
+    35
+   ]
+  },
+  {
+   "type": "region",
+   "role": "container",
+   "r": [
+    0.17,
+    0.24
+   ],
+   "angle_deg": [
+    -50,
+    50
+   ]
+  }
+ ],
+ "goal": [
+  {
+   "pred": "inside",
+   "for_each": "caps",
+   "args": [
+    "$",
+    "@container"
+   ]
+  },
+  {
+   "pred": "on_top",
+   "args": [
+    "@moving_base",
+    "@receiving_base"
+   ]
+  }
+ ],
+ "instructions": [
+  "Put both tower tops into {container}, then stack the original {moving_base.color} base on the original {receiving_base.color} base.",
+  "Remove every {caps.color} cube from the two towers and place them in {container}. Build a new tower from their former bases, with {receiving_base} below {moving_base}.",
+  "Store both upper cubes in {container}; the two cubes that originally supported them should form a tower with {moving_base} on {receiving_base}.",
+  "First put the top cube from each existing tower into {container}. Then place the base of the {moving_base.color} tower on the base of the {receiving_base.color} tower.",
+  "The goal is for all the {caps.color} cubes to be inside {container}, and for the two original tower bases to be stacked with {receiving_base} at the bottom.",
+  "Strip both towers of their top cubes, placing those cubes in {container}, and combine the exposed bases by putting {moving_base} on {receiving_base}.",
+  "Take the top cube off each of the two towers and put both into {container}; then set the original {moving_base.color} base on the original {receiving_base.color} base.",
+  "Please place both tower-top cubes in {container} before stacking the former {moving_base.color} tower base on the former {receiving_base.color} tower base.",
+  "First transfer the two upper blocks from the towers into {container}. Next, put the original {moving_base.color} bottom block on the original {receiving_base.color} bottom block.",
+  "Clear the tops of both towers into {container}, then make a new tower by placing the original {moving_base.color} base above the original {receiving_base.color} base.",
+  "Put the upper cube from each existing tower inside {container}. Afterward, stack the base that originally supported the {moving_base.color} tower on the base that originally supported the {receiving_base.color} tower.",
+  "Both tower tops should end up inside {container}; once they are there, the original {moving_base.color} base should be placed on the original {receiving_base.color} base.",
+  "Remove both top blocks and store them in {container}. Then join the original bases into one tower, with the {moving_base.color} base on the {receiving_base.color} base.",
+  "Begin by moving the top cube of each tower into {container}, and finish by placing the original {moving_base.color} base on top of the original {receiving_base.color} base.",
+  "Put all the {caps.color} cubes from the two towers into {container}; then stack their former bases with {moving_base} on top of {receiving_base}.",
+  "Please remove the two {caps.color} upper blocks from the towers and place them inside {container}. After that, build a tower from the original bases, placing {moving_base} on {receiving_base}.",
+  "First collect both {caps.color} tower tops in {container}. Then use the bases they came from to make a tower with {receiving_base} underneath {moving_base}.",
+  "Empty both towers of their {caps.color} top cubes, putting those cubes into {container}, before stacking the old bases with {moving_base} above {receiving_base}.",
+  "The two {caps.color} cubes should first be taken off the towers and placed inside {container}; their original bases should then be stacked with {moving_base} on {receiving_base}.",
+  "Move every {caps.color} cube from the two towers into {container}. Once both are stored, place {moving_base} on {receiving_base} to form a tower from their former supports.",
+  "Start with the two {caps.color} upper cubes: place both in {container}. Follow by stacking their original bases, keeping {receiving_base} below {moving_base}.",
+  "Remove and store both {caps.color} tower-top blocks in {container}; afterward, combine the former base blocks by setting {moving_base} on {receiving_base}.",
+  "Store the top block from each of the two towers in {container}, then place {moving_base} on {receiving_base} to stack the original supports.",
+  "Please take both upper cubes off their towers and put them inside {container}; next, arrange their former bases into a tower with {moving_base} on {receiving_base}.",
+  "First, both tower tops go into {container}. Then the exposed original bases form a single tower, with {receiving_base} supporting {moving_base}.",
+  "Take down the upper layer of each tower by putting its cube in {container}. Once both are stored, set {moving_base} on top of {receiving_base}.",
+  "Make a tower from the original bases by placing {moving_base} on {receiving_base}, but first remove both upper cubes from the existing towers and put them into {container}.",
+  "Your first step is to place the two tower-top cubes inside {container}; your second is to stack their original supports with {receiving_base} at the bottom and {moving_base} on top.",
+  "Clear both upper blocks into {container}. With the original bases exposed, put {moving_base} on {receiving_base}.",
+  "Both upper cubes should end up in {container}. After moving them there, finish with the two original bases stacked so that {moving_base} rests on {receiving_base}."
+ ],
+ "notes": "This family stores an entire group of tower caps before repurposing their two former supports as a new tower."
+}

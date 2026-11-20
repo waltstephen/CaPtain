@@ -1,0 +1,138 @@
+{
+ "id": "gen_store_mat_occupant_and_pair_remaining_cu",
+ "tid": 1128,
+ "version": 1,
+ "domain": "cube",
+ "split": "train",
+ "provenance": "llm",
+ "difficulty": 4,
+ "builder": "declarative",
+ "objects": [
+  {
+   "role": "mat",
+   "kind": "pad",
+   "count": 1,
+   "where": {
+    "size_class": 8.5
+   }
+  },
+  {
+   "role": "container",
+   "kind": "bowl",
+   "count": 1,
+   "where": {
+    "size_class": 11.0
+   }
+  },
+  {
+   "role": "payload",
+   "kind": "cube",
+   "count": 1,
+   "where": {
+    "size_class": 3.0,
+    "color": [
+     "yellow",
+     "orange"
+    ]
+   }
+  },
+  {
+   "role": "left_cube",
+   "kind": "cube",
+   "count": 1,
+   "where": {
+    "size_class": 3.0,
+    "color": [
+     "blue",
+     "cyan"
+    ]
+   }
+  },
+  {
+   "role": "right_cube",
+   "kind": "cube",
+   "count": 1,
+   "where": {
+    "size_class": 3.0,
+    "color": [
+     "red",
+     "purple"
+    ]
+   }
+  }
+ ],
+ "layout": [
+  {
+   "type": "on",
+   "role": "payload",
+   "support": "@mat"
+  },
+  {
+   "type": "region",
+   "role": "container",
+   "r": [
+    0.17,
+    0.24
+   ],
+   "angle_deg": [
+    -50,
+    50
+   ]
+  }
+ ],
+ "goal": [
+  {
+   "pred": "inside",
+   "args": [
+    "@payload",
+    "@container"
+   ]
+  },
+  {
+   "pred": "in_line",
+   "args": [
+    "@left_cube",
+    "@right_cube"
+   ],
+   "params": {
+    "order": "left_to_right",
+    "max_residual": 0.015,
+    "min_gap": 0.02,
+    "max_gap": 0.05
+   }
+  }
+ ],
+ "instructions": [
+  "Put the cube on {mat} into {container}, then arrange {left_cube} and {right_cube} on the bare table in that left-to-right order with a gap of two to five centimetres. Use the view from in front of the robot.",
+  "Store the mat's occupant in {container}. Form a closely spaced two-cube row on the table with {left_cube} on the left and {right_cube} on the right, two to five centimetres apart between their edges. Use camera-view left and right.",
+  "The cube initially on {mat} should end inside {container}; the other two should form a left-to-right row, {left_cube} then {right_cube}, with a two-to-five-centimetre edge gap on the table. Judge directions from in front of the robot.",
+  "First move the lone cube from {mat} into {container}. Next place {left_cube} and {right_cube} side by side on the table, in that camera-left-to-right order, leaving two to five centimetres between them.",
+  "Clear {mat} into {container}, and make a short row of the remaining cubes on the bare table: {left_cube} to the left of {right_cube}, with an edge-to-edge gap of two to five centimetres as viewed from in front of the robot.",
+  "Place the mat's original cube in {container}; finish with {left_cube} and {right_cube} aligned left to right on the table, separated by two to five centimetres between their edges. Left and right are seen from in front of the robot, facing it.",
+  "Move the single cube initially on {mat} into {container}, then line up {left_cube} and {right_cube} on the bare table. Viewed from in front of the robot, {left_cube} must be left of {right_cube}, with two to five centimetres between their edges.",
+  "Please put the original occupant of {mat} inside {container}. Then form a straight two-cube row on the bare table, ordered {left_cube} followed by {right_cube} from camera-left to camera-right, with an edge-to-edge gap of two to five centimetres.",
+  "The cube that starts on {mat} should end up inside {container}; afterward, {left_cube} and {right_cube} should form a row on the bare table, in that order from left to right as seen from in front of the robot, with two to five centimetres of clear space between their edges.",
+  "First, transfer the lone block from {mat} to the inside of {container}. Second, arrange {left_cube} to the camera-left of {right_cube} in a straight row on the bare table, leaving an edge gap of two to five centimetres.",
+  "Empty {mat} of its original cube by putting it in {container}; next, set {left_cube} and {right_cube} side by side in a row directly on the table. Looking toward the robot from in front, place them in that left-to-right order with two to five centimetres between their edges.",
+  "Start by storing the cube initially resting on {mat} inside {container}. Follow this by making a two-cube row on the bare table: {left_cube} on the left, {right_cube} on the right, and an edge-to-edge separation of two to five centimetres, using the camera view.",
+  "Using the view from in front of the robot for left and right, first put the lone cube from {mat} inside {container}. Then align {left_cube} and {right_cube} left to right on the bare table with a gap of two to five centimetres between their edges.",
+  "Could you place the original cube from {mat} into {container}, then arrange {left_cube} and {right_cube} in a straight row on the bare table? Keep that camera-left-to-right order and leave two to five centimetres between the cubes' edges.",
+  "Put away the block that begins on {mat} by placing it inside {container}. After that, create a short row directly on the table, with {left_cube} left of {right_cube} as viewed from in front of the robot and a two-to-five-centimetre edge gap.",
+  "Complete these steps in order: place the sole cube on {mat} inside {container}; then position {left_cube} and {right_cube} in a left-to-right row on the bare table, viewed from the camera, with two to five centimetres between their nearest edges.",
+  "Your first goal is to get the original occupant of {mat} inside {container}. Your next goal is a straight row of {left_cube} and {right_cube} on the bare table, with {left_cube} camera-left of {right_cube} and an edge-to-edge gap of two to five centimetres.",
+  "Transfer the cube initially on {mat} into {container}. Once that is done, place {left_cube} and {right_cube} in a row on the bare tabletop, ordered left to right from the perspective of someone standing in front of the robot, with two to five centimetres between their edges.",
+  "Begin with the cube on {mat}: put it inside {container}. Then work on the two-cube row on the bare table, aligning {left_cube} to the left of {right_cube} in the camera view and leaving an edge gap of two to five centimetres.",
+  "Please clear the lone cube off {mat} into {container} before arranging {left_cube} and {right_cube} on the bare table. They should be aligned side by side, in that order from left to right when facing the robot, with two to five centimetres between their edges.",
+  "First the mat's cube, then the row: move the original cube from {mat} inside {container}, and afterward line up {left_cube} and {right_cube} directly on the table. Use camera-left to camera-right for their order and keep the edge-to-edge gap between two and five centimetres.",
+  "Make sure the cube originally on {mat} ends inside {container} first. Then finish with {left_cube} and {right_cube} forming a straight row on the bare table, {left_cube} on the left and {right_cube} on the right as seen from in front of the robot, their edges two to five centimetres apart.",
+  "Take the single block off {mat} and place it within {container}; next, arrange {left_cube} followed by {right_cube} in a camera-left-to-right row on the bare table. Leave two to five centimetres of space between the facing edges.",
+  "After putting the original occupant of {mat} into {container}, establish a straight two-cube row on the bare tabletop. From in front of the robot, its left member must be {left_cube} and its right member {right_cube}, separated edge to edge by two to five centimetres.",
+  "Carry out the storage step before the alignment step: put the cube that starts on {mat} inside {container}, then align {left_cube} and {right_cube} on the bare table in camera-left-to-right order, with an edge gap of two to five centimetres.",
+  "Place the lone cube initially resting on {mat} inside {container}. Next, leave {left_cube} and {right_cube} side by side in a straight row directly on the table, with {left_cube} left of {right_cube} when viewed from in front of the robot and two to five centimetres between their edges.",
+  "The required sequence is to store the original cube from {mat} in {container}, then make a closely spaced row of {left_cube} and {right_cube} on the bare table. Read the row from camera-left to camera-right in that order, and leave an edge-to-edge gap of two to five centimetres.",
+  "Facing the robot, use your left and right to judge the final row. First move the cube initially on {mat} into {container}; afterward, line up {left_cube} on the left and {right_cube} on the right on the bare table, with two to five centimetres between their edges.",
+  "Put the original cube from {mat} inside {container} before setting up the other two. Arrange {left_cube} and {right_cube} as a straight row on the bare tabletop, left to right in the camera view, leaving a two-to-five-centimetre edge-to-edge gap.",
+  "First ensure that {container} holds the cube that was initially on {mat}. Then create a side-by-side row directly on the table with {left_cube} to the left of {right_cube}, judged from in front of the robot, and a clear gap of two to five centimetres between their edges."
+ ],
+ "notes": "Combines selecting a container payload by its initial mat support with arranging the remaining colour-identified cubes into a short ordered row."
+}

@@ -1,0 +1,44 @@
+{
+ "id": "obj_big_cylinder_lift",
+ "tid": 10019,
+ "version": 1,
+ "domain": "broad",
+ "split": "train",
+ "provenance": "hand",
+ "difficulty": 1,
+ "builder": "declarative",
+ "objects": [
+  {
+   "role": "target",
+   "kind": "big_cylinder",
+   "count": 1
+  },
+  {
+   "role": "distractors",
+   "kind": [
+    "cube",
+    "block"
+   ],
+   "count": [
+    0,
+    2
+   ]
+  }
+ ],
+ "layout": [],
+ "goal": [
+  {
+   "pred": "lifted",
+   "args": [
+    "@target"
+   ]
+  }
+ ],
+ "instructions": [
+  "Pick up {target} and hold it above the table.",
+  "Lift {target} up off the table.",
+  "Grab {target} and raise it a few centimetres.",
+  "Take {target} in the gripper and hold it up."
+ ],
+ "notes": "div3 variant (tools/make_variants.py)."
+}

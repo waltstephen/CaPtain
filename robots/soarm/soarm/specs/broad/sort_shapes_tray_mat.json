@@ -1,0 +1,88 @@
+{
+ "id": "obj_sort_shapes_tray_mat",
+ "tid": 10025,
+ "version": 1,
+ "domain": "broad",
+ "split": "train",
+ "provenance": "hand",
+ "difficulty": 2,
+ "builder": "declarative",
+ "objects": [
+  {
+   "role": "destination",
+   "kind": "tray",
+   "count": 1
+  },
+  {
+   "role": "mat",
+   "kind": "big_mat",
+   "count": 1
+  },
+  {
+   "role": "cyl",
+   "kind": "cylinder",
+   "count": 1
+  },
+  {
+   "role": "blk",
+   "kind": "block",
+   "count": 1
+  }
+ ],
+ "layout": [
+  {
+   "type": "region",
+   "role": "cyl",
+   "r": [
+    0.15,
+    0.26
+   ],
+   "angle_deg": [
+    -60,
+    60
+   ]
+  },
+  {
+   "type": "region",
+   "role": "blk",
+   "r": [
+    0.15,
+    0.26
+   ],
+   "angle_deg": [
+    -60,
+    60
+   ]
+  }
+ ],
+ "goal": [
+  {
+   "pred": "inside",
+   "args": [
+    "@cyl",
+    "@destination"
+   ]
+  },
+  {
+   "pred": "in_region",
+   "args": [
+    "@blk",
+    "@mat"
+   ]
+  }
+ ],
+ "instructions": [
+  "Put {cyl} in {destination} and {blk} on {mat}.",
+  "Place {cyl} into {destination}, then {blk} onto {mat}.",
+  "Sort the two objects: {cyl} goes in {destination}, {blk} goes on {mat}.",
+  "The cylinder belongs in {destination} and the block on {mat}."
+ ],
+ "workspace": {
+  "r": [
+   0.13,
+   0.29
+  ],
+  "angle_deg": 70
+ },
+ "notes": "div3 variant (tools/make_variants.py)."
+}

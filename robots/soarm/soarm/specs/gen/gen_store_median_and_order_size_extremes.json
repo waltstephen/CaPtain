@@ -1,0 +1,118 @@
+{
+ "id": "gen_store_median_and_order_size_extremes",
+ "tid": 1142,
+ "version": 1,
+ "domain": "cube",
+ "split": "train",
+ "provenance": "llm",
+ "difficulty": 4,
+ "builder": "declarative",
+ "objects": [
+  {
+   "role": "smallest",
+   "kind": "cube",
+   "count": 1,
+   "where": {
+    "size_class": 3.0
+   }
+  },
+  {
+   "role": "middle",
+   "kind": "cube",
+   "count": 1,
+   "where": {
+    "size_class": 3.5,
+    "color": {
+     "same_role": "smallest"
+    }
+   }
+  },
+  {
+   "role": "largest",
+   "kind": "cube",
+   "count": 1,
+   "where": {
+    "size_class": 4.0,
+    "color": {
+     "same_role": "smallest"
+    }
+   }
+  },
+  {
+   "role": "container",
+   "kind": "bowl",
+   "count": 1,
+   "where": {
+    "size_class": 12.0
+   }
+  }
+ ],
+ "layout": [
+  {
+   "type": "region",
+   "role": "container",
+   "r": [
+    0.17,
+    0.24
+   ],
+   "angle_deg": [
+    -50,
+    50
+   ]
+  }
+ ],
+ "goal": [
+  {
+   "pred": "inside",
+   "args": [
+    "@middle",
+    "@container"
+   ]
+  },
+  {
+   "pred": "in_line",
+   "args": [
+    "@smallest",
+    "@largest"
+   ],
+   "params": {
+    "order": "left_to_right",
+    "min_gap": 0.01,
+    "max_gap": 0.05
+   }
+  }
+ ],
+ "instructions": [
+  "Put the middle-sized cube in {container}. Arrange the smallest and largest cubes on the bare table in that left-to-right order, with a gap of one to five centimetres. Judge left and right from in front of the robot, facing it.",
+  "Store the cube that is neither smallest nor largest in {container}, then make a left-to-right row of the smallest cube followed by the largest, leaving one to five centimetres between them on the table. Use the view from in front of the robot.",
+  "The middle-sized cube belongs inside {container}; the other two belong on the bare table, smallest on the left and largest on the right, with a one-to-five-centimetre gap. Left and right are as seen from in front of the robot.",
+  "First identify the cubes by size. Put the middle one into {container}, then place the smallest to the left of the largest in a straight table row with a gap of one to five centimetres, as viewed from in front of the robot.",
+  "Leave the median-sized cube in {container} and the two size extremes in a straight row on the bare table. From the viewpoint in front of the robot, the smallest must precede the largest from left to right, separated by one to five centimetres.",
+  "Sort by size into two arrangements: the middle-sized cube inside {container}, and the smallest then largest in a camera-left-to-right row on the table with one to five centimetres between them. Use the view from in front of the robot, facing it.",
+  "Place the middle-sized cube inside {container}. On the bare table, line up the smallest cube and the largest cube, smallest on the left, with a gap of one to five centimetres. Take left and right from the viewpoint in front of the robot, facing it.",
+  "Please put the cube of intermediate size into {container}, and arrange the smallest and largest cubes in a straight row on the bare table. Viewed from in front of the robot, facing it, the smallest must be on the left and the largest on the right, one to five centimetres apart.",
+  "The middle-sized block should end up inside {container}. The smallest and largest blocks should end up in a straight row on the bare table, with the smallest to the left of the largest and a one-to-five-centimetre gap, as seen from in front of the robot, facing it.",
+  "From a position in front of the robot, facing it, arrange the smallest cube on the left and the largest cube on the right in a straight row on the bare table, leaving one to five centimetres between them. Put the middle-sized cube inside {container}.",
+  "Identify the smallest, middle-sized and largest cubes. Move the middle-sized one into {container}; place the other two in a straight row on the bare table, smallest then largest from left to right, with a gap of one to five centimetres as viewed from in front of the robot, facing it.",
+  "Put the median-sized block inside {container}; align the two size extremes on the bare table. They must read smallest, then largest from left to right when viewed from in front of the robot, facing it, with one to five centimetres of space between them.",
+  "Leave the middle-sized cube inside {container}, and leave the smallest and largest cubes on the bare table in a straight left-to-right row. From in front of the robot, facing it, that row must have the smallest first and the largest second, separated by a gap of one to five centimetres.",
+  "Please make a straight row on the bare table using the smallest cube followed by the largest cube, with one to five centimetres between them. Read the row from left to right while facing the robot from in front of it, and place the middle-sized cube inside {container}.",
+  "Set up two arrangements: the intermediate-sized cube inside {container}, and the smallest and largest cubes aligned on the bare table. Use the view from in front of the robot, facing it, to put the smallest on the left and the largest on the right, with a one-to-five-centimetre gap.",
+  "First place the cube that is neither the smallest nor the largest inside {container}. Then form a straight row on the bare table with the smallest cube to the left of the largest cube and a gap of one to five centimetres, judging left and right from in front of the robot, facing it.",
+  "Arrange the size extremes as a straight pair on the bare table: smallest on the left, largest on the right, and one to five centimetres between them. Use the viewpoint in front of the robot, facing it. Put the middle-sized cube inside {container}.",
+  "The required final layout is the middle-sized block inside {container}, with the smallest and largest blocks in a straight row on the bare table. Seen from in front of the robot, facing it, the smallest is left of the largest, and their gap is one to five centimetres.",
+  "Move the middle cube, determined by size, into {container}. Keep the smallest and largest cubes on the bare table and align them in a straight row, placing the smallest to the left of the largest with one to five centimetres between them, as seen from in front of the robot, facing it.",
+  "Use the front-facing view of the robot\u2014that is, stand in front of it and face it\u2014to establish left and right. Put the middle-sized cube inside {container}, and line up the smallest on the left and the largest on the right on the bare table, leaving a gap of one to five centimetres.",
+  "Middle-sized cube: place inside {container}. Smallest and largest cubes: place in a straight row on the bare table, smallest left and largest right, with a one-to-five-centimetre gap. Judge the directions from in front of the robot, facing it.",
+  "Could you place the middle-sized block inside {container} and make a straight row of the smallest and largest blocks on the bare table? Put the smallest on the left and the largest on the right, one to five centimetres apart, using the view from in front of the robot, facing it.",
+  "On the bare table, position the largest cube to the right of the smallest cube, aligned in a straight row with a gap of one to five centimetres. Interpret right from in front of the robot, facing it, and place the middle-sized cube inside {container}.",
+  "Put the cube between the other two in size inside {container}. Arrange those other two cubes on the bare table in a straight row, running from smallest on the left to largest on the right with one to five centimetres between them, as viewed from in front of the robot, facing it.",
+  "Finish with the middle-sized cube inside {container} and the smallest and largest cubes aligned on the bare table. Looking toward the robot from in front of it, you should see the smallest on the left, the largest on the right, and a gap of one to five centimetres between them.",
+  "Make the table arrangement first: a straight row containing the smallest cube on the left and the largest cube on the right, with a one-to-five-centimetre gap, all on the bare table. Use left and right as seen from in front of the robot, facing it. Then put the middle-sized cube inside {container}.",
+  "Place the intermediate-sized block inside {container}, not in the table row. Form that straight row on the bare table from the smallest and largest blocks only, smallest followed by largest from left to right, with a gap of one to five centimetres as viewed from in front of the robot, facing it.",
+  "Let the middle-sized cube occupy the inside of {container}. Arrange the remaining two cubes in a straight row on the bare table, with the smallest left of the largest and one to five centimetres separating them. Establish left and right by looking at the robot from in front of it.",
+  "Please arrange the cubes by size as follows: put the middle-sized one inside {container}, and put the smallest and largest on the bare table in a straight row. Facing the robot from in front, place the smallest on your left and the largest on your right, leaving one to five centimetres between them.",
+  "Create a straight smallest-to-largest pair on the bare table, running left to right with a gap of one to five centimetres, and put the middle-sized cube inside {container}. The pair consists of the smallest and largest cubes, and its left-to-right order is judged from in front of the robot, facing it."
+ ],
+ "notes": "Combines median-size selection for storage with an ordered table row formed only from the two size extremes."
+}

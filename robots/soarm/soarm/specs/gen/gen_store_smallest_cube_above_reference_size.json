@@ -1,0 +1,127 @@
+{
+ "id": "gen_store_smallest_cube_above_reference_size",
+ "tid": 1219,
+ "version": 1,
+ "domain": "cube",
+ "split": "train",
+ "provenance": "llm",
+ "difficulty": 1,
+ "builder": "declarative",
+ "objects": [
+  {
+   "role": "tray",
+   "kind": "tray",
+   "count": 1,
+   "where": {
+    "size_class": 18.0,
+    "color": "gray"
+   }
+  },
+  {
+   "role": "reference",
+   "kind": "cube",
+   "count": 1,
+   "where": {
+    "size_class": 3.5,
+    "color": [
+     "red",
+     "orange"
+    ]
+   }
+  },
+  {
+   "role": "target",
+   "kind": "cube",
+   "count": 1,
+   "where": {
+    "size_class": 4.0,
+    "color": [
+     "blue",
+     "green"
+    ]
+   }
+  },
+  {
+   "role": "smaller",
+   "kind": "cube",
+   "count": 1,
+   "where": {
+    "size_class": 3.0,
+    "color": [
+     "white",
+     "black"
+    ]
+   }
+  },
+  {
+   "role": "larger",
+   "kind": "cube",
+   "count": [
+    0,
+    1
+   ],
+   "where": {
+    "size_class": 4.5,
+    "color": [
+     "purple",
+     "pink"
+    ]
+   }
+  }
+ ],
+ "layout": [
+  {
+   "type": "region",
+   "role": "tray",
+   "r": [
+    0.17,
+    0.24
+   ],
+   "angle_deg": [
+    -50,
+    50
+   ]
+  }
+ ],
+ "goal": [
+  {
+   "pred": "inside",
+   "args": [
+    "@target",
+    "@tray"
+   ]
+  }
+ ],
+ "instructions": [
+  "Among the cubes larger than {reference}, put the smallest one in {tray}.",
+  "Use {reference} as the size threshold. Ignore cubes that are no larger than it, then place the smallest remaining cube inside {tray}.",
+  "Put the cube that is the next size up from {reference} into {tray}; do not choose a smaller cube or skip to a larger eligible cube.",
+  "Find all cubes bigger than {reference}. The smallest member of that group belongs in {tray}.",
+  "Compare the other cubes with {reference}, select the smallest cube that is still larger than it, and place that cube in {tray}.",
+  "The tray should receive just the smallest cube exceeding {reference} in size. If there is an even larger cube, it is not the one to move.",
+  "Place in {tray} the smallest of the cubes that are bigger than {reference}.",
+  "Please put the cube immediately above {reference} in size into {tray}, leaving any smaller or still larger cubes unchosen.",
+  "First rule out every cube no bigger than {reference}. From those left, move the smallest into {tray}.",
+  "Choose the smallest block whose size exceeds that of {reference}, and put it inside {tray}.",
+  "Use {reference} as your cutoff: only bigger cubes qualify, and only the smallest qualifying cube goes into {tray}.",
+  "Into {tray}, move the cube that comes next after {reference} when the cubes are ordered from smallest to largest.",
+  "Please compare the cubes against {reference} and place the smallest one that is larger than it inside {tray}.",
+  "The cube to put in {tray} is the smallest cube above {reference} in size, not any cube farther up the size ordering.",
+  "Find the cubes that exceed {reference} in size; put the smallest of those inside {tray}.",
+  "Select by size, using {reference} as the lower limit: move the smallest cube strictly above that limit into {tray}.",
+  "Have the smallest cube bigger than {reference} end up in {tray}; do not substitute an even bigger cube.",
+  "Put just one selected cube into {tray}: the smallest among those larger than {reference}.",
+  "Start with {reference}, look upward in size, and place the first cube you reach into {tray}.",
+  "Ignore cubes equal to or smaller than {reference}, then put the least large of the remaining cubes in {tray}.",
+  "Please move into {tray} whichever cube is larger than {reference} by the smallest amount.",
+  "The next larger cube relative to {reference} should be placed inside {tray}, rather than a smaller cube or a more distant larger one.",
+  "Check which blocks are bigger than {reference}. Choose the smallest of that set and place it in {tray}.",
+  "Make {tray} the destination for the smallest cube whose size is greater than that of {reference}.",
+  "Do not choose a cube at or below the size of {reference}; put the smallest cube above that size into {tray}.",
+  "Identify the immediate successor to {reference} in the cubes' size ordering and move that cube into {tray}.",
+  "Please place the least large eligible cube inside {tray}, where eligibility means being larger than {reference}.",
+  "Among the blocks exceeding {reference} in size, choose the one with no smaller eligible block and put it in {tray}.",
+  "Choose the cube just larger in size than {reference}, not a smaller one and not a still larger alternative, and place it inside {tray}."
+ ],
+ "notes": "Selects a size successor after filtering against a reference, rather than selecting a global size extreme or an equal-sized match."
+}

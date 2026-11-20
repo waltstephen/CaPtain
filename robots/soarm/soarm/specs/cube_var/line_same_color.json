@@ -1,0 +1,54 @@
+{
+ "id": "cube_v_line_same_color",
+ "tid": 233,
+ "version": 1,
+ "domain": "cube",
+ "split": "train",
+ "provenance": "hand",
+ "difficulty": 3,
+ "builder": "declarative",
+ "objects": [
+  {
+   "role": "items",
+   "kind": "cube",
+   "count": 3,
+   "where": {
+    "color": {
+     "same_role": "items[0]"
+    },
+    "size_class": {
+     "max": 4.0
+    }
+   }
+  },
+  {
+   "role": "distractors",
+   "kind": "cube",
+   "count": [
+    0,
+    1
+   ],
+   "where": {
+    "color": {
+     "not_role": "items"
+    }
+   }
+  }
+ ],
+ "layout": [],
+ "goal": [
+  {
+   "pred": "in_line",
+   "args": [
+    "@items*"
+   ]
+  }
+ ],
+ "instructions": [
+  "Line up the three {items.color} cubes in a straight row.",
+  "Arrange the {items.color} cubes in a straight line.",
+  "Put the three {items.color} cubes in one straight row, a few centimetres apart.",
+  "Make a straight line out of the {items.color} cubes."
+ ],
+ "notes": "div2 variant (tools/make_variants.py)."
+}

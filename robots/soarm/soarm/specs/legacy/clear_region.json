@@ -1,0 +1,50 @@
+{
+ "id": "clear_region",
+ "tid": 0,
+ "version": 1,
+ "domain": "legacy",
+ "split": "train",
+ "provenance": "hand",
+ "difficulty": 1,
+ "builder": "legacy:clear_region",
+ "objects": [
+  {
+   "role": "mat",
+   "kind": "pad",
+   "count": 1
+  },
+  {
+   "role": "on",
+   "kind": "cube",
+   "count": [
+    1,
+    2
+   ]
+  },
+  {
+   "role": "distractors",
+   "kind": "cube",
+   "count": [
+    0,
+    1
+   ]
+  }
+ ],
+ "layout": [],
+ "goal": [
+  {
+   "pred": "off_region",
+   "for_each": "on",
+   "args": [
+    "$",
+    "@mat"
+   ]
+  }
+ ],
+ "instructions": [
+  "Clear {mat}: move everything off it onto the table.",
+  "Remove all objects from {mat}.",
+  "Take every object off {mat} and leave them on the table."
+ ],
+ "notes": "Legacy family (pre-pivot). Sampled by families.py (builder legacy:*), bit-identical to the pre-spec sampler; objects/goal/instructions here describe it (object kinds vary per seed in the generator) and are not interpreted."
+}

@@ -1,0 +1,159 @@
+{
+ "id": "gen_two_destinations_with_optional_final_hol",
+ "tid": 1131,
+ "version": 1,
+ "domain": "cube",
+ "split": "train",
+ "provenance": "llm",
+ "difficulty": 3,
+ "builder": "declarative",
+ "objects": [
+  {
+   "role": "container",
+   "kind": "box",
+   "count": 1,
+   "where": {
+    "size_class": 12.0,
+    "color": "gray"
+   }
+  },
+  {
+   "role": "mat",
+   "kind": "pad",
+   "count": 1,
+   "where": {
+    "size_class": 10.0,
+    "color": "white"
+   }
+  },
+  {
+   "role": "stored",
+   "kind": "cube",
+   "count": 1,
+   "where": {
+    "size_class": [
+     3.0,
+     3.5
+    ],
+    "color": [
+     "red",
+     "orange"
+    ]
+   }
+  },
+  {
+   "role": "parked",
+   "kind": "cube",
+   "count": 1,
+   "where": {
+    "size_class": [
+     3.0,
+     3.5
+    ],
+    "color": [
+     "blue",
+     "cyan"
+    ]
+   }
+  },
+  {
+   "role": "held",
+   "kind": "cube",
+   "count": [
+    0,
+    1
+   ],
+   "where": {
+    "size_class": 3.0,
+    "color": [
+     "green",
+     "purple"
+    ]
+   }
+  }
+ ],
+ "layout": [
+  {
+   "type": "region",
+   "role": "container",
+   "r": [
+    0.17,
+    0.24
+   ],
+   "angle_deg": [
+    -50,
+    50
+   ]
+  },
+  {
+   "type": "region",
+   "role": "mat",
+   "r": [
+    0.17,
+    0.24
+   ],
+   "angle_deg": [
+    -50,
+    50
+   ]
+  }
+ ],
+ "goal": [
+  {
+   "pred": "inside",
+   "args": [
+    "@stored",
+    "@container"
+   ]
+  },
+  {
+   "pred": "in_region",
+   "args": [
+    "@parked",
+    "@mat"
+   ]
+  },
+  {
+   "pred": "lifted",
+   "for_each": "held",
+   "args": [
+    "$"
+   ],
+   "params": {
+    "height": 0.04
+   }
+  }
+ ],
+ "instructions": [
+  "Put {stored} in {container} and {parked} on {mat}. If a green or purple cube is present, finish by holding it at least four centimetres above the table.",
+  "Store {stored} inside {container}, park {parked} directly on {mat}, and then lift the green or purple cube if there is one. Keep that cube held at least four centimetres above the table.",
+  "The final arrangement is {stored} in {container} and {parked} on {mat}; any green or purple cube must be held at least four centimetres above the table.",
+  "Complete both placements: {stored} goes into {container}, and {parked} goes onto {mat}. Only if a green or purple cube exists, pick it up last and hold it at least four centimetres above the table.",
+  "Place {stored} inside {container} and set {parked} on {mat}. With an extra green or purple cube present, end holding that extra cube at least four centimetres above the table; otherwise stop after the placements.",
+  "First put {stored} into {container}, then put {parked} onto {mat}. If you see a green or purple cube, lift it and keep it at least four centimetres above the tabletop.",
+  "Put {stored} inside {container}, then place {parked} on {mat}. If a green or purple cube is present, lift it last and keep it held at least four centimetres above the table.",
+  "Please place {stored} in {container} and {parked} on {mat}. After those placements, hold the green or purple cube at least four centimetres above the table if there is one.",
+  "{stored} should end up inside {container}, and {parked} should end up on {mat}. If there is a green or purple cube, finish with it held at least four centimetres above the table.",
+  "Start by putting {stored} into {container}. Next, set {parked} on {mat}. If a green or purple cube is present, pick it up last and hold it at least four centimetres above the tabletop.",
+  "Store {stored} in {container}; park {parked} on {mat}. If there is a green or purple block, end with that block held at least four centimetres above the table.",
+  "Could you put {stored} inside {container} and set {parked} directly on {mat}? Once both are placed, lift the green or purple cube if present and keep it held at least four centimetres above the table.",
+  "Complete the task with {stored} inside {container} and {parked} on {mat}, holding the green or purple cube at least four centimetres above the table if one exists.",
+  "First place {stored} in {container}; second, place {parked} on {mat}. As a final step, if there is a green or purple cube, lift it and maintain a hold at least four centimetres above the table.",
+  "Arrange for {stored} to be inside {container} and {parked} to be on {mat}. With a green or purple cube present, your final action should be to pick it up and keep it held at least four centimetres above the table.",
+  "Place {stored} into {container} and put {parked} onto {mat}. Stop after these placements if no green or purple cube is present; otherwise, finish by holding that cube at least four centimetres above the table.",
+  "Your target arrangement is {stored} inside {container} and {parked} on {mat}. Any green or purple cube present must also be held at least four centimetres above the table when you finish.",
+  "Put {stored} in {container} before setting {parked} on {mat}. If you find a green or purple cube, pick it up after both placements and keep it held at least four centimetres above the tabletop.",
+  "Please complete both placements\u2014{stored} inside {container} and {parked} directly on {mat}\u2014then, if a green or purple block exists, lift it and hold it at least four centimetres above the table.",
+  "Finish with {stored} in {container}, {parked} on {mat}, and, if present, the green or purple cube held at least four centimetres above the table.",
+  "Make the two placements: put {stored} into {container} and set {parked} onto {mat}. If an extra green or purple cube is present, take it up last and keep it held at least four centimetres above the table; otherwise, you are done.",
+  "The completed scene should have {stored} inside {container} and {parked} on {mat}. If there is a green or purple block, it should be held at least four centimetres above the tabletop at the end.",
+  "Place {stored} inside {container}, followed by {parked} on {mat}. Only after those placements, and only if a green or purple cube exists, pick it up and hold it at least four centimetres above the table.",
+  "Get {stored} into {container} and {parked} onto {mat}. If a green or purple cube is available, end the task holding it at least four centimetres above the table.",
+  "After putting {stored} inside {container} and setting {parked} on {mat}, check for a green or purple cube. If there is one, lift it and keep it held at least four centimetres above the table; if not, stop.",
+  "Ensure that {stored} is inside {container} and that {parked} is on {mat}. At completion, any green or purple cube present must be held at least four centimetres above the table.",
+  "Do the placements in this order: {stored} into {container}, then {parked} onto {mat}. If a green or purple block is present, lift that block last and hold it at least four centimetres above the tabletop.",
+  "Please leave {stored} inside {container} and {parked} on {mat}. If there is also a green or purple cube, finish by picking it up and keeping it held at least four centimetres above the table.",
+  "Both placements must be completed: {stored} belongs inside {container}, and {parked} belongs on {mat}. Once those are done, pick up the green or purple cube if one exists and finish holding it at least four centimetres above the table."
+ ],
+ "notes": "Requires two different completed placements before an optional final held-object state, rather than pairing a single placement with a lift."
+}

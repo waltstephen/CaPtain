@@ -1,0 +1,7 @@
+{
+ "id": "div3_seen",
+ "description": "Every task of the div3 training mix on one eval seed, in the div3 training scene distribution (edge3 tables, div3 layouts, random3 lights, train camera views).",
+ "mix": "div3",
+ "seeds": "9000",
+ "config": {"mix": "div3"}
+}

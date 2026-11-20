@@ -1,0 +1,68 @@
+{
+ "id": "cube_v_container_and_relation",
+ "tid": 246,
+ "version": 1,
+ "domain": "cube",
+ "split": "train",
+ "provenance": "hand",
+ "difficulty": 2,
+ "builder": "declarative",
+ "objects": [
+  {
+   "role": "container",
+   "kind": [
+    "bowl",
+    "box"
+   ],
+   "count": 1
+  },
+  {
+   "role": "first",
+   "kind": "cube",
+   "count": 1
+  },
+  {
+   "role": "second",
+   "kind": "cube",
+   "count": 1
+  },
+  {
+   "role": "distractors",
+   "kind": "cube",
+   "count": [
+    0,
+    1
+   ]
+  }
+ ],
+ "layout": [],
+ "goal": [
+  {
+   "pred": "inside",
+   "args": [
+    "@first",
+    "@container"
+   ]
+  },
+  {
+   "pred": "relation",
+   "args": [
+    "@second",
+    "@container",
+    "%dir"
+   ]
+  }
+ ],
+ "instructions": [
+  "Put {first} in {container} and place {second} {%dir} {container}.",
+  "Drop {first} into {container}, then set {second} down {%dir} it.",
+  "Place {first} into {container}; put {second} on the table {%dir} {container}."
+ ],
+ "vars": {
+  "dir": {
+   "left": "to the left of",
+   "right": "to the right of"
+  }
+ },
+ "notes": "div2 variant (tools/make_variants.py)."
+}

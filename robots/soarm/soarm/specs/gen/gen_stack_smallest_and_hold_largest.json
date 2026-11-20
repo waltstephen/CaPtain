@@ -1,0 +1,86 @@
+{
+ "id": "gen_stack_smallest_and_hold_largest",
+ "tid": 1143,
+ "version": 1,
+ "domain": "cube",
+ "split": "train",
+ "provenance": "llm",
+ "difficulty": 2,
+ "builder": "declarative",
+ "objects": [
+  {
+   "role": "smallest",
+   "kind": "cube",
+   "count": 1,
+   "where": {
+    "size_class": 3.0
+   }
+  },
+  {
+   "role": "middle",
+   "kind": "cube",
+   "count": 1,
+   "where": {
+    "size_class": 4.0,
+    "color": {
+     "same_role": "smallest"
+    }
+   }
+  },
+  {
+   "role": "largest",
+   "kind": "cube",
+   "count": 1,
+   "where": {
+    "size_class": 5.0,
+    "color": {
+     "same_role": "smallest"
+    }
+   }
+  }
+ ],
+ "layout": [],
+ "goal": [
+  {
+   "pred": "on_top",
+   "args": [
+    "@smallest",
+    "@middle"
+   ]
+  },
+  {
+   "pred": "lifted",
+   "args": [
+    "@largest"
+   ],
+   "params": {
+    "height": 0.04
+   }
+  }
+ ],
+ "instructions": [
+  "Stack the smallest cube on the middle-sized cube, then pick up the largest cube and hold it at least four centimetres above the table.",
+  "Make a two-cube tower with the middle-sized cube below the smallest, and finish holding the largest cube at least four centimetres above the table.",
+  "The smallest cube should rest on the cube that is neither smallest nor largest. Keep the largest cube held at least four centimetres above the table.",
+  "First put the smallest cube on top of the middle-sized one. Next lift the largest cube and keep holding it at least four centimetres above the table.",
+  "Use only the two smaller cubes for a tower, with the smaller one on top. Pick up the remaining, largest cube and hold it at least four centimetres above the table.",
+  "Leave a tower whose bottom is the middle-sized cube and whose top is the smallest cube, while holding the largest cube at least four centimetres above the table.",
+  "Place the smallest cube on the middle-sized cube, then raise the largest cube and keep holding it at least four centimetres above the table.",
+  "Please stack the smallest cube atop the middle-sized cube before picking up the largest cube and holding it at least four centimetres above the table.",
+  "Build a two-cube stack with the middle-sized cube underneath the smallest, then hold the largest cube at least four centimetres above the table.",
+  "First arrange the two smaller cubes with the smallest on top of the middle-sized one; afterward, lift the largest cube and maintain a hold at least four centimetres above the table.",
+  "Set the smallest block on the middle-sized block. Then pick up the largest block and keep it held no less than four centimetres above the table.",
+  "Start by making the middle-sized cube support the smallest cube. Finish by holding the largest cube at least four centimetres above the table.",
+  "Put the smallest cube onto the cube of intermediate size, then lift the largest cube and continue holding it at least four centimetres above the table.",
+  "Please make a tower of the two smaller blocks, smallest above middle-sized, and then pick up the largest block and hold it at least four centimetres above the table.",
+  "The smallest cube should end up resting on the middle-sized cube; once that is done, the largest cube should be lifted and kept held at least four centimetres above the table.",
+  "Stack smallest on middle-sized, using those two cubes only for the tower. Then lift and hold the largest cube at least four centimetres above the table.",
+  "Arrange the smallest block atop the middle-sized block; with that stack left in place, pick up the largest block and keep it held at least four centimetres above the table.",
+  "The final arrangement should have the smallest cube resting on the middle-sized cube and the largest cube held at least four centimetres above the table. Establish the stack first, then lift and hold the largest cube.",
+  "Use the middle-sized cube to support the smallest cube in a two-cube tower. Then take hold of the largest cube, lift it, and keep it at least four centimetres above the table.",
+  "First leave the smallest cube sitting on top of the middle-sized cube. Only then pick up the largest cube, keeping it held at least four centimetres above the table.",
+  "Create a stack whose lower block is the middle-sized one and whose upper block is the smallest. Follow this by lifting the largest block and holding it at least four centimetres above the table.",
+  "Place the smallest cube above and resting on the middle-sized cube, then finish with the largest cube in your grasp at least four centimetres above the table, leaving the two-cube stack intact."
+ ],
+ "notes": "Uses global size ranks to combine a completed two-cube stack with a different cube held at the end."
+}

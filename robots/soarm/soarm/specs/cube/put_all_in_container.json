@@ -1,0 +1,70 @@
+{
+ "id": "cube_put_all_in_container",
+ "tid": 106,
+ "version": 2,
+ "domain": "cube",
+ "split": "train",
+ "provenance": "hand",
+ "difficulty": 3,
+ "builder": "declarative",
+ "objects": [
+  {
+   "role": "destination",
+   "kind": [
+    "bowl",
+    "box"
+   ],
+   "count": 1
+  },
+  {
+   "role": "items",
+   "kind": "cube",
+   "count": 2,
+   "where": {
+    "color": {
+     "distinct": true
+    },
+    "size_class": {
+     "max": 4.0
+    }
+   }
+  },
+  {
+   "role": "distractors",
+   "kind": "cube",
+   "count": [
+    0,
+    1
+   ]
+  }
+ ],
+ "layout": [
+  {
+   "type": "region",
+   "role": "destination",
+   "r": [
+    0.17,
+    0.24
+   ],
+   "angle_deg": [
+    -50,
+    50
+   ]
+  }
+ ],
+ "goal": [
+  {
+   "pred": "inside",
+   "for_each": "items",
+   "args": [
+    "$",
+    "@destination"
+   ]
+  }
+ ],
+ "instructions": [
+  "Put {items} in {destination}.",
+  "Place both {items} into {destination}."
+ ],
+ "notes": "Reach fix (soarm-taskgen measurement 11-10): as first written 0-4/100 layouts were reachable; this version solved 8-10/10 by script."
+}

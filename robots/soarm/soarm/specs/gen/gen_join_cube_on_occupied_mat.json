@@ -1,0 +1,100 @@
+{
+ "id": "gen_join_cube_on_occupied_mat",
+ "tid": 1212,
+ "version": 1,
+ "domain": "cube",
+ "split": "train",
+ "provenance": "llm",
+ "difficulty": 1,
+ "builder": "declarative",
+ "objects": [
+  {
+   "role": "occupied_mat",
+   "kind": "big_mat",
+   "count": 1,
+   "where": {
+    "size_class": 14.0,
+    "color": [
+     "blue",
+     "cyan"
+    ]
+   }
+  },
+  {
+   "role": "empty_mat",
+   "kind": "big_mat",
+   "count": 1,
+   "where": {
+    "size_class": 12.0,
+    "color": [
+     "yellow",
+     "orange"
+    ]
+   }
+  },
+  {
+   "role": "resident",
+   "kind": "cube",
+   "count": 1,
+   "where": {
+    "size_class": 3.0,
+    "color": [
+     "white",
+     "gray"
+    ]
+   }
+  },
+  {
+   "role": "incoming",
+   "kind": "cube",
+   "count": 1,
+   "where": {
+    "size_class": 3.0,
+    "color": {
+     "not_role": "resident"
+    }
+   }
+  }
+ ],
+ "layout": [
+  {
+   "type": "on",
+   "role": "resident",
+   "support": "@occupied_mat"
+  }
+ ],
+ "goal": [
+  {
+   "pred": "in_region",
+   "args": [
+    "@incoming",
+    "@occupied_mat"
+   ]
+  }
+ ],
+ "instructions": [
+  "Put the loose cube directly on the mat that already has a cube on it.",
+  "Move {incoming} onto the occupied mat, beside the cube already there.",
+  "The loose cube should join the other cube on its mat, not go onto the empty mat.",
+  "Find the mat with a cube on it, then place {incoming} directly on that same mat.",
+  "Use the occupied mat as the destination for {incoming}; place it on the mat rather than on the resident cube.",
+  "Place {incoming} beside {resident} on their shared mat, leaving the other mat empty.",
+  "Set the loose cube on the mat already holding a cube, beside that cube rather than on top of it.",
+  "Please put the loose block directly onto the occupied mat and leave the empty mat unused.",
+  "The loose cube should end up resting on the same mat as the other cube, not stacked on it.",
+  "Locate the mat with a cube already on it, then set the loose cube down beside that cube on the mat.",
+  "Move the loose block to the occupied mat; it belongs on the mat itself, not on the block already there.",
+  "Place {incoming} directly on the mat that already holds a cube.",
+  "Please set {incoming} beside the existing cube on the occupied mat.",
+  "{incoming} should end up on the occupied mat itself, alongside the cube already there.",
+  "First identify the mat holding a cube; then move {incoming} onto that mat, next to the cube.",
+  "Use the mat with a cube on it, not the empty one, as the place to set {incoming}.",
+  "Put {incoming} on the occupied mat without stacking it on the cube already there.",
+  "Keep the empty mat unused; set {incoming} directly onto the other mat, beside its cube.",
+  "On the mat already holding a cube, place {incoming} alongside that cube.",
+  "Find the occupied mat and set {incoming} on its surface, not on its existing cube.",
+  "Transfer {incoming} to the same mat as the cube already placed there, leaving the empty mat alone.",
+  "The destination for {incoming} is the mat with a cube on it; put it directly on that mat."
+ ],
+ "notes": "Selects a shared destination by its existing occupancy rather than by colour, size, or an explicitly named mat."
+}

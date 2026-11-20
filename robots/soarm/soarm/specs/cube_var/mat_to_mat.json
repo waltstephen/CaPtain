@@ -1,0 +1,82 @@
+{
+ "id": "cube_v_mat_to_mat",
+ "tid": 238,
+ "version": 1,
+ "domain": "cube",
+ "split": "train",
+ "provenance": "hand",
+ "difficulty": 1,
+ "builder": "declarative",
+ "objects": [
+  {
+   "role": "source",
+   "kind": "pad",
+   "count": 1
+  },
+  {
+   "role": "destination",
+   "kind": "pad",
+   "count": 1,
+   "where": {
+    "color": {
+     "not_role": "source"
+    }
+   }
+  },
+  {
+   "role": "target",
+   "kind": "cube",
+   "count": 1
+  },
+  {
+   "role": "distractors",
+   "kind": "cube",
+   "count": [
+    0,
+    1
+   ]
+  }
+ ],
+ "layout": [
+  {
+   "type": "on",
+   "role": "target",
+   "support": "@source"
+  },
+  {
+   "type": "region",
+   "role": "distractors",
+   "r": [
+    0.15,
+    0.26
+   ],
+   "angle_deg": [
+    -60,
+    60
+   ]
+  }
+ ],
+ "goal": [
+  {
+   "pred": "in_region",
+   "args": [
+    "@target",
+    "@destination"
+   ]
+  }
+ ],
+ "instructions": [
+  "Move {target} from {source} to {destination}.",
+  "Take {target} off {source} and put it on {destination}.",
+  "Transfer {target} from {source} onto {destination}.",
+  "Put {target}, which is on {source}, onto {destination}."
+ ],
+ "workspace": {
+  "r": [
+   0.13,
+   0.29
+  ],
+  "angle_deg": 70
+ },
+ "notes": "div2 variant (tools/make_variants.py)."
+}

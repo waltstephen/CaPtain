@@ -1,0 +1,126 @@
+{
+ "id": "gen_compare_loose_cubes_with_tray_resident",
+ "tid": 1224,
+ "version": 1,
+ "domain": "cube",
+ "split": "train",
+ "provenance": "llm",
+ "difficulty": 2,
+ "builder": "declarative",
+ "objects": [
+  {
+   "role": "tray",
+   "kind": "tray",
+   "count": 1,
+   "where": {
+    "size_class": 14.0
+   }
+  },
+  {
+   "role": "mat",
+   "kind": "big_mat",
+   "count": 1,
+   "where": {
+    "size_class": 12.0
+   }
+  },
+  {
+   "role": "reference",
+   "kind": "cube",
+   "count": 1,
+   "where": {
+    "size_class": 3.5
+   }
+  },
+  {
+   "role": "smaller",
+   "kind": "cube",
+   "count": 1,
+   "where": {
+    "size_class": 3.0,
+    "color": {
+     "not_role": "reference"
+    }
+   }
+  },
+  {
+   "role": "larger",
+   "kind": "cube",
+   "count": 1,
+   "where": {
+    "size_class": 4.0,
+    "color": {
+     "not_role": "reference"
+    }
+   }
+  }
+ ],
+ "layout": [
+  {
+   "type": "on",
+   "role": "reference",
+   "support": "@tray"
+  },
+  {
+   "type": "region",
+   "role": "tray",
+   "r": [
+    0.17,
+    0.24
+   ],
+   "angle_deg": [
+    -50,
+    50
+   ]
+  }
+ ],
+ "goal": [
+  {
+   "pred": "in_region",
+   "args": [
+    "@smaller",
+    "@mat"
+   ]
+  },
+  {
+   "pred": "inside",
+   "args": [
+    "@larger",
+    "@tray"
+   ]
+  }
+ ],
+ "instructions": [
+  "Use the cube initially in {tray} as the size reference. Put the smaller loose cube directly on {mat}, and put the larger loose cube in the tray.",
+  "Compare each loose cube with the cube already in {tray}: the smaller one belongs on {mat}, and the larger one belongs in the tray.",
+  "Put the loose cube that is smaller than the tray's original cube on {mat}. Put the loose cube that is larger than that original cube into {tray}.",
+  "Sort the two loose cubes around the tray resident's size: smaller onto {mat}, larger into {tray}.",
+  "First identify the size of the cube already in {tray}. Move the smaller loose cube onto {mat}, then add the larger loose cube to the tray.",
+  "The goal is to have the smaller-than-reference loose cube resting directly on {mat} and the larger-than-reference loose cube inside {tray}; use the tray's initial cube as the reference.",
+  "Take the cube originally in {tray} as your size standard. Set the smaller of the two loose cubes directly on {mat}, then place the larger one in the tray.",
+  "Please compare the two loose blocks with the block initially inside {tray}. Move the smaller block directly onto {mat} and the larger block into the tray.",
+  "Using the original cube in {tray} for comparison, put the loose cube below its size directly on {mat} and the loose cube above its size inside the tray.",
+  "The loose cube smaller than the initial occupant of {tray} should end up directly on {mat}; the loose cube larger than that occupant should end up in the tray.",
+  "Check the size of the cube already in {tray}. Next, place the smaller loose cube directly on {mat}. Finally, put the larger loose cube inside the tray.",
+  "Sort both loose blocks by comparison with the block originally in {tray}: the smaller block goes directly on {mat}, and the larger block goes into the tray.",
+  "Would you place the loose cube smaller than the cube initially in {tray} directly on {mat}, then put the loose cube larger than that same reference into the tray?",
+  "Use the initial cube in {tray} to distinguish the two loose cubes by size. Transfer the smaller one directly onto {mat} and the larger one into the tray.",
+  "Place one loose cube directly on {mat}: choose the one smaller than the cube originally in {tray}. Then put the loose cube larger than that original cube into the tray.",
+  "With the cube initially inside {tray} serving as the reference, arrange the two loose cubes so the smaller one rests directly on {mat} and the larger one is inside the tray.",
+  "Compare against the original block in {tray}, not against another size standard: put the smaller loose block directly on {mat} and the larger loose block in the tray.",
+  "For the two loose cubes, use the size of the cube already in {tray} as the dividing point. Place the one below that size directly on {mat}, then the one above that size in the tray.",
+  "Put the smaller-than-reference loose block directly onto {mat}, followed by the larger-than-reference loose block into {tray}; the reference is the block initially in the tray.",
+  "Begin by identifying the cube originally inside {tray}. Relative to that cube, move the smaller loose cube directly onto {mat}, then move the larger loose cube into the tray.",
+  "Please sort the two loose cubes using the tray's original cube as the size reference: place the smaller cube directly on {mat}, and place the larger cube inside {tray}.",
+  "Your target arrangement is the smaller loose cube directly on {mat} and the larger loose cube inside {tray}, with both size comparisons made against the cube initially in the tray.",
+  "Find which loose block is smaller than the block initially in {tray} and set it directly on {mat}. Put the loose block larger than that initial block into the tray.",
+  "Treat the cube already inside {tray} as the benchmark. The loose cube smaller than it goes directly onto {mat}; the loose cube larger than it goes into the tray.",
+  "Size-check both loose cubes against the original cube in {tray}. Set the smaller one directly on {mat}, then deposit the larger one inside the tray.",
+  "Make the following placements using the cube initially in {tray} as the reference: smaller loose cube directly on {mat}, larger loose cube inside the tray.",
+  "First compare the two loose blocks to the block originally in {tray}; next put the smaller one directly on {mat}; then put the larger one into the tray.",
+  "Arrange the loose cubes according to their sizes relative to the cube originally in {tray}: the one smaller than it should rest directly on {mat}, and the one larger than it should be inside the tray.",
+  "Use the tray's initial cube to judge size, then move the smaller loose cube directly onto {mat} and the larger loose cube into {tray}.",
+  "To complete the sort, take the cube initially in {tray} as your reference, place the loose cube smaller than it directly on {mat}, and put the loose cube larger than it inside the tray."
+ ],
+ "notes": "Introduces size-threshold routing of loose cubes using an initially contained cube as the reference."
+}

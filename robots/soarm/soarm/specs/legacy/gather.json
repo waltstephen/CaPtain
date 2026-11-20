@@ -1,0 +1,39 @@
+{
+ "id": "gather",
+ "tid": 1,
+ "version": 1,
+ "domain": "legacy",
+ "split": "heldout",
+ "provenance": "hand",
+ "difficulty": 2,
+ "builder": "legacy:gather",
+ "objects": [
+  {
+   "role": "items",
+   "kind": "cube",
+   "count": 3
+  },
+  {
+   "role": "distractors",
+   "kind": "cube",
+   "count": [
+    1,
+    2
+   ]
+  }
+ ],
+ "layout": [],
+ "goal": [
+  {
+   "pred": "grouped",
+   "args": [
+    "@items*"
+   ]
+  }
+ ],
+ "instructions": [
+  "Gather all the {items.color} objects close together.",
+  "Bring the three {items.color} objects together into one small group."
+ ],
+ "notes": "Legacy family (pre-pivot). Sampled by families.py (builder legacy:*), bit-identical to the pre-spec sampler; objects/goal/instructions here describe it (object kinds vary per seed in the generator) and are not interpreted."
+}

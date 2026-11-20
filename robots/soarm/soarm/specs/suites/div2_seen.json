@@ -1,0 +1,7 @@
+{
+ "id": "div2_seen",
+ "description": "Every task of the div2 training mix on one eval seed, in the div2 training scene distribution (edge-mounted arm, mixed layouts, train camera views).",
+ "mix": "div2",
+ "seeds": "9000",
+ "config": {"mix": "div2"}
+}

@@ -1,0 +1,152 @@
+{
+ "id": "gen_mat_tower_with_optional_storage",
+ "tid": 1130,
+ "version": 1,
+ "domain": "cube",
+ "split": "train",
+ "provenance": "llm",
+ "difficulty": 3,
+ "builder": "declarative",
+ "objects": [
+  {
+   "role": "mat",
+   "kind": "pad",
+   "count": 1,
+   "where": {
+    "size_class": 10.0,
+    "color": "gray"
+   }
+  },
+  {
+   "role": "container",
+   "kind": "bowl",
+   "count": 1,
+   "where": {
+    "size_class": 12.0,
+    "color": "white"
+   }
+  },
+  {
+   "role": "base",
+   "kind": "cube",
+   "count": 1,
+   "where": {
+    "size_class": 3.5,
+    "color": [
+     "blue",
+     "cyan"
+    ]
+   }
+  },
+  {
+   "role": "cap",
+   "kind": "cube",
+   "count": 1,
+   "where": {
+    "size_class": 3.0,
+    "color": [
+     "red",
+     "orange"
+    ]
+   }
+  },
+  {
+   "role": "spare",
+   "kind": "cube",
+   "count": [
+    0,
+    1
+   ],
+   "where": {
+    "size_class": 3.5,
+    "color": [
+     "green",
+     "purple"
+    ]
+   }
+  }
+ ],
+ "layout": [
+  {
+   "type": "region",
+   "role": "mat",
+   "r": [
+    0.17,
+    0.24
+   ],
+   "angle_deg": [
+    -50,
+    50
+   ]
+  },
+  {
+   "type": "region",
+   "role": "container",
+   "r": [
+    0.17,
+    0.24
+   ],
+   "angle_deg": [
+    -50,
+    50
+   ]
+  }
+ ],
+ "goal": [
+  {
+   "pred": "in_region",
+   "args": [
+    "@base",
+    "@mat"
+   ]
+  },
+  {
+   "pred": "on_top",
+   "args": [
+    "@cap",
+    "@base"
+   ]
+  },
+  {
+   "pred": "inside",
+   "for_each": "spare",
+   "args": [
+    "$",
+    "@container"
+   ]
+  }
+ ],
+ "instructions": [
+  "Put {base} directly on {mat} and stack {cap} on it. If a green or purple cube is present, put that extra cube in {container}.",
+  "Build a two-cube tower on {mat}, with {base} below {cap}; store the green or purple cube in {container} if one is present.",
+  "The finished scene should have {base} on {mat}, {cap} on {base}, and any green or purple cube inside {container}.",
+  "First move {base} onto {mat}, then place {cap} on top. Also put the green or purple cube into {container} if it exists.",
+  "Make a tower using {base} as the bottom cube and {cap} as the top cube, with the bottom resting directly on {mat}. If there is a green or purple cube, store it in {container}.",
+  "Place {base} on {mat} and cap it with {cap}. A green or purple cube, when present, belongs inside {container}; if absent, only build the tower.",
+  "Set {base} directly on {mat}, then stack {cap} on {base}. If a green or purple cube is present, place it inside {container}.",
+  "Please build a two-cube tower on {mat}: {base} should rest directly on it, with {cap} on top. Put the green or purple cube inside {container} if there is one.",
+  "Arrange the scene so that {base} rests directly on {mat} and supports {cap}. Any green or purple cube present should end up inside {container}.",
+  "Start by placing {base} directly on {mat}. Next, set {cap} on top of it. If you find a green or purple cube, move that cube into {container}.",
+  "Tower: {base} directly on {mat}, {cap} on {base}. Extra green or purple cube: inside {container}, if present.",
+  "If there is a green or purple cube, tuck it inside {container}; otherwise, skip that step. Build a two-cube tower with {base} directly on {mat} and {cap} on top of {base}.",
+  "Could you place {base} directly onto {mat} and top it with {cap}? Please also put the green or purple cube inside {container} if one is present.",
+  "The target arrangement is a two-cube tower whose bottom is {base}, resting directly on {mat}, and whose top is {cap}. A green or purple cube, if present, must be inside {container}.",
+  "Use {base} as the tower's foundation directly on {mat}, and place {cap} above it, resting on {base}. Store the green or purple cube inside {container} if it exists.",
+  "Put the green or purple cube into {container} if one is available. For the tower, set {base} directly on {mat}, then add {cap} on top of {base}.",
+  "Make {base} the lower cube and {cap} the upper cube of a two-cube stack, with {base} directly on {mat}. If a green or purple cube is present, put that cube inside {container}.",
+  "Leave {base} resting directly on {mat}, with {cap} stacked on it. Leave any green or purple cube inside {container}; if there is none, just make the tower.",
+  "First establish the bottom of the tower by setting {base} directly on {mat}; finish the tower by placing {cap} on {base}. Also move the green or purple cube inside {container}, if present.",
+  "Please arrange {base} directly on {mat} with {cap} sitting on top of it, forming a two-cube tower. If there is a green or purple cube, place it within {container}.",
+  "Your goal is to have {base} directly on {mat} and {cap} resting on {base}, plus the green or purple cube inside {container} if that cube is present.",
+  "Stack {cap} onto {base} after putting {base} directly on {mat}. Put any green or purple cube inside {container}.",
+  "Build the tower from the bottom up: place {base} directly on {mat}, then place {cap} on {base}. If the scene includes a green or purple cube, store it inside {container}.",
+  "On {mat}, make a stack of exactly two cubes: {base} resting directly on {mat}, and {cap} resting on {base}. Put the green or purple cube inside {container} if there is one.",
+  "Have {base} end up directly on {mat}, carrying {cap} on top. Have the green or purple cube end up inside {container} if such a cube is present.",
+  "Set up a two-level cube tower with {base} directly on {mat} and {cap} directly on {base}. If a green or purple cube is around, place that extra cube inside {container}.",
+  "Place {base} directly on {mat}; once it is there, set {cap} on top of it. The green or purple cube, when present, should be put into {container}.",
+  "Keep the tower to two cubes, using {base} directly on {mat} as the bottom and {cap} on {base} as the top. Store the green or purple cube inside {container} if one is present.",
+  "Please put the green or purple cube inside {container} if it exists, and form a two-cube tower by placing {base} directly on {mat} with {cap} stacked on {base}.",
+  "Complete this arrangement: {base} resting directly on {mat}, {cap} resting on {base}, and the green or purple cube inside {container} if present. If no green or purple cube is present, only the two-cube tower is needed."
+ ],
+ "notes": "Combines a mat-supported tower with a separate storage obligation that activates only when an optional cube is present."
+}

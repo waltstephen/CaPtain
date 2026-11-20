@@ -1,0 +1,117 @@
+{
+ "id": "gen_park_two_smallest_and_hold_largest",
+ "tid": 1205,
+ "version": 1,
+ "domain": "cube",
+ "split": "train",
+ "provenance": "llm",
+ "difficulty": 3,
+ "builder": "declarative",
+ "objects": [
+  {
+   "role": "mat",
+   "kind": "big_mat",
+   "count": 1,
+   "where": {
+    "size_class": 15.0,
+    "color": "gray"
+   }
+  },
+  {
+   "role": "smallest",
+   "kind": "cube",
+   "count": 1,
+   "where": {
+    "size_class": 3.0,
+    "color": [
+     "red",
+     "blue",
+     "green",
+     "purple",
+     "orange"
+    ]
+   }
+  },
+  {
+   "role": "middle",
+   "kind": "cube",
+   "count": 1,
+   "where": {
+    "size_class": 3.5,
+    "color": {
+     "same_role": "smallest"
+    }
+   }
+  },
+  {
+   "role": "largest",
+   "kind": "cube",
+   "count": 1,
+   "where": {
+    "size_class": 5.0,
+    "color": {
+     "same_role": "smallest"
+    }
+   }
+  }
+ ],
+ "layout": [],
+ "goal": [
+  {
+   "pred": "in_region",
+   "args": [
+    "@smallest",
+    "@mat"
+   ]
+  },
+  {
+   "pred": "in_region",
+   "args": [
+    "@middle",
+    "@mat"
+   ]
+  },
+  {
+   "pred": "lifted",
+   "args": [
+    "@largest"
+   ],
+   "params": {
+    "height": 0.04
+   }
+  }
+ ],
+ "instructions": [
+  "Put the two smallest cubes directly on {mat}, then pick up the largest cube and hold it at least four centimetres above the table.",
+  "Reserve the largest cube for a final hold. Place both other cubes directly on {mat}, then hold the largest at least four centimetres above the table.",
+  "The smallest and middle-sized cubes should rest separately on {mat}; the largest should finish held at least four centimetres above the table.",
+  "Compare all three cubes by size. Move the two smaller ones directly onto {mat}, and finish by lifting the biggest at least four centimetres above the table.",
+  "Park every cube except the largest directly on {mat}, without stacking. Then pick up the largest and keep it at least four centimetres above the table.",
+  "First place the smallest cube and the middle-sized cube side by side directly on {mat}. Finally hold the remaining, largest cube at least four centimetres above the table.",
+  "Set the two smaller cubes separately and directly on {mat}, then lift the largest cube and keep it held at least four centimetres above the table.",
+  "Please place the smallest and medium-sized blocks side by side directly on {mat}. Afterward, pick up the biggest block and hold it at least four centimetres above the table.",
+  "The two smaller cubes should end up resting directly on {mat}, not on each other, before you lift and hold the largest cube at least four centimetres above the table.",
+  "First, put both cubes that are smaller than the largest directly on {mat} without stacking them. Then grasp the largest and keep it at least four centimetres above the table.",
+  "Leave the biggest cube for last: place the other two separately, directly on {mat}, and finish with the biggest held at least four centimetres above the table.",
+  "Move the smallest block and the middle-sized block onto {mat}, with each resting directly on it. Next, raise the largest block and hold it at least four centimetres above the table.",
+  "Put the two smaller cubes directly on {mat}, side by side rather than stacked; afterward, keep the largest cube in your grasp at least four centimetres above the table.",
+  "Please start by placing every cube except the biggest separately and directly on {mat}. Finish by picking up the biggest and holding it at least four centimetres above the table.",
+  "Arrange the smallest and middle-sized cubes so that both rest directly on {mat}, then take hold of the largest cube and suspend it at least four centimetres above the table.",
+  "Two smaller blocks onto {mat}, each directly on it and neither stacked on the other; then pick up the largest block and hold it at least four centimetres above the table.",
+  "Begin with the two smaller cubes: set them separately and directly on {mat}. Only then lift the biggest cube, keeping it held at least four centimetres above the table.",
+  "Place both the smallest cube and the next-largest cube directly on {mat}, without stacking. Your final action should be to lift the largest cube and hold it at least four centimetres above the table.",
+  "Before picking up the largest block for the final hold, put the other two blocks separately and directly on {mat}. Hold the largest at least four centimetres above the table.",
+  "Get the two smaller cubes resting side by side directly on {mat}; once that is done, raise the largest cube and keep holding it at least four centimetres above the table.",
+  "Please put the smallest and middle-sized cubes directly on {mat}, with neither resting on the other, and then hold the largest cube at least four centimetres above the table.",
+  "Complete this in two stages: place the two smaller blocks separately and directly on {mat}, then pick up the largest block and maintain a hold at least four centimetres above the table.",
+  "Keep the largest cube for the finishing step. First set the remaining two cubes directly on {mat} without stacking, then lift the largest and hold it at least four centimetres above the table.",
+  "Have the smallest and middle-sized blocks rest separately, directly on {mat}. After placing them, finish with the biggest block held at least four centimetres above the table.",
+  "Start by moving the two smaller cubes directly onto {mat}, placing them beside one another rather than stacking them. Then pick up and hold the largest cube at least four centimetres above the table.",
+  "Set down both cubes other than the largest so that each rests directly on {mat}. After that, lift the largest and keep it in your grasp at least four centimetres above the table.",
+  "The final arrangement should have the two smaller cubes separately and directly on {mat} and the largest held at least four centimetres above the table; place the smaller cubes first, then lift the largest.",
+  "Put the smallest block alongside the middle-sized block, both directly on {mat}, and follow that by lifting and holding the biggest block at least four centimetres above the table.",
+  "Once you have placed the smallest and middle-sized cubes separately and directly on {mat}, pick up the largest cube and keep it held no less than four centimetres above the table.",
+  "First give the two smaller cubes separate resting places directly on {mat}, with no stacking. For the last step, grasp the largest cube, lift it at least four centimetres above the table, and keep holding it there."
+ ],
+ "notes": "Uses a global size ranking to select a two-cube shared-region group while excluding the largest cube for a final hold."
+}

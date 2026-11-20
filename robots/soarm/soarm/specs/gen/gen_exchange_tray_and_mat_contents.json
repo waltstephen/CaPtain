@@ -1,0 +1,129 @@
+{
+ "id": "gen_exchange_tray_and_mat_contents",
+ "tid": 1200,
+ "version": 1,
+ "domain": "cube",
+ "split": "train",
+ "provenance": "llm",
+ "difficulty": 3,
+ "builder": "declarative",
+ "objects": [
+  {
+   "role": "tray",
+   "kind": "tray",
+   "count": 1,
+   "where": {
+    "size_class": 18.0,
+    "color": "gray"
+   }
+  },
+  {
+   "role": "mat",
+   "kind": "big_mat",
+   "count": 1,
+   "where": {
+    "size_class": 15.0,
+    "color": "black"
+   }
+  },
+  {
+   "role": "tray_cube",
+   "kind": "cube",
+   "count": 1,
+   "where": {
+    "size_class": 3.5,
+    "color": [
+     "red",
+     "orange",
+     "yellow"
+    ]
+   }
+  },
+  {
+   "role": "mat_cube",
+   "kind": "cube",
+   "count": 1,
+   "where": {
+    "size_class": 3.5,
+    "color": [
+     "blue",
+     "green",
+     "purple"
+    ]
+   }
+  }
+ ],
+ "layout": [
+  {
+   "type": "region",
+   "role": "tray",
+   "r": [
+    0.17,
+    0.24
+   ],
+   "angle_deg": [
+    -50,
+    50
+   ]
+  },
+  {
+   "type": "on",
+   "role": "tray_cube",
+   "support": "@tray"
+  },
+  {
+   "type": "on",
+   "role": "mat_cube",
+   "support": "@mat"
+  }
+ ],
+ "goal": [
+  {
+   "pred": "in_region",
+   "args": [
+    "@tray_cube",
+    "@mat"
+   ]
+  },
+  {
+   "pred": "inside",
+   "args": [
+    "@mat_cube",
+    "@tray"
+   ]
+  }
+ ],
+ "instructions": [
+  "Exchange the contents of {tray} and {mat}: move the cube from the tray directly onto the mat, and put the cube from the mat into the tray.",
+  "Put {tray_cube} directly on {mat}, and put {mat_cube} inside {tray}. Each cube should change destinations.",
+  "The cube initially in {tray} belongs on {mat}; the cube initially on {mat} belongs inside {tray}. Move both.",
+  "Transfer {mat_cube} from {mat} into {tray}, then move {tray_cube} out of the tray and directly onto the mat.",
+  "Make the tray and mat trade cubes. Finish with {mat_cube} inside {tray} and {tray_cube} resting directly on {mat}.",
+  "Move both cubes to the other occupied destination: the tray's original cube goes on the mat, and the mat's original cube goes in the tray.",
+  "Move {tray_cube} directly onto {mat} and place {mat_cube} inside {tray}, exchanging their destinations.",
+  "Please put {mat_cube} inside {tray} and set {tray_cube} directly on {mat}.",
+  "Finish with {tray_cube} resting directly on {mat} and {mat_cube} contained inside {tray}. Both cubes must switch destinations.",
+  "Swap the cubes' locations: place {mat_cube} inside {tray} and move {tray_cube} directly onto {mat}.",
+  "Set {tray_cube} down directly on {mat}; place {mat_cube} within {tray}.",
+  "Please exchange the cubes so that {tray_cube} is directly on {mat} and {mat_cube} is inside {tray}.",
+  "The required arrangement is {mat_cube} inside {tray} and {tray_cube} resting directly on {mat}. Move both cubes to achieve it.",
+  "Relocate both blocks: {tray_cube} goes directly onto {mat}, while {mat_cube} goes inside {tray}.",
+  "Put {mat_cube} into {tray}; set {tray_cube} directly onto {mat}, completing the exchange.",
+  "Have the cubes trade destinations, leaving {tray_cube} directly on {mat} and {mat_cube} inside {tray}.",
+  "Make sure {mat_cube} ends up inside {tray} and {tray_cube} ends up directly on {mat}.",
+  "Carry out the swap by moving {tray_cube} directly onto {mat} and placing {mat_cube} inside {tray}.",
+  "Exchange the two cubes between {tray} and {mat}, putting the one originally in the tray directly on the mat and the one originally on the mat inside the tray.",
+  "Please swap the contents of {tray} and {mat}: the tray's cube must rest directly on the mat, and the mat's cube must go inside the tray.",
+  "Take the cube initially inside {tray} and set it directly on {mat}; move the cube originally on the mat into the tray.",
+  "Move the cube originally on {mat} inside {tray}, and move the tray's original cube directly onto the mat.",
+  "Have {tray} and {mat} exchange their cubes. Leave the tray's original cube directly on the mat and the mat's original cube inside the tray.",
+  "Swap both cubes between {mat} and {tray}, with the mat's original cube inside the tray and the tray's original cube directly on the mat.",
+  "First transfer {mat_cube} from {mat} into {tray}; then take {tray_cube} out of the tray and set it directly on the mat.",
+  "Begin by moving {mat_cube} off {mat} and into {tray}. After that, move {tray_cube} out of the tray and directly onto the mat.",
+  "Please place {mat_cube} from {mat} inside {tray} before moving {tray_cube} out of the tray and directly onto the mat.",
+  "In this order, transfer {mat_cube} from {mat} into {tray}, then relocate {tray_cube} from the tray directly onto the mat.",
+  "Start with {mat_cube}: move it from {mat} into {tray}. Next, take {tray_cube} out of the tray and place it directly on the mat.",
+  "Complete the exchange in two steps: move {mat_cube} from {mat} into {tray}, then move {tray_cube} out of the tray and directly onto the mat."
+ ],
+ "notes": "Introduces a reciprocal exchange between a container and a region, rather than a one-way transfer or a swap of initial table coordinates."
+}

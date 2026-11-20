@@ -1,0 +1,56 @@
+{
+ "id": "mesh_on_mat",
+ "tid": 11002,
+ "version": 1,
+ "domain": "broad",
+ "split": "train",
+ "provenance": "hand",
+ "difficulty": 1,
+ "builder": "declarative",
+ "objects": [
+  {
+   "role": "destination",
+   "kind": "pad",
+   "count": 1
+  },
+  {
+   "role": "target",
+   "kind": "registry",
+   "count": 1,
+   "where": {
+    "footprint": {
+     "max": 0.09
+    }
+   }
+  },
+  {
+   "role": "distractors",
+   "kind": [
+    "cylinder",
+    "block",
+    "cube"
+   ],
+   "count": [
+    0,
+    2
+   ]
+  }
+ ],
+ "layout": [],
+ "goal": [
+  {
+   "pred": "in_region",
+   "args": [
+    "@target",
+    "@destination"
+   ]
+  }
+ ],
+ "instructions": [
+  "Put {target} on {destination}.",
+  "Place {target} onto {destination}.",
+  "Move {target} onto {destination}.",
+  "Set {target} down on {destination}."
+ ],
+ "notes": "div3 variant (tools/make_variants.py)."
+}

@@ -340,8 +340,27 @@ def selective_causal_loss(model, inputs, *, num_items_in_batch=None, loss_scale=
     keep = torch.nonzero(target != IGNORE_INDEX, as_tuple=False).squeeze(-1)
     if keep.numel() == 0:
         raise ValueError("SFT batch has no supervised next-token targets")
-    out = model(**inputs, use_cache=False, logits_to_keep=keep)
-    loss = torch.nn.functional.cross_entropy(out.logits[0].float(), target[keep], reduction="sum")
+    chunk = int(os.environ.get("SFT_CE_CHUNK") or 0)
+    if chunk > 0:
+        # 24 GB GPUs: a packed row can supervise ~20k tokens, i.e. 20k x 248k fp32 logits (~19 GB) in one tensor. Run the
+        # model (through the DeepSpeed engine, so ZeRO-3 gathers every parameter) for one logit only, take the final-norm
+        # hidden states, then lm_head + cross-entropy in checkpointed chunks of supervised positions (same loss sum).
+        hf = getattr(model, "module", model)
+        out = model(**inputs, use_cache=False, logits_to_keep=1, output_hidden_states=True)
+        hidden = out.hidden_states[-1][0]
+        lm_head = hf.lm_head
+
+        def chunk_loss(h, t):
+            return torch.nn.functional.cross_entropy(lm_head(h).float(), t, reduction="sum")
+
+        loss = hidden.new_zeros((), dtype=torch.float32)
+        for s in range(0, keep.numel(), chunk):
+            idx = keep[s:s + chunk]
+            loss = loss + torch.utils.checkpoint.checkpoint(chunk_loss, hidden[idx], target[idx], use_reentrant=False)
+        out = None
+    else:
+        out = model(**inputs, use_cache=False, logits_to_keep=keep)
+        loss = torch.nn.functional.cross_entropy(out.logits[0].float(), target[keep], reduction="sum")
     if weight is not None:
         loss = loss * weight.reshape(-1)[0].to(loss.device, loss.dtype)
     if num_items_in_batch is None:
@@ -449,8 +468,11 @@ def main() -> None:
         gradient_checkpointing_kwargs=({"offload": True} if os.environ.get("SFT_GC_OFFLOAD") == "1" else None),
         logging_steps=1,
         # SFT_SAVE_STEPS=N: periodic full (resumable) checkpoints instead of only at the epoch end; SFT_RESUME=<dir|1> resumes.
-        save_strategy="steps" if os.environ.get("SFT_SAVE_STEPS") else "epoch",
-        save_steps=int(os.environ.get("SFT_SAVE_STEPS") or 500),
+        # SFT_SAVE_STEPS=0: no Trainer checkpoints at all, only output_dir/final (small disks: a ZeRO-3 checkpoint of the 4B
+        # model with optimizer states is ~65 GB).
+        save_strategy=("no" if os.environ.get("SFT_SAVE_STEPS") == "0" else
+                       "steps" if os.environ.get("SFT_SAVE_STEPS") else "epoch"),
+        save_steps=int(os.environ.get("SFT_SAVE_STEPS") or 500) or 500,
         save_total_limit=2,
         lr_scheduler_type="cosine",
         warmup_steps=args.warmup_steps,
@@ -459,7 +481,9 @@ def main() -> None:
         average_tokens_across_devices=True,
         deepspeed=args.deepspeed,
         remove_unused_columns=False,
-        dataloader_num_workers=4,
+        # SFT_NUM_WORKERS: fewer workers on small-RAM hosts (each re-forked worker at an epoch boundary costs host RAM;
+        # with CPU-offloaded ZeRO-3 on a 188 GB box that tipped the OOM killer at the epoch-1 boundary)
+        dataloader_num_workers=int(os.environ.get("SFT_NUM_WORKERS", "4")),
         # SFT_SAMPLING=sequential: keep the file order (bucket_order.py / mix_order.py write world-size groups of similar length in random
         # group order, so a ZeRO-3 step does not wait for one 65k row while the other ranks hold short ones)
         train_sampling_strategy=os.environ.get("SFT_SAMPLING", "random"),

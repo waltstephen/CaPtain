@@ -1,0 +1,66 @@
+{
+ "id": "obj_cube_and_cylinder_on_big_mat",
+ "tid": 10026,
+ "version": 1,
+ "domain": "broad",
+ "split": "train",
+ "provenance": "hand",
+ "difficulty": 2,
+ "builder": "declarative",
+ "objects": [
+  {
+   "role": "destination",
+   "kind": "big_mat",
+   "count": 1
+  },
+  {
+   "role": "a",
+   "kind": "cube",
+   "count": 1,
+   "where": {
+    "size_class": {
+     "max": 4.0
+    }
+   }
+  },
+  {
+   "role": "b",
+   "kind": "cylinder",
+   "count": 1
+  },
+  {
+   "role": "distractors",
+   "kind": [
+    "block"
+   ],
+   "count": [
+    0,
+    1
+   ]
+  }
+ ],
+ "layout": [],
+ "goal": [
+  {
+   "pred": "in_region",
+   "args": [
+    "@a",
+    "@destination"
+   ]
+  },
+  {
+   "pred": "in_region",
+   "args": [
+    "@b",
+    "@destination"
+   ]
+  }
+ ],
+ "instructions": [
+  "Put {a} and {b} on {destination}.",
+  "Place both {a} and {b} onto {destination}.",
+  "Move {a} and {b} onto {destination}.",
+  "Set {a} and {b} down on {destination}."
+ ],
+ "notes": "div3 variant (tools/make_variants.py)."
+}
